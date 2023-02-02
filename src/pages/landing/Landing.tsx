@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import styles from "./Landing.module.css";
-import bnollarLogo from "../resources/images/logo/bnollar_logo.svg";
-import frame from "../resources/images/landing/frame.svg";
-import icon1 from "../resources/images/landing/icon1.svg";
-import icon2 from "../resources/images/landing/icon2.svg";
-import icon6 from "../resources/images/landing/icon6.svg";
+import bnollarLogo from "../../resources/images/logo/bnollar_logo.svg";
+import frame from "../../resources/images/landing/frame.svg";
+import icon1 from "../../resources/images/landing/icon1.svg";
+import icon2 from "../../resources/images/landing/icon2.svg";
+import icon6 from "../../resources/images/landing/icon6.svg";
 const Landing: FC = () => {
   console.log(styles);
   return (
