@@ -105,7 +105,6 @@
   width: 320px;
   position: absolute;
   right: 0;
-  
 }
 .center {
   display: flex;
@@ -116,7 +115,6 @@
   left: 320px;
   right: 320px;
   margin: auto;
-
 }
 /* .center img {
     width: 100%;
@@ -145,23 +143,23 @@
   top: 353px;
 }
 .right > :first-child {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    right: 253px;
-    top: 71px;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: 253px;
+  top: 71px;
 }
 .right > :nth-child(2) {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    right: 20px;
-    top: 106px;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: 20px;
+  top: 106px;
 }
 .right > :nth-child(3) {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    right: 120px;
-    top: 338px;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: 120px;
+  top: 338px;
 }
