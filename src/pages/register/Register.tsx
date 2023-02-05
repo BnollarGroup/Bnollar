@@ -3,6 +3,7 @@ import styles from "./Register.module.css";
 import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
 import addIcon from "../../resources/images/registration/addIcon.svg";
+import ok from "../../resources/images/registration/ok.svg";
 const Register: FC = () => {
   const [userName, setUserName] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -16,30 +17,45 @@ const Register: FC = () => {
     } else {
       setCanCreate(false);
     }
-  });
+  }, [userName, displayName]);
   const handleCreateAccount = () => {
     if (canCreate) {
       setShowSelectCategory(true);
       setShowRegister(false);
     }
   };
-  const categories = [
-    {id:1,name:'Business'},
-    {id:2,name:'Creative'},
-    {id:3,name:'Education'},
-    {id:4,name:'Entertainment'},
-    {id:5,name:'Fashion & Beauty'},
-    {id:6,name:'Food'},
-    {id:7,name:'Government & politics'},
-    {id:8,name:'Health & wealness'},
-    {id:9,name:'More'},
-
-  ]
+  const handleContinue = () => {
+    setShowSelectCategory(false);
+    setShowAllSet(true);
+  };
+  const togleSelect = (id: number)=>{
+    const newArr: React.SetStateAction<{ id: number; name: string; selected: boolean; }[]> = []
+    categories.forEach(item =>{
+        if(item.id===id){
+            const newitem = {id:item.id,name:item.name,selected:!item.selected}
+            newArr.push(newitem)
+        }else {
+            newArr.push(item)
+        }
+    })
+    setCategories(newArr)
+  }
+  const [categories,setCategories] =useState( [
+    { id: 1, name: "Business", selected: true },
+    { id: 2, name: "Creative", selected: false },
+    { id: 3, name: "Education", selected: false },
+    { id: 4, name: "Entertainment", selected: false },
+    { id: 5, name: "Fashion & Beauty", selected: true },
+    { id: 6, name: "Food", selected: false },
+    { id: 7, name: "Government & politics", selected: false },
+    { id: 8, name: "Health & wealness", selected: false },
+    { id: 9, name: "More", selected: false },
+  ])
   return (
     <section className={styles.register}>
       <div className={styles.left_register}>
-          {showRegister && (
-        <div className={styles.register_wrapper}>
+        {showRegister && (
+          <div className={styles.register_wrapper}>
             <div>
               <h1 className={styles.title}>Registration</h1>
               <p className={styles.text}>
@@ -47,8 +63,8 @@ const Register: FC = () => {
               </p>
               <div className={styles.addImg_wrapper}>
                 <div className={styles.addImg}>
-                  <img src={imgIcon} />
-                  <img src={addIcon} />
+                  <img src={imgIcon} alt='img icon'/>
+                  <img src={addIcon} alt='add icon'/>
                 </div>
               </div>
               <div className={styles.input_wrapper}>
@@ -71,19 +87,48 @@ const Register: FC = () => {
               </div>
             </div>
           </div>
-          )}
-          {showSelectCategory && (
-            <div className={styles.categories}>
-              <h1 className={styles.title}>Select category</h1>
-              <p className={styles.text}>For a personalised experience</p>
-              <div className={styles.categoriesWrapper}>
-                {categories.map(item=>(
-                    <div key={item.id} className={styles.categoriesNotSelected}>{item.name}</div>
-                ))}
-              </div>
+        )}
+        {showSelectCategory && (
+          <div className={styles.categories}>
+            <h1 className={styles.title}>Select category</h1>
+            <p className={styles.text}>For a personalised experience</p>
+            <div className={styles.categoriesWrapper}>
+              {categories.map((item) => (
+                <div
+                  key={item.id}
+                  className={
+                    item.selected
+                      ? styles.categorieSelected
+                      : styles.categoriesNotSelected
+                  }
+                onClick={()=>{togleSelect(item.id)}}>
+                  {item.name}
+                </div>
+              ))}
             </div>
-          )}
-        </div>
+            <div className={styles.continue}>
+              <button onClick={handleContinue}>Continue</button>
+            </div>
+          </div>
+        )}
+        {showAllSet && (
+          <div className={styles.allSetWrapper}>
+            <div>
+              <img src={ok} alt="ok" />
+            </div>
+            <div>
+              <h1 className={styles.title}>You’re all set</h1>
+              <p className={styles.text}>
+                We're excited to have you on board. Your account is all set up
+                and ready for you to start using.
+              </p>
+            </div>
+            <div className={styles.finish}>
+              <button>Finish</button>
+            </div>
+          </div>
+        )}
+      </div>
       <div className={styles.right_image}>
         <img src={registerBg} alt="" />
       </div>

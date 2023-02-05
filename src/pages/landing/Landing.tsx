@@ -29,17 +29,17 @@ const Landing: FC = () => {
       </div>
       <div className={styles.footerWrapper}>
         <div className={styles.left}>
-            <div><img src={icon6}/></div>
-            <div><img src={icon1}/></div>
-            <div><img src={icon2}/></div>
+            <div><img src={icon6} alt='nft' /></div>
+            <div><img src={icon1} alt='nft'/></div>
+            <div><img src={icon2} alt='nft'/></div>
         </div>
         <div className={styles.center}>
           <img src={frame} />
         </div>
         <div className={styles.right}>
-            <div><img src={icon6}/></div>
-            <div><img src={icon1}/></div>
-            <div><img src={icon2}/></div>
+            <div><img src={icon6} alt='nft'/></div>
+            <div><img src={icon1} alt='nft'/></div>
+            <div><img src={icon2} alt='nft'/></div>
         </div>
       </div>
     </div>
