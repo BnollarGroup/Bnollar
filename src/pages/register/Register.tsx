@@ -4,6 +4,49 @@ import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
 import addIcon from "../../resources/images/registration/addIcon.svg";
 import ok from "../../resources/images/registration/ok.svg";
+
+interface Category {
+  id: number;
+  name: string;
+  selected: boolean;
+}
+
+const CATEGORIES: Category[] = [
+  { id: 1, name: "Business", selected: true },
+  { id: 2, name: "Creative", selected: false },
+  { id: 3, name: "Education", selected: false },
+  { id: 4, name: "Entertainment", selected: false },
+  { id: 5, name: "Fashion & Beauty", selected: true },
+  { id: 6, name: "Food", selected: false },
+  { id: 7, name: "Government & politics", selected: false },
+  { id: 8, name: "Health & wealness", selected: false },
+  { id: 9, name: "More", selected: false },
+];
+
+type UseCategoriesType = {
+  categories: Category[];
+  toggleSelect: (id: number) => void;
+};
+
+const useCategories = (): UseCategoriesType => {
+  const [categories, setCategories] = useState<Category[]>(CATEGORIES);
+
+  const toggleSelect = (id: number) => {
+    setCategories((categories) => {
+      return categories.map((category) => {
+        return category.id === id
+          ? {
+              ...category,
+              selected: !category.selected,
+            }
+          : category;
+      });
+    });
+  };
+
+  return { categories, toggleSelect };
+};
+
 const Register: FC = () => {
   const [userName, setUserName] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -11,6 +54,7 @@ const Register: FC = () => {
   const [showRegister, setShowRegister] = useState(true);
   const [showSelectCategory, setShowSelectCategory] = useState(false);
   const [showAllSet, setShowAllSet] = useState(false);
+  const { categories, toggleSelect } = useCategories();
   useEffect(() => {
     if (userName.length > 3 && displayName.length > 3) {
       setCanCreate(true);
@@ -28,29 +72,7 @@ const Register: FC = () => {
     setShowSelectCategory(false);
     setShowAllSet(true);
   };
-  const togleSelect = (id: number)=>{
-    const newArr: React.SetStateAction<{ id: number; name: string; selected: boolean; }[]> = []
-    categories.forEach(item =>{
-        if(item.id===id){
-            const newitem = {id:item.id,name:item.name,selected:!item.selected}
-            newArr.push(newitem)
-        }else {
-            newArr.push(item)
-        }
-    })
-    setCategories(newArr)
-  }
-  const [categories,setCategories] =useState( [
-    { id: 1, name: "Business", selected: true },
-    { id: 2, name: "Creative", selected: false },
-    { id: 3, name: "Education", selected: false },
-    { id: 4, name: "Entertainment", selected: false },
-    { id: 5, name: "Fashion & Beauty", selected: true },
-    { id: 6, name: "Food", selected: false },
-    { id: 7, name: "Government & politics", selected: false },
-    { id: 8, name: "Health & wealness", selected: false },
-    { id: 9, name: "More", selected: false },
-  ])
+  //
   return (
     <section className={styles.register}>
       <div className={styles.left_register}>
@@ -63,8 +85,8 @@ const Register: FC = () => {
               </p>
               <div className={styles.addImg_wrapper}>
                 <div className={styles.addImg}>
-                  <img src={imgIcon} alt='img icon'/>
-                  <img src={addIcon} alt='add icon'/>
+                  <img src={imgIcon} alt="img icon" />
+                  <img src={addIcon} alt="add icon" />
                 </div>
               </div>
               <div className={styles.input_wrapper}>
@@ -101,7 +123,10 @@ const Register: FC = () => {
                       ? styles.categorieSelected
                       : styles.categoriesNotSelected
                   }
-                onClick={()=>{togleSelect(item.id)}}>
+                  onClick={() => {
+                    toggleSelect(item.id);
+                  }}
+                >
                   {item.name}
                 </div>
               ))}
@@ -130,7 +155,7 @@ const Register: FC = () => {
         )}
       </div>
       <div className={styles.right_image}>
-        <img src={registerBg} alt="" />
+        <img src={registerBg} alt="nft" />
       </div>
     </section>
   );
