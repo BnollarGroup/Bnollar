@@ -12,11 +12,11 @@ interface Category {
 }
 
 const CATEGORIES: Category[] = [
-  { id: 1, name: "Business", selected: true },
+  { id: 1, name: "Business", selected: false },
   { id: 2, name: "Creative", selected: false },
   { id: 3, name: "Education", selected: false },
   { id: 4, name: "Entertainment", selected: false },
-  { id: 5, name: "Fashion & Beauty", selected: true },
+  { id: 5, name: "Fashion & Beauty", selected: false },
   { id: 6, name: "Food", selected: false },
   { id: 7, name: "Government & politics", selected: false },
   { id: 8, name: "Health & wealness", selected: false },
@@ -55,6 +55,11 @@ const Register: FC = () => {
   const [showSelectCategory, setShowSelectCategory] = useState(false);
   const [showAllSet, setShowAllSet] = useState(false);
   const { categories, toggleSelect } = useCategories();
+  const [file, setFile] = useState(null);
+
+  const handleChange = (e: any) => {
+    setFile(e.target.files[0]);
+  };
   useEffect(() => {
     if (userName.length > 3 && displayName.length > 3) {
       setCanCreate(true);
@@ -86,7 +91,10 @@ const Register: FC = () => {
               <div className={styles.addImg_wrapper}>
                 <div className={styles.addImg}>
                   <img src={imgIcon} alt="img icon" />
-                  <img src={addIcon} alt="add icon" />
+                  <label htmlFor="file-input">
+                    <img src={addIcon} alt="Upload File" />
+                  </label>
+                  <input type="file" id="file-input" onChange={handleChange} style={{display:'none'}}/>
                 </div>
               </div>
               <div className={styles.input_wrapper}>
