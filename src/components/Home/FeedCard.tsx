@@ -8,7 +8,7 @@ import share from "../../resources/images/icons/share.svg";
 import upvote from "../../resources/images/icons/upvote.svg";
 import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
 import chat from "../../resources/images/icons/chat.svg";
-const FeedCard = () => {
+const FeedCard = (props:any) => {
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
   const [showUpVote, setShowUpVote] = useState(false);
   const [showShare, setShowShare] = useState(false);
@@ -21,6 +21,7 @@ const FeedCard = () => {
   const handleShareClick = () => {
     setShowShare((prevState) => !prevState);
   };
+  const isNft =props.isNft
   return (
     <div className={styles.feed_card_wrapper}>
       <div className={styles.feedCardWrapper}>
@@ -60,7 +61,7 @@ const FeedCard = () => {
           <div className={styles.feedCard_image}>
             <img src={post1} />
           </div>
-          {showUpVote && 
+          {isNft && 
             <div className={styles.buyNowWrapper}>
                 <div className={styles.buyNow_description}>
                     <div>Clone X</div>

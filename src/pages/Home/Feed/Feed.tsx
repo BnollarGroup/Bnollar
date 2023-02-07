@@ -9,6 +9,9 @@ const Feed = () => {
     <div className={styles.feedWrapper}>
         <FeedHeader/>
         <FeedCard/>
+        <FeedCard isNft={true}/>
+        <FeedCard/>
+        <FeedCard/>
         <FeedCard/>
     </div>
   );
