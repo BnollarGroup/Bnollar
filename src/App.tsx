@@ -9,7 +9,7 @@ import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" >
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/landing" element={<Landing />} />

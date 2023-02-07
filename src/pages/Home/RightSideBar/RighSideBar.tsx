@@ -11,19 +11,19 @@ const RighSideBar = () => {
         <ul>
           <li>
             <img src={user1} alt="user icon" />{" "}
-            <img src={active} className={styles.activeUser} /> Calvin May
+            <img src={active} className={styles.activeUser} /> <span>Calvin May</span>
           </li>
           <li>
-            <img src={user1} alt="user icon" /> Pedro Clark
+            <img src={user1} alt="user icon" /> <span>Pedro Clark</span>
           </li>
           <li>
-            <img src={user1} alt="user icon" /> Tina Davidson
+            <img src={user1} alt="user icon" /> <span>Tina Davidson</span>
           </li>
           <li>
-            <img src={user1} alt="user icon" /> Chritopher Williams
+            <img src={user1} alt="user icon" /> <span>Chritopher Williams</span>
           </li>
           <li>
-            <img src={user1} alt="user icon" /> Velma Crawford
+            <img src={user1} alt="user icon" /> <span>Velma Crawford</span>
           </li>
         </ul>
       </div>
@@ -31,19 +31,19 @@ const RighSideBar = () => {
         <h2>Top NFTs</h2>
         <ul>
           <li>
-            <img src={nft1} alt="user icon" /> Wolf Game
+            <img src={nft1} alt="user icon" /> <span>Wolf Game</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> Gods undchained
+            <img src={nft1} alt="user icon" /> <span>Gods undchained</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> Otherdeed
+            <img src={nft1} alt="user icon" /> <span>Otherdeed</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> MutantApeYachtClub Williams
+            <img src={nft1} alt="user icon" /> <span>MutantApeYachtClub Williams</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> Bored Ape Yacht Club
+            <img src={nft1} alt="user icon" /> <span>Bored Ape Yacht Club</span>
           </li>
         </ul>
       </div>
