@@ -84,6 +84,7 @@
   width: 100%;
   justify-content: space-between;
   margin: 16px 0px;
+  position: relative;
 }
 .feedCard_buttons button {
   display: flex;
@@ -130,4 +131,110 @@
 }
 .menuDropDown :hover {
   background: rgba(255, 255, 255, 0.04);
+}
+.upvote {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  background: rgba(239, 128, 49, 0.1) !important;
+  border-radius: 8px;
+}
+
+.buyNowWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 339px;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.buyNow_description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+  color: #ffffff;
+}
+.buyNow_description > :nth-child(2) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+  color: #ffffff;
+}
+.buyNow_description > :nth-child(2) span {
+  color: rgba(255, 255, 255, 0.4);
+}
+.buyNow_button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 32px;
+  gap: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+.buyNow_button button {
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  cursor: pointer;
+  color: #000000;
+  background: none;
+}
+.shareDropDown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  z-index: 1000;
+  background: #17181B;
+  box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1), 0px 10px 60px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 35%;
+}
+.shareButton {
+  box-sizing: border-box;
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 100%;
+gap: 10px;
+border-radius: 6px;
+}
+.shareButton button {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 20px;
+/* identical to box height, or 154% */
+color: #FFFFFF;
+border: black;
+background: none;
+padding: 10px 14px 10px 10px;
+display: flex;
+justify-content: flex-start;
+width: 100%;
+}
+.shareButton button:hover {
+  background: rgba(255, 255, 255, 0.04)!important;
 }

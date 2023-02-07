@@ -6,12 +6,21 @@ import post1 from "../../resources/images/posts/postImg1.svg";
 import menuIcon from "../../resources/images/icons/more-horiz.svg";
 import share from "../../resources/images/icons/share.svg";
 import upvote from "../../resources/images/icons/upvote.svg";
+import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
 import chat from "../../resources/images/icons/chat.svg";
 const FeedCard = () => {
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
-  const handleMenuClick = ()=>{
-    setShowMenuDropDown(prevState => !prevState)
-  }
+  const [showUpVote, setShowUpVote] = useState(false);
+  const [showShare, setShowShare] = useState(false);
+  const handleMenuClick = () => {
+    setShowMenuDropDown((prevState) => !prevState);
+  };
+  const handleUpvoteClick = () => {
+    setShowUpVote((prevState) => !prevState);
+  };
+  const handleShareClick = () => {
+    setShowShare((prevState) => !prevState);
+  };
   return (
     <div className={styles.feed_card_wrapper}>
       <div className={styles.feedCardWrapper}>
@@ -31,15 +40,15 @@ const FeedCard = () => {
               <div className={styles.menuItem} onClick={handleMenuClick}>
                 <img src={menuIcon} />
               </div>
-              {showMenuDropDown&&
-              <div className={styles.menuDropDown}>
-                <ul>
-                  <li>Report</li>
-                  <li>Copy link</li>
-                  <li>Add to favourites</li>
-                </ul>
-              </div>
-              }
+              {showMenuDropDown && (
+                <div className={styles.menuDropDown}>
+                  <ul>
+                    <li>Report</li>
+                    <li>Copy link</li>
+                    <li>Add to favourites</li>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
           <div className={styles.feedCard_description}>
@@ -51,19 +60,47 @@ const FeedCard = () => {
           <div className={styles.feedCard_image}>
             <img src={post1} />
           </div>
+          {showUpVote && 
+            <div className={styles.buyNowWrapper}>
+                <div className={styles.buyNow_description}>
+                    <div>Clone X</div>
+                    <div>443 <span>ETH</span></div>
+                </div>
+                <div className={styles.buyNow_button}>
+                    <button>Buy now</button>
+                </div>
+            </div>
+           
+          }
           <div className={styles.feedCard_buttons}>
-            <button>
-              <img src={upvote} alt="vote" />
-              Upvote
+            <button className={showUpVote? styles.upvote:'none'} onClick={handleUpvoteClick}>
+              <img src={showUpVote ? upvoteOn:upvote} alt="vote" />
+              {showUpVote? '442':'Upvote'}
             </button>
             <button>
               <img src={chat} alt="comment" />
               Comment
             </button>
-            <button>
-              <img src={share} alt="share" />
+            <button className={styles.share} onClick={handleShareClick}>
+              <img src={share} alt="share"/>
               Share
             </button>
+            {showShare&&
+            <div className={styles.shareDropDown}>
+                <div className={styles.shareButton}>
+                    <button>Send</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Share to Facebook</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Share to Twitter</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Iframe</button>
+                </div>
+            </div>
+            }
           </div>
         </div>
       </div>
