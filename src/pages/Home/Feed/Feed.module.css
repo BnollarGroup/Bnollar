@@ -4,7 +4,7 @@
   background-color: black;
   flex-direction: column;
   overflow-y: scroll;
-  height: 90vh;
+  height: 100vh;
 }
 .feedWrapper::-webkit-scrollbar {
   width: 0.2em;
