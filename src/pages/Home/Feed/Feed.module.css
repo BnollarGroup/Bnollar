@@ -1,0 +1,6 @@
+.feedWrapper {
+  display: flex;
+  flex: 0.472;
+  background-color: black;
+  flex-direction: column;
+}

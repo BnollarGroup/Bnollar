@@ -1,0 +1,53 @@
+.rightSideBarWrapper {
+    display: flex;
+    flex: 0.224;
+    background-color: black;
+    flex-direction: column;
+}
+.contactsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 20px;
+    width: 100%;
+    background: #17181B;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.contactsWrapper h2 {
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+
+color: #FFFFFF;
+}
+.contactsWrapper ul {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+.contactsWrapper ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+.contactsWrapper ul li:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+.contactsWrapper ul li img {
+    margin: 10px 14px 10px 16px;
+}
+.activeUser {
+    position: absolute;
+    bottom: 0;
+    left: 32px;
+
+}

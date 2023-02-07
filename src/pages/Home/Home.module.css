@@ -1,12 +1,15 @@
 .homeWrapper {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background-color: black;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    padding-bottom: 40px;
+    
 }
 .main {
     display: flex;
     color: white;
+    justify-content: space-around;
 }

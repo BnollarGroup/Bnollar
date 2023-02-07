@@ -1,0 +1,101 @@
+.feedCardWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 14px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    margin-top: 16px;
+  }
+  .feedCard_user img {
+    margin: 16px;
+    cursor: pointer;
+  }
+  .feedCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .feedCard_header {
+    display: flex;
+    margin-top: 18px;
+    position: relative;
+  }
+  .feedCard_header_name {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+  .feedCard_header_img {
+    margin: 0px 8px 0px 4px;
+    cursor: pointer;
+  }
+  .feedCard_header_date {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .feedCard_header_menu {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .feedCard_description {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* or 154% */
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  .feedCard_description span {
+    color: #ef8031;
+  }
+  .feedCard_image {
+    width: 100%;
+  }
+  .feedCard_image img {
+    width: 100%;
+    height: auto;
+  }
+  .feedCard_buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 16px 0px;
+  }
+  .feedCard_buttons button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    border: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    /* identical to box height, or 154% */
+    color: rgba(255, 255, 255, 0.6);
+    width: 30%;
+    cursor: pointer;
+  }
+  
