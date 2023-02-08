@@ -25,6 +25,9 @@ const RighSideBar = () => {
           <li>
             <img src={user1} alt="user icon" /> <span>Velma Crawford</span>
           </li>
+          <li>
+            <img src={user1} alt="user icon" /> <span>Velma Crawford</span>
+          </li>
         </ul>
       </div>
       <div className={styles.contactsWrapper}>
