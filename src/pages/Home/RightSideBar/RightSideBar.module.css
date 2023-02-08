@@ -14,7 +14,25 @@
   background: #17181b;
   border-radius: 10px;
   margin-bottom: 20px;
+  height: 350px;
+  overflow-y: scroll;
 }
+.contactsWrapper::-webkit-scrollbar {
+  width: 0.2em;
+  background-color: #110e0e;
+  
+}
+
+.contactsWrapper::-webkit-scrollbar-thumb {
+  background-color: #000000;
+ 
+}
+
+.contactsWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+ 
+}
+
 .contactsWrapper h2 {
   font-family: "Inter";
   font-style: normal;

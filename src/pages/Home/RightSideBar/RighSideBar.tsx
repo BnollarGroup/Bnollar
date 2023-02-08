@@ -10,7 +10,7 @@ const RighSideBar = () => {
         <h2>Contacts</h2>
         <ul>
           <li>
-            <img src={user1} alt="user icon" />{" "}
+            <img src={user1} alt="user icon" />
             <img src={active} className={styles.activeUser} /> <span>Calvin May</span>
           </li>
           <li>
