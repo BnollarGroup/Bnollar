@@ -16,14 +16,15 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-  width: 791px;
-  height: 912px;
+  width: 54%;
+  height: calc(100vh - 100px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 .postImage img {
   width: auto;
   height: auto;
+  max-width: 100%;
 }
 .sideBar {
   display: flex;
@@ -32,9 +33,8 @@
   align-items: flex-start;
   padding: 16px;
   gap: 14px;
-
   width: 39%;
-
+  height: calc(100vh - 100px);
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
 }

@@ -8,7 +8,13 @@ const Post = ()=>{
             <Navbar/>
             <div className={styles.post}>
                 <div className={styles.postImage}><img src={nft1}/></div>
-                <div className={styles.sideBar}></div>
+                <div className={styles.sideBar}>
+                    <div className={styles.commentCard}>
+                        <div className={styles.commentCard_img}></div>
+                        <div className={styles.commentCard_text}></div>
+                        <div className={styles.commentCard_buttons}></div>
+                    </div>
+                </div>
             </div>
         </div>
     )
