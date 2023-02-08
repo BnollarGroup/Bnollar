@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Register from "./pages/register/Register";
 import UploadNft from "./pages/uploadNft/UploadNft";
 import Home from "./pages/Home/Home";
+import Post from "./pages/Post/Post";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/upload-nft" element={<UploadNft />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/post" element={<Post />} />
       </Routes>
     </div>
   );
