@@ -1,0 +1,64 @@
+import React, { useState } from "react";
+import styles from "./Buttons.module.css";
+import upvote from "../../resources/images/icons/upvote.svg";
+import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
+import chat from "../../resources/images/icons/chat.svg";
+import share from "../../resources/images/icons/share.svg";
+
+
+export const UpvoteButton = () => {
+  const [showUpVote, setShowUpVote] = useState(false);
+  const handleUpvoteClick = () => {
+    setShowUpVote((prevState) => !prevState);
+  };
+  return (
+    <button
+      className={showUpVote ? styles.upvote : "none"}
+      onClick={handleUpvoteClick}
+    >
+      <img src={showUpVote ? upvoteOn : upvote} alt="vote" />
+      {showUpVote ? "442" : "Upvote"}
+    </button>
+  );
+};
+
+export const CommnetButton = ()=>{
+    return (
+        <button>
+        <img src={chat} alt="comment" />
+        Comment
+      </button>
+    )
+}
+
+export const ShareButton = ()=>{
+  const [showShare, setShowShare] = useState(false);
+
+    const handleShareClick = () => {
+        setShowShare((prevState) => !prevState);
+      };
+    return (
+        <>
+        <button className={styles.share} onClick={handleShareClick}>
+        <img src={share} alt="share"/>
+        Share
+      </button>
+      {showShare&&
+            <div className={styles.shareDropDown}>
+                <div className={styles.shareButton}>
+                    <button>Send</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Share to Facebook</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Share to Twitter</button>
+                </div>
+                <div className={styles.shareButton}>
+                    <button>Iframe</button>
+                </div>
+            </div>
+            }
+     </>
+    )
+}

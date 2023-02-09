@@ -8,6 +8,8 @@ import share from "../../resources/images/icons/share.svg";
 import upvote from "../../resources/images/icons/upvote.svg";
 import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
 import chat from "../../resources/images/icons/chat.svg";
+import  {UpvoteButton,CommnetButton, ShareButton}  from "../Buttons/Buttons";
+import PostHeader from "../Post/PostHeader";
 const FeedCard = (props:any) => {
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
   const [showUpVote, setShowUpVote] = useState(false);
@@ -74,15 +76,17 @@ const FeedCard = (props:any) => {
            
           }
           <div className={styles.feedCard_buttons}>
-            <button className={showUpVote? styles.upvote:'none'} onClick={handleUpvoteClick}>
+            {/* <button className={showUpVote? styles.upvote:'none'} onClick={handleUpvoteClick}>
               <img src={showUpVote ? upvoteOn:upvote} alt="vote" />
               {showUpVote? '442':'Upvote'}
-            </button>
-            <button>
+            </button> */}
+            <UpvoteButton />
+            {/* <button>
               <img src={chat} alt="comment" />
               Comment
-            </button>
-            <button className={styles.share} onClick={handleShareClick}>
+            </button> */}
+            <CommnetButton />
+            {/* <button className={styles.share} onClick={handleShareClick}>
               <img src={share} alt="share"/>
               Share
             </button>
@@ -101,7 +105,8 @@ const FeedCard = (props:any) => {
                     <button>Iframe</button>
                 </div>
             </div>
-            }
+            } */}
+            <ShareButton />
           </div>
         </div>
       </div>

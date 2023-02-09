@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import styles from './Post.module.css'
 import nft1 from '../../resources/images/posts/postImg2.svg'
+import PostHeader from '../../components/Post/PostHeader'
 const Post = ()=>{
     return (
         <div className={styles.postWrapper}>
@@ -10,9 +11,7 @@ const Post = ()=>{
                 <div className={styles.postImage}><img src={nft1}/></div>
                 <div className={styles.sideBar}>
                     <div className={styles.commentCard}>
-                        <div className={styles.commentCard_img}></div>
-                        <div className={styles.commentCard_text}></div>
-                        <div className={styles.commentCard_buttons}></div>
+                        <PostHeader/>
                     </div>
                 </div>
             </div>
