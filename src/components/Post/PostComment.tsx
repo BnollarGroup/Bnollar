@@ -4,6 +4,20 @@ import user1 from "../../resources/images/icons/user1.svg";
 import heart from "../../resources/images/icons/heart.svg";
 const PostComment = (props: any) => {
   const Reply = props.reply;
+  var myHeaders = new Headers();
+myHeaders.append("Authorization", "Basic Z29jaGEuYmVydWxhdmFAYXZlcnNpLmdlOnlPbjdKUjNuOTRveTZ2emUxNmJKemg1NTJNNUIxNlk1");
+myHeaders.append("Cookie", "sid_customer_0d824=c40d458e91b03e364ad4ac26ac9e94aa-1-C");
+
+var requestOptions:any = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://shop.aversi.ge/api/users", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
   return (
     <div>
       <div className={styles.commentWrapper}>
