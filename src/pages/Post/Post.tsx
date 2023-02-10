@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import styles from './Post.module.css'
 import nft1 from '../../resources/images/posts/postImg2.svg'
 import PostHeader from '../../components/Post/PostHeader'
+import PostComment from '../../components/Post/PostComment'
 const Post = ()=>{
     return (
         <div className={styles.postWrapper}>
@@ -12,6 +13,8 @@ const Post = ()=>{
                 <div className={styles.sideBar}>
                     <div className={styles.commentCard}>
                         <PostHeader/>
+                        <PostComment reply={<PostComment />}/>
+                        <PostComment/>
                     </div>
                 </div>
             </div>

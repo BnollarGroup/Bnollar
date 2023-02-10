@@ -3,29 +3,18 @@
     color: white;
     flex-wrap: wrap;
 }
-.userIcon {
-    display: flex;
-    width: 74px;
-    justify-content: center;
-    align-items: flex-start;
-    
-}
-.userIcon img{
-    margin-top: 20px;
-    width: 44px;
-    height: 44px;
-}
 .descriptionWrapper {
     display: flex;
     flex-direction: column;
     flex: 1 1;
+    margin-left: 14px;
 }
 .name {
     display: flex;
 }
 .buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     margin: 20px 0px;
 }
