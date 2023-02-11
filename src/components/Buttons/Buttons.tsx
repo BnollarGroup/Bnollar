@@ -3,6 +3,7 @@ import styles from "./Buttons.module.css";
 import upvote from "../../resources/images/icons/upvote.svg";
 import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
 import chat from "../../resources/images/icons/chat.svg";
+import chatOn from "../../resources/images/icons/chatOn.svg";
 import share from "../../resources/images/icons/share.svg";
 
 
@@ -23,11 +24,18 @@ export const UpvoteButton = () => {
 };
 
 export const CommnetButton = ()=>{
+  const [showComment,setShowComment] = useState(false)
+  const handleCommentClick = () => {
+    setShowComment((prevState) => !prevState);
+  };
     return (
-        <button>
-        <img src={chat} alt="comment" />
-        Comment
-      </button>
+      <button
+      className={showComment ? styles.upvote : "none"}
+      onClick={handleCommentClick}
+    >
+      <img src={showComment ? chatOn : chat} alt="Comment" />
+      Comment
+    </button>
     )
 }
 

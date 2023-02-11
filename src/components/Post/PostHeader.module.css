@@ -1,20 +1,59 @@
 .header {
-    display: flex;
-    color: white;
-    flex-wrap: wrap;
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+}
+.userIcon {
+    cursor: pointer;
 }
 .descriptionWrapper {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1;
-    margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  margin-left: 14px;
+}
+.description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* or 154% */
+}
+.description span {
+  color: #ef8031;
 }
 .name {
-    display: flex;
+  display: flex;
+  cursor: pointer;
 }
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px 0px;
+}
+
+.name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  color: #ffffff;
+}
+.verifieBadge {
+  margin: 0px 8px 0px 4px;
+}
+.date {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  color: rgba(255, 255, 255, 0.4);
 }
