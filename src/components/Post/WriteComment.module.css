@@ -1,9 +1,14 @@
 .commentWrapper {
+    position: absolute;
+    bottom:50px;
+    right: 10px;
+    z-index: 1000;
     display: flex;
 flex-direction: row;
 align-items: center;
 padding: 0px;
 gap: 14px;
+width: 40%;
 }
 .comment {
 display: flex;
@@ -14,6 +19,7 @@ gap: 8px;
 width: 100%;
 background: rgba(255, 255, 255, 0.04);
 border-radius: 10px;
+
 }
 .comment input {
     background: none;
@@ -23,6 +29,8 @@ border-radius: 10px;
     padding-left: 30px;
     color: white;
     height: 100%;
+
+
 }
 .inputButtons {
     display: flex;

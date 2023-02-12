@@ -17,7 +17,6 @@ const Post = () => {
           <div className={styles.commentCard}>
             <PostHeader />
             <PostComment reply={<PostComment />} />
-            <PostComment />
             <WriteComment />
           </div>
         </div>
