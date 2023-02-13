@@ -1,0 +1,11 @@
+.nftWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around ;
+}
+.leftPanel {
+    width: 45%;
+}
+.rightPanel{
+    width: 45%;
+}
