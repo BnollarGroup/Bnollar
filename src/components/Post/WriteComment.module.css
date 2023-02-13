@@ -1,47 +1,40 @@
 .commentWrapper {
-    position: absolute;
-    bottom:50px;
-    right: 10px;
-    z-index: 1000;
-    display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 14px;
-width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 14px;
+  width: 100%;
+  margin-top: auto;
 }
 .comment {
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 7px 12px;
-gap: 8px;
-width: 100%;
-background: rgba(255, 255, 255, 0.04);
-border-radius: 10px;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 7px 12px;
+  gap: 8px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
 }
 .comment input {
-    background: none;
-    border: none;
-    width: 100%;
-    outline: none;
-    padding-left: 30px;
-    color: white;
-    height: 100%;
-
-
+  background: none;
+  border: none;
+  width: 100%;
+  outline: none;
+  padding-left: 30px;
+  color: white;
+  height: 100%;
 }
 .inputButtons {
-    display: flex;
-    margin-left: auto;
-    background: none;
-
+  display: flex;
+  margin-left: auto;
+  background: none;
 }
 .inputButtons button {
-    background: none;
-    margin-right: 4px;
+  background: none;
+  margin-right: 4px;
 }
 .send {
-    cursor: pointer;
+  cursor: pointer;
 }
