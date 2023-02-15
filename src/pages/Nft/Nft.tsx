@@ -2,19 +2,27 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Nft.module.css";
 import nft1 from "../../resources/images/icons/nftImage.svg";
-import userIcon1 from '../../resources/images/icons/userIcon3.svg'
-import userIcon2 from '../../resources/images/icons/userIcon4.svg'
-import transfer from '../../resources/images/icons/transfer.svg'
+import userIcon1 from "../../resources/images/icons/userIcon3.svg";
+import userIcon2 from "../../resources/images/icons/userIcon4.svg";
+import transfer from "../../resources/images/icons/transfer.svg";
 const Description = () => {
+  const [showDescription, setShowDescription] = React.useState(true);
+  const handleClick =()=>{
+    setShowDescription(prevState => !prevState)
+  }
   return (
     <div className={styles.nftModuleWrapper}>
-      <div className={styles.moduleName}>Description</div>
-      <div className={styles.moduleBody}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+      <div className={styles.moduleName}>
+        Description <button onClick={handleClick}>asd</button>
       </div>
+      {showDescription && (
+        <div className={styles.moduleBody}>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </div>
+      )}
     </div>
   );
 };
@@ -74,65 +82,73 @@ const NftHistory = () => {
         <div className={styles.nftCollectionName}>CloneX</div>
       </div>
       <div className={styles.historyBody}>
-        <div className={styles.historyCollection}>    
+        <div className={styles.historyCollection}>
           <div className={styles.historyUserInfo}>
-            <img src={userIcon1}/>
+            <img src={userIcon1} />
             <div className={styles.historyDescription}>
-            <p>Collection</p>
-            <p>0x423...32X3</p>
+              <p>Collection</p>
+              <p>0x423...32X3</p>
             </div>
           </div>
           <div className={styles.historyUserInfo}>
-          <img src={userIcon2}/>
-          <div className={styles.historyDescription}>
-
-            <p>Owner</p>
-            <p>0x423...32X3</p>
+            <img src={userIcon2} />
+            <div className={styles.historyDescription}>
+              <p>Owner</p>
+              <p>0x423...32X3</p>
             </div>
           </div>
         </div>
         <div className={styles.historyOwner}>
-            <div className={styles.historyPrice} >
-                <p className={styles.historyItemTop}>Price</p>
-                <p className={styles.historyItemCenter}>6.194 ETH</p>
-                <p className={styles.historyItemBottom}>$7,519</p>
-            </div>
-            <div className={styles.historyPriceOwner}>
-                <p className={styles.historyItemTop}>Highest bid</p>
-                <p className={styles.historyItemCenter}>1.21 wETH</p>
-                <p className={styles.historyItemBottom}>By Quark</p>
-            </div>
-
-    
+          <div className={styles.historyPrice}>
+            <p className={styles.historyItemTop}>Price</p>
+            <p className={styles.historyItemCenter}>6.194 ETH</p>
+            <p className={styles.historyItemBottom}>$7,519</p>
+          </div>
+          <div className={styles.historyPriceOwner}>
+            <p className={styles.historyItemTop}>Highest bid</p>
+            <p className={styles.historyItemCenter}>1.21 wETH</p>
+            <p className={styles.historyItemBottom}>By Quark</p>
+          </div>
         </div>
       </div>
       <div className={styles.buyButton}>Buy now for 6.194 ETH</div>
     </div>
   );
 };
-const Activity =()=>{
-    const ActivityCard=()=>{
-        return (
-            <div className={styles.activityCard}>
-            <div className={styles.activityCardName}><button><img src={transfer}/>Transfer</button></div>
-            <div className={styles.activityCardFooter}>
-                <div><span>From</span> Katama</div>
-                <div><span>To</span> Zamara</div>
-                <div><span>1 day ago</span></div>
-            </div>
-        </div>
-        )
-    }
+const Activity = () => {
+  const ActivityCard = () => {
     return (
-        <div className={styles.activityWrapper}>
-            <div className={styles.activityName}>Activity</div>
-            <ActivityCard/>
-            <ActivityCard/>
-            <ActivityCard/>
-            <ActivityCard/>
+      <div className={styles.activityCard}>
+        <div className={styles.activityCardName}>
+          <button>
+            <img src={transfer} />
+            Transfer
+          </button>
         </div>
-    )
-}
+        <div className={styles.activityCardFooter}>
+          <div>
+            <span>From</span> Katama
+          </div>
+          <div>
+            <span>To</span> Zamara
+          </div>
+          <div>
+            <span>1 day ago</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  return (
+    <div className={styles.activityWrapper}>
+      <div className={styles.activityName}>Activity</div>
+      <ActivityCard />
+      <ActivityCard />
+      <ActivityCard />
+      <ActivityCard />
+    </div>
+  );
+};
 const Nft = () => {
   return (
     <div className={styles.nftWrapper}>
@@ -146,9 +162,9 @@ const Nft = () => {
         <Properties />
       </div>
       <div className={styles.rightPanel}>
-        <NftHistory/>
-        <Activity/>
-        </div>
+        <NftHistory />
+        <Activity />
+      </div>
     </div>
   );
 };
