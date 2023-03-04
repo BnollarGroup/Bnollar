@@ -1,39 +1,28 @@
 .wrapper {
   width: 100%;
-  height: 100vh;
-  background-color: black;
+  background-color: #0d0e11;
   overflow: hidden;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding: 20px 120px 60px 120px;
 }
 .getStarted {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   padding: 10px 24px;
   gap: 4px;
   background: rgba(255, 255, 255, 0.04);
-  border: 0;
   border-radius: 40px;
-  cursor: pointer;
-  border: none;
-}
-.getStartedText {
-  padding: 0;
-  margin: 0;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
-  line-height: 20px;
-  color: #ffffff;
+  color: white;
+  max-width: max-content;
+  width: 100%;
 }
+
 .welcomeWrapper {
   display: flex;
   width: 100%;
@@ -51,7 +40,7 @@
   color: white;
 }
 .welcomeHeader {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -59,7 +48,7 @@
   color: #ffffff;
 }
 .welcomeText {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -68,19 +57,16 @@
   color: rgba(255, 255, 255, 0.4);
 }
 .welcomeGetStarted {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 12px 24px;
   gap: 10px;
-  width: 120px;
   height: 44px;
+  width: 100%;
   background: #ef8031;
   border-radius: 40px;
+  color: white !important;
 }
 .welcomeGetStarted button {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -94,73 +80,48 @@
 .footerWrapper {
   margin-top: 110px;
   display: flex;
-  position: relative;
   justify-content: center;
 }
 .left {
-  width: 320px;
-  position: absolute;
-  left: 0;
+  flex: 1;
+  position: relative;
 }
 .right {
-  width: 320px;
-  position: absolute;
-  right: 0;
+  flex: 1;
+  position: relative;
 }
 .center {
+  flex: 1;
   display: flex;
-  justify-content: center;
-  width: calc(vw-640px);
   z-index: 1000;
-  position: absolute;
-  left: 320px;
-  right: 320px;
-  margin: auto;
 }
-/* .center img {
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-} */
-.left > :first-child {
+
+.landingIcon {
   position: absolute;
   width: 120px;
   height: 120px;
-  left: 39px;
+}
+.left > :first-child {
+  right: 161px;
   top: 71px;
 }
 .left > :nth-child(2) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: 205px;
+  right: -15px;
   top: 246px;
 }
 .left > :nth-child(3) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: -21px;
+  right: 221px;
   top: 353px;
 }
 .right > :first-child {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 253px;
+  left: -65px;
   top: 71px;
 }
 .right > :nth-child(2) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 20px;
+  left: 180px;
   top: 106px;
 }
 .right > :nth-child(3) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 120px;
+  left: 80px;
   top: 338px;
 }
