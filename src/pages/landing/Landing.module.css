@@ -94,8 +94,17 @@
   flex: 1;
   display: flex;
   z-index: 1000;
+  position: relative;
+  padding: 6px 6px 0 6px;
+  background: rgb(13, 14, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(13, 14, 17, 1) 0%,
+    rgba(30, 30, 30, 1) 50%
+  );
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
-
 .landingIcon {
   position: absolute;
   width: 120px;

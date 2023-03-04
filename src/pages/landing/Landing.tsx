@@ -1,13 +1,12 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Landing.module.css'
 import bnollarLogo from '../../resources/images/logo/bnollar_logo.svg'
-import frame from '../../resources/images/landing/frame.svg'
+import frame from '../../resources/images/landing/frame.png'
 import icon1 from '../../resources/images/landing/icon1.svg'
 import icon2 from '../../resources/images/landing/icon2.svg'
 import icon6 from '../../resources/images/landing/icon6.svg'
 import { Link } from 'react-router-dom'
 const Landing: FC = () => {
-  console.log(styles)
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -28,6 +27,7 @@ const Landing: FC = () => {
           </Link>
         </div>
       </div>
+
       <div className={styles.footerWrapper}>
         <div className={styles.left}>
           <img className={styles.landingIcon} src={icon6} alt="nft" />
