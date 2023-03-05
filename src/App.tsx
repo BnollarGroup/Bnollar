@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/connect-wallet" element={<SignIn />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register/:step" element={<Register />} />
         <Route path="/upload-nft" element={<UploadNft />} />
         <Route path="/home" element={<Home />} />
         <Route path="/post" element={<Post />} />
