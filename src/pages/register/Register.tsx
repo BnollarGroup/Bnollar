@@ -1,10 +1,10 @@
-import { FC, useState, useEffect } from 'react'
+import { FC, useState } from 'react'
 import styles from './Register.module.css'
 import registerBg from '../../resources/images/registration/register_bg.svg'
 import { useParams } from 'react-router-dom'
-import NameForm from '../../components/Register/NameForm/NameForm'
 import CategorySelet from '../../components/Register/CategorySelect/CategorySelet'
 import Finished from '../../components/Register/Finished/Finished'
+import PersonalInfoForm from '../../components/Register/PersonalInfoForm/PersonalInfoForm'
 
 interface Category {
   id: number
@@ -58,9 +58,9 @@ const Register: FC = () => {
 
   const getComponent = () => {
     switch (step) {
-      case 'name':
+      case 'personal_info':
         return (
-          <NameForm
+          <PersonalInfoForm
             userName={userName}
             setUserName={setUserName}
             displayName={displayName}
@@ -79,13 +79,14 @@ const Register: FC = () => {
   }
 
   const titles = {
-    name: 'Registration',
+    personal_info: 'Registration',
     category: 'Select category',
     finished: "You're all set",
   }
 
   const messages = {
-    name: 'Choose your Bnollar username. You can always change it later.',
+    personal_info:
+      'Choose your Bnollar username. You can always change it later.',
     category: 'For a personalised experience',
     finished:
       "We're excited to have you on board. Your account is all set up and ready for you to start using.",

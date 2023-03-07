@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './CategorySelect.module.css'
 

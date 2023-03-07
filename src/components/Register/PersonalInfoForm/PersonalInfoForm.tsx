@@ -1,11 +1,11 @@
 import imgIcon from '../../../resources/images/registration/imgIcon.svg'
 import addIcon from '../../../resources/images/registration/addIcon.svg'
-import styles from './NameForm.module.css'
+import styles from './PersonalInfoForm.module.css'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import Dropzone, { useDropzone } from 'react-dropzone'
+import Dropzone from 'react-dropzone'
 
-interface NameFormProps {
+interface PersonalInfoFormProps {
   userName: string
   setUserName: Dispatch<SetStateAction<string>>
   displayName: string
@@ -14,14 +14,14 @@ interface NameFormProps {
   setImage: Dispatch<SetStateAction<string>>
 }
 
-const NameForm = ({
+const PersonalInfoForm = ({
   userName,
   setUserName,
   displayName,
   setDisplayName,
   image,
   setImage,
-}: NameFormProps) => {
+}: PersonalInfoFormProps) => {
   const [canCreate, setCanCreate] = useState(false)
   const { step } = useParams()
   const dropzoneRef = useRef(null)
@@ -55,8 +55,6 @@ const NameForm = ({
   }
 
   const openDialog = () => {
-    // Note that the ref is set async,
-    // so it might be null at some point
     if (dropzoneRef.current) {
       ;(dropzoneRef.current as any).open()
     }
@@ -127,4 +125,4 @@ const NameForm = ({
   )
 }
 
-export default NameForm
+export default PersonalInfoForm
