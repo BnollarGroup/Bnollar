@@ -1,9 +1,15 @@
 .rightSideBarWrapper {
-  display: flex;
-  flex: 0.224;
-  background-color: black;
-  flex-direction: column;
+  max-width: 380px;
+  width: 100%;
+  padding: 0 25px 0 32px;
+  position: relative;
 }
+.homeRightSidebarCont {
+  position: fixed;
+  max-width: 323px;
+  width: 100%;
+}
+
 .contactsWrapper {
   display: flex;
   flex-direction: column;
@@ -20,21 +26,18 @@
 .contactsWrapper::-webkit-scrollbar {
   width: 0.2em;
   background-color: #110e0e;
-  
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb {
   background-color: #000000;
- 
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
- 
 }
 
 .contactsWrapper h2 {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -59,7 +62,7 @@
 }
 .contactsWrapper ul li span {
   margin-left: 14px;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
