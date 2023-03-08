@@ -9,13 +9,19 @@ const FeedHeader = () => {
     <div className={styles.feedHeader}>
       <div className={styles.headerSearch}>
         <img src={user1} />
-        <input type="text" placeholder="Write your thought"></input>
+        <input type="text" placeholder="Write your thought" />
       </div>
       <div className={styles.headerButtons}>
         <div className={styles.leftButtons}>
-          <img src={attach} />
-          <img src={nft} />
-          <img src={emoji} />
+          <button>
+            <img src={attach} />
+          </button>
+          <button>
+            <img src={nft} />
+          </button>
+          <button>
+            <img src={emoji} />
+          </button>
         </div>
         <div className={styles.rightButtons}>
           <button>

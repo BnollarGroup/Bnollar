@@ -1,6 +1,6 @@
-import FeedCard from '../../../components/Home/Feed/FeedCard'
-import FeedHeader from '../../../components/Home/Feed/FeedHeader'
 import styles from './Feed.module.css'
+import FeedCard from './FeedCard'
+import FeedHeader from './FeedHeader'
 
 const Feed = () => {
   return (
