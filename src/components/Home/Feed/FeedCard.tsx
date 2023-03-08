@@ -1,29 +1,25 @@
-import React, { FC, useEffect, useState } from "react";
-import styles from "./FeedCard.module.css";
-import user1 from "../../resources/images/icons/user1.svg";
-import verified from "../../resources/images/icons/verified.svg";
-import post1 from "../../resources/images/posts/postImg1.svg";
-import menuIcon from "../../resources/images/icons/more-horiz.svg";
-import share from "../../resources/images/icons/share.svg";
-import upvote from "../../resources/images/icons/upvote.svg";
-import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
-import chat from "../../resources/images/icons/chat.svg";
-import  {UpvoteButton,CommnetButton, ShareButton}  from "../Buttons/Buttons";
-import PostHeader from "../Post/PostHeader";
-const FeedCard = (props:any) => {
-  const [showMenuDropDown, setShowMenuDropDown] = useState(false);
-  const [showUpVote, setShowUpVote] = useState(false);
-  const [showShare, setShowShare] = useState(false);
+import { useState } from 'react'
+import styles from './FeedCard.module.css'
+import user1 from '../../../resources/images/icons/user1.svg'
+import verified from '../../../resources/images/icons/verified.svg'
+import post1 from '../../../resources/images/posts/postImg1.svg'
+import menuIcon from '../../../resources/images/icons/more-horiz.svg'
+import { UpvoteButton, CommnetButton, ShareButton } from '../../Buttons/Buttons'
+
+const FeedCard = (props: any) => {
+  const [showMenuDropDown, setShowMenuDropDown] = useState(false)
+  const [showUpVote, setShowUpVote] = useState(false)
+  const [showShare, setShowShare] = useState(false)
   const handleMenuClick = () => {
-    setShowMenuDropDown((prevState) => !prevState);
-  };
+    setShowMenuDropDown((prevState) => !prevState)
+  }
   const handleUpvoteClick = () => {
-    setShowUpVote((prevState) => !prevState);
-  };
+    setShowUpVote((prevState) => !prevState)
+  }
   const handleShareClick = () => {
-    setShowShare((prevState) => !prevState);
-  };
-  const isNft =props.isNft
+    setShowShare((prevState) => !prevState)
+  }
+  const isNft = props.isNft
   return (
     <div className={styles.feed_card_wrapper}>
       <div className={styles.feedCardWrapper}>
@@ -63,18 +59,19 @@ const FeedCard = (props:any) => {
           <div className={styles.feedCard_image}>
             <img src={post1} />
           </div>
-          {isNft && 
+          {isNft && (
             <div className={styles.buyNowWrapper}>
-                <div className={styles.buyNow_description}>
-                    <div>Clone X</div>
-                    <div>443 <span>ETH</span></div>
+              <div className={styles.buyNow_description}>
+                <div>Clone X</div>
+                <div>
+                  443 <span>ETH</span>
                 </div>
-                <div className={styles.buyNow_button}>
-                    <button>Buy now</button>
-                </div>
+              </div>
+              <div className={styles.buyNow_button}>
+                <button>Buy now</button>
+              </div>
             </div>
-           
-          }
+          )}
           <div className={styles.feedCard_buttons}>
             {/* <button className={showUpVote? styles.upvote:'none'} onClick={handleUpvoteClick}>
               <img src={showUpVote ? upvoteOn:upvote} alt="vote" />
@@ -111,6 +108,6 @@ const FeedCard = (props:any) => {
         </div>
       </div>
     </div>
-  );
-};
-export default FeedCard;
+  )
+}
+export default FeedCard

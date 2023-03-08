@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import HomeRightSidebar from '../../components/HomeRightSidebar/HomeRightSidebar'
+import RightSidebar from '../../components/Home/RightSidebar/RightSidebar'
 import WithNavigation from '../../HOCs/WithNavigation/WithNavigation'
 import Feed from './Feed/Feed'
 const Home: FC = () => {
   return (
     <>
       <Feed />
-      <HomeRightSidebar />
+      <RightSidebar />
     </>
   )
 }

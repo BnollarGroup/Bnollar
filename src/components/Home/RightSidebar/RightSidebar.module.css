@@ -1,0 +1,30 @@
+.rightSideBarWrapper {
+  max-width: 380px;
+  width: 100%;
+  padding: 0 25px 0 32px;
+  position: relative;
+}
+.rightSidebarCont {
+  position: fixed;
+  max-width: 323px;
+  width: 100%;
+  max-height: calc(100vh - 80px);
+  padding-right: 0.4rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightSidebarCont::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.rightSidebarCont::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 8px;
+}
+.rightSidebarCont::-webkit-scrollbar-track {
+  background-color: #17181b;
+  border-radius: 8px;
+}
