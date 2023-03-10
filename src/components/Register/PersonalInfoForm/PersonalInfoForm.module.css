@@ -92,24 +92,21 @@
   cursor: pointer;
   width: 366px;
   height: 44px;
-  background: #ef8031;
   border-radius: 40px;
   color: white;
   margin-top: 20px;
 }
 
-.initial {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 16px;
-  gap: 10px;
-  width: 366px;
+.createButton {
+  padding: 12px;
   height: 44px;
   background: rgba(255, 255, 255, 0.04);
   border: none;
   border-radius: 40px;
   color: white;
   margin-top: 20px;
+}
+
+.active {
+  background: #ef8031 !important;
 }
