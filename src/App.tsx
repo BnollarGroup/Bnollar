@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import Landing from './pages/landing/Landing'
 import SignIn from './pages/SignIn/SignIn'
@@ -8,6 +7,7 @@ import UploadNft from './pages/uploadNft/UploadNft'
 import Home from './pages/Home/Home'
 import Post from './pages/Post/Post'
 import Nft from './pages/Nft/Nft'
+import Settings from './pages/Settings/Settings'
 
 const App = () => {
   return (
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
+        <Route path="/settings/:type" element={<Settings />} />
       </Routes>
     </div>
   )

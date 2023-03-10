@@ -9,6 +9,8 @@
   cursor: pointer;
   padding: 17px;
   border-radius: 10px;
+  width: 100%;
+  transition: 500ms;
 }
 .side_nav_link img {
   width: 20px;
