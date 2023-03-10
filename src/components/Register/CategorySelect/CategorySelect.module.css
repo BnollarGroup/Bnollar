@@ -40,11 +40,14 @@
   color: #ffffff;
   cursor: pointer;
 }
+
 .continue {
+  padding: 12px;
+  height: 44px;
   background: #ef8031;
-  font-family: 'Inter';
-  font-weight: 600;
-  width: 100%;
-  color: #ffffff;
+  border: none;
   border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  width: 100%;
 }

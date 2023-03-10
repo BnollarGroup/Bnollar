@@ -115,7 +115,7 @@ const PersonalInfoForm = ({
           onChange={(e) => setDisplayName(e.target.value)}
         ></input>
         <button
-          className={canCreate ? styles.canCreate : styles.initial}
+          className={`${styles.createButton} ${canCreate && styles.active}`}
           onClick={handleClick}
         >
           Create account
