@@ -1,10 +1,9 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import styles from "./Post.module.css";
-import nft1 from "../../resources/images/posts/postImg2.svg";
-import PostHeader from "../../components/Post/PostHeader";
-import PostComment from "../../components/Post/PostComment";
-import WriteComment from "../../components/Post/WriteComment";
+import Navbar from '../../components/Navbar/Navbar'
+import styles from './Post.module.css'
+import nft1 from '../../resources/images/posts/postImg2.svg'
+import PostHeader from '../../components/Post/PostHeader'
+import PostComment from '../../components/Post/PostComment'
+import WriteComment from '../../components/Post/WriteComment'
 const Post = () => {
   return (
     <div className={styles.postWrapper}>
@@ -17,11 +16,12 @@ const Post = () => {
           <div className={styles.commentCard}>
             <PostHeader />
             <PostComment reply={<PostComment />} />
-            <WriteComment />
+            <PostComment reply={<PostComment />} />
           </div>
+          <WriteComment />
         </div>
       </div>
     </div>
-  );
-};
-export default Post;
+  )
+}
+export default Post
