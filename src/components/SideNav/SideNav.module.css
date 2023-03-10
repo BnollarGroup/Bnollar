@@ -11,8 +11,6 @@
 }
 .leftMenu {
   background: #17181b;
-  display: flex;
-  flex-direction: column;
   padding: 10px;
   border-radius: 10px;
 }
