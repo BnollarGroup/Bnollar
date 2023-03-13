@@ -1,13 +1,14 @@
-import './App.css'
-import Landing from './pages/landing/Landing'
-import SignIn from './pages/SignIn/SignIn'
-import { Routes, Route } from 'react-router-dom'
-import Register from './pages/register/Register'
-import UploadNft from './pages/uploadNft/UploadNft'
-import Home from './pages/Home/Home'
-import Post from './pages/Post/Post'
-import Nft from './pages/Nft/Nft'
-import Settings from './pages/Settings/Settings'
+import "./App.css";
+import Landing from "./pages/landing/Landing";
+import SignIn from "./pages/SignIn/SignIn";
+import { Routes, Route } from "react-router-dom";
+import Register from "./pages/register/Register";
+import UploadNft from "./pages/uploadNft/UploadNft";
+import Home from "./pages/Home/Home";
+import Post from "./pages/Post/Post";
+import Nft from "./pages/Nft/Nft";
+import Settings from "./pages/Settings/Settings";
+import ProfileChat from "./pages/ProfileChat/ProfileChat";
 
 const App = () => {
   return (
@@ -21,9 +22,10 @@ const App = () => {
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
         <Route path="/settings/:type" element={<Settings />} />
+        <Route path="/profile-chat" element={<ProfileChat />} />
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
