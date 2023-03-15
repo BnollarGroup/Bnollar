@@ -9,6 +9,7 @@ import Post from "./pages/Post/Post";
 import Nft from "./pages/Nft/Nft";
 import Settings from "./pages/Settings/Settings";
 import ProfileChat from "./pages/ProfileChat/ProfileChat";
+import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/nft" element={<Nft />} />
         <Route path="/settings/:type" element={<Settings />} />
         <Route path="/profile-chat" element={<ProfileChat />} />
+        <Route path="/profile-chat/videocall" element={<VideoCall />} />
       </Routes>
     </div>
   );

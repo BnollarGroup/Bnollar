@@ -20,6 +20,7 @@ import editNickname from "../../resources/images/profile-chat/edit-nickname.svg"
 import dropdownSearch from "../../resources/images/profile-chat/search-dropdown.svg";
 import unmute from "../../resources/images/profile-chat/unmute.svg";
 import deleteIcon from "../../resources/images/profile-chat/delete.svg";
+import { Link } from "react-router-dom";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -131,9 +132,13 @@ function ProfileChat() {
               <button className={styles.actionButton}>
                 <img src={phone} alt="call icon" />
               </button>
-              <button className={styles.actionButton}>
+
+              <Link
+                className={styles.actionButton}
+                to="/profile-chat/videocall"
+              >
                 <img src={videoCall} alt="video call icon" />
-              </button>
+              </Link>
               <button
                 onClick={() => setDropdownMenu(!dropdownMenu)}
                 className={styles.actionButton}
