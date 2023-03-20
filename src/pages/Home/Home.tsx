@@ -1,0 +1,19 @@
+import React,{FC,useState,useEffect} from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Feed from "./Feed/Feed";
+import styles from './Home.module.css'
+import LeftSideBar from "./Leftsidebar/LeftSideBar";
+import RighSideBar from "./RightSideBar/RighSideBar";
+const Home :FC= ()=>{
+    return (
+        <div className={styles.homeWrapper}>
+            <Navbar />
+            <div className={styles.main}>
+                <LeftSideBar/>
+                <Feed/>
+                <RighSideBar/>
+            </div>
+        </div>
+    )
+}
+export default Home

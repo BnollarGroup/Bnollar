@@ -1,0 +1,297 @@
+.profilemain {
+    display: flex;
+}
+
+
+.profileleft {
+    margin-left: 50px;
+    width: 80%;
+}
+
+.profilecover {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.profilecover img {
+    width: 100%;
+    height: 100%;
+}
+
+.profilecover button {
+    position: absolute;
+    background-color: white;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    border-radius: 10px;
+    color: grey;
+}
+
+.aboutuser {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.aboutuserright {
+    z-index: 11;
+    margin-top: -70px;
+}
+
+.user_name {
+    display: flex;
+    align-items: center;
+}
+
+.user_name h1 {
+    font-size: 22px;
+}
+
+.user_name img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.user_about {
+    margin-top: 10px;
+}
+
+.user_about p {
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.user_ceo {
+    display: flex;
+    align-items: center;
+}
+
+.user_ceo h1 {
+    font-size: 13px;
+}
+
+.user_ceo span {
+    font-size: 13px;
+    color: #EF8031;
+    margin-left: 10px;
+}
+
+.followers_following {
+    width: 260px;
+    height: 52px;
+    background-color: #3a3737;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.followers_following h1 {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.followers_following h2 {
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+
+.aboutuserleft {
+    display: flex;
+    margin-top: 20px;
+}
+
+.aboutuserleft img {
+    width: 44px;
+    height: 44px;
+}
+
+.aboutuserleft button {
+    width: 88px;
+    height: 44px;
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+}
+
+.user_feed {
+    margin-top: 50px;
+    height: 53px;
+}
+
+.feed_box {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news {
+    display: flex;
+    align-items: center;
+}
+
+.news h1 {
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+hr {
+    margin-top: 10px;
+    color: grey;
+    width: 100%;
+}
+
+
+.news_feed {
+    display: flex;
+    width: 100%;
+}
+
+.feed_rightside {
+    width: 80%;
+    margin-top: 20px;
+}
+
+.upload_news {
+    width: 80%;
+    height: 176px;
+    background-color: #3a3737;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px 0 0 15px;
+}
+
+.upload_news_desc {
+    margin-left: 10px;
+    width: 100%;
+}
+
+.rate_btns {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.upvote  button {
+    width: 162px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.upvote button {
+    background: url('../../resources/images/icons/upvote.png');
+    background-repeat: no-repeat;
+    background-position: 40px center;
+    background-color: #555353;
+}
+
+.about_box  {
+    width: 325px;
+    height: 182px;
+    background-color: #3a3737;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 10px 15px 0 10px;
+}
+
+.edit_info  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit_info h1 {
+    font-size: 14px;
+}
+
+.about_user_desc h1 {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.post  {
+    margin-top: 20px;
+}
+
+.post_box {
+    width: 80%;
+    background-color: #3a3737;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px 0 0 15px;
+}
+
+.post_img {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.post_img img {
+    width: 100%;
+    height: 90%;
+}
+
+.friend_box {
+    position: relative;
+    background-color: #3a3737;
+    width: 325px;
+    height: 56px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.friend_box h1 {
+    font-size: 16px;
+}
+
+.friends {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0 0 15px;
+}
+
+.buy_now {
+    width: 90%;
+    background-color: rgb(141, 134, 134);
+    margin-top: 20px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.buy_now {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    padding-left: 15px;
+}
+
+.price h1 {
+    font-size: 16px;
+}
+
+.buy_btn button {
+    width: 180px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    margin-right: 20px;
+}
+
+.btns {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,99 @@
+* {
+    color: #FFFFFF;
+}
+
+.nftcollection2_main {
+    display: flex;
+}
+
+.rightside {
+    width: 323px;
+    height: 290px;
+    padding-left: 20px;
+}
+
+.leftside {
+    margin-left: 60px;
+    width: calc(100% - 423px)
+}
+
+.description {
+    display: flex;
+}
+
+.description h2 {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.description h1 {
+    font-size: 24px;
+}
+
+.searchinput input {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border-radius: 40px;
+    border: none;
+    padding-left: 30px;
+    background: url('../../resources/images/icons/search.png');
+    background-color: rgba(255, 255, 255, 0.137);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.nfts {
+    margin-top: 30px;
+}
+
+.nfts_sections {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nfts_sections h1 {
+    font-size: 12px;
+}
+
+.nfts_cols_loop {
+    margin-top: 30px;
+}
+
+.nft_element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nft_img_name {
+    display: flex;
+    align-items: center;
+    width: 55px;
+}
+
+.nft_img_name h1 {
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+hr {
+    width: 100%;
+    margin-top: 15px;
+    background-color: grey;
+}
+
+.nft_element h1 {
+    font-size: 15px;
+}
+
+.nft_postition {
+    margin-top: 20px;
+}

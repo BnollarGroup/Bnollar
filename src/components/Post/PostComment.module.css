@@ -1,0 +1,84 @@
+.commentWrapper {
+  display: flex;
+  border-top:1px solid rgba(217, 217, 217, 0.04) ;
+  padding:14px 0px ;
+}
+.commentWrapperReply {
+  padding:14px 0px ;
+
+    padding-left: 50px;
+    
+  border-top:1px solid rgba(217, 217, 217, 0.04) ;
+
+}
+.userIcon {cursor: pointer;}
+.comment {
+  margin-left: 14px;
+  box-sizing: border-box;
+}
+.userName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  color: #ffffff;
+  cursor: pointer;
+}
+.text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  /* or 154% */
+
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  color: #ffffff;
+}
+.commentButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+.commentDate {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.commentLike {
+  display: flex;
+  align-items: center;
+  font-family: "Inter";
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+  width: 30px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.commentReply,
+.commentShare {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}

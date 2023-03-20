@@ -1,0 +1,85 @@
+.navigator {
+    width: 323px;
+    word-break: break-all;
+}
+
+.navcontainer {
+    width: 323px;
+    height: 290px;
+    padding: 15px 0 0 20px;
+    background: rgba(255, 255, 255, 0.13);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.nftCollectioncontainter {
+    margin-left: 30px;
+    width: 90%;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.home h1 {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    height: 30px;
+    width: 90%;
+}
+
+.navbar:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 5px;
+}
+
+.navbar h1 {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.desc {
+    margin-top: 15px;
+    width: 100%;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.about h2 {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #FFFFFF;
+}
+
+.terms_conditions h3 {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #FFFFFF;   
+}
+
+.allright h3 {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #FFFFFF;   
+}
