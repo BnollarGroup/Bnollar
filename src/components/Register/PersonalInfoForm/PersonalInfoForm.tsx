@@ -12,6 +12,8 @@ interface PersonalInfoFormProps {
   setDisplayName: Dispatch<SetStateAction<string>>
   image: string
   setImage: Dispatch<SetStateAction<string>>
+  coverImage: string
+  setCoverImage: Dispatch<SetStateAction<string>>
 }
 
 const PersonalInfoForm = ({
@@ -21,6 +23,8 @@ const PersonalInfoForm = ({
   setDisplayName,
   image,
   setImage,
+  coverImage,
+  setCoverImage,
 }: PersonalInfoFormProps) => {
   const [canCreate, setCanCreate] = useState(false)
   const { step } = useParams()
@@ -28,13 +32,16 @@ const PersonalInfoForm = ({
 
   const navigate = useNavigate()
 
-  const imageHandler = (file: File) => {
+  const imageHandler = (file: File, imageName: string) => {
     const reader = new FileReader()
 
     reader.addEventListener('load', () => {
       if (typeof reader.result === 'string') {
-        console.log('uploaded')
-        setImage(reader.result)
+        if (imageName === 'profile') {
+          setImage(reader.result)
+        } else if (imageName === 'cover') {
+          setCoverImage(reader.result)
+        }
       }
     })
     reader.readAsDataURL(file)
@@ -64,7 +71,7 @@ const PersonalInfoForm = ({
     <div>
       <Dropzone
         ref={dropzoneRef}
-        onDrop={(acceptedFiles) => imageHandler(acceptedFiles[0])}
+        onDrop={(acceptedFiles) => imageHandler(acceptedFiles[0], 'cover')}
         noClick
         noKeyboard
         accept={{
@@ -75,31 +82,38 @@ const PersonalInfoForm = ({
       >
         {({ getRootProps, getInputProps }) => {
           return (
-            <>
-              {!image && (
-                <div {...getRootProps({ className: styles.dropzone })}>
-                  <input {...getInputProps()} />
-                  <p>
-                    Drop image here, or{' '}
-                    <span className={styles.browse} onClick={openDialog}>
-                      browse
-                    </span>
-                  </p>
-                </div>
+            <div {...getRootProps({ className: styles.dropzone })}>
+              <input {...getInputProps()} />
+              {coverImage ? (
+                <img className={styles.coverImage} src={coverImage} alt="" />
+              ) : (
+                <p>
+                  Drop image here, or{' '}
+                  <span className={styles.browse} onClick={openDialog}>
+                    browse
+                  </span>
+                </p>
               )}
-              <div className={styles.addImg}>
-                <img
-                  className={image ? styles.uploaded : styles.notUploaded}
-                  src={image || imgIcon}
-                  alt="img icon"
-                />
-
-                <img onClick={openDialog} src={addIcon} alt="Upload File" />
-              </div>
-            </>
+            </div>
           )
         }}
       </Dropzone>
+      <div className={styles.addImg}>
+        <img
+          className={image ? styles.uploaded : styles.notUploaded}
+          src={image || imgIcon}
+          alt="img icon"
+        />
+        <input
+          type="file"
+          id="file-input"
+          onChange={(e) => imageHandler((e.target as any).files[0], 'profile')}
+          style={{ display: 'none' }}
+        />
+        <label className={styles.plusButton} htmlFor="file-input">
+          <img src={addIcon} alt="Upload File" />
+        </label>
+      </div>
 
       <div className={styles.input_wrapper}>
         <input
