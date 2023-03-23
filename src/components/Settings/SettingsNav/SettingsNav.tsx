@@ -28,7 +28,11 @@ const SettingsNav = ({ active }: SettingsNavProps) => {
         <SideNavLink
           name="Privacy & Security"
           to="/settings/privacy&security"
-          active={active === 'privacy&security'}
+          active={
+            active === 'privacy&security' ||
+            active === 'privacy&security_messages' ||
+            active === 'privacy&security_comments'
+          }
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Buttons from '../Buttons/Buttons'
 import contStyles from '../SettingsContainer.module.css'
 import styles from './Profile.module.css'
 
@@ -67,7 +68,7 @@ const Profile = () => {
             />
           </div>
         </div>
-        <div>
+        <div className={styles.socialLinks}>
           <h2 className={contStyles.contHeader}>Social link</h2>
           <p className={contStyles.message}>
             Add your existing social links to build a stronger reputatior
@@ -104,14 +105,9 @@ const Profile = () => {
             />
           </div>
         </div>
-        <div className={contStyles.buttonsWrapper}>
-          <button type="button" className={contStyles.cancelButton}>
-            Cancel
-          </button>
-          <button type="button" className={contStyles.updateButton}>
-            Update profile
-          </button>
-        </div>
+        <div className={contStyles.line} />
+
+        <Buttons updateButtonTitle="Update profile" />
       </form>
     </div>
   )
