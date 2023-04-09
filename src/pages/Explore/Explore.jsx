@@ -15,6 +15,11 @@ import chatIcon from "../../resources/images/explore/chat-icon.svg";
 import postShareIcon from "../../resources/images/explore/post-share-icon.svg";
 import nonClickedHeart from "../../resources/images/explore/nonclicked-heart.png";
 import ClickedHeart from "../../resources/images/explore/clicked-heart.png";
+import followUser1 from "../../resources/images/explore/follow-user1.png";
+import followUser2 from "../../resources/images/explore/follow-user2.png";
+import followUser3 from "../../resources/images/explore/follow-user3.png";
+import followUser4 from "../../resources/images/explore/follow-user4.png";
+import followUser5 from "../../resources/images/explore/follow-user5.png";
 
 function Explore() {
   const [like, setLike] = useState(false);
@@ -93,6 +98,52 @@ function Explore() {
           replies: [],
         },
       ],
+    },
+  ];
+
+  const trends = [
+    {
+      name: "#Bitcoin",
+      postsQuantity: "183k posts",
+    },
+    {
+      name: "NFTs",
+      postsQuantity: "423k posts",
+    },
+    {
+      name: "Elon Musk",
+      postsQuantity: "124k posts",
+    },
+    {
+      name: "Ethereum",
+      postsQuantity: "123k posts",
+    },
+    {
+      name: "OpenAI",
+      postsQuantity: "94L posts",
+    },
+  ];
+
+  const follow = [
+    {
+      avatar: followUser1,
+      name: "Muriel Kub",
+    },
+    {
+      avatar: followUser2,
+      name: "Jorge Kling III",
+    },
+    {
+      avatar: followUser3,
+      name: "Jeanne Barton",
+    },
+    {
+      avatar: followUser4,
+      name: "Neal Crist Jr.",
+    },
+    {
+      avatar: followUser5,
+      name: "Guadalupe Conroy",
     },
   ];
 
