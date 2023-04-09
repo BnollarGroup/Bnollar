@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
 import styles from "./Explore.module.css";
 import currentUserImage from "../../resources/images/explore/current-user.png";
@@ -9,9 +9,17 @@ import postTwoUserImage from "../../resources/images/explore/post2-user.png";
 import postThreeUserImage from "../../resources/images/explore/post3-user.png";
 import postTwoAttachment from "../../resources/images/explore/post2-attachment.png";
 import postThreeAttachment from "../../resources/images/explore/post3-attachment.png";
+import verifiedIcon from "../../resources/images/explore/verified-icon.png";
+import arrowUpIcon from "../../resources/images/explore/arrow-up.svg";
+import chatIcon from "../../resources/images/explore/chat-icon.svg";
+import postShareIcon from "../../resources/images/explore/post-share-icon.svg";
+import nonClickedHeart from "../../resources/images/explore/nonclicked-heart.png";
+import ClickedHeart from "../../resources/images/explore/clicked-heart.png";
 
 function Explore() {
-  
+  const [like, setLike] = useState(false);
+  const [comment, setComment] = useState(false);
+
   const newsFeed = [
     {
       currentUser: {
@@ -100,7 +108,134 @@ function Explore() {
         <button className={styles.categoryButton}>Fashion & Beauty</button>
       </div>
       <div className={styles.newsFeed}>
-        <div className={styles.post}></div>
+        {newsFeed[1].posts.map((post) => {
+          return (
+            <div className={styles.post}>
+              <img className={styles.postAvatar} src={post.user.image} alt="" />
+              <div className={styles.postContent}>
+                <div className={styles.postContentInner}>
+                  <div className={styles.postInfo}>
+                    <div className={styles.postAuthor}>
+                      <span className={styles.postAuthorName}>
+                        {post.user.name}
+                      </span>
+                      {post.verified ? (
+                        <img
+                          className={styles.verifiedUser}
+                          src={verifiedIcon}
+                          alt=""
+                        />
+                      ) : null}
+                      <span className={styles.postDate}>{post.createdAt}</span>
+                    </div>
+                    <button className={styles.postSettings}>
+                      <span className={styles.postSettingsInner}>...</span>
+                    </button>
+                  </div>
+                </div>
+                <p className={styles.postText}>{post.content}</p>
+                <img src={post.attachment} alt="" />
+                <div className={styles.postButtons}>
+                  <button className={styles.postButton}>
+                    <img src={arrowUpIcon} alt="" />
+                    <span className={styles.postButtonText}>
+                      {post.upScore}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      const postIndex = newsFeed[1].posts.findIndex(
+                        (element) => element.id === post.id
+                      );
+                      const commentIndex = newsFeed[1].posts[postIndex].replies;
+
+                      if (commentIndex.length > 0) {
+                        setComment(!comment);
+                      }
+                    }}
+                    className={styles.postButton}
+                  >
+                    <img src={chatIcon} alt="" />
+                    <span className={styles.postButtonText}>
+                      {post.numberOfComments}
+                    </span>
+                  </button>
+                  <button className={styles.postButton}>
+                    <img src={postShareIcon} alt="" />
+                    <span className={styles.postButtonText}>
+                      {post.numberOfShares}
+                    </span>
+                  </button>
+                </div>
+                {comment & (newsFeed[1].posts[0].replies.length > 0) ? (
+                  <>
+                    <div className={styles.postLine}></div>
+                    {newsFeed[1].posts[0].replies.map((reply) => {
+                      return (
+                        <>
+                          <div className={styles.postComments}>
+                            <div className={styles.postComment}>
+                              <img
+                                className={styles.commentAvatar}
+                                src={reply.image}
+                                alt=""
+                              />
+                              <div className={styles.commentInfo}>
+                                <p className={styles.commentAuthor}>
+                                  {reply.username}
+                                </p>
+                                <p className={styles.commentText}>
+                                  {reply.content}
+                                </p>
+                                <div className={styles.commentActionButtons}>
+                                  <div className={styles.commentButtons}>
+                                    <span className={styles.commentDate}>
+                                      {reply.createdAt}
+                                    </span>
+                                    <button className={styles.commentReply}>
+                                      Reply
+                                    </button>
+                                    <button className={styles.commentShare}>
+                                      Share
+                                    </button>
+                                  </div>
+                                  <div className={styles.commentLikes}>
+                                    <button
+                                      className={styles.likeButton}
+                                      onClick={() => setLike(!like)}
+                                    >
+                                      {like ? (
+                                        <img src={ClickedHeart} alt="liked" />
+                                      ) : (
+                                        <img
+                                          src={nonClickedHeart}
+                                          alt="isn't liked"
+                                        />
+                                      )}
+                                      <span
+                                        className={`${styles.numberOfLikes} ${
+                                          like
+                                            ? styles.numberOfLikesActive
+                                            : null
+                                        }`}
+                                      >
+                                        {reply.replyLikes}
+                                      </span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                ) : null}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -29,4 +29,225 @@
 
 .post {
     padding: 16px;
+    width: 712px;
+    display: flex;
+    column-gap: 14px;
+}
+
+.postAvatar {
+    width: 44px;
+    height: 44px;
+}
+
+.postContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.postContentInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.postInfo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.postAuthor {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+.postAuthorName {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.verifiedUser {
+    margin-left: 4px;
+}
+
+.postDate {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.postText {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.postSettings {
+    width: 24px;
+    height: 24px;
+    background: inherit;
+    position: relative;
+    /* border: 1.5px solid rgba(255, 255, 255, 0.4); */
+}
+
+.postSettingsInner {
+    position: absolute;
+    top: 35%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.postButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.postButton {
+    width: 192px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+
+}
+
+.postButtonText {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.postLine {
+    width: 100%;
+    height: 1px;
+    background: red;
+    /* background: rgba(217, 217, 217, 0.04); */
+    margin-bottom: 16px;
+}
+
+.postComments {
+    padding: 16px;
+    width: 712px;
+
+}
+
+.postComment {
+    display: flex;
+    column-gap: 19px;
+}
+
+.commentAvatar {
+    width: 34px;
+    height: 34px;
+}
+
+.commentInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.commentAuthor {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.commentText {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+    width: 590px;
+}
+
+.commentActionButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commentDate {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.commentButtons {
+    display: flex;
+    column-gap: 8px;
+
+}
+
+.commentReply {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    background: inherit;
+    border: none;
+}
+
+.commentShare {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    background: inherit;
+    border: none;
+}
+
+.likeButton {
+    width: 28px;
+    height: 18px;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+
+}
+
+.numberOfLikes {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.numberOfLikesActive {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #EF8031;
 }
