@@ -149,144 +149,176 @@ function Explore() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Explore</h1>
-      <div className={styles.categoryButtons}>
-        <button className={styles.categoryButton}>Recommended</button>
-        <button className={styles.categoryButton}>Business</button>
-        <button className={styles.categoryButton}>Creative</button>
-        <button className={styles.categoryButton}>Education</button>
-        <button className={styles.categoryButton}>Entertainment</button>
-        <button className={styles.categoryButton}>Fashion & Beauty</button>
-      </div>
-      <div className={styles.newsFeed}>
-        {newsFeed[1].posts.map((post) => {
-          return (
-            <div className={styles.post}>
-              <img className={styles.postAvatar} src={post.user.image} alt="" />
-              <div className={styles.postContent}>
-                <div className={styles.postContentInner}>
-                  <div className={styles.postInfo}>
-                    <div className={styles.postAuthor}>
-                      <span className={styles.postAuthorName}>
-                        {post.user.name}
-                      </span>
-                      {post.verified ? (
-                        <img
-                          className={styles.verifiedUser}
-                          src={verifiedIcon}
-                          alt=""
-                        />
-                      ) : null}
-                      <span className={styles.postDate}>{post.createdAt}</span>
+      <div className={styles.newsfeedContainer}>
+        <h1 className={styles.title}>Explore</h1>
+        <div className={styles.categoryButtons}>
+          <button className={styles.categoryButton}>Recommended</button>
+          <button className={styles.categoryButton}>Business</button>
+          <button className={styles.categoryButton}>Creative</button>
+          <button className={styles.categoryButton}>Education</button>
+          <button className={styles.categoryButton}>Entertainment</button>
+          <button className={styles.categoryButton}>Fashion & Beauty</button>
+        </div>
+        <div className={styles.newsFeed}>
+          {newsFeed[1].posts.map((post) => {
+            return (
+              <div className={styles.post}>
+                <img
+                  className={styles.postAvatar}
+                  src={post.user.image}
+                  alt=""
+                />
+                <div className={styles.postContent}>
+                  <div className={styles.postContentInner}>
+                    <div className={styles.postInfo}>
+                      <div className={styles.postAuthor}>
+                        <span className={styles.postAuthorName}>
+                          {post.user.name}
+                        </span>
+                        {post.verified ? (
+                          <img
+                            className={styles.verifiedUser}
+                            src={verifiedIcon}
+                            alt=""
+                          />
+                        ) : null}
+                        <span className={styles.postDate}>
+                          {post.createdAt}
+                        </span>
+                      </div>
+                      <button className={styles.postSettings}>
+                        <span className={styles.postSettingsInner}>...</span>
+                      </button>
                     </div>
-                    <button className={styles.postSettings}>
-                      <span className={styles.postSettingsInner}>...</span>
+                  </div>
+                  <p className={styles.postText}>{post.content}</p>
+                  <img src={post.attachment} alt="" />
+                  <div className={styles.postButtons}>
+                    <button className={styles.postButton}>
+                      <img src={arrowUpIcon} alt="" />
+                      <span className={styles.postButtonText}>
+                        {post.upScore}
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        const postIndex = newsFeed[1].posts.findIndex(
+                          (element) => element.id === post.id
+                        );
+                        const commentIndex =
+                          newsFeed[1].posts[postIndex].replies;
+
+                        if (commentIndex.length > 0) {
+                          setComment(!comment);
+                        }
+                      }}
+                      className={styles.postButton}
+                    >
+                      <img src={chatIcon} alt="" />
+                      <span className={styles.postButtonText}>
+                        {post.numberOfComments}
+                      </span>
+                    </button>
+                    <button className={styles.postButton}>
+                      <img src={postShareIcon} alt="" />
+                      <span className={styles.postButtonText}>
+                        {post.numberOfShares}
+                      </span>
                     </button>
                   </div>
-                </div>
-                <p className={styles.postText}>{post.content}</p>
-                <img src={post.attachment} alt="" />
-                <div className={styles.postButtons}>
-                  <button className={styles.postButton}>
-                    <img src={arrowUpIcon} alt="" />
-                    <span className={styles.postButtonText}>
-                      {post.upScore}
-                    </span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      const postIndex = newsFeed[1].posts.findIndex(
-                        (element) => element.id === post.id
-                      );
-                      const commentIndex = newsFeed[1].posts[postIndex].replies;
-
-                      if (commentIndex.length > 0) {
-                        setComment(!comment);
-                      }
-                    }}
-                    className={styles.postButton}
-                  >
-                    <img src={chatIcon} alt="" />
-                    <span className={styles.postButtonText}>
-                      {post.numberOfComments}
-                    </span>
-                  </button>
-                  <button className={styles.postButton}>
-                    <img src={postShareIcon} alt="" />
-                    <span className={styles.postButtonText}>
-                      {post.numberOfShares}
-                    </span>
-                  </button>
-                </div>
-                {comment & (newsFeed[1].posts[0].replies.length > 0) ? (
-                  <>
-                    <div className={styles.postLine}></div>
-                    {newsFeed[1].posts[0].replies.map((reply) => {
-                      return (
-                        <>
-                          <div className={styles.postComments}>
-                            <div className={styles.postComment}>
-                              <img
-                                className={styles.commentAvatar}
-                                src={reply.image}
-                                alt=""
-                              />
-                              <div className={styles.commentInfo}>
-                                <p className={styles.commentAuthor}>
-                                  {reply.username}
-                                </p>
-                                <p className={styles.commentText}>
-                                  {reply.content}
-                                </p>
-                                <div className={styles.commentActionButtons}>
-                                  <div className={styles.commentButtons}>
-                                    <span className={styles.commentDate}>
-                                      {reply.createdAt}
-                                    </span>
-                                    <button className={styles.commentReply}>
-                                      Reply
-                                    </button>
-                                    <button className={styles.commentShare}>
-                                      Share
-                                    </button>
-                                  </div>
-                                  <div className={styles.commentLikes}>
-                                    <button
-                                      className={styles.likeButton}
-                                      onClick={() => setLike(!like)}
-                                    >
-                                      {like ? (
-                                        <img src={ClickedHeart} alt="liked" />
-                                      ) : (
-                                        <img
-                                          src={nonClickedHeart}
-                                          alt="isn't liked"
-                                        />
-                                      )}
-                                      <span
-                                        className={`${styles.numberOfLikes} ${
-                                          like
-                                            ? styles.numberOfLikesActive
-                                            : null
-                                        }`}
-                                      >
-                                        {reply.replyLikes}
+                  {comment & (newsFeed[1].posts[0].replies.length > 0) ? (
+                    <>
+                      <div className={styles.postLine}></div>
+                      {newsFeed[1].posts[0].replies.map((reply) => {
+                        return (
+                          <>
+                            <div className={styles.postComments}>
+                              <div className={styles.postComment}>
+                                <img
+                                  className={styles.commentAvatar}
+                                  src={reply.image}
+                                  alt=""
+                                />
+                                <div className={styles.commentInfo}>
+                                  <p className={styles.commentAuthor}>
+                                    {reply.username}
+                                  </p>
+                                  <p className={styles.commentText}>
+                                    {reply.content}
+                                  </p>
+                                  <div className={styles.commentActionButtons}>
+                                    <div className={styles.commentButtons}>
+                                      <span className={styles.commentDate}>
+                                        {reply.createdAt}
                                       </span>
-                                    </button>
+                                      <button className={styles.commentReply}>
+                                        Reply
+                                      </button>
+                                      <button className={styles.commentShare}>
+                                        Share
+                                      </button>
+                                    </div>
+                                    <div className={styles.commentLikes}>
+                                      <button
+                                        className={styles.likeButton}
+                                        onClick={() => setLike(!like)}
+                                      >
+                                        {like ? (
+                                          <img src={ClickedHeart} alt="liked" />
+                                        ) : (
+                                          <img
+                                            src={nonClickedHeart}
+                                            alt="isn't liked"
+                                          />
+                                        )}
+                                        <span
+                                          className={`${styles.numberOfLikes} ${
+                                            like
+                                              ? styles.numberOfLikesActive
+                                              : null
+                                          }`}
+                                        >
+                                          {reply.replyLikes}
+                                        </span>
+                                      </button>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </>
-                ) : null}
+                          </>
+                        );
+                      })}
+                    </>
+                  ) : null}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+      </div>
+      <div className={styles.rightSidebar}>
+        <div className={styles.trends}>
+          <h2 className={styles.trendsTitle}>Trends</h2>
+          <div className={styles.trendsContent}>
+            {trends.map((item, index) => {
+              return (
+                <div key={index} className={styles.trendsItem}>
+                  <div className={styles.trendsInfo}>
+                    <span className={styles.trendsName}>{item.name}</span>
+                    <span className={styles.trendsPosts}>
+                      {item.postsQuantity}
+                    </span>
+                  </div>
+                  <button className={styles.trendsButton}>
+                    <span className={styles.trendsButtonInner}>...</span>
+                  </button>
+                </div>
+              );
+            })}
+            <button className={styles.moreTrendsButton}>Show more</button>
+          </div>
+        </div>
       </div>
     </div>
   );

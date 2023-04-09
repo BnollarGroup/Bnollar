@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    column-gap: 25px;
+}
+
 .title {
     font-family: 'Inter';
     font-weight: 600;
@@ -51,7 +56,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-
 }
 
 .postInfo {
@@ -250,4 +254,83 @@
     font-size: 12px;
     line-height: 18px;
     color: #EF8031;
+}
+
+.trends {
+    width: 323px;
+    height: 400px;
+    border-radius: 10px;
+    padding: 16px;
+    background: #17181B;
+}
+
+.trendsTitle {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.trendsContent {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.trendsItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trendsInfo {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.trendsName {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.trendsPosts {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.trendsButton {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: inherit;
+}
+
+.trendsButtonInner {
+    position: absolute;
+    top: 35%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.moreTrendsButton {
+    width: fit-content;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #EF8031;
+    background: inherit;
+    cursor: pointer;
+    margin-top: 4px;
 }
