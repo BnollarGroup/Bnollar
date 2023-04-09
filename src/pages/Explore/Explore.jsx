@@ -319,6 +319,22 @@ function Explore() {
             <button className={styles.moreTrendsButton}>Show more</button>
           </div>
         </div>
+        <div className={styles.follow}>
+          <h2 className={styles.followTitle}>Who to follow</h2>
+          <div className={styles.followContent}>
+            {follow.map((item, index) => {
+              return (
+                <div className={styles.followItem}>
+                  <div className={styles.followInfo}>
+                    <img src={item.avatar} alt="" />
+                    <span className={styles.followName}>{item.name}</span>
+                  </div>
+                  <button className={styles.followButton}>Follow</button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

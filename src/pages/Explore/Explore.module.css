@@ -16,7 +16,6 @@
     column-gap: 8px;
     flex-wrap: wrap;
     margin: 24px 0;
-
 }
 
 .categoryButton {
@@ -48,7 +47,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-
 }
 
 .postContentInner {
@@ -131,7 +129,6 @@
     justify-content: center;
     align-items: center;
     column-gap: 10px;
-
 }
 
 .postButtonText {
@@ -153,7 +150,6 @@
 .postComments {
     padding: 16px;
     width: 712px;
-
 }
 
 .postComment {
@@ -206,7 +202,6 @@
 .commentButtons {
     display: flex;
     column-gap: 8px;
-
 }
 
 .commentReply {
@@ -237,7 +232,6 @@
     align-items: center;
     justify-content: center;
     column-gap: 4px;
-
 }
 
 .numberOfLikes {
@@ -254,6 +248,12 @@
     font-size: 12px;
     line-height: 18px;
     color: #EF8031;
+}
+
+.rightSidebar {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
 }
 
 .trends {
@@ -333,4 +333,60 @@
     background: inherit;
     cursor: pointer;
     margin-top: 4px;
+}
+
+.follow {
+    width: 323px;
+    height: 360px;
+    background: #17181B;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.followTitle {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.followContent {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.followItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.followInfo {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.followName {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.followButton {
+    width: 72px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 4px solid #0D0E11;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #0D0E11;
 }
