@@ -11,7 +11,7 @@ function Explore() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.newsfeedContainer}>
+      <div className={styles.newsFeedContainer}>
         <h1 className={styles.title}>Explore</h1>
         <div className={styles.categoryButtons}>
           <button className={styles.categoryButton}>Recommended</button>

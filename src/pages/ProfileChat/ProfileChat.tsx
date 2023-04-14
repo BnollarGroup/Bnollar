@@ -86,9 +86,9 @@ function ProfileChat() {
             </button>
           </form>
           <div className={styles.messageContainer}>
-            {chatMessages.map((item) => {
+            {chatMessages.map((item, index) => {
               return (
-                <div className={styles.messages}>
+                <div key={index} className={styles.messages}>
                   <div className={styles.messagesContent}>
                     {item.hasDot ? (
                       <img
