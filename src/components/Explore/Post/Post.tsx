@@ -1,21 +1,11 @@
 import React, { useState } from "react";
+import { DataType } from "../types";
 import styles from "./Post.module.css";
-import currentUserImage from "../../resources/images/explore/current-user.png";
-import userOneImage from "../../resources/images/explore/post-user1.png";
-import userTwoImage from "../../resources/images/explore/post-user2.png";
-import userThreeImage from "../../resources/images/explore/post-user3.png";
-import postTwoUserImage from "../../resources/images/explore/post2-user.png";
-import postThreeUserImage from "../../resources/images/explore/post3-user.png";
-import postTwoAttachment from "../../resources/images/explore/post2-attachment.png";
-import postThreeAttachment from "../../resources/images/explore/post3-attachment.png";
+import Comment from "../Comment/Comment";
 import verifiedIcon from "../../../resources/images/explore/verified-icon.png";
 import arrowUpIcon from "../../../resources/images/explore/arrow-up.svg";
 import chatIcon from "../../../resources/images/explore/chat-icon.svg";
 import postShareIcon from "../../../resources/images/explore/post-share-icon.svg";
-import nonClickedHeart from "../../resources/images/explore/nonclicked-heart.png";
-import ClickedHeart from "../../resources/images/explore/clicked-heart.png";
-import { DataType, PostsData } from "../types";
-import Comment from "../Comment/Comment";
 
 interface PostProps {
   dataItem: DataType;
@@ -23,9 +13,6 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = (props) => {
   const { dataItem } = props;
-
-  const [like, setLike] = useState(false);
-  const [comment, setComment] = useState(false);
 
   const [openComments, setOpenComments] = useState<Record<number, boolean>>({});
   const handleCommentClick = (postId: number) => {
@@ -36,7 +23,7 @@ const Post: React.FC<PostProps> = (props) => {
     <>
       {dataItem.posts?.map((post, index) => {
         return (
-          <div className={styles.post}>
+          <div key={index} className={styles.post}>
             <div className={styles.postInner}>
               <img className={styles.postAvatar} src={post.user.image} alt="" />
               <div className={styles.postContent}>
@@ -50,7 +37,7 @@ const Post: React.FC<PostProps> = (props) => {
                         <img
                           className={styles.verifiedUser}
                           src={verifiedIcon}
-                          alt=""
+                          alt="verified user icon"
                         />
                       ) : null}
                       <span className={styles.postDate}>{post.createdAt}</span>
@@ -61,10 +48,12 @@ const Post: React.FC<PostProps> = (props) => {
                   </div>
                 </div>
                 <p className={styles.postText}>{post.content}</p>
-                <img src={post.attachment} alt="" />
+                {post.attachment.length > 0 ? (
+                  <img src={post.attachment} alt="attachment icon" />
+                ) : null}
                 <div className={styles.postButtons}>
                   <button className={styles.postButton}>
-                    <img src={arrowUpIcon} alt="" />
+                    <img src={arrowUpIcon} alt="arrow up icon" />
                     <span className={styles.postButtonText}>
                       {post.upScore}
                     </span>
@@ -73,13 +62,13 @@ const Post: React.FC<PostProps> = (props) => {
                     onClick={() => handleCommentClick(post.id)}
                     className={styles.postButton}
                   >
-                    <img src={chatIcon} alt="" />
+                    <img src={chatIcon} alt="chat icon" />
                     <span className={styles.postButtonText}>
                       {post.numberOfComments}
                     </span>
                   </button>
                   <button className={styles.postButton}>
-                    <img src={postShareIcon} alt="" />
+                    <img src={postShareIcon} alt="post share icon" />
                     <span className={styles.postButtonText}>
                       {post.numberOfShares}
                     </span>
