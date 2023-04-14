@@ -1,6 +1,7 @@
 .container {
     display: flex;
     column-gap: 25px;
+    padding-right: 16px;
 }
 
 .title {
@@ -31,9 +32,13 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.post {
-    padding: 16px;
+.newsFeed {
     width: 712px;
+    padding: 16px;
+}
+
+.post {
+    width: 100%;
     display: flex;
     column-gap: 14px;
 }
@@ -102,7 +107,6 @@
     height: 24px;
     background: inherit;
     position: relative;
-    /* border: 1.5px solid rgba(255, 255, 255, 0.4); */
 }
 
 .postSettingsInner {
