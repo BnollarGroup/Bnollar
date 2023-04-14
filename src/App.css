@@ -1,11 +1,12 @@
 body {
   height: 100%;
-  background-color: black;
+  background-color: #0D0E11;
 }
 
 a {
   text-decoration: none;
 }
+
 button {
   outline: none;
   border: none;
