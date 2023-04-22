@@ -11,6 +11,8 @@ import Nft from "./pages/Nft/Nft";
 import NftCollection from "./pages/nftCollection/NftCollection";
 import NftCollectionsecond from "./pages/nftCollection2/NftCollectionsecond";
 import Profile from "./pages/Profile/Profile";
+import JoinCommunity from "./pages/joinCommunity/JoinCommunity";
+import Profile_2 from "./pages/Profile2/Profile_2";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/nft-collection" element={<NftCollection/>} />
         <Route path="/nft-collection2" element={<NftCollectionsecond/>} />
         <Route path="/profile" element={<Profile/>} />
+        <Route path="/joincommunity" element={<JoinCommunity/>} />
+        <Route path="/profile2" element={<Profile_2/>} />
       </Routes>
     </div>
   );
