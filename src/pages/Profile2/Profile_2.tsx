@@ -6,6 +6,13 @@ import CoverPicture from '../../resources/images/icons/coverpic.png'
 import Instagram from '../../resources/images/icons/instagram.png'
 import Verifed from '../../resources/images/icons/verified.svg'
 import Member from '../../resources/images/icons/memeber.png'
+import UserPic from '../../resources/images/icons/Ellipse 1.png'
+import attachment from '../../resources/images/icons/attachment.png'
+import emoji from '../../resources/images/icons/emoji.png'
+import statreport from '../../resources/images/icons/stats-report.png'
+import PostImg from '../../resources/images/icons/post-img.png'
+import UserFeedPic from '../../resources/images/icons/userfeedpic.png'
+import language from '../../resources/images/icons/language.png'
 
 function Profile_2() {
   return (
@@ -57,26 +64,33 @@ function Profile_2() {
         <div className={style.left_profile_side}>
           <div className={style.post}>
             <div className={style.writesomething}>
-              <img src={Instagram} alt="" />
+              <img src={UserPic} alt="" />
               <input type="text" placeholder='Write Something' />
             </div>
-            <hr></hr>
+            <div className={style.line}></div>
             <div className={style.addsomethinginpost}>
               <div className={style.attachment}>
-                <img src={Instagram} alt="" />
-                <img src={Instagram} alt="" />
-                <img src={Instagram} alt="" />
+                <img src={attachment} />
+                <img className={style.postimg} src={statreport} />
+                <img className={style.postimg} src={emoji}  />
               </div>
               <div className={style.addbtn}>
-                <button className={style.public}>Public</button> 
+                <div className={style.publiclanguage}>
+                  <img src={language} alt="" />
+                  <button className={style.public}>Public</button> 
+                </div>
                 <button className={style.postbtn}>POST</button>
               </div>
             </div>
-            <div className={style.upload_news_desc}>
-                              <div className={style.user_name}>
-                                    <img className={style.userimg} src={Instagram} />
+            {/* asd */}
+            <div className={style.upload_news}>
+                        <div className={style.upload_news_author_pic}>
+                            <img src={UserFeedPic} />
+                        </div>
+                        <div className={style.upload_news_desc}>
+                                <div className={style.user_name}>
                                     <h1>Christopher Williams</h1>
-                                    <img className={style.verifed_img} src={Verifed} />
+                                    <img src={Verifed} />
                                     <span>14 Dec</span>
                                 </div>
                                 <p>#Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, 
@@ -89,14 +103,45 @@ function Profile_2() {
                                     <div className={style.upvote}>
                                         <button>Upvote</button>
                                     </div>
-                                    <div className={style.upvote}>
-                                        <button>Upvote</button>
+                                    <div className={style.comment}>
+                                        <button>Comment</button>
                                     </div>
-                                    <div className={style.upvote}>
-                                        <button>Upvote</button>
+                                    <div className={style.share}>
+                                        <button>Share</button>
                                     </div>
                                 </div>
                             </div>
+                    </div>
+            {/* sadsa */}
+            <div className={style.posts}>
+                    <div className={style.post_box}>
+                        <div className={style.upload_news_author_pic}>
+                            <img src={UserFeedPic} />
+                        </div>
+                        <div className={style.upload_news_desc}>
+                                <div className={style.user_name}>
+                                    <h1>Christopher Williams</h1>
+                                    <img src={Verifed} />
+                                    <span>14 Dec</span>
+                                </div>
+                                <p>I am selling this NFT from Clone x collection</p>
+                                <div className={style.post_img}>
+                                    <img src={PostImg} />
+                                </div>
+                                <div className={style.btns}>
+                                    <div className={style.upvote}>
+                                        <button>433</button>
+                                    </div>
+                                    <div className={style.comment}>
+                                        <button>Comment</button>
+                                    </div>
+                                    <div className={style.share}>
+                                        <button>Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
           </div>
         </div>
         <div className={style.right_profile_side}>
@@ -125,6 +170,16 @@ function Profile_2() {
               <h3>4,222</h3>
             </div>
             <div className={style.memberimg}>
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
+              <img src={Member} alt="" />
               <img src={Member} alt="" />
               <img src={Member} alt="" />
               <img src={Member} alt="" />

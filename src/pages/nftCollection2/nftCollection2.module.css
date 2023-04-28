@@ -61,6 +61,7 @@
 
 .nfts_sections h1 {
     font-size: 12px;
+    color: #FFFFFF;
 }
 
 .nfts_cols_loop {
@@ -84,10 +85,11 @@
     font-size: 15px;
 }
 
-hr {
+.line {
     width: 100%;
+    height: 1px;
     margin-top: 15px;
-    background-color: grey;
+    background-color: #16181C;
 }
 
 .nft_element h1 {
@@ -96,4 +98,128 @@ hr {
 
 .nft_postition {
     margin-top: 20px;
+}
+
+.nftmenu {
+    width: 95%;
+    height: 35px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.chains {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.chains button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    background-image: url('../../resources/images/icons/circle.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    border-radius: 20px;
+}
+
+.chains img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenubt{
+    width: 85px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.nftmenubt button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+}
+
+.nftmenubt img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.lgbtn{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.lgbtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+}
+
+.lgbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenuposition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smbtn{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.smbtn button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    border-radius: 20px;
+}
+
+.smbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.volume_percent h2 {
+    color: #CDF67F;
+    font-size: 12px;
 }

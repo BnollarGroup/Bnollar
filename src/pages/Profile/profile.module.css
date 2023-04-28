@@ -30,14 +30,32 @@
 }
 
 .aboutuser {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
+.userimg {
+    position: relative;
+    background-color: red;
+    width: 100px;
+    border-radius: 50%;
+    width: 144px;
+    height: 144px;
+}
+
 .aboutuserright {
     z-index: 11;
     margin-top: -70px;
+}
+
+.edit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 11;
+    width: 30px;
 }
 
 .user_name {
@@ -127,15 +145,17 @@
 }
 
 .feed_box {
-    width: 35%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 52px;
 }
 
 .news {
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .news h1 {
@@ -162,9 +182,9 @@ hr {
 }
 
 .upload_news {
-    width: 80%;
+    width: 90%;
     height: 176px;
-    background-color: #3a3737;
+    background-color: #16181C;
     border-radius: 5px;
     display: flex;
     padding: 15px 0 0 15px;
@@ -173,6 +193,7 @@ hr {
 .upload_news_desc {
     margin-left: 10px;
     width: 100%;
+    background-color: #16181C;
 }
 
 .rate_btns {
@@ -188,9 +209,30 @@ hr {
 }
 
 .upvote button {
-    background: url('../../resources/images/icons/upvote.png');
+    background: url('../../resources/images/icons/arrow-up-circled.png');
     background-repeat: no-repeat;
     background-position: 40px center;
+    background-color: #555353;
+}
+
+
+.comment button {
+    width: 162px;
+    height: 40px;
+    margin-top: 20px;
+    background: url('../../resources/images/icons/chat-lines.png');
+    background-repeat: no-repeat;
+    background-position: 25px center;
+    background-color: #555353;
+}
+
+.share button {
+    width: 162px;
+    height: 40px;
+    margin-top: 20px;
+    background: url('../../resources/images/icons/share-ios.png');
+    background-repeat: no-repeat;
+    background-position: 25px center;
     background-color: #555353;
 }
 
@@ -216,6 +258,20 @@ hr {
 .about_user_desc h1 {
     font-size: 13px;
     margin-top: 15px;
+    margin-left: 10px;
+}
+
+.about_user_desc {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.about_user_desc img {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
 }
 
 .post  {
@@ -223,8 +279,8 @@ hr {
 }
 
 .post_box {
-    width: 80%;
-    background-color: #3a3737;
+    width: 90%;
+    background-color: #16181C;
     border-radius: 5px;
     display: flex;
     padding: 15px 0 0 15px;
@@ -262,10 +318,10 @@ hr {
 
 .buy_now {
     width: 90%;
-    background-color: rgb(141, 134, 134);
+    background-color: #4E525A;
     margin-top: 20px;
     height: 80px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .buy_now {

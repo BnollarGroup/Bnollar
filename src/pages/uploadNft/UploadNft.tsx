@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import classes from "./UploadNft.module.css";
 import addIcon from "../../resources/images/icons/addicon.png"
+import Fruit from '../../resources/images/icons/watermelon.png'
 
 function UploadNft() {
   const[browseNft, setopenBrowsenft] = useState(false)
@@ -66,7 +67,11 @@ function UploadNft() {
           </div>
           <div className={classes.upload}>
             <h1>Upload File</h1>
-            <button className={classes.openBtn} onClick={browseOpen}>Upload File</button>
+            <div className={classes.openBtn}>
+            <button className={classes.uploadopenbutton} onClick={browseOpen}>Upload File</button>
+            <h1 className={classes.uploadopentext}>PNG, GIF, WEBP, MP4 or MP3. Max 100mb.</h1>
+            </div>
+            {/* <button className={classes.openBtn} onClick={browseOpen}>Upload File</button> */}
           </div>
           <div className={classes.description}>
             <h1>Description</h1>
@@ -111,10 +116,12 @@ function UploadNft() {
         <div className={classes.rightSide}>
           <div className={classes.pic_text}>
             <div className={classes.image}>
-              image
+              <img src={Fruit}/>
             </div>
             <div className={classes.text}>
-              <h1>text</h1>
+              <div className={classes.img_description}>
+                <h1>Description</h1>
+              </div>
             </div>
           </div>
         </div>

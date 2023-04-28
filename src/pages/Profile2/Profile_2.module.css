@@ -67,9 +67,10 @@
 }
 
 .post {
-    border: 1px solid gray;
+    background-color: #16181C;
+    padding: 10px;
     border-radius: 5px;
-    height: 150px;
+    height: 200px;
 }
 
 .writesomething {
@@ -87,10 +88,12 @@
     background-color: transparent;
     border: none;
     outline: none;
+    margin-left: 10px;
 }
 
 .addsomethinginpost {
     width: 100%;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -119,10 +122,14 @@
 
 .upload_news_desc {
     margin-top: 20px;
-    border: 1px solid gray;
     border-radius: 5px;
     padding: 5px;
     width: 100%;
+    margin-left: 10px;
+}
+
+.upload_news_author_pic {
+    margin-top: 25px;
 }
 
 .rate_btns {
@@ -194,8 +201,9 @@
 .tags {
     width: 90%;
     margin-left: 5px;
-    background-color: #3a3737;
+    background-color: #16181C;
     border-radius: 5px;
+    padding: 10px;
 }
 
 .tags h1 {
@@ -217,7 +225,8 @@
 
 .memberbox {
     width: 90%;
-    background-color: #3a3737;
+    background-color: #16181C;
+    padding: 10px;
     margin-left: 5px;
     margin-top: 20px;
     border-radius: 5px;
@@ -226,6 +235,7 @@
 .membercount {
     display: flex;
     align-items: center;
+    padding: 10px;
 }
 
 .membercount h1 {
@@ -250,5 +260,116 @@
     width: 30px;
     height: 30px;
     margin-left: 10px;
+    margin-top: 25px;
+}
+
+.attachment img {
+    width: 25px;
+    height: 25px;
+}
+
+.postimg {
+    margin-left: 10px;
+}
+
+.posts  {
+    margin-top: 50px;
+    background-color: #16181C;
+}
+
+.post_box {
+    width: 95%;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px 0 0 15px;
+}
+
+.post_img {
+    width: 100%;
     margin-top: 10px;
+}
+
+.post_img img {
+    width: 100%;
+    height: 90%;
+}
+
+.btns {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.upvote button {
+    background: url('../../resources/images/icons/arrow-up-circled.png');
+    background-repeat: no-repeat;
+    background-position: 40px center;
+    background-color: #555353;
+}
+
+
+.comment button {
+    width: 162px;
+    height: 40px;
+    margin-top: 20px;
+    background: url('../../resources/images/icons/chat-lines.png');
+    background-repeat: no-repeat;
+    background-position: 25px center;
+    background-color: #555353;
+}
+
+.share button {
+    width: 162px;
+    height: 40px;
+    margin-top: 20px;
+    background: url('../../resources/images/icons/share-ios.png');
+    background-repeat: no-repeat;
+    background-position: 25px center;
+    background-color: #555353;
+}
+
+
+
+.line {
+    height: 1px;
+    background-color: #3a3737;
+}
+
+.publiclanguage {
+    position: relative;
+    width: 110px;
+    display: flex;
+    align-items: center;
+}
+
+.publiclanguage button {
+    width: 100%;
+}
+
+.publiclanguage img {
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+}
+
+.upload_news {
+    width: 100%;
+    height: 180px;
+    background-color: #16181C;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px 0 0 15px;
+    margin-top: 50px;
+}
+
+.upload_news_desc {
+    margin-left: 10px;
+    width: 100%;
+    background-color: #16181C;
+}
+
+.rate_btns {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
 }

@@ -9,6 +9,11 @@ import Instagram from '../../resources/images/icons/instagram.png'
 import Grid from '../../resources/images/icons/view-grid.png'
 import UserFeedPic from '../../resources/images/icons/userfeedpic.png'
 import PostImg from '../../resources/images/icons/post-img.png'
+import Upvote from '../../resources/images/icons/upvote.png'
+import MeriaLogo from '../../resources/images/icons/briefcase.png'
+import Edit from '../../resources/images/icons/edit (2).png'
+import Twitter from '../../resources/images/icons/_Twitter.png'
+import Discord from '../../resources/images/icons/_Discord.png'
 
 
 function Profile() {
@@ -26,7 +31,10 @@ function Profile() {
             </div>
             <div className={style.aboutuser}>
                 <div className={style.aboutuserright}>
+                    <div className={style.userimg}>
                     <img src={UserIcon} />
+                    <img className={style.edit} src={Edit} alt="" />
+                    </div>
                     <div className={style.user_name}>
                         <h1>Christopher Reinger</h1>
                         <img src={Verifed} />
@@ -45,11 +53,10 @@ function Profile() {
                     </div>
                 </div>
                 <div className={style.aboutuserleft}>
-                    <img src={Instagram} />
-                    <img src={Instagram} />
-                    <img src={Instagram} />
+                    <img  src={Instagram} />
+                    <img  src={Instagram} />
+                    <img  src={Instagram} />
                     <button>Follow</button>
-                    <img src={Instagram} />
                 </div>
             </div>
             <div className={style.user_feed}>
@@ -91,11 +98,11 @@ function Profile() {
                                     <div className={style.upvote}>
                                         <button>Upvote</button>
                                     </div>
-                                    <div className={style.upvote}>
-                                        <button>Upvote</button>
+                                    <div className={style.comment}>
+                                        <button>Comment</button>
                                     </div>
-                                    <div className={style.upvote}>
-                                        <button>Upvote</button>
+                                    <div className={style.share}>
+                                        <button>Share</button>
                                     </div>
                                 </div>
                             </div>
@@ -128,10 +135,10 @@ function Profile() {
                                     <div className={style.upvote}>
                                         <button>433</button>
                                     </div>
-                                    <div className={style.upvote}>
+                                    <div className={style.comment}>
                                         <button>Comment</button>
                                     </div>
-                                    <div className={style.upvote}>
+                                    <div className={style.share}>
                                         <button>Share</button>
                                     </div>
                                 </div>
@@ -147,16 +154,20 @@ function Profile() {
                         </div>
                         <div className={style.user_description}>
                             <div className={style.about_user_desc}>
+                                <img src={MeriaLogo}/>
                                 <h1>Worked at Meria</h1>
                             </div>
                             <div className={style.about_user_desc}>
-                                <h1>Worked at Meria</h1>
+                            <img src={MeriaLogo}/>
+                                <h1>Former Pianist at Alla Pugacheva Band</h1>
                             </div>
                             <div className={style.about_user_desc}>
-                                <h1>Worked at Meria</h1>
+                            <img src={MeriaLogo}/>
+                                <h1>Studied at Georgian Technical University</h1>
                             </div>
                             <div className={style.about_user_desc}>
-                                <h1>Worked at Meria</h1>
+                            <img src={MeriaLogo}/>
+                                <h1>Lives in Yerevan, Armenia </h1>
                             </div>
                         </div>
                     </div>

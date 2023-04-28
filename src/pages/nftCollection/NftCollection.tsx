@@ -7,12 +7,13 @@ import NFT from "../../resources/images/icons/stats-report.png"
 import Group from '../../resources/images/icons/group.png'
 import SettingsLogo from '../../resources/images/icons/settings.png'
 import NftLogo from '../../resources/images/icons/Rectangle.png'
-import NftMonkey from '../../resources/images/icons/monkey.png'
+import NftMonkey from '../../resources/images/icons/nft.png'
 import Rightnavbar from '../../components/RightNavBar/rightnavbar'
+import ArrowDown from '../../resources/images/icons/nav-arrow-down.png'
 
 function NftCollection() {
   const[nftPicture, setNftPicture] = useState([
-    {"img": NftLogo, "name": "Mutant Hound Collar #4872" ,"price": "1.325ETH"},
+    {"img": NftMonkey, "name": "Mutant Hound Collar #4872" ,"price": "1.325ETH"},
     {"img": NftMonkey, "name": "Mutant Hound Collar #4872" ,"price": "1.325ETH"},
     {"img": NftMonkey, "name": "Mutant Hound Collar #4872" ,"price": "1.325ETH"},
     {"img": NftMonkey, "name": "Mutant Hound Collar #4872" ,"price": "1.325ETH"},
@@ -42,6 +43,28 @@ function NftCollection() {
         </div>
         <div className={style.search}>
           <input type="text" placeholder='Search NFTs' />
+        </div>
+        <div className={style.nftmenu}>
+          <div className={style.chains}>
+            <button>All Chains</button>
+            <img src={ArrowDown}/>
+          </div>
+          <div className={style.nftmenubt}>
+            <button>Status</button>
+            <img src={ArrowDown}/>
+          </div>
+          <div className={style.nftmenubt}>
+            <button>Price</button>
+            <img src={ArrowDown}/>
+          </div>
+          <div className={style.lgbtn}>
+            <button>Marketplace</button>
+            <img src={ArrowDown}/>
+          </div>
+          <div className={style.lgbtn}>
+            <button>Collection</button>
+            <img src={ArrowDown}/>
+          </div>
         </div>
         <div className={style.nft_market}>
           {nftPicture.map((nft) => {

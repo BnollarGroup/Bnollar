@@ -73,3 +73,93 @@ main {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+/**/
+.nftmenu {
+    width: 95%;
+    height: 35px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.chains {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.chains button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    background-image: url('../../resources/images/icons/circle.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    color: white;
+    background-position: 5px 50%;
+    border-radius: 20px;
+}
+
+.chains img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenubt{
+    width: 85px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.nftmenubt button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+}
+
+.nftmenubt img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.lgbtn{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.lgbtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #32353B;
+    border-radius: 20px;
+}
+
+.lgbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+/**/
