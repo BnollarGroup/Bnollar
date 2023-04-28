@@ -12,9 +12,9 @@ import PostImg from '../../resources/images/icons/post-img.png'
 import Upvote from '../../resources/images/icons/upvote.png'
 import MeriaLogo from '../../resources/images/icons/briefcase.png'
 import Edit from '../../resources/images/icons/edit (2).png'
-import Twitter from '../../resources/images/icons/_Twitter.png'
-import Discord from '../../resources/images/icons/_Discord.png'
-
+import Twitter from '../../resources/images/icons/_Twitter (2).png'
+import Discord from '../../resources/images/icons/Discord.png'
+import Feed from '../../resources/images/icons/view-grid.png'
 
 function Profile() {
   return (
@@ -54,9 +54,10 @@ function Profile() {
                 </div>
                 <div className={style.aboutuserleft}>
                     <img  src={Instagram} />
-                    <img  src={Instagram} />
-                    <img  src={Instagram} />
+                    <img  src={Twitter} />
+                    <img  src={Discord} />
                     <button>Follow</button>
+                    <button className={style.dotbtn}>...</button>
                 </div>
             </div>
             <div className={style.user_feed}>

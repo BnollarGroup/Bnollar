@@ -126,6 +126,7 @@
     margin-top: 20px;
 }
 
+
 .aboutuserleft img {
     width: 44px;
     height: 44px;
@@ -137,6 +138,14 @@
     background-color: white;
     border-radius: 8px;
     color: black;
+}
+
+.aboutuserleft .dotbtn{
+    width: 60px;
+    height: 40px;
+    background-color: #16181C;
+    color: white;
+    border-radius: 20px;
 }
 
 .user_feed {

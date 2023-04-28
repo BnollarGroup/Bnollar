@@ -13,6 +13,12 @@ import statreport from '../../resources/images/icons/stats-report.png'
 import PostImg from '../../resources/images/icons/post-img.png'
 import UserFeedPic from '../../resources/images/icons/userfeedpic.png'
 import language from '../../resources/images/icons/language.png'
+import Feed from '../../resources/images/icons/view-grid.png'
+import Members from '../../resources/images/icons/memebers.png'
+import Media from '../../resources/images/icons/stats-report.png'
+import File from '../../resources/images/icons/folder.png'
+import Twitter from '../../resources/images/icons/_Twitter (2).png'
+import Discord from '../../resources/images/icons/Discord.png'
 
 function Profile_2() {
   return (
@@ -30,9 +36,10 @@ function Profile_2() {
           <h1>BlockChain Developer</h1>
           <div className={style.social}>
             <img src={Instagram} alt="" />
-            <img src={Instagram} alt="" />
-            <img src={Instagram} alt="" />
-            <img src={Instagram} alt="" />
+            <img src={Twitter} alt="" />
+            <img src={Discord} alt="" />
+            <button>Subscribe</button>
+            <button className={style.dotbtn}>...</button>
           </div>
         </div>
         <div className={style.info}>
@@ -43,23 +50,23 @@ function Profile_2() {
         </div>
         <div className={style.menu}>
           <div className={style.img_name}>
-          <img src={Instagram} alt="" />
+          <img src={Feed} alt="" />
           <h1>Feed</h1>
           </div>
           <div className={style.img_name}>
-          <img src={Instagram} alt="" />
-          <h1>Feed</h1>
+          <img src={Members} alt="" />
+          <h1>Memebers</h1>
           </div>
           <div className={style.img_name}>
-          <img src={Instagram} alt="" />
-          <h1>Feed</h1>
+          <img src={Media} alt="" />
+          <h1>Media</h1>
           </div>
           <div className={style.img_name}>
-          <img src={Instagram} alt="" />
-          <h1>Feed</h1>
+          <img src={File} alt="" />
+          <h1>Files</h1>
           </div>
         </div>
-        <hr></hr>
+        <div className={style.line}></div>
         <div className={style.mainbox}>
         <div className={style.left_profile_side}>
           <div className={style.post}>
