@@ -23,7 +23,11 @@ function Explore() {
         </div>
         <div className={styles.newsFeed}>
           {data.map((dataItem: DataType, index: number) => {
-            return <Post dataItem={dataItem} />;
+            return (
+              <div key={index}>
+                <Post dataItem={dataItem} />
+              </div>
+            );
           })}
         </div>
       </div>

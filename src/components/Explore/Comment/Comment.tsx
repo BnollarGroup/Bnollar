@@ -43,11 +43,13 @@ function Comment(props: CommentProps) {
             return (
               <div className={styles.postComments}>
                 <div className={styles.postComment}>
-                  <img
-                    className={styles.commentAvatar}
-                    src={reply.image}
-                    alt=""
-                  />
+                  <div className={styles.commentAvatarBlock}>
+                    <img
+                      className={styles.commentAvatar}
+                      src={reply.image}
+                      alt="user avatar"
+                    />
+                  </div>
                   <div className={styles.commentInfo}>
                     <p className={styles.commentAuthor}>{reply.username}</p>
                     <p className={styles.commentText}>{reply.content}</p>
@@ -88,7 +90,9 @@ function Comment(props: CommentProps) {
             );
           })}
           <div className={styles.sendMessage}>
-            <img src={currentUser} alt="current user" />
+            <div className={styles.commentAvatarBlock}>
+              <img src={currentUser} alt="current user" />
+            </div>
             <div className={styles.sendMessageContainer}>
               <textarea
                 className={styles.messageInput}
