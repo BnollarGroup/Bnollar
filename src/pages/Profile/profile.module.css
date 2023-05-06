@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+* {
+    font-family: 'Inter';
+}
+
 .profilemain {
     display: flex;
 }
@@ -19,14 +24,38 @@
     height: 100%;
 }
 
-.profilecover button {
+.editcoverpicture  {
     position: absolute;
+    background: url('../../resources/images/icons/edit.png');
+    background-repeat: no-repeat;
+    background-position: 25px center;
     background-color: white;
     top: 20px;
     right: 20px;
-    width: 250px;
+    width: 200px;
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.opencovereditdrop {
+    position: absolute;
+    background-color: #17181B;
+    z-index: 11;
+    width: 220px;
+    height: 140px;
     border-radius: 10px;
-    color: grey;
+    top: 60px;
+    right: 20px;
+    font-weight: bold;
+}
+
+.dropcoverbtn {
+    margin-top: 6px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
 }
 
 .aboutuser {
@@ -58,6 +87,17 @@
     width: 30px;
 }
 
+.profilepicedit {
+    position: absolute;
+    right: -170px;
+    border-radius: 10px;
+    height: 90px;
+    bottom: -90px;
+    z-index: 11;
+    width: 200px;
+    background-color: #17181B;
+}
+
 .user_name {
     display: flex;
     align-items: center;
@@ -86,6 +126,7 @@
 .user_ceo {
     display: flex;
     align-items: center;
+    margin-top: 15px;
 }
 
 .user_ceo h1 {
@@ -136,8 +177,9 @@
     width: 88px;
     height: 44px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     color: black;
+    font-weight: bolder;
 }
 
 .aboutuserleft .dotbtn{
@@ -165,6 +207,28 @@
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.menuline {
+    background-color: #EF8031;
+    height: 2px;
+    
+}
+
+.newsexmpl {
+    height: 100%;
+}
+
+.newsflex {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.newsflex h1 {
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
 .news h1 {
@@ -205,6 +269,18 @@ hr {
     background-color: #16181C;
 }
 
+.upload_news_desc p {
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+    line-height: 1.5;
+}
+
+.line {
+    height: 1px;
+    background-color: #3a3737;
+}
+
 .rate_btns {
     display: flex;
     width: 85%;
@@ -214,14 +290,21 @@ hr {
 .upvote  button {
     width: 162px;
     height: 40px;
+    font-weight: bolder;
     margin-top: 20px;
 }
 
+.upvote button:hover {
+    background-color: #EF8031;
+    opacity: .3;
+}
+
 .upvote button {
+    background: rgba(255, 255, 255, 0.04);
     background: url('../../resources/images/icons/arrow-up-circled.png');
     background-repeat: no-repeat;
-    background-position: 40px center;
-    background-color: #555353;
+    background-position: 30px center;
+    font-weight: bolder;
 }
 
 
@@ -229,20 +312,22 @@ hr {
     width: 162px;
     height: 40px;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.04);
     background: url('../../resources/images/icons/chat-lines.png');
     background-repeat: no-repeat;
     background-position: 25px center;
-    background-color: #555353;
+    font-weight: bolder;
 }
 
 .share button {
     width: 162px;
     height: 40px;
     margin-top: 20px;
+    background: rgba(255, 255, 255, 0.04);
     background: url('../../resources/images/icons/share-ios.png');
     background-repeat: no-repeat;
     background-position: 25px center;
-    background-color: #555353;
+    font-weight: bolder;
 }
 
 .about_box  {
@@ -348,9 +433,10 @@ hr {
 }
 
 .buy_btn button {
-    width: 180px;
-    height: 40px;
+    width: 150px;
+    height: 60px;
     background-color: white;
+    font-weight: bold;
     color: black;
     margin-right: 20px;
 }

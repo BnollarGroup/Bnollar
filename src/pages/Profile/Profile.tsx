@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import style from '../Profile/profile.module.css'
 import Rightnavbar from '../../components/RightNavBar/rightnavbar'
-import Cover from '../../resources/images/icons/profile-cover.png'
+import Cover from '../../resources/images/icons/cover (2).png'
 import UserIcon from '../../resources/images/icons/user-icon.png'
 import Verifed from '../../resources/images/icons/twitter-verified-badge.png'
 import Instagram from '../../resources/images/icons/instagram.png'
@@ -15,8 +15,37 @@ import Edit from '../../resources/images/icons/edit (2).png'
 import Twitter from '../../resources/images/icons/_Twitter (2).png'
 import Discord from '../../resources/images/icons/Discord.png'
 import Feed from '../../resources/images/icons/view-grid.png'
+import StatsReport from '../../resources/images/icons/stats-report.png'
 
 function Profile() {
+    const [openCover, setOperCover] = useState(false)
+    let editcover;
+    if(openCover){
+        editcover = <div className={style.opencovereditdrop}>
+        <button className={style.dropcoverbtn}>Upload Photo</button>
+        <button className={style.dropcoverbtn}>Reposition</button>
+        <button className={style.dropcoverbtn}>Remove</button>
+    </div>
+    }
+
+    function openCoverEdit(){
+        setOperCover(true)
+    }
+
+    const [openProfilePic, setProfilePic] = useState(false)
+    let profilePicEdit;
+    if(openProfilePic){
+    profilePicEdit = <div className={style.profilepicedit}>
+       <button className={style.dropcoverbtn}>Upload Photo</button>
+        <button className={style.dropcoverbtn}>Remove</button>
+    </div>
+    }
+
+    function openProfile(){
+        setProfilePic(true)
+    }
+    
+
   return (
     <div>
         <Navbar />
@@ -27,13 +56,19 @@ function Profile() {
         <div className={style.profileleft}>
             <div className={style.profilecover}>
                 <img src={Cover} />
-                <button>Edit Cover Photo</button>
+                <div>
+                <button onClick={openCoverEdit} className={style.editcoverpicture}>Edit Cover Photo</button>
+                {editcover}
+                </div>
             </div>
             <div className={style.aboutuser}>
                 <div className={style.aboutuserright}>
                     <div className={style.userimg}>
                     <img src={UserIcon} />
-                    <img className={style.edit} src={Edit} alt="" />
+                    <div>
+                    <img onClick={openProfile} className={style.edit} src={Edit} alt="" />
+                    {profilePicEdit}
+                    </div>
                     </div>
                     <div className={style.user_name}>
                         <h1>Christopher Reinger</h1>
@@ -62,20 +97,23 @@ function Profile() {
             </div>
             <div className={style.user_feed}>
                 <div className={style.feed_box}>
-                    <div className={style.news}>
+                    <div className={style.newsexmpl}>
+                        <div className={style.newsflex}>
                         <img src={Grid} />
-                    <h1>Feed</h1>
+                        <h1>Feed</h1>
+                        </div>
+                        <div className={style.menuline}></div>
                     </div>
                     <div className={style.news}>
-                    <img src={Grid} />
+                    <img src={StatsReport} />
                     <h1>NFTs</h1>
                 </div>
                 <div className={style.news}>
-                <img src={Grid} />
+                <img src={StatsReport} />
                     <h1>Media</h1>
                 </div>
                 </div>
-                <hr></hr>
+                <div className={style.line}></div>
             </div>
             <div className={style.news_feed}>
                 <div className={style.feed_rightside}>

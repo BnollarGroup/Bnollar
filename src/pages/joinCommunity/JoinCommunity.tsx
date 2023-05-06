@@ -16,8 +16,43 @@ function JoinCommunity() {
         {"img": Cover, "title": 'Title', "member": 'Member 24'},
         {"img": Cover, "title": 'Title', "member": 'Member 24'},
     ])
+
+    const[openCreateGroup, setopenCreateGroup] = useState(false)
+    let createGroup
+    if(openCreateGroup){
+    createGroup = <div className={style.crategrouppopup}>
+      <div className={style.popup}>
+        <div className={style.popupleft}></div>
+        <div className={style.popupright}>
+          <h1 className={style.creategrouppopup}>Create Group</h1>
+          <h2 className={style.tellusmore}>Tell us more about your group</h2>
+          <div className={style.groupname}>
+            <input className={style.groupnameinput} type="text" placeholder='Group Name' />
+          </div>
+          <div className={style.privecy_category}>
+            <select className={style.privacy_select}>
+              <option value="">Choose Privacy</option>
+            </select>
+            <select className={style.category_select}>
+              <option value="">Choose Category</option>
+            </select>
+          </div>
+          <div className={style.groupdescription}>
+            <textarea className={style.grouptextarea} placeholder='Description'></textarea>
+          </div>
+          <button className={style.popupcreate}>Create</button>
+        </div>
+      </div>
+    </div>
+    }
+
+    function CreateGroupOpen(){
+      setopenCreateGroup(true)
+    }
+
   return (
     <section>
+        {createGroup}
         <Navbar/>
         <div className={style.join_main}>
             <div className='rightnavbar'>
@@ -26,7 +61,7 @@ function JoinCommunity() {
             <div className={style.join_left_side}>
                 <div className={style.join_search}>
                     <input type='text' placeholder='Search Group' />
-                    <button className={style.join_community_button}>Create Group</button>
+                    <button onClick={CreateGroupOpen} className={style.join_community_button}>Create Group</button>
                 </div>
                 <div className={style.nftmenu}>
           <div className={style.nftmenubt}>

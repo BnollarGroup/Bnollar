@@ -1,4 +1,9 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+* {
+    font-family: 'Inter';
+}
+
 .join_main {
     display: flex;
 }
@@ -22,11 +27,16 @@
 }
 
 .join_community_button {
+    background: url('../../resources/images/icons/plus.png');
+    background-repeat: no-repeat;
+    background-position: 24px center;
     background-color: orange;
     width: 200px;
     margin-left: 10px;
     border-radius: 50px;
     margin-right: 20px;
+    color: white;
+    font-weight: bolder;
 }
 
 .join_community_box {
@@ -39,7 +49,7 @@
     position: relative;
     width: 329px;
     height: 356px;
-    background-color: #413f3f;
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 15px;
     margin-left: 20px;
     margin-top: 20px;
@@ -73,6 +83,8 @@
     transform: translateX(-50%);
     width: 90%;
     height: 30px;
+    font-weight: bolder;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /**/
@@ -98,6 +110,7 @@
     background-color: transparent;
     border: 1px solid #32353B;
     color: white;
+    font-weight: bold;
     border-radius: 20px;
 }
 
@@ -116,6 +129,7 @@
     border: 1px solid #32353B;
     color: white;
     border-radius: 20px;
+    font-weight: bold;
 }
 
 .chains img {
@@ -142,6 +156,7 @@
     border: 1px solid #32353B;
     color: white;
     border-radius: 20px;
+    font-weight: bold;
 }
 
 .nftmenubt img{
@@ -168,6 +183,7 @@
     color: white;
     border: 1px solid #32353B;
     border-radius: 20px;
+    font-weight: bold;
 }
 
 .lgbtn img{
@@ -194,5 +210,119 @@
     background-color: transparent;
     border: 1px solid #32353B;
     border-radius: 20px;
+    font-weight: bold;
 }
 /**/
+
+.crategrouppopup {
+    position: fixed;
+    z-index: 11;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    display: flex;
+    width: 924px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.popupleft {
+    background-color: #111315;
+    width: 360px;
+}
+
+.popupright {
+    background-color: #16171A;
+    width: 565px;
+    padding-left: 30px;
+}
+
+.creategrouppopup {
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+.tellusmore {
+    color: grey;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.groupname {
+    margin-top: 40px;
+    width: 500px;
+    height: 52px;
+}
+
+.groupnameinput {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    padding-left: 15px;
+}
+
+.privecy_category {
+    width: 500px;
+    height: 52px;
+    margin-top: 30px;
+}
+
+.privacy_select {
+    width: 48%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+.category_select{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+
+.groupdescription {
+    width: 500px;
+    margin-top: 30px;
+}
+
+.grouptextarea {
+    width: 100%;
+    height: 95px;
+    resize: none;
+    background-color: transparent;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.grouptextarea::placeholder {
+    color: white;
+}
+
+.popupcreate {
+    margin-top: 20px;
+    width: 500px;
+    height: 40px;
+    background-color: #EF8031;
+    color: white;
+    font-weight: bolder;
+}

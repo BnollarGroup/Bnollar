@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import classes from "./UploadNft.module.css";
 import addIcon from "../../resources/images/icons/addicon.png"
 import Fruit from '../../resources/images/icons/watermelon.png'
+import UploadImgMiddleLogo from '../../resources/images/icons/uploadimgmiddlelogo.png'
 
 function UploadNft() {
   const[browseNft, setopenBrowsenft] = useState(false)
@@ -17,7 +18,8 @@ function UploadNft() {
           <h3 className={classes.browsetext}>browse</h3>
         </div>
         <div className={classes.nftimage}>
-          <img src={addIcon} />
+          <img  className={classes.addicon} src={addIcon} />
+          <img className={classes.uploadmiddlelogo} src={UploadImgMiddleLogo} />
         </div>
       </div>
       <div className={classes.nftdescription}>
@@ -71,7 +73,6 @@ function UploadNft() {
             <button className={classes.uploadopenbutton} onClick={browseOpen}>Upload File</button>
             <h1 className={classes.uploadopentext}>PNG, GIF, WEBP, MP4 or MP3. Max 100mb.</h1>
             </div>
-            {/* <button className={classes.openBtn} onClick={browseOpen}>Upload File</button> */}
           </div>
           <div className={classes.description}>
             <h1>Description</h1>
@@ -99,7 +100,12 @@ function UploadNft() {
           </div>
           <div className={classes.price}>
               <h1>Price</h1>
+              <div className={classes.priceinpselect}>
               <input className={classes.priceInput} type="text" placeholder="2.5" />
+              <select>
+                <option>ETH</option>
+              </select>
+              </div>
             </div>
             <div className={classes.fee_recieve}>
               <div className={classes.fee_percent}>

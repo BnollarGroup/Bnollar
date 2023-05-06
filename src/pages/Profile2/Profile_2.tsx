@@ -49,9 +49,12 @@ function Profile_2() {
             technology and building decentralized applications.</p>
         </div>
         <div className={style.menu}>
-          <div className={style.img_name}>
-          <img src={Feed} alt="" />
-          <h1>Feed</h1>
+          <div className={style.img_namefirst}>
+            <div className={style.img_namefirstbox}>
+            <img src={Feed} alt="" />
+            <h1>Feed</h1>
+            </div>
+            <div className={style.menuline}></div>
           </div>
           <div className={style.img_name}>
           <img src={Members} alt="" />

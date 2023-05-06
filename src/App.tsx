@@ -26,10 +26,10 @@ const App = () => {
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
         <Route path="/nft-collection" element={<NftCollection/>} />
-        <Route path="/nft-collection2" element={<NftCollectionsecond/>} />
+        <Route path="/nft-collectionprice" element={<NftCollectionsecond/>} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/joincommunity" element={<JoinCommunity/>} />
-        <Route path="/profile2" element={<Profile_2/>} />
+        <Route path="/grouppage" element={<Profile_2/>} />
       </Routes>
     </div>
   );
