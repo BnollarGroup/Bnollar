@@ -11,16 +11,17 @@
 .createnftwidth {
   width: 60%;
   margin: auto;
+  display: flex;
 }
 
 .leftSide {
   width: 60%;
-  float: left;
+  /* float: left; */
   padding-left: 50px;
 }
 
 .rightSide {
-  float: right;
+  /* float: right; */
   width: 40%;
 }
 
