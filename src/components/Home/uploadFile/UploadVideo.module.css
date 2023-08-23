@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 48px 24px 16px 24px;
+}
+
+section {
+  width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 48px 24px 16px 24px;
+}
+
+.feedHeader {
+  padding: 16px;
+  gap: 14px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.headerSearch {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  gap: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.headerSearch input {
+  background: none;
+  border: none;
+  font-family: "Inter";
+  font-size: 15px;
+  outline: none;
+  color: white;
+}
+.headerSearch input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.headerButtons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(217, 217, 217, 0.04);
+  padding-top: 22px;
+}
+
+.leftButtons {
+  display: flex;
+  gap: 13px;
+}
+.leftButtons button {
+  background-color: transparent;
+}
+
+.rightButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rightButtons > :first-child {
+  padding: 6px 12px;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rightButtons button {
+  background: none;
+  font-family: "Inter";
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 28px;
+}
+
+.postButton {
+  padding: 8px 36px;
+  background: #ef8031 !important;
+}
+
+.uploaded {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.video_img {
+  margin-left: 48px;
+  position: relative;
+}
+
+.video_img img {
+  width: 100%;
+}
+
+.edit_btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 28px;
+  padding: 8px 24px;
+  color: #000;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.cancel_btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.play_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play_box {
+  position: relative;
+}
+
+.play_circle {
+  background-color: grey;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  opacity: 65%;
+}
+
+.play_img {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
