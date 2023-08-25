@@ -17,15 +17,14 @@ import arrow from "../../resources/images/profile-chat/arrow.png";
 import attachment from "../../resources/images/profile-chat/attachment.svg";
 import statsReport from "../../resources/images/profile-chat/stats-report.svg";
 import emoji from "../../resources/images/profile-chat/emoji.svg";
-import editNickname from "../../resources/images/profile-chat/edit-nickname.svg";
-import dropdownSearch from "../../resources/images/profile-chat/search-dropdown.svg";
-import unmute from "../../resources/images/profile-chat/unmute.svg";
-import deleteIcon from "../../resources/images/profile-chat/delete.svg";
 import videoPlayButtonIcon from "../../resources/images/profile-chat/play-outline.svg";
 import videoPlayButtonIconOrange from "../../resources/images/profile-chat/play-outline-orange.svg";
+import DropDownMenu from "../../components/ProfileChat/DropDownMenu/DropDownMenu";
+import ChatSearch from "../../components/ProfileChat/ChatSearch/ChatSearch";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
+  const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false);
 
   const chatMessages = [
     {
@@ -122,59 +121,44 @@ function ProfileChat() {
         <div className={styles.chatWindow}>
           <div className={styles.chatWindowNav}>
             <div className={styles.chatWindowContainer}>
-              <img src={avatar1} alt="user avatar" />
-              <div className={styles.usernameInfo}>
-                <span className={styles.username}>Owen Padberg</span>
-                <span className={styles.usernameActiveTime}>
-                  Active 15 min ago
-                </span>
-              </div>
-            </div>
-            <div className={styles.chatWindowButtons}>
-              <button className={styles.actionButton}>
-                <img src={phone} alt="call icon" />
-              </button>
-
-              <Link
-                className={styles.actionButton}
-                to="/profile-chat/videocall"
-              >
-                <img src={videoCall} alt="video call icon" />
-              </Link>
-              <button
-                onClick={() => setDropdownMenu(!dropdownMenu)}
-                className={styles.actionButton}
-              >
-                <span className={styles.actionButtonInner}>...</span>
-              </button>
-            </div>
-            {dropdownMenu ? (
-              <div className={styles.dropdownMenu}>
-                <div className={styles.dropdownContainer}>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={editNickname} alt="edit nickname icon" />
-                    <span className={styles.categoryName}>Edit nicknames</span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={dropdownSearch} alt="search icon" />
-                    <span className={styles.categoryName}>
-                      Search in conversation
-                    </span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={unmute} alt="unmute icon" />
-                    <span className={styles.categoryName}>
-                      Mute notifications
-                    </span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={deleteIcon} alt="delete icon" />
-                    <span className={styles.categoryName}>Delete chat</span>
-                  </div>
-                  <button className={styles.dropdownMenuButton}>Block</button>
-                  <button className={styles.dropdownMenuButton}>Report</button>
+              <div className={styles.chatWindowUserInfo}>
+                <img src={avatar1} alt="user avatar" />
+                <div className={styles.usernameInfo}>
+                  <span className={styles.username}>Owen Padberg</span>
+                  <span className={styles.usernameActiveTime}>
+                    Active 15 min ago
+                  </span>
                 </div>
               </div>
+              <div className={styles.chatWindowButtons}>
+                <button className={styles.actionButton}>
+                  <img src={phone} alt="call icon" />
+                </button>
+                <Link
+                  className={styles.actionButton}
+                  to="/profile-chat/videocall"
+                >
+                  <img src={videoCall} alt="video call icon" />
+                </Link>
+                <button
+                  onClick={() => {
+                    setDropdownMenu(!dropdownMenu);
+                    setSearchIsOpen(false);
+                  }}
+                  className={styles.actionButton}
+                >
+                  <span className={styles.actionButtonInner}>...</span>
+                </button>
+              </div>
+              {dropdownMenu ? (
+                <DropDownMenu
+                  setDropdownMenu={setDropdownMenu}
+                  setSearchIsOpen={setSearchIsOpen}
+                />
+              ) : null}
+            </div>
+            {searchIsOpen ? (
+              <ChatSearch setSearchIsOpen={setSearchIsOpen} />
             ) : null}
           </div>
           <div className={styles.chatMessagesContainer}>
