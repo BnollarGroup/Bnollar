@@ -1,6 +1,7 @@
-import { useState } from "react";
 import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
 import styles from "./ProfileChat.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import edit from "../../resources/images/profile-chat/edit.svg";
 import searchLogo from "../../resources/images/profile-chat/search-logo.svg";
 import dotIcon from "../../resources/images/profile-chat/dot.png";
@@ -20,7 +21,8 @@ import editNickname from "../../resources/images/profile-chat/edit-nickname.svg"
 import dropdownSearch from "../../resources/images/profile-chat/search-dropdown.svg";
 import unmute from "../../resources/images/profile-chat/unmute.svg";
 import deleteIcon from "../../resources/images/profile-chat/delete.svg";
-import { Link } from "react-router-dom";
+import videoPlayButtonIcon from "../../resources/images/profile-chat/play-outline.svg";
+import videoPlayButtonIconOrange from "../../resources/images/profile-chat/play-outline-orange.svg";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -175,43 +177,94 @@ function ProfileChat() {
               </div>
             ) : null}
           </div>
-          <div className={styles.chatMessages}>
-            <div className={styles.currentUser}>
-              <img
-                className={styles.currentUserAvatar}
-                src={chatAvatar}
-                alt="current user avatar"
-              />
-              <p className={styles.currentUserMessage}>
-                Hey Olivia, Katherine sent me over the latest doc. I just have a
-                quick question about the job
+          <div className={styles.chatMessagesContainer}>
+            <div className={styles.chatMessages}>
+              <div className={styles.currentUser}>
+                <img
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <p className={styles.currentUserMessage}>
+                  Hey Olivia, Katherine sent me over the latest doc. I just have
+                  a quick question about the job
+                </p>
+              </div>
+              <p className={styles.answeredMessage}>
+                Hey, Yeah Let me know what’s yur question.
               </p>
-            </div>
-            <p className={styles.answeredMessage}>
-              Hey, Yeah Let me know what’s yur question.
-            </p>
-          </div>
-          <div className={styles.sendMessage}>
-            <div className={styles.sendMessageContainer}>
-              <textarea
-                className={styles.messageInput}
-                placeholder="Message..."
-              />
-              <div className={styles.inputButtons}>
-                <button className={styles.inputButton}>
-                  <img src={attachment} alt="attachment logo" />
-                </button>
-                <button className={styles.inputButton}>
-                  <img src={statsReport} alt="stats report logo" />
-                </button>
-                <button className={styles.inputButton}>
-                  <img src={emoji} alt="emojis logo" />
-                </button>
+              <div className={styles.currentUser}>
+                <img
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <div className={styles.currentUserAttachment}>
+                  <div className={styles.currentUserVideo}>
+                    <button className={styles.currentUserVideoPlayButton}>
+                      <img
+                        src={videoPlayButtonIcon}
+                        alt="video player play button"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.currentUser}>
+                <img
+                  style={{ alignSelf: "center" }}
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <div className={styles.currentUserAttachment}>
+                  <div className={styles.currentUserVoiceMessage}>
+                    <button className={styles.currentUserVoiceMessageButton}>
+                      <img
+                        src={videoPlayButtonIcon}
+                        alt="video player play button"
+                      />
+                    </button>
+                    <div className={styles.currentUserVoiceMessageTime}>
+                      0:52
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.answeredAttachment}>
+                <div className={styles.answeredVoiceMessage}>
+                  <button className={styles.answeredVoiceMessageButton}>
+                    <img
+                      src={videoPlayButtonIconOrange}
+                      alt="video player play button"
+                    />
+                  </button>
+                  <div className={styles.answeredVoiceMessageTime}>0:52</div>
+                </div>
               </div>
             </div>
-            <button className={styles.sendMessageButton}>
-              <img src={arrow} alt="arrow" />
-            </button>
+            <div className={styles.sendMessage}>
+              <div className={styles.sendMessageContainer}>
+                <textarea
+                  className={styles.messageInput}
+                  placeholder="Message..."
+                />
+                <div className={styles.inputButtons}>
+                  <button className={styles.inputButton}>
+                    <img src={attachment} alt="attachment logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={statsReport} alt="stats report logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={emoji} alt="emojis logo" />
+                  </button>
+                </div>
+              </div>
+              <button className={styles.sendMessageButton}>
+                <img src={arrow} alt="arrow" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
