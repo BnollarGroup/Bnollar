@@ -21,10 +21,13 @@ import videoPlayButtonIcon from "../../resources/images/profile-chat/play-outlin
 import videoPlayButtonIconOrange from "../../resources/images/profile-chat/play-outline-orange.svg";
 import DropDownMenu from "../../components/ProfileChat/DropDownMenu/DropDownMenu";
 import ChatSearch from "../../components/ProfileChat/ChatSearch/ChatSearch";
+import Mute from "../../components/ProfileChat/Mute/Mute";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
   const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false);
+  const [muteIsOpen, setMuteIsOpen] = useState<boolean>(false);
+  const [muteOption, setMuteOption] = useState<string>("");
 
   const chatMessages = [
     {
@@ -152,8 +155,10 @@ function ProfileChat() {
               </div>
               {dropdownMenu ? (
                 <DropDownMenu
+                  dropdownMenu={dropdownMenu}
                   setDropdownMenu={setDropdownMenu}
                   setSearchIsOpen={setSearchIsOpen}
+                  setMuteIsOpen={setMuteIsOpen}
                 />
               ) : null}
             </div>
@@ -252,6 +257,9 @@ function ProfileChat() {
           </div>
         </div>
       </div>
+      {muteIsOpen ? (
+        <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
+      ) : null}
     </div>
   );
 }

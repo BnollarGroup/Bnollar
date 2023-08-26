@@ -6,11 +6,15 @@ import deleteIcon from "../../../resources/images/profile-chat/delete.svg";
 
 interface DropDownMenuProps {
   setSearchIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  dropdownMenu: boolean;
   setDropdownMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  setMuteIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function DropDownMenu(props: DropDownMenuProps) {
-  const { setSearchIsOpen, setDropdownMenu } = props;
+  const { setSearchIsOpen, setDropdownMenu, dropdownMenu, setMuteIsOpen } =
+    props;
+
   return (
     <div className={styles.dropdownMenu}>
       <div className={styles.dropdownContainer}>
@@ -28,7 +32,13 @@ function DropDownMenu(props: DropDownMenuProps) {
           <img src={dropdownSearch} alt="search icon" />
           <span className={styles.categoryName}>Search in conversation</span>
         </button>
-        <button className={styles.dropdownMenuCategory}>
+        <button
+          onClick={() => {
+            setMuteIsOpen(true);
+            setDropdownMenu(false);
+          }}
+          className={styles.dropdownMenuCategory}
+        >
           <img src={unmute} alt="unmute icon" />
           <span className={styles.categoryName}>Mute notifications</span>
         </button>
