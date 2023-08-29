@@ -9,11 +9,17 @@ interface DropDownMenuProps {
   dropdownMenu: boolean;
   setDropdownMenu: React.Dispatch<React.SetStateAction<boolean>>;
   setMuteIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setBlockIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function DropDownMenu(props: DropDownMenuProps) {
-  const { setSearchIsOpen, setDropdownMenu, dropdownMenu, setMuteIsOpen } =
-    props;
+  const {
+    setSearchIsOpen,
+    setDropdownMenu,
+    dropdownMenu,
+    setMuteIsOpen,
+    setBlockIsOpen,
+  } = props;
 
   return (
     <div className={styles.dropdownMenu}>
@@ -46,7 +52,15 @@ function DropDownMenu(props: DropDownMenuProps) {
           <img src={deleteIcon} alt="delete icon" />
           <span className={styles.categoryName}>Delete chat</span>
         </button>
-        <button className={styles.dropdownMenuButton}>Block</button>
+        <button
+          onClick={() => {
+            setBlockIsOpen(true);
+            setDropdownMenu(false);
+          }}
+          className={styles.dropdownMenuButton}
+        >
+          Block
+        </button>
         <button className={styles.dropdownMenuButton}>Report</button>
       </div>
     </div>
