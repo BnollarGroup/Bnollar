@@ -23,6 +23,7 @@ import DropDownMenu from "../../components/ProfileChat/DropDownMenu/DropDownMenu
 import ChatSearch from "../../components/ProfileChat/ChatSearch/ChatSearch";
 import Mute from "../../components/ProfileChat/Mute/Mute";
 import BlockMenu from "../../components/ProfileChat/BlockMenu/BlockMenu";
+import EditNicknameMenu from "../../components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -30,6 +31,8 @@ function ProfileChat() {
   const [muteIsOpen, setMuteIsOpen] = useState<boolean>(false);
   const [muteOption, setMuteOption] = useState<string>("");
   const [blockIsOpen, setBlockIsOpen] = useState<boolean>(false);
+  const [editMenuIsOpen, setEditMenuIsOpen] = useState<boolean>(false);
+  const [nickname, setNickname] = useState<string>("");
 
   const chatMessages = [
     {
@@ -129,7 +132,9 @@ function ProfileChat() {
               <div className={styles.chatWindowUserInfo}>
                 <img src={avatar1} alt="user avatar" />
                 <div className={styles.usernameInfo}>
-                  <span className={styles.username}>Owen Padberg</span>
+                  <span className={styles.username}>
+                    {nickname.length > 0 ? nickname : "Owen Padberg"}
+                  </span>
                   <span className={styles.usernameActiveTime}>
                     Active 15 min ago
                   </span>
@@ -162,6 +167,7 @@ function ProfileChat() {
                   setSearchIsOpen={setSearchIsOpen}
                   setMuteIsOpen={setMuteIsOpen}
                   setBlockIsOpen={setBlockIsOpen}
+                  setEditMenuIsOpen={setEditMenuIsOpen}
                 />
               ) : null}
             </div>
@@ -264,6 +270,13 @@ function ProfileChat() {
         <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
       ) : null}
       {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
+      {editMenuIsOpen ? (
+        <EditNicknameMenu
+          setEditMenuIsOpen={setEditMenuIsOpen}
+          nickname={nickname}
+          setNickname={setNickname}
+        />
+      ) : null}
     </div>
   );
 }

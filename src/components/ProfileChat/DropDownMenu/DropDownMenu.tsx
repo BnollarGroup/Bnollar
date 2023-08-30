@@ -10,6 +10,7 @@ interface DropDownMenuProps {
   setDropdownMenu: React.Dispatch<React.SetStateAction<boolean>>;
   setMuteIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setBlockIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setEditMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function DropDownMenu(props: DropDownMenuProps) {
@@ -19,12 +20,19 @@ function DropDownMenu(props: DropDownMenuProps) {
     dropdownMenu,
     setMuteIsOpen,
     setBlockIsOpen,
+    setEditMenuIsOpen,
   } = props;
 
   return (
     <div className={styles.dropdownMenu}>
       <div className={styles.dropdownContainer}>
-        <button className={styles.dropdownMenuCategory}>
+        <button
+          onClick={() => {
+            setEditMenuIsOpen(true);
+            setDropdownMenu(false);
+          }}
+          className={styles.dropdownMenuCategory}
+        >
           <img src={editNickname} alt="edit nickname icon" />
           <span className={styles.categoryName}>Edit nicknames</span>
         </button>

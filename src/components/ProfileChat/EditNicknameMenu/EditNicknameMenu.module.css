@@ -10,14 +10,14 @@
     align-items: center;
 }
 
-.blockPopup {
+.editPopup {
     width: 548px;
-    height: 415px;
+    height: 193px;
     border-radius: 16px;
     background: rgba(23, 24, 27, 1)
 }
 
-.blockHead {
+.editHead {
     width: 548px;
     padding: 24px;
     display: flex;
@@ -25,7 +25,7 @@
     justify-content: space-between;
 }
 
-.blockTitle {
+.title {
     font-family: 'Inter';
     font-size: 18px;
     font-weight: 700;
@@ -33,7 +33,7 @@
     color: #FFFFFF;
 }
 
-.blockCloseButton {
+.closeButton {
     width: 24px;
     height: 24px;
     background: inherit;
@@ -43,37 +43,35 @@
     align-items: center;
 }
 
-.blockCloseButtonIcon {
+.closeButtonIcon {
     width: 14.83px;
     height: 14.83px;
 }
 
-.options {
+.editContainer {
     display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+    justify-content: space-between;
+    align-items: center;
     padding: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-
 }
 
-.option {
+.infoContainer {
     display: flex;
     column-gap: 16px;
 }
 
-.circle {
-    align-self: baseline;
+.editUserAvatar {
+    width: 44px;
+    height: 44px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    row-gap: 10px;
 }
 
-.title {
+.name {
     font-family: 'Inter';
     font-size: 15px;
     font-weight: 500;
@@ -81,29 +79,46 @@
     color: #FFFFFF;
 }
 
-.text {
+.setNickname {
     font-family: 'Inter';
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 13px;
+    line-height: 22px;
     color: rgba(255, 255, 255, 0.6);
 }
 
-.arrow {
-    width: 20px;
-    height: 192px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: inherit;
-    border: none;
+.editButton {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+
+
 }
 
-.arrowSmall {
-    width: 20px;
-    height: 82px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.setNicknameInput {
+    width: 384px;
+    height: 44px;
+    border-radius: 10px;
+    padding: 11px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: inherit;
-    border: none;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #ffffff
+}
+
+.setNicknameInput::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.confirmButton {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 20px;
+    background: #EF8031;
+
 }
