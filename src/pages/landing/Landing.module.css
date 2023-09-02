@@ -1,13 +1,18 @@
 .wrapper {
   width: 100%;
+
   height: 100vh;
   background-color: black;
+
+  background-color: #0d0e11;
+
   overflow: hidden;
 }
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   height: 120px;
   padding-left: 120px;
   padding-right: 120px;
@@ -34,6 +39,24 @@
   line-height: 20px;
   color: #ffffff;
 }
+
+  padding: 20px 120px 60px 120px;
+}
+.getStarted {
+  padding: 10px 24px;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 40px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  max-width: max-content;
+  width: 100%;
+}
+
+
 .welcomeWrapper {
   display: flex;
   width: 100%;
@@ -51,7 +74,11 @@
   color: white;
 }
 .welcomeHeader {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -59,7 +86,11 @@
   color: #ffffff;
 }
 .welcomeText {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -68,6 +99,7 @@
   color: rgba(255, 255, 255, 0.4);
 }
 .welcomeGetStarted {
+
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -81,6 +113,18 @@
 }
 .welcomeGetStarted button {
   font-family: "Inter";
+
+  padding: 12px 24px;
+  gap: 10px;
+  height: 44px;
+  width: 100%;
+  background: #ef8031;
+  border-radius: 40px;
+  color: white !important;
+}
+.welcomeGetStarted button {
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -94,6 +138,7 @@
 .footerWrapper {
   margin-top: 110px;
   display: flex;
+
   position: relative;
   justify-content: center;
 }
@@ -162,5 +207,58 @@
   width: 120px;
   height: 120px;
   right: 120px;
+
+  justify-content: center;
+}
+.left {
+  flex: 1;
+  position: relative;
+}
+.right {
+  flex: 1;
+  position: relative;
+}
+.center {
+  flex: 1;
+  display: flex;
+  z-index: 1000;
+  position: relative;
+  padding: 6px 6px 0 6px;
+  background: rgb(13, 14, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(13, 14, 17, 1) 0%,
+    rgba(30, 30, 30, 1) 50%
+  );
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.landingIcon {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+}
+.left > :first-child {
+  right: 161px;
+  top: 71px;
+}
+.left > :nth-child(2) {
+  right: -15px;
+  top: 246px;
+}
+.left > :nth-child(3) {
+  right: 221px;
+  top: 353px;
+}
+.right > :first-child {
+  left: -65px;
+  top: 71px;
+}
+.right > :nth-child(2) {
+  left: 180px;
+  top: 106px;
+}
+.right > :nth-child(3) {
+  left: 80px;
   top: 338px;
 }

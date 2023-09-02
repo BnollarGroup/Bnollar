@@ -8,6 +8,9 @@
 .right_image {
   flex: 0.43;
 }
+
+
+
 .right_image img {
   width: 100%;
   height: 100vh;
@@ -21,12 +24,19 @@
   align-items: center;
   flex: 0.57;
 }
+
 .register_wrapper {
   width: 360px;
   margin: 0 20px;
 }
+
 .title {
   font-family: "Inter";
+
+
+.title {
+  font-family: 'Inter';
+
   font-style: medium;
   font-size: 20px;
   line-height: 30px;
@@ -34,7 +44,11 @@
   color: #fff;
 }
 .text {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: medium;
   font-size: 15px;
   line-height: 22px;
@@ -42,6 +56,7 @@
   color: rgba(255, 255, 255, 0.4);
   margin-top: 16px;
 }
+
 .addImg_wrapper {
   margin: 34px 0px;
   width: 100%;
@@ -125,6 +140,7 @@
   color: white;
   margin-top: 20px;
 }
+
 .categories {
   width: 418px;
 }
@@ -144,7 +160,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   margin: 0px 8px 8px 0px;
+
   font-family: "Inter";
+
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -158,7 +177,10 @@
   padding: 10px 16px;
   gap: 4px;
   margin: 0px 8px 8px 0px;
+
   font-family: "Inter";
+
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -184,7 +206,11 @@
   border-radius: 40px;
 }
 .continue button {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -230,6 +256,7 @@
 }
 .finish button {
   font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 13px;

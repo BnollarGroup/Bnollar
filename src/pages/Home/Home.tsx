@@ -1,3 +1,4 @@
+
 import React,{FC,useState,useEffect} from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Feed from "./Feed/Feed";
@@ -17,3 +18,18 @@ const Home :FC= ()=>{
     )
 }
 export default Home
+
+import { FC } from 'react'
+import Feed from '../../components/Home/Feed/Feed'
+import RightSidebar from '../../components/Home/RightSidebar/RightSidebar'
+import WithNavigation from '../../HOCs/WithNavigation/WithNavigation'
+const Home: FC = () => {
+  return (
+    <>
+      <Feed />
+      <RightSidebar />
+    </>
+  )
+}
+export default WithNavigation(Home)
+

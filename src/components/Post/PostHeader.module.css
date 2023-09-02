@@ -4,7 +4,11 @@
   flex-wrap: wrap;
 }
 .userIcon {
+
     cursor: pointer;
+
+  cursor: pointer;
+
 }
 .descriptionWrapper {
   display: flex;
@@ -13,7 +17,11 @@
   margin-left: 14px;
 }
 .description {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -30,12 +38,44 @@
 .buttons {
   display: flex;
   justify-content: space-between;
+
   position: relative;
   margin: 20px 0px;
 }
 
 .name {
   font-family: "Inter";
+
+  margin: 20px 0px;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 16px 0px;
+  position: relative;
+}
+.buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  border: none;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 30%;
+  cursor: pointer;
+}
+
+.name {
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
@@ -48,7 +88,11 @@
   margin: 0px 8px 0px 4px;
 }
 .date {
+
   font-family: "Inter";
+
+  font-family: 'Inter';
+
   font-style: normal;
   font-weight: 500;
   font-size: 13px;

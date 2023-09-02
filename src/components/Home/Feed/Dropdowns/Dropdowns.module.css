@@ -1,0 +1,22 @@
+.dropdownWrapper {
+  position: absolute;
+  right: 0;
+  top: 37px;
+  width: 213px;
+  background: #17181b;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1),
+    0px 10px 60px -4px rgba(0, 0, 0, 0.4);
+}
+
+.dropdownItem {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 500ms;
+  border-radius: 6px;
+}
+.dropdownItem:hover {
+  background-color: #ffffff0a;
+}

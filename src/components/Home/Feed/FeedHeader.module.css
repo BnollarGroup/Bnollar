@@ -1,0 +1,69 @@
+.feedHeader {
+  padding: 16px;
+  gap: 14px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.headerSearch {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.04);
+  gap: 20px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.headerSearch input {
+  background: none;
+  border: none;
+  font-family: 'Inter';
+  font-size: 15px;
+  outline: none;
+  color: white;
+}
+.headerSearch input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.headerButtons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftButtons {
+  display: flex;
+  gap: 13px;
+}
+
+.leftButtons button {
+  background-color: transparent;
+}
+
+.rightButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rightButtons > :first-child {
+  padding: 6px 12px;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.rightButtons button {
+  background: none;
+  font-family: 'Inter';
+  font-size: 13px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 28px;
+}
+.postButton {
+  padding: 8px 36px;
+  background: #ef8031 !important;
+}
