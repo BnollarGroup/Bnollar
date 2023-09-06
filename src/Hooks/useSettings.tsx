@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import ManageWallets from '../components/Settings/ManageWallets/ManageWallets'
 import Notifications from '../components/Settings/Notifications/Notifications'
 import Profile from '../components/Settings/Profile/Profile'
+import NotificationControls from '../components/Settings/Security/NotificationControls'
 import Security from '../components/Settings/Security/Security'
 
 const useSettings = () => {
@@ -16,6 +17,10 @@ const useSettings = () => {
         return <Notifications />
       case 'privacy&security':
         return <Security />
+      case 'privacy&security_messages':
+        return <NotificationControls type="Message" />
+      case 'privacy&security_comments':
+        return <NotificationControls type="Comment" />
     }
   }
   return {
