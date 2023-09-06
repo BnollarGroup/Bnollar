@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+* {
+    color: #FFFFFF;
+    font-family: 'Inter';
+}
+
+.nftcollection2_main {
+    display: flex;
+}
+
+.rightside {
+    width: 323px;
+    height: 290px;
+    padding-left: 20px;
+}
+
+.leftside {
+    margin-left: 60px;
+    width: calc(100% - 423px)
+}
+
+.description {
+    display: flex;
+}
+
+.description h2 {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.description h1 {
+    font-size: 24px;
+}
+
+.searchinput input {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border-radius: 40px;
+    border: none;
+    padding-left: 30px;
+    background: url('../../resources/images/icons/search.png');
+    background-color: rgba(255, 255, 255, 0.137);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.nfts {
+    margin-top: 30px;
+}
+
+.nfts_sections {
+    width: 100%;
+    padding: 10px 0 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nfts_sections h1 {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.nfts_cols_loop {
+    margin-top: 30px;
+}
+
+.nft_element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nft_img_name {
+    display: flex;
+    align-items: center;
+    width: 55px;
+}
+
+.nft_img_name h1 {
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    background-color: #16181C;
+}
+
+.nft_element h1 {
+    font-size: 15px;
+}
+
+.nft_postition {
+    margin-top: 20px;
+}
+
+.nftmenu {
+    width: 95%;
+    height: 35px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.chains {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.chains button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    background-image: url('../../resources/images/icons/circle.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.chains img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenubt{
+    width: 85px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.nftmenubt button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.nftmenubt img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.lgbtn{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.lgbtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.lgbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenuposition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smbtn{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.smbtn button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.smbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.volume_percent h2 {
+    color: #CDF67F;
+    font-size: 12px;
+}

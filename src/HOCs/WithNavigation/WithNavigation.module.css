@@ -1,8 +1,9 @@
 .homeWrapper {
-  width: 100%;
   min-height: 100vh;
 }
 
 .main {
+  width: 100%;
   display: flex;
+  padding-right: 32px;
 }

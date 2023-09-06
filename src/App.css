@@ -1,4 +1,8 @@
 body {
+
+    height: 100%;
+    background-color: black;
+
   height: 100%;
   background-color: #0D0E11;
 }
@@ -11,4 +15,5 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+
 }

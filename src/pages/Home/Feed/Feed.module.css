@@ -1,0 +1,23 @@
+.feedWrapper {
+  display: flex;
+  flex: 0.472;
+  background-color: black;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.feedWrapper::-webkit-scrollbar {
+  width: 0.2em;
+  background-color: #f5f5f5;
+  display: none;
+}
+
+.feedWrapper::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  display: none;
+}
+
+.feedWrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+  display: none;
+}

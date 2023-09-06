@@ -9,6 +9,8 @@
   flex: 0.43;
 }
 
+
+
 .right_image img {
   width: 100%;
   height: 100vh;
@@ -29,7 +31,12 @@
 }
 
 .title {
+  font-family: "Inter";
+
+
+.title {
   font-family: 'Inter';
+
   font-style: medium;
   font-size: 20px;
   line-height: 30px;
@@ -37,13 +44,101 @@
   color: #fff;
 }
 .text {
+
+  font-family: "Inter";
+
   font-family: 'Inter';
+
   font-style: medium;
   font-size: 15px;
   line-height: 22px;
   text-align: left;
   color: rgba(255, 255, 255, 0.4);
   margin-top: 16px;
+}
+
+.addImg_wrapper {
+  margin: 34px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.addImg {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0;
+  border-radius: 50%;
+  position: relative;
+}
+.addImg > :first-child {
+  position: absolute;
+  left: 8.33%;
+  right: 8.34%;
+  top: 8.33%;
+  bottom: 8.33%;
+  margin: auto;
+  opacity: 0.4;
+}
+.addImg > :nth-child(2) {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 72px;
+  top: 72px;
+}
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.input_wrapper input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 10px;
+  width: 366px;
+  height: 52px;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin: 10px 0;
+  color: white;
+
+}
+.initial {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  width: 366px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  
+}
+.input_wrapper input:focus {
+  outline: none;
+}
+.canCreate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  cursor: pointer;
+  width: 366px;
+  height: 44px;
+  background: #ef8031;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
 }
 
 .categories {
@@ -65,6 +160,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   margin: 0px 8px 8px 0px;
+
+  font-family: "Inter";
+
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -79,6 +177,9 @@
   padding: 10px 16px;
   gap: 4px;
   margin: 0px 8px 8px 0px;
+
+  font-family: "Inter";
+
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -105,7 +206,11 @@
   border-radius: 40px;
 }
 .continue button {
+
+  font-family: "Inter";
+
   font-family: 'Inter';
+
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -150,6 +255,7 @@
   border-radius: 40px;
 }
 .finish button {
+  font-family: "Inter";
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;

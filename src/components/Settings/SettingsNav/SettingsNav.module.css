@@ -1,7 +1,13 @@
 .settingsNavWrapper {
   background: #17181b;
-
+  height: max-content;
   padding: 10px;
   border-radius: 10px;
+  position: fixed;
   width: 323px;
+}
+
+.settingsNavContainer {
+  width: 100%;
+  max-width: 323px;
 }

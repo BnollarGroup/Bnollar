@@ -10,6 +10,7 @@ const UseRegister = () => {
   const [displayName, setDisplayName] = useState('')
   const { categories, toggleSelect } = useCategories()
   const [image, setImage] = useState('')
+  const [coverImage, setCoverImage] = useState('')
 
   const { step } = useParams()
 
@@ -24,6 +25,8 @@ const UseRegister = () => {
             setDisplayName={setDisplayName}
             image={image}
             setImage={setImage}
+            coverImage={coverImage}
+            setCoverImage={setCoverImage}
           />
         )
       case 'category':

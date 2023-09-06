@@ -1,0 +1,330 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+* {
+    font-family: 'Inter';
+}
+
+.join_main {
+    display: flex;
+}
+
+.join_left_side {
+    margin-left: 25px;
+    width: 80%;
+}
+
+.join_search {
+    display: flex;
+    width: 96%;
+}
+
+.join_search  input{
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: #5a5454;
+    padding-left: 20px;
+}
+
+.join_community_button {
+    background: url('../../resources/images/icons/plus.png');
+    background-repeat: no-repeat;
+    background-position: 24px center;
+    background-color: orange;
+    width: 200px;
+    margin-left: 10px;
+    border-radius: 50px;
+    margin-right: 20px;
+    color: white;
+    font-weight: bolder;
+}
+
+.join_community_box {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.join_box {
+    position: relative;
+    width: 329px;
+    height: 356px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.join_picture {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 50%;
+    width: 100%;
+}
+
+.join_picture img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.join_title {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.join_title h1 {
+    font-size: 12px;
+}
+
+.join_box_button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 30px;
+    font-weight: bolder;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/**/
+.nftmenu {
+    width: 95%;
+    height: 35px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.extralargebtn {
+    width: 160px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.extralargebtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.largebtn {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.largebtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.chains img {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.nftmenubt{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.nftmenubt button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.nftmenubt img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.lgbtn{
+    width: 120px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.lgbtn button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #32353B;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.lgbtn img{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+}
+
+.smbtn{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 10px;
+}
+
+.smbtn button{
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: transparent;
+    border: 1px solid #32353B;
+    border-radius: 20px;
+    font-weight: bold;
+}
+/**/
+
+.crategrouppopup {
+    position: fixed;
+    z-index: 11;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    display: flex;
+    width: 924px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.popupleft {
+    background-color: #111315;
+    width: 360px;
+}
+
+.popupright {
+    background-color: #16171A;
+    width: 565px;
+    padding-left: 30px;
+}
+
+.creategrouppopup {
+    margin-top: 40px;
+    font-size: 22px;
+}
+
+.tellusmore {
+    color: grey;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.groupname {
+    margin-top: 40px;
+    width: 500px;
+    height: 52px;
+}
+
+.groupnameinput {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    padding-left: 15px;
+}
+
+.privecy_category {
+    width: 500px;
+    height: 52px;
+    margin-top: 30px;
+}
+
+.privacy_select {
+    width: 48%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+.category_select{
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #4E525A;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+
+.groupdescription {
+    width: 500px;
+    margin-top: 30px;
+}
+
+.grouptextarea {
+    width: 100%;
+    height: 95px;
+    resize: none;
+    background-color: transparent;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.grouptextarea::placeholder {
+    color: white;
+}
+
+.popupcreate {
+    margin-top: 20px;
+    width: 500px;
+    height: 40px;
+    background-color: #EF8031;
+    color: white;
+    font-weight: bolder;
+}
