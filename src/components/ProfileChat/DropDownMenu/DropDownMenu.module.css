@@ -1,0 +1,43 @@
+.dropdownMenu {
+    position: absolute;
+    top: 130px;
+    right: 60px;
+    background: #17181B;
+    color: white;
+}
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 18px;
+}
+
+.dropdownMenuCategory {
+    border: none;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+}
+
+.categoryName {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.dropdownMenuButton {
+    border: none;
+    background: inherit;
+    width: fit-content;
+    padding: 0;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #FFFFFF;
+}

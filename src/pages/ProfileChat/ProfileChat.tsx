@@ -1,6 +1,7 @@
-import { useState } from "react";
 import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
 import styles from "./ProfileChat.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import edit from "../../resources/images/profile-chat/edit.svg";
 import searchLogo from "../../resources/images/profile-chat/search-logo.svg";
 import dotIcon from "../../resources/images/profile-chat/dot.png";
@@ -16,14 +17,22 @@ import arrow from "../../resources/images/profile-chat/arrow.png";
 import attachment from "../../resources/images/profile-chat/attachment.svg";
 import statsReport from "../../resources/images/profile-chat/stats-report.svg";
 import emoji from "../../resources/images/profile-chat/emoji.svg";
-import editNickname from "../../resources/images/profile-chat/edit-nickname.svg";
-import dropdownSearch from "../../resources/images/profile-chat/search-dropdown.svg";
-import unmute from "../../resources/images/profile-chat/unmute.svg";
-import deleteIcon from "../../resources/images/profile-chat/delete.svg";
-import { Link } from "react-router-dom";
+import videoPlayButtonIcon from "../../resources/images/profile-chat/play-outline.svg";
+import videoPlayButtonIconOrange from "../../resources/images/profile-chat/play-outline-orange.svg";
+import DropDownMenu from "../../components/ProfileChat/DropDownMenu/DropDownMenu";
+import ChatSearch from "../../components/ProfileChat/ChatSearch/ChatSearch";
+import Mute from "../../components/ProfileChat/Mute/Mute";
+import BlockMenu from "../../components/ProfileChat/BlockMenu/BlockMenu";
+import EditNicknameMenu from "../../components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
+  const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false);
+  const [muteIsOpen, setMuteIsOpen] = useState<boolean>(false);
+  const [muteOption, setMuteOption] = useState<string>("");
+  const [blockIsOpen, setBlockIsOpen] = useState<boolean>(false);
+  const [editMenuIsOpen, setEditMenuIsOpen] = useState<boolean>(false);
+  const [nickname, setNickname] = useState<string>("");
 
   const chatMessages = [
     {
@@ -120,101 +129,154 @@ function ProfileChat() {
         <div className={styles.chatWindow}>
           <div className={styles.chatWindowNav}>
             <div className={styles.chatWindowContainer}>
-              <img src={avatar1} alt="user avatar" />
-              <div className={styles.usernameInfo}>
-                <span className={styles.username}>Owen Padberg</span>
-                <span className={styles.usernameActiveTime}>
-                  Active 15 min ago
-                </span>
-              </div>
-            </div>
-            <div className={styles.chatWindowButtons}>
-              <button className={styles.actionButton}>
-                <img src={phone} alt="call icon" />
-              </button>
-
-              <Link
-                className={styles.actionButton}
-                to="/profile-chat/videocall"
-              >
-                <img src={videoCall} alt="video call icon" />
-              </Link>
-              <button
-                onClick={() => setDropdownMenu(!dropdownMenu)}
-                className={styles.actionButton}
-              >
-                <span className={styles.actionButtonInner}>...</span>
-              </button>
-            </div>
-            {dropdownMenu ? (
-              <div className={styles.dropdownMenu}>
-                <div className={styles.dropdownContainer}>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={editNickname} alt="edit nickname icon" />
-                    <span className={styles.categoryName}>Edit nicknames</span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={dropdownSearch} alt="search icon" />
-                    <span className={styles.categoryName}>
-                      Search in conversation
-                    </span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={unmute} alt="unmute icon" />
-                    <span className={styles.categoryName}>
-                      Mute notifications
-                    </span>
-                  </div>
-                  <div className={styles.dropdownMenuCategory}>
-                    <img src={deleteIcon} alt="delete icon" />
-                    <span className={styles.categoryName}>Delete chat</span>
-                  </div>
-                  <button className={styles.dropdownMenuButton}>Block</button>
-                  <button className={styles.dropdownMenuButton}>Report</button>
+              <div className={styles.chatWindowUserInfo}>
+                <img src={avatar1} alt="user avatar" />
+                <div className={styles.usernameInfo}>
+                  <span className={styles.username}>
+                    {nickname.length > 0 ? nickname : "Owen Padberg"}
+                  </span>
+                  <span className={styles.usernameActiveTime}>
+                    Active 15 min ago
+                  </span>
                 </div>
               </div>
-            ) : null}
-          </div>
-          <div className={styles.chatMessages}>
-            <div className={styles.currentUser}>
-              <img
-                className={styles.currentUserAvatar}
-                src={chatAvatar}
-                alt="current user avatar"
-              />
-              <p className={styles.currentUserMessage}>
-                Hey Olivia, Katherine sent me over the latest doc. I just have a
-                quick question about the job
-              </p>
-            </div>
-            <p className={styles.answeredMessage}>
-              Hey, Yeah Let me know what’s yur question.
-            </p>
-          </div>
-          <div className={styles.sendMessage}>
-            <div className={styles.sendMessageContainer}>
-              <textarea
-                className={styles.messageInput}
-                placeholder="Message..."
-              />
-              <div className={styles.inputButtons}>
-                <button className={styles.inputButton}>
-                  <img src={attachment} alt="attachment logo" />
+              <div className={styles.chatWindowButtons}>
+                <button className={styles.actionButton}>
+                  <img src={phone} alt="call icon" />
                 </button>
-                <button className={styles.inputButton}>
-                  <img src={statsReport} alt="stats report logo" />
-                </button>
-                <button className={styles.inputButton}>
-                  <img src={emoji} alt="emojis logo" />
+                <Link
+                  className={styles.actionButton}
+                  to="/profile-chat/videocall"
+                >
+                  <img src={videoCall} alt="video call icon" />
+                </Link>
+                <button
+                  onClick={() => {
+                    setDropdownMenu(!dropdownMenu);
+                    setSearchIsOpen(false);
+                  }}
+                  className={styles.actionButton}
+                >
+                  <span className={styles.actionButtonInner}>...</span>
                 </button>
               </div>
+              {dropdownMenu ? (
+                <DropDownMenu
+                  dropdownMenu={dropdownMenu}
+                  setDropdownMenu={setDropdownMenu}
+                  setSearchIsOpen={setSearchIsOpen}
+                  setMuteIsOpen={setMuteIsOpen}
+                  setBlockIsOpen={setBlockIsOpen}
+                  setEditMenuIsOpen={setEditMenuIsOpen}
+                />
+              ) : null}
             </div>
-            <button className={styles.sendMessageButton}>
-              <img src={arrow} alt="arrow" />
-            </button>
+            {searchIsOpen ? (
+              <ChatSearch setSearchIsOpen={setSearchIsOpen} />
+            ) : null}
+          </div>
+          <div className={styles.chatMessagesContainer}>
+            <div className={styles.chatMessages}>
+              <div className={styles.currentUser}>
+                <img
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <p className={styles.currentUserMessage}>
+                  Hey Olivia, Katherine sent me over the latest doc. I just have
+                  a quick question about the job
+                </p>
+              </div>
+              <p className={styles.answeredMessage}>
+                Hey, Yeah Let me know what’s yur question.
+              </p>
+              <div className={styles.currentUser}>
+                <img
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <div className={styles.currentUserAttachment}>
+                  <div className={styles.currentUserVideo}>
+                    <button className={styles.currentUserVideoPlayButton}>
+                      <img
+                        src={videoPlayButtonIcon}
+                        alt="video player play button"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.currentUser}>
+                <img
+                  style={{ alignSelf: "center" }}
+                  className={styles.currentUserAvatar}
+                  src={chatAvatar}
+                  alt="current user avatar"
+                />
+                <div className={styles.currentUserAttachment}>
+                  <div className={styles.currentUserVoiceMessage}>
+                    <button className={styles.currentUserVoiceMessageButton}>
+                      <img
+                        src={videoPlayButtonIcon}
+                        alt="video player play button"
+                      />
+                    </button>
+                    <div className={styles.currentUserVoiceMessageTime}>
+                      0:52
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.answeredAttachment}>
+                <div className={styles.answeredVoiceMessage}>
+                  <button className={styles.answeredVoiceMessageButton}>
+                    <img
+                      src={videoPlayButtonIconOrange}
+                      alt="video player play button"
+                    />
+                  </button>
+                  <div className={styles.answeredVoiceMessageTime}>0:52</div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.sendMessage}>
+              <div className={styles.sendMessageContainer}>
+                <textarea
+                  className={styles.messageInput}
+                  placeholder="Message..."
+                />
+                <div className={styles.inputButtons}>
+                  <button className={styles.inputButton}>
+                    <img src={attachment} alt="attachment logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={statsReport} alt="stats report logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={emoji} alt="emojis logo" />
+                  </button>
+                </div>
+              </div>
+              <button className={styles.sendMessageButton}>
+                <img src={arrow} alt="arrow" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      {muteIsOpen ? (
+        <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
+      ) : null}
+      {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
+      {editMenuIsOpen ? (
+        <EditNicknameMenu
+          setEditMenuIsOpen={setEditMenuIsOpen}
+          nickname={nickname}
+          setNickname={setNickname}
+        />
+      ) : null}
     </div>
   );
 }
