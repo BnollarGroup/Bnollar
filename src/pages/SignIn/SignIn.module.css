@@ -85,9 +85,9 @@
   color: #6e6e6e;
 }
 
-@media all and (max-width: 768px) {
+/* @media all and (max-width: 768px) { */
 
-@medsa all and (max-width: 768px) {
+@media all and (max-width: 768px) {
 
   .left_image {
     display: none;
@@ -96,6 +96,7 @@
     justify-content: center;
   }
 }
+
 @media all and (max-width: 407px) {
   .right_sign_in {
     flex: 1;

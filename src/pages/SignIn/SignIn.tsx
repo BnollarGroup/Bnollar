@@ -1,4 +1,3 @@
-
 import React, { FC } from "react";
 import classes from "./SignIn.module.css";
 import Nft_1 from "../../resources/images/SignIn/nft_1.svg";
@@ -6,15 +5,16 @@ import SignInNavbar from "../../components/SignIn/SignInNavbar";
 import coinbase from "../../resources/images/SignIn/wallets/coinbase.svg";
 import walletconnect from "../../resources/images/SignIn/wallets/walletconnect.svg";
 import metamask from "../../resources/images/SignIn/wallets/metamask.svg";
-
-import { FC } from 'react'
-import classes from './SignIn.module.css'
-import Nft_1 from '../../resources/images/SignIn/nft_1.svg'
-// import SignInNavbar from '../../components/SignIn/SignInNavbar'
-import coinbase from '../../resources/images/SignIn/wallets/coinbase.svg'
-import walletconnect from '../../resources/images/SignIn/wallets/walletconnect.svg'
-import metamask from '../../resources/images/SignIn/wallets/metamask.svg'
 import WalletItem from '../../components/WalletItem/WalletItem'
+
+// import { FC } from 'react'
+// import classes from './SignIn.module.css'
+// import Nft_1 from '../../resources/images/SignIn/nft_1.svg'
+// // import SignInNavbar from '../../components/SignIn/SignInNavbar'
+// import coinbase from '../../resources/images/SignIn/wallets/coinbase.svg'
+// import walletconnect from '../../resources/images/SignIn/wallets/walletconnect.svg'
+// import metamask from '../../resources/images/SignIn/wallets/metamask.svg'
+// import WalletItem from '../../components/WalletItem/WalletItem'
 
 
 const SignIn: FC = () => {
@@ -75,14 +75,13 @@ const SignIn: FC = () => {
           </div>
         </div>
       </div>
+      </div>
     </section>
-
   );
 };
 
 export default SignIn;
 
-  )
-}
-export default SignIn
+
+
 
