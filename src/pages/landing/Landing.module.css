@@ -1,13 +1,11 @@
 .wrapper {
   width: 100%;
-
   height: 100vh;
   background-color: black;
-
   background-color: #0d0e11;
-
   overflow: hidden;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -17,6 +15,7 @@
   padding-left: 120px;
   padding-right: 120px;
 }
+
 .getStarted {
   display: flex;
   flex-direction: row;
@@ -40,8 +39,8 @@
   color: #ffffff;
 }
 
-  padding: 20px 120px 60px 120px;
-}
+  /* padding: 20px 120px 60px 120px; */
+
 .getStarted {
   padding: 10px 24px;
   gap: 4px;
@@ -56,12 +55,12 @@
   width: 100%;
 }
 
-
 .welcomeWrapper {
   display: flex;
   width: 100%;
   justify-content: center;
 }
+
 .welcome {
   display: flex;
   flex-direction: column;
@@ -73,24 +72,18 @@
   height: 174px;
   color: white;
 }
+
 .welcomeHeader {
-
-  font-family: "Inter";
-
   font-family: 'Inter';
-
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 30px;
   color: #ffffff;
 }
+
 .welcomeText {
-
-  font-family: "Inter";
-
   font-family: 'Inter';
-
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -98,8 +91,8 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.4);
 }
-.welcomeGetStarted {
 
+.welcomeGetStarted {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -111,9 +104,9 @@
   background: #ef8031;
   border-radius: 40px;
 }
+
 .welcomeGetStarted button {
   font-family: "Inter";
-
   padding: 12px 24px;
   gap: 10px;
   height: 44px;
@@ -122,9 +115,9 @@
   border-radius: 40px;
   color: white !important;
 }
+
 .welcomeGetStarted button {
   font-family: 'Inter';
-
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -135,23 +128,26 @@
   color: #ffffff;
   cursor: pointer;
 }
+
 .footerWrapper {
   margin-top: 110px;
   display: flex;
-
   position: relative;
   justify-content: center;
 }
+
 .left {
   width: 320px;
   position: absolute;
   left: 0;
 }
+
 .right {
   width: 320px;
   position: absolute;
   right: 0;
 }
+
 .center {
   display: flex;
   justify-content: center;
@@ -162,11 +158,13 @@
   right: 320px;
   margin: auto;
 }
+
 /* .center img {
     width: 100%;
     height: auto;
     z-index: 1000;
 } */
+
 .left > :first-child {
   position: absolute;
   width: 120px;
@@ -174,6 +172,7 @@
   left: 39px;
   top: 71px;
 }
+
 .left > :nth-child(2) {
   position: absolute;
   width: 120px;
@@ -181,6 +180,7 @@
   left: 205px;
   top: 246px;
 }
+
 .left > :nth-child(3) {
   position: absolute;
   width: 120px;
@@ -188,6 +188,7 @@
   left: -21px;
   top: 353px;
 }
+
 .right > :first-child {
   position: absolute;
   width: 120px;
@@ -195,6 +196,7 @@
   right: 253px;
   top: 71px;
 }
+
 .right > :nth-child(2) {
   position: absolute;
   width: 120px;
