@@ -1,4 +1,3 @@
-import "./App.css";
 import Landing from "./pages/landing/Landing";
 import SignIn from "./pages/SignIn/SignIn";
 import { Routes, Route } from "react-router-dom";
@@ -16,19 +15,6 @@ import ProfileChat from "./pages/ProfileChat/ProfileChat";
 import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
 import Explore from "./pages/Explore/Explore";
 import Settings from "./pages/Settings/Settings";
-
-// const App = () => {
-//   return (
-//     <div className="App" >
-//       <Routes>
-//         <Route path="/" element={<SignIn />} />
-//         <Route path="/landing" element={<Landing />} />
-//         <Route path="/register" element={<Register />} />
-
-// import Settings from "./pages/Settings/Settings";
-// import ProfileChat from "./pages/ProfileChat/ProfileChat";
-// import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
-// import Explore from "./pages/Explore/Explore";
 
 const App = () => {
   return (
