@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import styles from "./Register.module.css";
 import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
@@ -18,8 +18,8 @@ const CATEGORIES: Category[] = [
   { id: 4, name: "Entertainment", selected: false },
   { id: 5, name: "Fashion & Beauty", selected: false },
   { id: 6, name: "Food", selected: false },
-  { id: 7, name: "Government & politics", selected: false },
-  { id: 8, name: "Health & wealness", selected: false },
+  { id: 7, name: "Government & Politics", selected: false },
+  { id: 8, name: "Health & Wealness", selected: false },
   { id: 9, name: "More", selected: false },
 ];
 
@@ -55,11 +55,39 @@ const Register: FC = () => {
   const [showSelectCategory, setShowSelectCategory] = useState(false);
   const [showAllSet, setShowAllSet] = useState(false);
   const { categories, toggleSelect } = useCategories();
-  const [file, setFile] = useState(null);
+  const [dropText, setDropText] = useState("Drop image here,");
+  const [active, setActive] = useState(false);
+  const [coverImage, setCoverImage] = useState<File | null>(null);
+  const [profileImage, setProfileImage] = useState<File | null>(null);
+  const [coverImageTag, setCoverImageTag] = useState<string | null>(null);
+  const [profileImageTag, setProfileImageTag] = useState<string | null>(null);
+  const inputRefCover = useRef<HTMLInputElement | null>(null);
+  const inputRefProfile = useRef<HTMLInputElement | null>(null);
 
-  const handleChange = (e: any) => {
-    setFile(e.target.files[0]);
+  const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setCoverImage(e.target.files[0]);
+      displayCoverFile();
+      console.log("browsing");
+    }
   };
+
+  const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setProfileImage(e.target.files[0]);
+      displayProfileFile();
+      console.log("browsing");
+    }
+  };
+
+  useEffect(() => {
+    displayCoverFile();
+  }, [coverImage]);
+
+  useEffect(() => {
+    displayProfileFile();
+  }, [profileImage]);
+
   useEffect(() => {
     if (userName.length > 3 && displayName.length > 3) {
       setCanCreate(true);
@@ -77,7 +105,76 @@ const Register: FC = () => {
     setShowSelectCategory(false);
     setShowAllSet(true);
   };
-  
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDropText("Release to Upload,");
+    setActive(!active);
+    console.log("metor");
+  };
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDropText("Drop image here,");
+    setActive(false);
+    console.log("luminu");
+  };
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setActive(false);
+    console.log("iamai");
+    const droppedFile = e.dataTransfer.files[0];
+    if (droppedFile) {
+      setCoverImage(droppedFile);
+      displayCoverFile();
+    }
+  };
+
+  function displayCoverFile() {
+    if (coverImage) {
+      let fileType = coverImage.type;
+      let validExtensions = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/svg",
+      ];
+      if (validExtensions.includes(fileType)) {
+        let fileReader = new FileReader();
+        fileReader.onload = () => {
+          let fileURL = fileReader.result as string;
+          const imgTag = `<img src="${fileURL}" alt="Dropped Image" />`;
+          setCoverImageTag(imgTag);
+        };
+        fileReader.readAsDataURL(coverImage);
+      } else {
+        alert("Cover image format not supported!");
+      }
+    }
+  }
+
+  function displayProfileFile() {
+    if (profileImage) {
+      let fileType = profileImage.type;
+      let validExtensions = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/svg",
+      ];
+      if (validExtensions.includes(fileType)) {
+        let fileReader = new FileReader();
+        fileReader.onload = () => {
+          let fileURL = fileReader.result as string;
+          const imgTag = `<img src="${fileURL}" alt="Dropped Image" />`;
+          setProfileImageTag(imgTag);
+        };
+        fileReader.readAsDataURL(profileImage);
+      } else {
+        alert("Profile image format not supported!");
+      }
+    }
+  }
+
   return (
     <section className={styles.register}>
       <div className={styles.left_register}>
@@ -89,12 +186,69 @@ const Register: FC = () => {
                 Choose your Bnollar username. You can always change it later.
               </p>
               <div className={styles.addImg_wrapper}>
-                <div className={styles.addImg}>
-                  <img src={imgIcon} alt="img icon" />
-                  <label htmlFor="file-input">
-                    <img src={addIcon} alt="Upload File" />
-                  </label>
-                  <input type="file" id="file-input" onChange={handleChange} style={{display:'none'}}/>
+                <div
+                  className={styles.addCoverImg}
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                  style={active ? { border: "1px solid #EF8031" } : {}}
+                >
+                  {coverImageTag ? (
+                    <div
+                      className={styles.actualCoverImg}
+                      dangerouslySetInnerHTML={{ __html: coverImageTag }}
+                    />
+                  ) : (
+                    <div>
+                      <p className={styles.dropCoverImgText}>
+                        {dropText} or{" "}
+                        <span onClick={() => inputRefCover.current?.click()}>
+                          {" "}
+                          browse
+                        </span>
+                      </p>
+                      <input
+                        type="file"
+                        id="cover-input"
+                        hidden
+                        ref={inputRefCover}
+                        onChange={handleCoverChange}
+                      />
+                    </div>
+                  )}
+                </div>
+
+                <div
+                  className={styles.addImg}
+                  style={profileImageTag ? { overflow: "hidden" } : undefined}
+                >
+                  {profileImageTag ? (
+                    <div
+                      className={styles.actualProfileImg}
+                      dangerouslySetInnerHTML={{ __html: profileImageTag }}
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={imgIcon}
+                        className={styles.imgIcon}
+                        alt="img icon"
+                      />
+                      <img
+                        src={addIcon}
+                        className={styles.uploadIcon}
+                        alt="Upload File"
+                        onClick={() => inputRefProfile.current?.click()}
+                      />
+                      <input
+                        type="file"
+                        id="profile-input"
+                        hidden
+                        onChange={handleProfileChange}
+                        ref={inputRefProfile}
+                      />
+                    </>
+                  )}
                 </div>
               </div>
               <div className={styles.input_wrapper}>
@@ -161,41 +315,12 @@ const Register: FC = () => {
             </div>
           </div>
         )}
-        </div>
-        <div className={styles.right_image}>
-         <img src={registerBg} alt="nft" />
-       </div>
-        </section>
-      
+      </div>
+      <div className={styles.right_image}>
+        <img src={registerBg} alt="nft" />
+      </div>
+    </section>
+  );
+};
 
-// import { FC } from 'react'
-// import styles from './Register.module.css'
-// import registerBg from '../../resources/images/registration/register_bg.svg'
-// import UseRegister from '../../Hooks/UseRegister'
-
-// const Register: FC = () => {
-//   const { title, message, component } = UseRegister()
-
-//   return (
-//     <section className={styles.register}>
-//       <div className={styles.left_register}>
-//         <div className={styles.register_wrapper}>
-//           <h1 className={styles.title}>{title}</h1>
-//           <p className={styles.text}>{message}</p>
-//           {component}
-//         </div>
-
-//       </div>
-//       <div className={styles.right_image}>
-//         <img src={registerBg} alt="nft" />
-//       </div>
-//     </section>
-
-//   );
-// };
-// export default Register;
-
-  )
-}
-export default Register
-
+export default Register;

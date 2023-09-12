@@ -27,11 +27,11 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
-        <Route path="/nft-collection" element={<NftCollection/>} />
-        <Route path="/nft-collectionprice" element={<NftCollectionsecond/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/joincommunity" element={<JoinCommunity/>} />
-        <Route path="/grouppage" element={<Profile_2/>} />
+        <Route path="/nft-collection" element={<NftCollection />} />
+        <Route path="/nft-collectionprice" element={<NftCollectionsecond />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/joincommunity" element={<JoinCommunity />} />
+        <Route path="/grouppage" element={<Profile_2 />} />
         <Route path="/settings/:type" element={<Settings />} />
         <Route path="/profile-chat" element={<ProfileChat />} />
         <Route path="/profile-chat/videocall" element={<VideoCall />} />

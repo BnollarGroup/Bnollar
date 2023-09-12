@@ -5,11 +5,10 @@
   display: flex;
   overflow-y: hidden;
 }
+
 .right_image {
   flex: 0.43;
 }
-
-
 
 .right_image img {
   width: 100%;
@@ -30,21 +29,17 @@
   margin: 0 20px;
 }
 
-
 .title {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: medium;
   font-size: 20px;
   line-height: 30px;
   text-align: left;
   color: #fff;
 }
+
 .text {
-
   font-family: "Inter";
-
-  font-family: 'Inter';
-
   font-style: medium;
   font-size: 15px;
   line-height: 22px;
@@ -57,17 +52,72 @@
   margin: 34px 0px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
+
+.addCoverImg {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+.actualCoverImg {
+  width: 100%;
+  height: 100%;
+}
+
+.actualCoverImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.actualProfileImg {
+  width: 100%;
+  height: 100%;
+}
+
+.actualProfileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dropCoverImgText {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 15%;
+}
+
+.dropCoverImgText span {
+  color: #ef8031;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+
 .addImg {
   width: 100px;
   height: 100px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 0;
+  background-color: #17181b;
+  border: 4px solid #0d0e11;
   border-radius: 50%;
   position: relative;
+  transform: translateY(-50%);
 }
-.addImg > :first-child {
+
+.imgIcon {
   position: absolute;
   left: 8.33%;
   right: 8.34%;
@@ -76,17 +126,21 @@
   margin: auto;
   opacity: 0.4;
 }
-.addImg > :nth-child(2) {
+
+.uploadIcon {
   position: absolute;
   width: 28px;
   height: 28px;
-  left: 72px;
-  top: 72px;
+  left: 67%;
+  top: 67%;
+  cursor: pointer;
 }
+
 .input_wrapper {
   display: flex;
   flex-direction: column;
 }
+
 .input_wrapper input {
   display: flex;
   flex-direction: row;
@@ -100,8 +154,17 @@
   border-radius: 8px;
   margin: 10px 0;
   color: white;
-
 }
+
+.input_wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 .initial {
   display: flex;
   flex-direction: row;
@@ -116,11 +179,12 @@
   border-radius: 40px;
   color: white;
   margin-top: 20px;
-  
 }
+
 .input_wrapper input:focus {
   outline: none;
 }
+
 .canCreate {
   display: flex;
   flex-direction: row;
@@ -140,12 +204,14 @@
 .categories {
   width: 418px;
 }
+
 .categoriesWrapper {
   margin: 54px 0px;
   display: flex;
   flex-wrap: wrap;
   width: 418px;
 }
+
 .categoriesNotSelected {
   display: flex;
   flex-direction: row;
@@ -156,16 +222,14 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   margin: 0px 8px 8px 0px;
-
   font-family: "Inter";
-
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
   cursor: pointer;
 }
+
 .categorieSelected {
   display: flex;
   flex-direction: row;
@@ -173,10 +237,7 @@
   padding: 10px 16px;
   gap: 4px;
   margin: 0px 8px 8px 0px;
-
   font-family: "Inter";
-
-  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -187,6 +248,7 @@
   color: #ffffff;
   cursor: pointer;
 }
+
 .continue {
   display: flex;
   flex-direction: row;
@@ -197,16 +259,12 @@
   cursor: pointer;
   width: 418px;
   height: 44px;
-
   background: #ef8031;
   border-radius: 40px;
 }
+
 .continue button {
-
   font-family: "Inter";
-
-  font-family: 'Inter';
-
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -218,9 +276,11 @@
   background: none;
   color: #ffffff;
 }
+
 .allSetWrapper {
   width: 418px;
 }
+
 .allSetWrapper > :first-child {
   display: flex;
   flex-direction: row;
@@ -236,6 +296,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .finish {
   display: flex;
   flex-direction: row;
@@ -250,9 +311,10 @@
   background: #ef8031;
   border-radius: 40px;
 }
+
 .finish button {
   font-family: "Inter";
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -263,6 +325,7 @@
   cursor: pointer;
   color: #ffffff;
 }
+
 @media all and (max-width: 768px) {
   .right_image {
     display: none;
@@ -271,6 +334,7 @@
     justify-content: center;
   }
 }
+
 @media all and (max-width: 407px) {
   .left_register {
     flex: 1;
