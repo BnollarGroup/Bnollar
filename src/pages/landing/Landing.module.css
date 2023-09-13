@@ -1,16 +1,15 @@
 .wrapper {
   width: 100%;
-  height: 100vh;
+  max-height:100%;
+  overflow-y: hidden;
   background-color: black;
   background-color: #0d0e11;
-  overflow: hidden;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 120px;
   padding-left: 120px;
   padding-right: 120px;
@@ -42,8 +41,7 @@
   /* padding: 20px 120px 60px 120px; */
 
 .getStarted {
-  padding: 10px 24px;
-  gap: 4px;
+  padding: 10px 14px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 40px;
   font-family: 'Inter';
@@ -59,6 +57,9 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  position: center;
+  margin:20px;
+  gap:4px;
 }
 
 .welcome {
@@ -67,7 +68,7 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-  gap: 24px;
+  gap: 20px;
   width: 346px;
   height: 174px;
   color: white;
@@ -80,6 +81,7 @@
   font-size: 24px;
   line-height: 30px;
   color: #ffffff;
+  position: center;
 }
 
 .welcomeText {
@@ -90,6 +92,8 @@
   line-height: 20px;
   text-align: center;
   color: rgba(255, 255, 255, 0.4);
+  width:364px;
+  height: 60px;
 }
 
 .welcomeGetStarted {
@@ -99,11 +103,11 @@
   align-items: center;
   padding: 12px 24px;
   gap: 10px;
-  width: 120px;
+  width: 160px;
   height: 44px;
   background: #ef8031;
   border-radius: 40px;
-}
+}  
 
 .welcomeGetStarted button {
   font-family: "Inter";
@@ -120,147 +124,90 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 20px;
   /* identical to box height, or 154% */
   background-color: transparent;
   border: none;
   color: #ffffff;
   cursor: pointer;
+  width:140px;
 }
 
 .footerWrapper {
-  margin-top: 110px;
+  margin-top: 230px;
+  width: 1200px;
+  height: 100%;
+  display: flex; 
+  align-items: center;
+  position: center;
+  padding: 40px;
+  z-index: 90;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  position: center;
+  row-gap: 50px;
+  column-gap: 288px;
+  margin-left:20px;
+  width:1200px;
+}
+
+.grid div {
   display: flex;
-  position: relative;
   justify-content: center;
+  align-items: center;
 }
 
-.left {
-  width: 320px;
-  position: absolute;
-  left: 0;
+.grid img {
+  max-width: 100%;
+  height: auto;
 }
 
-.right {
-  width: 320px;
-  position: absolute;
-  right: 0;
+
+.icon{
+  margin-left: 140px;
+  width:100px;
+  height:100px;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  width: calc(vw-640px);
-  z-index: 1000;
-  position: absolute;
-  left: 320px;
-  right: 320px;
-  margin: auto;
+.icon9{
+
+  width:100px;
+  height:100px;
 }
 
-/* .center img {
-    width: 100%;
-    height: auto;
-    z-index: 1000;
-} */
-
-.left > :first-child {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: 39px;
-  top: 71px;
+.icon4{
+  width:100px;
+  height:100px;
+  margin-left: 160px;
 }
 
-.left > :nth-child(2) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: 205px;
-  top: 246px;
+.icon8{
+  width:100px;
+  height:100px;
+  margin-right: 200px;
+
 }
 
-.left > :nth-child(3) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  left: -21px;
-  top: 353px;
+.icon1{
+  width:100px;
+  height:100px;
 }
 
-.right > :first-child {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 253px;
-  top: 71px;
+.iconhid{
+  visibility: hidden;
 }
 
-.right > :nth-child(2) {
+.home{
+  z-index: 100;
   position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 20px;
-  top: 106px;
-}
-.right > :nth-child(3) {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  right: 120px;
-
-  justify-content: center;
-}
-.left {
-  flex: 1;
-  position: relative;
-}
-.right {
-  flex: 1;
-  position: relative;
-}
-.center {
-  flex: 1;
-  display: flex;
-  z-index: 1000;
-  position: relative;
-  padding: 6px 6px 0 6px;
-  background: rgb(13, 14, 17);
-  background: linear-gradient(
-    0deg,
-    rgba(13, 14, 17, 1) 0%,
-    rgba(30, 30, 30, 1) 50%
-  );
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.landingIcon {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-}
-.left > :first-child {
-  right: 161px;
-  top: 71px;
-}
-.left > :nth-child(2) {
-  right: -15px;
-  top: 246px;
-}
-.left > :nth-child(3) {
-  right: 221px;
-  top: 353px;
-}
-.right > :first-child {
-  left: -65px;
-  top: 71px;
-}
-.right > :nth-child(2) {
-  left: 180px;
-  top: 106px;
-}
-.right > :nth-child(3) {
-  left: 80px;
-  top: 338px;
+  align-items: center;
+  width:800px;
+  height: 570px;
+  margin-left: 286px;
+  margin-bottom: 100px;
 }
