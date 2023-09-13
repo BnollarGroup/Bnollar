@@ -2,7 +2,7 @@ import styles from "./header.module.css";
 
 type HeaderProps = {
   title: string;
-  text: string;
+  text: React.ReactNode;
   child: React.ReactNode;
 };
 

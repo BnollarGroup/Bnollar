@@ -8,11 +8,18 @@ export default function ChooseBlockchain() {
       Learn more about Blockchains
     </a>
   );
+  const textWithLineBreaks = (
+    <>
+      Choose the most suitable blockchain for your needs.
+      <br className={styles.newLine} />
+      You need to connect a wallet for creation.
+    </>
+  );
   return (
     <div className={styles.container}>
       <Header
         title="Choose Blockchain"
-        text="Choose the most suitable blockchain for your needs. You need to connect wallet for creation."
+        text={textWithLineBreaks}
         child={linkTag}
       />
     </div>

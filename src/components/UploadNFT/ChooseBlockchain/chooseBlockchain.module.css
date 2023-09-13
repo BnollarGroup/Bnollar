@@ -6,3 +6,13 @@
   color: #ef8031;
   text-decoration: underline;
 }
+
+.newLine {
+  display: none;
+}
+
+@media only screen and (min-width: 43.75rem) {
+  .newLine {
+    display: block;
+  }
+}
