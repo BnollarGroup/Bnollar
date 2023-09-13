@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import ChooseBlockchain from "../../components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
 import styles from "./UploadNft.module.css";
 // import addIcon from "../../resources/images/icons/addicon.png"
 // import Fruit from '../../resources/images/icons/watermelon.png'
@@ -9,6 +10,7 @@ export default function UploadNft() {
   return (
     <section className={styles.container}>
       <Navbar />
+      <ChooseBlockchain />
     </section>
   );
 }
