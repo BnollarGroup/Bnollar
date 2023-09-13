@@ -45,7 +45,7 @@ const Landing: FC = () => {
                 <div className={styles.icon9}><img src={icon2} alt='nft'/></div>
                 <div className={styles.iconhid}><img src={icon2} alt='nft'/></div>
                 <div className={styles.iconhid}><img src={icon6} alt='nft' /></div>
-                <div><img src={icon2} alt='nft'/></div>
+                <div className={styles.icon9}><img src={icon2} alt='nft'/></div>
 
                 <div className={styles.home}>
                     <img src={frame} alt='frame' />

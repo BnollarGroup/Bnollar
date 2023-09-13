@@ -114,7 +114,7 @@
   padding: 12px 24px;
   gap: 10px;
   height: 44px;
-  width: 100%;
+  width: 100px;
   background: #ef8031;
   border-radius: 40px;
   color: white !important;
@@ -126,7 +126,6 @@
   font-weight: 600;
   font-size: 11px;
   line-height: 20px;
-  /* identical to box height, or 154% */
   background-color: transparent;
   border: none;
   color: #ffffff;
@@ -136,7 +135,7 @@
 
 .footerWrapper {
   margin-top: 230px;
-  width: 1200px;
+  width: 100%;
   height: 100%;
   display: flex; 
   align-items: center;
@@ -153,7 +152,31 @@
   row-gap: 50px;
   column-gap: 288px;
   margin-left:20px;
-  width:1200px;
+  width:100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  position: center;
+  row-gap: 50px;
+  column-gap: 288px;
+  margin-left:20px;
+  width:100%;
+}
+
+
+@media (max-width: 1023px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    align-items: center;
+    position: center;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-left:20px;
+    width:300px;
+  }
 }
 
 .grid div {
@@ -178,6 +201,7 @@
 
   width:100px;
   height:100px;
+  margin-left: 90px;
 }
 
 .icon4{
@@ -200,6 +224,8 @@
 
 .iconhid{
   visibility: hidden;
+  width:100px;
+  height:100px;
 }
 
 .home{
@@ -207,7 +233,13 @@
   position: absolute;
   align-items: center;
   width:800px;
-  height: 570px;
-  margin-left: 286px;
-  margin-bottom: 100px;
+  height: 584px;
+  margin-left:320px;
 }
+
+@media (max-width: 1023px) {
+  .home {
+   visibility: hidden;
+  }
+}
+
