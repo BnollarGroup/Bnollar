@@ -9,7 +9,7 @@
   max-width: 323px;
   width: 100%;
   max-height: calc(100vh - 80px);
-  padding-right: 0.4rem;
+  padding-right: 0.64rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 }
 
 .rightSidebarCont::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.8rem;
 }
 
 .rightSidebarCont::-webkit-scrollbar-thumb {

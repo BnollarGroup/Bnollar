@@ -1,5 +1,4 @@
-import { ComponentType } from "react";
-import styles from "./header.module";
+import styles from "./header.module.css";
 
 type HeaderProps = {
   title: string;
@@ -9,11 +8,10 @@ type HeaderProps = {
 
 export default function Header({ title, text, child }: HeaderProps) {
   return (
-    <header>
-      <h2>Choose Blockchain</h2>
-      <p>
-        Choose the most suitable blockchain for your needs. You need to connect
-        wallet for creation. {child}
+    <header className={styles.header}>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.text}>
+        {text} {child}
       </p>
     </header>
   );

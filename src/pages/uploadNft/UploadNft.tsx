@@ -9,7 +9,7 @@ import styles from "./UploadNft.module.css";
 export default function UploadNft() {
   return (
     <section className={styles.container}>
-      <Navbar />
+      {/* <Navbar /> */}
       <ChooseBlockchain />
     </section>
   );

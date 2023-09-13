@@ -4,6 +4,12 @@
   font-family: 'Inter';
 } */
 
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 1.6rem;
+}
+
 /* .upload_nft {
   width: 100%;
   min-height: 100vh;
