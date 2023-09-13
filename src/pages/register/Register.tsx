@@ -3,6 +3,7 @@ import styles from "./Register.module.css";
 import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
 import addIcon from "../../resources/images/registration/addIcon.svg";
+import Cancel from "../../resources/images/icons/cancel.svg";
 import ok from "../../resources/images/registration/ok.svg";
 
 interface Category {
@@ -63,11 +64,14 @@ const Register: FC = () => {
   const [profileImageTag, setProfileImageTag] = useState<string | null>(null);
   const inputRefCover = useRef<HTMLInputElement | null>(null);
   const inputRefProfile = useRef<HTMLInputElement | null>(null);
+  const [isCoverImageUploaded, setIsCoverImageUploaded] = useState(false);
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setCoverImage(e.target.files[0]);
       displayCoverFile();
+      setIsCoverImageUploaded(true);
+      console.log(isCoverImageUploaded);
       console.log("browsing");
     }
   };
@@ -80,9 +84,21 @@ const Register: FC = () => {
     }
   };
 
+  const handleRemoveCover = () => {
+    // Reset cover image state and clear the flag
+    setCoverImage(null);
+    setCoverImageTag(null);
+    setIsCoverImageUploaded(false);
+  };
+
+  // useEffect(() => {
+  //   displayCoverFile();
+  // }, [coverImage]);
+
   useEffect(() => {
+    console.log(isCoverImageUploaded); // Log the updated value
     displayCoverFile();
-  }, [coverImage]);
+  }, [coverImage, isCoverImageUploaded]);
 
   useEffect(() => {
     displayProfileFile();
@@ -95,12 +111,14 @@ const Register: FC = () => {
       setCanCreate(false);
     }
   }, [userName, displayName]);
+
   const handleCreateAccount = () => {
     if (canCreate) {
       setShowSelectCategory(true);
       setShowRegister(false);
     }
   };
+
   const handleContinue = () => {
     setShowSelectCategory(false);
     setShowAllSet(true);
@@ -112,12 +130,14 @@ const Register: FC = () => {
     setActive(!active);
     console.log("metor");
   };
+
   const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault();
     setDropText("Drop image here,");
     setActive(false);
     console.log("luminu");
   };
+
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setActive(false);
@@ -194,10 +214,21 @@ const Register: FC = () => {
                   style={active ? { border: "1px solid #EF8031" } : {}}
                 >
                   {coverImageTag ? (
-                    <div
-                      className={styles.actualCoverImg}
-                      dangerouslySetInnerHTML={{ __html: coverImageTag }}
-                    />
+                    <div className={styles.actualCoverImgWrapper}>
+                      <div
+                        className={styles.actualCoverImg}
+                        dangerouslySetInnerHTML={{ __html: coverImageTag }}
+                      />
+                      {isCoverImageUploaded && (
+                        <button
+                          className={styles.removeCoverButton}
+                          onClick={handleRemoveCover}
+                        >
+                          Remove cover
+                          <img src={Cancel} alt="" />
+                        </button>
+                      )}
+                    </div>
                   ) : (
                     <div>
                       <p className={styles.dropCoverImgText}>
