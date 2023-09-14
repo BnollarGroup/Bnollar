@@ -85,18 +85,13 @@ const Register: FC = () => {
   };
 
   const handleRemoveCover = () => {
-    // Reset cover image state and clear the flag
     setCoverImage(null);
     setCoverImageTag(null);
     setIsCoverImageUploaded(false);
   };
 
-  // useEffect(() => {
-  //   displayCoverFile();
-  // }, [coverImage]);
-
   useEffect(() => {
-    console.log(isCoverImageUploaded); // Log the updated value
+    console.log(isCoverImageUploaded);
     displayCoverFile();
   }, [coverImage, isCoverImageUploaded]);
 
@@ -254,10 +249,25 @@ const Register: FC = () => {
                   style={profileImageTag ? { overflow: "hidden" } : undefined}
                 >
                   {profileImageTag ? (
-                    <div
-                      className={styles.actualProfileImg}
-                      dangerouslySetInnerHTML={{ __html: profileImageTag }}
-                    />
+                    <>
+                      <div
+                        className={styles.actualProfileImg}
+                        dangerouslySetInnerHTML={{ __html: profileImageTag }}
+                      />
+                      <img
+                        src={addIcon}
+                        className={styles.uploadIcon}
+                        alt="Upload File"
+                        onClick={() => inputRefProfile.current?.click()}
+                      />
+                      <input
+                        type="file"
+                        id="profile-input"
+                        hidden
+                        onChange={handleProfileChange}
+                        ref={inputRefProfile}
+                      />
+                    </>
                   ) : (
                     <>
                       <img
