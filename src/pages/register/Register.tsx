@@ -5,6 +5,7 @@ import imgIcon from "../../resources/images/registration/imgIcon.svg";
 import addIcon from "../../resources/images/registration/addIcon.svg";
 import Cancel from "../../resources/images/icons/cancel.svg";
 import ok from "../../resources/images/registration/ok.svg";
+import Edit from "../../resources/images/icons/edit (2).png";
 
 interface Category {
   id: number;
@@ -65,6 +66,7 @@ const Register: FC = () => {
   const inputRefCover = useRef<HTMLInputElement | null>(null);
   const inputRefProfile = useRef<HTMLInputElement | null>(null);
   const [isCoverImageUploaded, setIsCoverImageUploaded] = useState(false);
+  const [showProfileImgSettings, setShowProfileImgSettings] = useState(false);
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -80,8 +82,20 @@ const Register: FC = () => {
     if (e.target.files && e.target.files.length > 0) {
       setProfileImage(e.target.files[0]);
       displayProfileFile();
+      setShowProfileImgSettings(false);
       console.log("browsing");
     }
+  };
+
+  const handleProfileSettingView = () => {
+    setShowProfileImgSettings(!showProfileImgSettings);
+    console.log(showProfileImgSettings);
+  };
+
+  const handleRemoveProfile = () => {
+    setProfileImage(null);
+    setProfileImageTag(null);
+    setShowProfileImgSettings(false);
   };
 
   const handleRemoveCover = () => {
@@ -201,6 +215,29 @@ const Register: FC = () => {
                 Choose your Bnollar username. You can always change it later.
               </p>
               <div className={styles.addImg_wrapper}>
+                {showProfileImgSettings && (
+                  <div className={styles.settingButtonWrapper}>
+                    <button
+                      className={styles.uploadBtn}
+                      onClick={() => inputRefProfile.current?.click()}
+                    >
+                      Upload photo
+                    </button>
+                    <input
+                      type="file"
+                      id="profile-input"
+                      hidden
+                      onChange={handleProfileChange}
+                      ref={inputRefProfile}
+                    />
+                    <button
+                      className={styles.removeBtn}
+                      onClick={handleRemoveProfile}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                )}
                 <div
                   className={styles.addCoverImg}
                   onDragOver={handleDragOver}
@@ -255,17 +292,10 @@ const Register: FC = () => {
                         dangerouslySetInnerHTML={{ __html: profileImageTag }}
                       />
                       <img
-                        src={addIcon}
+                        src={Edit}
                         className={styles.uploadIcon}
                         alt="Upload File"
-                        onClick={() => inputRefProfile.current?.click()}
-                      />
-                      <input
-                        type="file"
-                        id="profile-input"
-                        hidden
-                        onChange={handleProfileChange}
-                        ref={inputRefProfile}
+                        onClick={handleProfileSettingView}
                       />
                     </>
                   ) : (
