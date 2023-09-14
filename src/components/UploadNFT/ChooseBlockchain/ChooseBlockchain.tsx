@@ -2,6 +2,7 @@ import sharedStyles from "../shared.module.css";
 import styles from "./chooseBlockchain.module.css";
 import Header from "../components/Header/Header";
 import BlockchainContainer from "../components/BlockchainContainer/BlockchainContainer";
+import { useState } from "react";
 
 const data = [
   {
@@ -27,6 +28,10 @@ const data = [
 ];
 
 export default function ChooseBlockchain() {
+  const [blockchain, setBlockchain] = useState<string | null>(null);
+
+  console.log(blockchain);
+
   const linkTag = (
     <a href="#" className={styles.link}>
       Learn more about Blockchains
@@ -49,7 +54,13 @@ export default function ChooseBlockchain() {
 
       <main className={styles.main}>
         {data.map((item) => {
-          return <BlockchainContainer image={item.img} text={item.text} />;
+          return (
+            <BlockchainContainer
+              image={item.img}
+              text={item.text}
+              setBlockchain={setBlockchain}
+            />
+          );
         })}
       </main>
     </div>
