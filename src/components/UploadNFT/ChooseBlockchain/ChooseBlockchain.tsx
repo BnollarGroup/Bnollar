@@ -53,9 +53,10 @@ export default function ChooseBlockchain() {
       />
 
       <main className={styles.main}>
-        {data.map((item) => {
+        {data.map((item, index) => {
           return (
             <BlockchainContainer
+              key={index}
               image={item.img}
               text={item.text}
               setBlockchain={setBlockchain}
