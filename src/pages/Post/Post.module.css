@@ -1,5 +1,4 @@
 .postWrapper {
-  overflow: hidden;
   height: 100vh;
   width: 100%;
   background-color: #0d0e11;
@@ -14,7 +13,7 @@
 
 .container{
   display: flex;
-  flex-direction: row;
+  flex-display: row;;
 }
 
 
@@ -77,3 +76,25 @@
 }
 
 
+/* Existing styles */
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .post {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .postImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .sideBar {
+    width: 100%;
+    margin-top: 16px; /* Add some space between post and sidebar */
+  }
+}

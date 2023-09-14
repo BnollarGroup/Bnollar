@@ -9,7 +9,9 @@ import WriteComment from "../../components/Post/WriteComment";
 const Post = () => {
   return (
     <div className={styles.postWrapper}>
+
       <Navbar />
+
       <div className={styles.container}>
 
       <div className={styles.post}>
@@ -28,6 +30,8 @@ const Post = () => {
         </div>
       </div>
       </div>
+
+
     </div>
   );
 };
