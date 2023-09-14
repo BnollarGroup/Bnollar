@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  padding: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  justify-content: start;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: 0.3s backgorund;
+  cursor: pointer;
+}
+
+.container:hover {
+  background: rgba(220, 217, 217, 0.04);
+}
+
+.text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+}
