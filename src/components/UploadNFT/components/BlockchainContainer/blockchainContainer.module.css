@@ -4,15 +4,15 @@
   display: flex;
   gap: 2.4rem;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
-  transition: 0.3s backgorund;
+  transition: 0.3s;
   cursor: pointer;
 }
 
 .container:hover {
-  background: rgba(220, 217, 217, 0.04);
+  background: rgba(186, 179, 179, 0.04);
 }
 
 .text {
@@ -20,4 +20,17 @@
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 2.2rem;
+}
+
+@media only screen and (min-width: 90em) {
+  .container {
+    width: 33.1rem;
+    padding: 4.5rem 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container:hover {
+    transform: scale(1.05);
+  }
 }
