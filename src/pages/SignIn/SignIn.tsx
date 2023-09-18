@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import classes from "./SignIn.module.css";
 import Nft_1 from "../../resources/images/SignIn/nft_1.svg";
+import Logo from "../../resources/images/logo/bnollar_logo.svg";
 import coinbase from "../../resources/images/SignIn/wallets/coinbase.svg";
 import walletconnect from "../../resources/images/SignIn/wallets/walletconnect.svg";
 import metamask from "../../resources/images/SignIn/wallets/metamask.svg";
@@ -10,7 +11,8 @@ const SignIn: FC = () => {
   return (
     <section className={classes.sign_in}>
       <div className={classes.left_image}>
-        <img src={Nft_1} alt="" />
+        <img src={Nft_1} alt="" className={classes.maskImg} />
+        <img src={Logo} alt="" className={classes.logo} />
       </div>
       <div className={classes.right_sign_in}>
         <div className={classes.sign_in_wrapper}>

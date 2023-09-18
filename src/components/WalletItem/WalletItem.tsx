@@ -1,10 +1,12 @@
 import classes from "./WalletItem.module.css";
+import { Link } from "react-router-dom";
 
 interface WalletItemProps {
   image?: string;
   title: string;
   callback?: () => void;
 }
+
 const WalletItem = ({ image, title, callback }: WalletItemProps) => {
   const handleClick = () => {
     if (callback) {

@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from "react";
 import styles from "./Register.module.css";
+import Logo from "../../resources/images/logo/bnollar_logo.svg";
 import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
 import addIcon from "../../resources/images/registration/addIcon.svg";
@@ -206,6 +207,9 @@ const Register: FC = () => {
 
   return (
     <section className={styles.register}>
+      <div className={styles.logo_img_box}>
+        <img src={Logo} alt="logo" className={styles.logo_img} />
+      </div>
       <div className={styles.left_register}>
         {showRegister && (
           <div className={styles.register_wrapper}>
@@ -327,11 +331,13 @@ const Register: FC = () => {
                   type="text"
                   placeholder="Username"
                   onChange={(e) => setUserName(e.target.value)}
+                  style={canCreate ? { border: "1px solid #ef8031" } : {}}
                 ></input>
                 <input
                   type="text"
                   placeholder="Display name"
                   onChange={(e) => setDisplayName(e.target.value)}
+                  style={canCreate ? { border: "1px solid #ef8031" } : {}}
                 ></input>
                 <button
                   className={canCreate ? styles.canCreate : styles.initial}
@@ -365,7 +371,9 @@ const Register: FC = () => {
               ))}
             </div>
             <div className={styles.continue}>
-              <button onClick={handleContinue}>Continue</button>
+              <button className={styles.continue_btn} onClick={handleContinue}>
+                Continue
+              </button>
             </div>
           </div>
         )}
@@ -389,6 +397,11 @@ const Register: FC = () => {
       </div>
       <div className={styles.right_image}>
         <img src={registerBg} alt="nft" />
+        <div className={styles.owner}>
+          <p>
+            Eras by <span>Aeforia</span>
+          </p>
+        </div>
       </div>
     </section>
   );
