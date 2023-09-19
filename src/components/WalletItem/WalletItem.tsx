@@ -1,21 +1,34 @@
 import classes from "./WalletItem.module.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface WalletItemProps {
-  image?: string;
   title: string;
-  callback?: () => void;
+  callback: () => void;
+  disabled?: boolean;
+  image?: string;
 }
 
-const WalletItem = ({ image, title, callback }: WalletItemProps) => {
+const WalletItem = ({
+  title,
+  callback,
+  disabled = false,
+  image,
+}: WalletItemProps) => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
+    navigate("/register/:step");
     if (callback) {
       callback();
     }
   };
 
   return (
-    <button onClick={handleClick} className={classes.wallet_item}>
+    <button
+      onClick={handleClick}
+      className={classes.wallet_item}
+      disabled={disabled}
+    >
       {image ? <img src={image} alt="wallet" /> : null}
       <p
         className={classes.wallet_name}

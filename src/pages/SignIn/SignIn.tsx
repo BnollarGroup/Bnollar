@@ -23,12 +23,25 @@ const SignIn: FC = () => {
           <div className={classes.sign_in_cont}>
             <div className={classes.wallets_list}>
               <div className={classes.wallets_list}>
-                <WalletItem image={metamask} title="Metamask" />
-                <WalletItem image={walletconnect} title="Walletconnect" />
-                <WalletItem image={coinbase} title="Coinbase wallet" />
+                <WalletItem
+                  image={metamask}
+                  title="Metamask"
+                  callback={() => console.log("Metamask clicked")}
+                />
+                <WalletItem
+                  image={walletconnect}
+                  title="Walletconnect"
+                  callback={() => console.log("Walletconnect clicked")}
+                />
+                <WalletItem
+                  image={coinbase}
+                  title="Coinbase wallet"
+                  callback={() => console.log("Coinbase clicked")}
+                />
                 <WalletItem
                   title="More"
                   callback={() => console.log("showmore")}
+                  disabled={true}
                 />
               </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { FC, useState, useEffect, useRef } from "react";
 import styles from "./Register.module.css";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Logo from "../../resources/images/logo/bnollar_logo.svg";
 import registerBg from "../../resources/images/registration/register_bg.svg";
 import imgIcon from "../../resources/images/registration/imgIcon.svg";
@@ -7,6 +9,8 @@ import addIcon from "../../resources/images/registration/addIcon.svg";
 import Cancel from "../../resources/images/icons/cancel.svg";
 import ok from "../../resources/images/registration/ok.svg";
 import Edit from "../../resources/images/icons/edit (2).png";
+import { useNavigate } from "react-router-dom";
+import registerSchema from "../../registerSchema";
 
 interface Category {
   id: number;
@@ -53,7 +57,6 @@ const useCategories = (): UseCategoriesType => {
 const Register: FC = () => {
   const [userName, setUserName] = useState("");
   const [displayName, setDisplayName] = useState("");
-  const [canCreate, setCanCreate] = useState(false);
   const [showRegister, setShowRegister] = useState(true);
   const [showSelectCategory, setShowSelectCategory] = useState(false);
   const [showAllSet, setShowAllSet] = useState(false);
@@ -68,6 +71,27 @@ const Register: FC = () => {
   const inputRefProfile = useRef<HTMLInputElement | null>(null);
   const [isCoverImageUploaded, setIsCoverImageUploaded] = useState(false);
   const [showProfileImgSettings, setShowProfileImgSettings] = useState(false);
+
+  const navigate = useNavigate();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(registerSchema),
+  });
+
+  const submitHandler = async (data: {
+    displayName: string;
+    username: string;
+  }) => {
+    setUserName(data.username);
+    setDisplayName(data.displayName);
+    setShowSelectCategory(true);
+    setShowRegister(false);
+    console.log(data);
+  };
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -113,21 +137,6 @@ const Register: FC = () => {
   useEffect(() => {
     displayProfileFile();
   }, [profileImage]);
-
-  useEffect(() => {
-    if (userName.length > 3 && displayName.length > 3) {
-      setCanCreate(true);
-    } else {
-      setCanCreate(false);
-    }
-  }, [userName, displayName]);
-
-  const handleCreateAccount = () => {
-    if (canCreate) {
-      setShowSelectCategory(true);
-      setShowRegister(false);
-    }
-  };
 
   const handleContinue = () => {
     setShowSelectCategory(false);
@@ -204,6 +213,10 @@ const Register: FC = () => {
       }
     }
   }
+
+  const handleFinish = () => {
+    navigate("/home");
+  };
 
   return (
     <section className={styles.register}>
@@ -326,26 +339,52 @@ const Register: FC = () => {
                   )}
                 </div>
               </div>
-              <div className={styles.input_wrapper}>
+              <form
+                className={styles.input_wrapper}
+                onSubmit={handleSubmit(submitHandler)}
+              >
                 <input
                   type="text"
                   placeholder="Username"
-                  onChange={(e) => setUserName(e.target.value)}
-                  style={canCreate ? { border: "1px solid #ef8031" } : {}}
+                  {...register("username", {
+                    onChange: (e) => {
+                      setUserName(e.target.value);
+                    },
+                  })}
+                  className={
+                    !errors.username && userName.trim() !== ""
+                      ? styles.validInput
+                      : styles.inputDefault
+                  }
                 ></input>
                 <input
                   type="text"
                   placeholder="Display name"
-                  onChange={(e) => setDisplayName(e.target.value)}
-                  style={canCreate ? { border: "1px solid #ef8031" } : {}}
+                  {...register("displayName", {
+                    onChange: (e) => {
+                      setDisplayName(e.target.value);
+                    },
+                  })}
+                  className={
+                    !errors.displayName && displayName.trim() !== ""
+                      ? styles.validInput
+                      : styles.inputDefault
+                  }
                 ></input>
                 <button
-                  className={canCreate ? styles.canCreate : styles.initial}
-                  onClick={handleCreateAccount}
+                  type="submit"
+                  className={
+                    !errors.username &&
+                    !errors.displayName &&
+                    userName.trim() !== "" &&
+                    displayName.trim() !== ""
+                      ? styles.submitted
+                      : styles.initial
+                  }
                 >
                   Create account
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         )}
@@ -390,7 +429,7 @@ const Register: FC = () => {
               </p>
             </div>
             <div className={styles.finish}>
-              <button>Finish</button>
+              <button onClick={handleFinish}>Finish</button>
             </div>
           </div>
         )}
