@@ -3,7 +3,6 @@
   height: 100vh;
   width: 100%;
   background-color: #0d0e11;
-
 }
 .post {
   display: flex;
@@ -55,7 +54,7 @@
 }
 
 .commentCard::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.8rem;
 }
 
 .commentCard::-webkit-scrollbar-thumb {
