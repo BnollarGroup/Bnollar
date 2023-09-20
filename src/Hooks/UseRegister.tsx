@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import CategorySelet from '../components/Register/CategorySelect/CategorySelet'
-import Finished from '../components/Register/Finished/Finished'
-import PersonalInfoForm from '../components/Register/PersonalInfoForm/PersonalInfoForm'
-import useCategories from './useCategories'
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import CategorySelet from "../components/Register/CategorySelect/CategorySelet";
+import Finished from "../components/Register/Finished/Finished";
+import PersonalInfoForm from "../components/Register/PersonalInfoForm/PersonalInfoForm";
+import useCategories from "./useCategories";
 
 const UseRegister = () => {
-  const [userName, setUserName] = useState('')
-  const [displayName, setDisplayName] = useState('')
-  const { categories, toggleSelect } = useCategories()
-  const [image, setImage] = useState('')
-  const [coverImage, setCoverImage] = useState('')
+  const [userName, setUserName] = useState("");
+  const [displayName, setDisplayName] = useState("");
+  const { categories, toggleSelect } = useCategories();
+  const [image, setImage] = useState("");
+  const [coverImage, setCoverImage] = useState("");
 
-  const { step } = useParams()
+  const { step } = useParams();
 
   const getComponent = () => {
     switch (step) {
-      case 'personal_info':
+      case "personal_info":
         return (
           <PersonalInfoForm
             userName={userName}
@@ -28,35 +28,35 @@ const UseRegister = () => {
             coverImage={coverImage}
             setCoverImage={setCoverImage}
           />
-        )
-      case 'category':
+        );
+      case "category":
         return (
           <CategorySelet categories={categories} toggleSelect={toggleSelect} />
-        )
-      case 'finished':
-        return <Finished />
+        );
+      case "finished":
+        return <Finished />;
     }
-  }
+  };
 
   const titles = {
-    personal_info: 'Registration',
-    category: 'Select category',
+    personal_info: "Registration",
+    category: "Select category",
     finished: "You're all set",
-  }
+  };
 
   const messages = {
     personal_info:
-      'Choose your Bnollar username. You can always change it later.',
-    category: 'For a personalised experience',
+      "Choose your Bnollar username. You can always change it later.",
+    category: "For a personalised experience",
     finished:
       "We're excited to have you on board. Your account is all set up and ready for you to start using.",
-  }
+  };
   return {
-    title: typeof step === 'string' ? (titles as any)[step] : 'Error',
+    title: typeof step === "string" ? (titles as any)[step] : "Error",
     message:
-      typeof step === 'string' ? (messages as any)[step] : 'try again later.',
+      typeof step === "string" ? (messages as any)[step] : "try again later.",
     component: getComponent(),
-  }
-}
+  };
+};
 
-export default UseRegister
+export default UseRegister;
