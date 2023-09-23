@@ -3,6 +3,7 @@ import styles from "./chooseBlockchain.module.css";
 import Header from "../components/Header/Header";
 import BlockchainContainer from "../components/BlockchainContainer/BlockchainContainer";
 import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 const data = [
   {
@@ -27,12 +28,21 @@ const data = [
   },
 ];
 
-export default function ChooseBlockchain() {
+type ChooseBlockchainProps = {
+  page: string;
+  setPage: Dispatch<SetStateAction<string>>;
+};
+
+export default function ChooseBlockchain({
+  page,
+  setPage,
+}: ChooseBlockchainProps) {
   const [blockchain, setBlockchain] = useState<string | null>(null);
 
   console.log(blockchain);
 
   const linkTag = (
+    // add link later
     <a href="#" className={styles.link}>
       Learn more about Blockchains
     </a>
@@ -60,6 +70,7 @@ export default function ChooseBlockchain() {
               image={item.img}
               text={item.text}
               setBlockchain={setBlockchain}
+              setPage={setPage}
             />
           );
         })}

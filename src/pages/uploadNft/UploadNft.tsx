@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import ChooseBlockchain from "../../components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
+import ChooseType from "../../components/UploadNFT/ChooseType/ChooseType";
 import styles from "./UploadNft.module.css";
 // import addIcon from "../../resources/images/icons/addicon.png"
 // import Fruit from '../../resources/images/icons/watermelon.png'
 // import UploadImgMiddleLogo from '../../resources/images/icons/uploadimgmiddlelogo.png'
 
 export default function UploadNft() {
+  const [page, setPage] = useState<string>("chooseBlockchain");
   return (
     <section className={styles.container}>
       {/* <Navbar /> */}
-      <ChooseBlockchain />
+
+      {page === "chooseBlockchain" ? (
+        <ChooseBlockchain page={page} setPage={setPage} />
+      ) : page === "chooseType" ? (
+        <ChooseType />
+      ) : null}
     </section>
   );
 }
