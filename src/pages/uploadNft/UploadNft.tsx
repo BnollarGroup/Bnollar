@@ -14,9 +14,9 @@ export default function UploadNft() {
       {/* <Navbar /> */}
 
       {page === "chooseBlockchain" ? (
-        <ChooseBlockchain page={page} setPage={setPage} />
+        <ChooseBlockchain setPage={setPage} />
       ) : page === "chooseType" ? (
-        <ChooseType />
+        <ChooseType setPage={setPage} />
       ) : null}
     </section>
   );

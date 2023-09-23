@@ -29,14 +29,10 @@ const data = [
 ];
 
 type ChooseBlockchainProps = {
-  page: string;
   setPage: Dispatch<SetStateAction<string>>;
 };
 
-export default function ChooseBlockchain({
-  page,
-  setPage,
-}: ChooseBlockchainProps) {
+export default function ChooseBlockchain({ setPage }: ChooseBlockchainProps) {
   const [blockchain, setBlockchain] = useState<string | null>(null);
 
   console.log(blockchain);

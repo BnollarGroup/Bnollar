@@ -1,18 +1,21 @@
 import styles from "./typeContainer.module.css";
+import { Dispatch, SetStateAction } from "react";
 
 type TypeContainerProps = {
   image: string;
   title: string;
   text: string;
+  setPage: Dispatch<SetStateAction<string>>;
 };
 
 export default function TypeContainer({
   image,
   title,
   text,
+  setPage,
 }: TypeContainerProps) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => setPage("createNewNFT")}>
       <img
         src={require(`../../../../resources/images/upload-nft/chooseType/${image}`)}
         alt={`${title} choose type`}

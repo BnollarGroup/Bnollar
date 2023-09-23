@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header/Header";
 import TypeContainer from "../components/TypeContainer/TypeContainer";
 import styles from "./chooseType.module.css";
-import image from "../../../resources/images/upload-nft/chooseType/single.png";
+import { Dispatch, SetStateAction } from "react";
 
 const data = [
   {
@@ -17,7 +17,11 @@ const data = [
   },
 ];
 
-export default function ChooseType() {
+type ChooseTypeProps = {
+  setPage: Dispatch<SetStateAction<string>>;
+};
+
+export default function ChooseType({ setPage }: ChooseTypeProps) {
   return (
     <div className={styles.container}>
       <Header
@@ -33,6 +37,7 @@ export default function ChooseType() {
               image={item.image}
               title={item.title}
               text={item.text}
+              setPage={setPage}
             />
           );
         })}
