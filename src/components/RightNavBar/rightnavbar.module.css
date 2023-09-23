@@ -1,85 +1,95 @@
 .navigator {
-    width: 323px;
-    word-break: break-all;
+  width: 323px;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .navcontainer {
-    width: 323px;
-    height: 290px;
-    padding: 15px 0 0 20px;
-    background: rgba(255, 255, 255, 0.13);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    margin-left: 20px;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .nftCollectioncontainter {
-    margin-left: 30px;
-    width: 90%;
+  margin-left: 30px;
+  width: 90%;
 }
 
-.home {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    cursor: pointer;
+.navcontainer div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px;
 }
 
-.home h1 {
-    font-size: 15px;
-    color: #FFFFFF;
-    margin-left: 10px;
+.navcontainer div h1 {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    cursor: pointer;
-    height: 30px;
-    width: 90%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px;
+  column-gap: 10px;
 }
 
 .navbar:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 5px;
-}
-
-.navbar h1 {
-    font-size: 15px;
-    color: #FFFFFF;
-    margin-left: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
 }
 
 .desc {
-    margin-top: 15px;
-    width: 100%;
-    margin-left: 20px;
-    text-align: center;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
 }
 
 .about {
-    display: flex;
-    width: 80%;
-    margin: auto;
-    justify-content: space-between;
-    cursor: pointer;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  cursor: pointer;
+  column-gap: 14px;
 }
 
 .about h2 {
-    font-size: 12px;
-    margin-left: 5px;
-    color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .terms_conditions h3 {
-    font-size: 12px;
-    margin-top: 10px;
-    color: #FFFFFF;   
+  color: rgba(255, 255, 255, 0.3);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 .allright h3 {
-    font-size: 12px;
-    margin-top: 10px;
-    color: #FFFFFF;   
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
