@@ -6,7 +6,7 @@ import icon1 from '../../resources/images/landing/icon1.svg'
 import icon2 from '../../resources/images/landing/icon2.svg'
 import icon6 from '../../resources/images/landing/icon6.svg'
 import { Link } from 'react-router-dom'
-
+import Home from "../Home/Home"
 
 const Landing: FC = () => {
   
@@ -47,12 +47,15 @@ const Landing: FC = () => {
                 <div className={styles.iconhid}><img src={icon6} alt='nft' /></div>
                 <div className={styles.icon9}><img src={icon2} alt='nft'/></div>
 
-                <div className={styles.home}>
-                    <img src={frame} alt='frame' />
-                </div>
+
             </div>
         </div>
 
+        <div className={styles.homeWrapper}>
+            <div className={styles.homeCenter}>
+                <Home />
+            </div>
+        </div>
 
     </div>
   );

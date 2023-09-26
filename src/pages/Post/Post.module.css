@@ -76,7 +76,6 @@
 }
 
 
-/* Existing styles */
 
 @media (max-width: 1024px) {
   .container {
@@ -95,6 +94,6 @@
 
   .sideBar {
     width: 100%;
-    margin-top: 16px; /* Add some space between post and sidebar */
+    margin-top: 16px;
   }
 }
