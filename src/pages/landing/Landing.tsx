@@ -52,7 +52,7 @@ const Landing: FC = () => {
         </div>
 
         <div className={styles.homeWrapper}>
-            <div className={styles.homeCenter}>
+            <div className={styles.frame}>
                 <Home />
             </div>
         </div>
