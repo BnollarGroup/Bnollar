@@ -11,7 +11,7 @@ export default function UploadNft() {
   const [page, setPage] = useState<string>("chooseBlockchain");
   return (
     <section className={styles.container}>
-      {/* <Navbar /> */}
+      <Navbar />
 
       {page === "chooseBlockchain" ? (
         <ChooseBlockchain setPage={setPage} />
