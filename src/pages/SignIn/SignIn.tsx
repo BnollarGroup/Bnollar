@@ -9,42 +9,38 @@ import WalletItem from "../../components/WalletItem/WalletItem";
 
 const SignIn: FC = () => {
   return (
-    <section className={classes.sign_in}>
-      <div className={classes.left_image}>
-        <img src={Nft_1} alt="" className={classes.maskImg} />
-        <img src={Logo} alt="" className={classes.logo} />
+    <section className={classes.signIn}>
+      <div className={classes.leftImage}>
+        <img src={Logo} alt="logo" className={classes.logo} />
+        <img src={Nft_1} alt="nft logo" className={classes.maskImg} />
       </div>
-      <div className={classes.right_sign_in}>
-        <div className={classes.sign_in_wrapper}>
-          <h1 className={classes.title}>Connect wallet</h1>
+      <div className={classes.rightSignIn}>
+        <div className={classes.signInWrapper}>
+          <h2 className={classes.title}>Connect wallet</h2>
           <p className={classes.text}>
             Choose how you want to connect. There are several wallet providers.
           </p>
-          <div className={classes.sign_in_cont}>
-            <div className={classes.wallets_list}>
-              <div className={classes.wallets_list}>
-                <WalletItem
-                  image={metamask}
-                  title="Metamask"
-                  callback={() => console.log("Metamask clicked")}
-                />
-                <WalletItem
-                  image={walletconnect}
-                  title="Walletconnect"
-                  callback={() => console.log("Walletconnect clicked")}
-                />
-                <WalletItem
-                  image={coinbase}
-                  title="Coinbase wallet"
-                  callback={() => console.log("Coinbase clicked")}
-                />
-                <WalletItem
-                  title="More"
-                  callback={() => console.log("showmore")}
-                  disabled={true}
-                />
-              </div>
-            </div>
+          <div className={classes.signInContent}>
+            <WalletItem
+              image={metamask}
+              title="Metamask"
+              callback={() => console.log("Metamask clicked")}
+            />
+            <WalletItem
+              image={walletconnect}
+              title="Walletconnect"
+              callback={() => console.log("Walletconnect clicked")}
+            />
+            <WalletItem
+              image={coinbase}
+              title="Coinbase wallet"
+              callback={() => console.log("Coinbase clicked")}
+            />
+            <WalletItem
+              title="More"
+              callback={() => console.log("showmore")}
+              disabled={true}
+            />
           </div>
         </div>
       </div>
