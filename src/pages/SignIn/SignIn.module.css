@@ -1,108 +1,3 @@
-/* .signIn {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #0d0e11;
-  display: flex;
-  overflow-y: hidden;
-}
-
-.leftImage {
-  flex: 0.5;
-}
-
-.logo {
-  display: none;
-}
-
-.maskImg {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  object-position: 50% 50%;
-}
-
-.rightSignIn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0.5;
-}
-
-.signIinWrapper {
-  width: 360px;
-  margin: 0 20px;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 30px;
-  color: #fff;
-}
-
-.text {
-  font-size: 15px;
-  line-height: 22px;
-  margin-top: 16px;
-  width: 300px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.signInContent {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 11px;
-  margin-top: 24px;
-}
-
-
-@media all and (max-width: 768px) {
-  .maskImg {
-    display: none;
-  }
-  .signIn {
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .logo {
-    display: block;
-  }
-
-  .leftImage {
-   padding: 21.5px 0 0 16px;
-   width: fit-content;
-   height: 60px;
-  }
-}
-
-@media all and (max-width: 320px) {
-  .signIn {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .rightSignIn {
-    flex: 1;
-  }
-  .signInWrapper {
-    width: 100%;
-  }
-
-  .leftImage {
-    display: block;
-    padding-left: 16px;
-    padding-top: 21.5px;
-    flex: inherit;
-  }
-
-  .maskImg {
-    display: none;
-  }
-} */
-
-
 .signIn {
   width: 100%;
   min-height: 100vh;
@@ -113,15 +8,10 @@
   overflow-y: hidden;
 }
 
-.leftImage {
- 
-}
-
 .rightSignIn {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex: 0.5;
+  flex: 1;
 }
 
 .logo {
@@ -157,4 +47,32 @@
   flex-direction: column;
   row-gap: 11px;
   margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .signIn {
+    flex-direction: row;
+    overflow-y: hidden;
+  }
+  
+  .leftImage {
+    flex: 0.5;
+  }
+
+  .rightSignIn {
+    align-items: center;
+    flex: 0.5;
+  }
+
+  .maskImg {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .logo {
+    display: none;
+  }
 }
