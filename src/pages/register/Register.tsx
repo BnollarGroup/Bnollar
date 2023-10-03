@@ -343,34 +343,36 @@ const Register: FC = () => {
                 className={styles.input_wrapper}
                 onSubmit={handleSubmit(submitHandler)}
               >
-                <input
-                  type="text"
-                  placeholder="Username"
-                  {...register("username", {
-                    onChange: (e) => {
-                      setUserName(e.target.value);
-                    },
-                  })}
-                  className={
-                    !errors.username && userName.trim() !== ""
-                      ? styles.validInput
-                      : styles.inputDefault
-                  }
-                ></input>
-                <input
-                  type="text"
-                  placeholder="Display name"
-                  {...register("displayName", {
-                    onChange: (e) => {
-                      setDisplayName(e.target.value);
-                    },
-                  })}
-                  className={
-                    !errors.displayName && displayName.trim() !== ""
-                      ? styles.validInput
-                      : styles.inputDefault
-                  }
-                ></input>
+                <div className={styles.input_block}>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    {...register("username", {
+                      onChange: (e) => {
+                        setUserName(e.target.value);
+                      },
+                    })}
+                    className={
+                      !errors.username && userName.trim() !== ""
+                        ? styles.validInput
+                        : styles.inputDefault
+                    }
+                  ></input>
+                  <input
+                    type="text"
+                    placeholder="Display name"
+                    {...register("displayName", {
+                      onChange: (e) => {
+                        setDisplayName(e.target.value);
+                      },
+                    })}
+                    className={
+                      !errors.displayName && displayName.trim() !== ""
+                        ? styles.validInput
+                        : styles.inputDefault
+                    }
+                  ></input>
+                </div>
                 <button
                   type="submit"
                   className={

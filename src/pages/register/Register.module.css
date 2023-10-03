@@ -71,7 +71,7 @@
   line-height: 22px;
   text-align: left;
   color: rgba(255, 255, 255, 0.4);
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 .addImg_wrapper {
@@ -237,6 +237,12 @@
   flex-direction: column;
 }
 
+.input_block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
 .inputDefault {
   display: flex;
   flex-direction: row;
@@ -246,7 +252,6 @@
   height: 52px;
   background-color: black;
   border-radius: 8px;
-  margin: 10px 0;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: border-color 0.3s ease;
@@ -334,22 +339,24 @@
 }
 
 .categoriesWrapper {
-  margin: 54px 0px;
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
   width: 418px;
+  margin:  44px 0;
 }
 
 .categoriesNotSelected {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 10px 16px;
+  height: 40px;
   gap: 4px;
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
-  margin: 0px 8px 8px 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -363,8 +370,8 @@
   flex-direction: row;
   align-items: center;
   padding: 10px 16px;
+  height: 40px;
   gap: 4px;
-  margin: 0px 8px 8px 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -403,6 +410,10 @@
   color: #ffffff;
 }
 
+.allSetWrapper {
+  padding-left: 20px;
+}
+
 .allSetWrapper > :first-child {
   display: flex;
   flex-direction: row;
@@ -428,6 +439,7 @@
   gap: 10px;
   margin-top: 44px;
   width: 102px;
+  height: 44px;
   cursor: pointer;
   background: #ef8031;
   border-radius: 40px;
