@@ -4,24 +4,28 @@ main {
   padding: 0px 32px;
 }
 
-.menu {
-  /* margin-right: 60px; */
-}
-
 .nftcollectionhead {
   display: flex;
 }
 
 .nftcollectionhead h1 {
+  color: #fff;
+  font-family: Inter;
   font-size: 24px;
-  color: white;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
   cursor: pointer;
 }
 
 .nftcollectionhead h2 {
-  font-size: 24px;
   margin-left: 20px;
-  color: grey;
+  color: rgba(255, 255, 255, 0.403);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
   cursor: pointer;
 }
 
@@ -32,7 +36,6 @@ main {
 .search {
   margin-bottom: 25px;
   margin-top: 20px;
-  /* width: 95%; */
 }
 
 .searchInput {
@@ -50,8 +53,16 @@ main {
   color: #ffffff;
 }
 
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 .nft_market {
-  /* width: 95%; */
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -64,6 +75,7 @@ main {
   margin-left: 20px;
   margin-top: 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .nft_description_img img {
@@ -88,344 +100,3 @@ main {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
-/**/
-
-.chains {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  border: 1px solid #32353b;
-  border-radius: 40px;
-  padding: 8px 14px 8px 10px;
-  position: relative;
-}
-
-.nftmenu {
-  display: flex;
-  column-gap: 8px;
-}
-
-.breakDown {
-  display: flex;
-  align-items: center;
-  column-gap: 4px;
-  cursor: pointer;
-}
-
-.circle {
-  width: 24px;
-  height: 24px;
-}
-
-.breakDownArrow {
-  width: 12px;
-  height: 12px;
-  cursor: pointer;
-}
-
-.breakDownbtn {
-  width: 100%;
-  color: #fff;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  background-color: transparent;
-  padding: 0;
-}
-
-.nftmenubtn {
-  display: flex;
-  align-items: center;
-  column-gap: 4px;
-  border: 1px solid #32353b;
-  border-radius: 40px;
-  padding: 10px 14px;
-  position: relative;
-}
-
-.nftmenubutton {
-  width: 100%;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  background-color: transparent;
-  padding: 0;
-}
-
-.chainsFilterBox {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  border-radius: 10px;
-  background: #17181b;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 175%;
-}
-
-.optionBox {
-  display: flex;
-  padding: 8px 14px;
-  column-gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.optionBox:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 5px;
-}
-
-.options {
-  color: #fff;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.statusFilterBox {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  border-radius: 10px;
-  background: #17181b;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 175%;
-}
-
-.priceFilterBox {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  border-radius: 10px;
-  row-gap: 16px;
-  background: #17181b;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 256px;
-}
-
-.CalculationBox {
-  display: flex;
-  /* column-gap: 8px; */
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* .minMaxBox {
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 10px 14px 10px 10px;
-  flex-grow: 1;
-} */
-
-.minMaxContent {
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 10px 14px 10px 10px;
-  /* flex-grow: 1; */
-  color: #fff;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  outline: none;
-  /* background-color: transparent; */
-  border: none;
-  width: 50%;
-}
-
-.minMaxContent::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.chooseBox {
-  display: flex;
-  align-items: center;
-  padding: 10px 14px;
-  justify-content: space-between;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.leftPart {
-  display: flex;
-  column-gap: 10px;
-  align-items: center;
-}
-
-.cryptoChoice {
-  color: #fff;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.dash {
-  color: rgba(255, 255, 255, 0.4);
-  text-align: center;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  padding: 8px;
-}
-
-.applybtn {
-  border-radius: 6px;
-  background: #ef8031 !important;
-  padding: 10px 14px;
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  width: 100%;
-}
-
-.marketplaceLogo {
-  width: 24px;
-  height: 24px;
-}
-
-.checkBox {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ffffff33;
-  border-radius: 3px;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-/* .optionBox input[type="checkbox"] {
-  transform: scale(1.8);
-} */
-
-.checkBox::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-}
-
-.checkBox:checked::before {
-  background-color: #fff;
-  border: none;
-  background-image: url("../../resources/images/icons/check.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: translate(-1.8px, -1.8px);
-}
-
-.CollectionFilterBox {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  border-radius: 10px;
-  background: #17181b;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 274px;
-}
-
-.nftPiece {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-}
-
-.place {
-  color: #fff;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.subtext {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.collectionFilterSearch {
-  display: flex;
-  background: rgba(255, 255, 255, 0.04);
-  align-items: center;
-  padding: 10px 14px;
-  column-gap: 4px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.collectionFilterSearchInput {
-  width: 100%;
-  outline: none;
-  background-color: transparent;
-  color: #ffffff;
-  border: none;
-}
-
-.collectionFilterSearchInput::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-/* .lgbtn {
-  width: 120px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-left: 10px;
-}
-
-.lgbtn button {
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  color: #ffffff;
-  border: 1px solid #32353b;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-.lgbtn img {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  z-index: 10;
-  right: 10px;
-} */
-/**/

@@ -1,98 +1,131 @@
-import React, { useState } from 'react'
-import Navbar from '../../components/Navbar/Navbar'
-import style from '../nftCollection2/nftCollection2.module.css'
-import RightSideBar from '../../components/RightNavBar/rightnavbar'
-import NftPic from '../../resources/images/icons/nfts.png'
-import ArrowDown from '../../resources/images/icons/nav-arrow-down.png'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import style from "../nftCollection2/nftCollection2.module.css";
+import NftPic from "../../resources/images/icons/nfts.png";
+import NftFilterMenu from "../../components/NftCollectionFilter/NftCollectionFilter";
+import Rightnavbar from "../../components/RightNavBar/rightnavbar";
 
-function NftCollectionsecond() {
-    const[nftCollectionSecond, setNftCollectionSecond] = useState([
-        {"img": NftPic, "name": "Potatoz", "volume": 931.5 + "ETH", "price": 2.5 + "ETH", "owners": 243, "items": 9.999, "percent": 25 + "%" },
-        {"img": NftPic, "name": "Potatoz", "volume": 931.5 + "ETH", "price": 2.5 + "ETH", "owners": 243, "items": 9.999, "percent": 25 + "%" },
-        {"img": NftPic, "name": "Potatoz", "volume": 931.5 + "ETH", "price": 2.5 + "ETH", "owners": 243, "items": 9.999, "percent": 25 + "%" },
-        {"img": NftPic, "name": "Potatoz", "volume": 931.5 + "ETH", "price": 2.5 + "ETH", "owners": 243, "items": 9.999, "percent": 25 + "%" },
-        {"img": NftPic, "name": "Potatoz", "volume": 931.5 + "ETH", "price": 2.5 + "ETH", "owners": 243, "items": 9.999, "percent": 25 + "%" }
-    ])
-  return (
-    <section>
-        <Navbar />
-        <div className={style.nftcollection2_main} >
-            <div className={style.rightside}>
-                <RightSideBar />
-            </div>
-            <div className={style.leftside}>
-                <div className={style.description}>
-                    <h1>Nft</h1>
-                    <h2>Collection</h2>
-                </div>
-                <div className={style.searchinput}>
-                    <input type="text" placeholder='Search NFTs' />
-                </div>
-                <div className={style.nftmenuposition}>
-                    <div className={style.nftmenu}>
-          <div className={style.chains}>
-            <button>All Chains</button>
-            <img src={ArrowDown}/>
-          </div>
-          <div className={style.nftmenubt}>
-            <button>Status</button>
-            <img src={ArrowDown}/>
-          </div>
-          <div className={style.nftmenubt}>
-            <button>Price</button>
-            <img src={ArrowDown}/>
-          </div>
-          <div className={style.lgbtn}>
-            <button>Marketplace</button>
-            <img src={ArrowDown}/>
-          </div>
-          <div className={style.lgbtn}>
-            <button>Collection</button>
-            <img src={ArrowDown}/>
-          </div>
-          </div>
-          <div>
-          <div className={style.smbtn}>
-            <button>Newest</button>
-            <img src={ArrowDown}/>
-          </div>
-          </div>
-        </div>
-                <div className={style.nfts}>
-                    <div className={style.nfts_sections}>
-                    <h1>Collection</h1>
-                    <h1>Day volume</h1>
-                    <h1>Floor price</h1>
-                    <h1>Owners</h1>
-                    <h1>Items</h1>
-                    </div>
-                    <div className={style.nfts_cols}>
-                        <div className={style.nfts_cols_loop}>
-                            {nftCollectionSecond.map((element) => {
-                                return <div className={style.nft_postition}>
-                                <div className={style.nft_element}>
-                                    <div className={style.nft_img_name}>
-                                        <img src={element.img} />
-                                        <h1>{element.name}</h1>
-                                    </div>
-                                    <div className={style.volume_percent}>
-                                        <h1>{element.volume}</h1>
-                                        <h2>{element.percent}</h2>
-                                    </div>
-                                    <h1>{element.price}</h1>
-                                    <h1>{element.owners}</h1>
-                                    <h1>{element.items}</h1>
-                                </div>
-                                <div className={style.line}></div>
-                                </div>
-                            })}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-  )
+interface NftFilterMenuProps {
+  showNewestFilter: boolean;
 }
 
-export default NftCollectionsecond
+function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
+  const [nftCollectionSecond, setNftCollectionSecond] = useState([
+    {
+      img: NftPic,
+      name: "Potatoz",
+      volume: 931.5 + "ETH",
+      price: 2.5 + " " + "ETH",
+      owners: 243,
+      items: 9.999,
+      percent: "+" + 24 + "%",
+    },
+    {
+      img: NftPic,
+      name: "Potatoz",
+      volume: 931.5 + "ETH",
+      price: 2.5 + " " + "ETH",
+      owners: 243,
+      items: 9.999,
+      percent: "+" + 24 + "%",
+    },
+    {
+      img: NftPic,
+      name: "Potatoz",
+      volume: 931.5 + "ETH",
+      price: 2.5 + " " + "ETH",
+      owners: 243,
+      items: 9.999,
+      percent: "+" + 24 + "%",
+    },
+    {
+      img: NftPic,
+      name: "Potatoz",
+      volume: 931.5 + "ETH",
+      price: 2.5 + " " + "ETH",
+      owners: 243,
+      items: 9.999,
+      percent: "+" + 24 + "%",
+    },
+    {
+      img: NftPic,
+      name: "Potatoz",
+      volume: 931.5 + "ETH",
+      price: 2.5 + " " + "ETH",
+      owners: 243,
+      items: 9.999,
+      percent: "+" + 24 + "%",
+    },
+  ]);
+
+  const navigate = useNavigate();
+
+  const handleNftsClick = () => {
+    navigate("/nft-collection");
+  };
+
+  const handleCollectionsClick = () => {
+    navigate("/nft-collectionprice");
+  };
+
+  return (
+    <section>
+      <Navbar />
+      <div className={style.nftcollection2_main}>
+        <Rightnavbar />
+        <div className={style.leftside}>
+          <div className={style.description}>
+            <h1 onClick={handleNftsClick}>NFTs</h1>
+            <h2 onClick={handleCollectionsClick}>Collections</h2>
+          </div>
+          <div className={style.search}>
+            <input
+              className={style.searchInput}
+              type="text"
+              placeholder="Search NFTs"
+            />
+          </div>
+          <NftFilterMenu showNewestFilter={showNewestFilter} />
+          <div className={style.nftmenuposition}>
+            <div className={style.nfts}>
+              <div className={style.nfts_sections}>
+                <h1>Collection</h1>
+                <h1>Day volume</h1>
+                <h1>Floor price</h1>
+                <h1>Owners</h1>
+                <h1>Items</h1>
+              </div>
+              <div className={style.nfts_cols}>
+                <div className={style.nfts_cols_loop}>
+                  {nftCollectionSecond.map((element, index) => {
+                    return (
+                      <div key={index} className={style.nft_postition}>
+                        <div className={style.nft_element}>
+                          <div className={style.nft_img_name}>
+                            <img src={element.img} />
+                            <h1>{element.name}</h1>
+                          </div>
+                          <div className={style.volume_percent}>
+                            <h1>{element.volume}</h1>
+                            <h2>{element.percent}</h2>
+                          </div>
+                          <h1 className={style.price}>{element.price}</h1>
+                          <h1 className={style.owners}>{element.owners}</h1>
+                          <h1 className={style.items}>{element.items}</h1>
+                        </div>
+                        <div className={style.line}></div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default NftCollectionsecond;
