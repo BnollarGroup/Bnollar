@@ -8,21 +8,21 @@ import NftFilterMenu from "../../components/NftCollectionFilter/NftCollectionFil
 
 function NftCollection() {
   const [nftPicture, setNftPicture] = useState([
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
-    { img: NftMonkey, name: "Mutant Hound Collar #4872", price: "1.325ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
+    { img: NftMonkey, name: "Potatoz #5610", price: "1.325 ETH" },
   ]);
 
   const [showNewestFilter, setShowNewestFilter] = useState(false);

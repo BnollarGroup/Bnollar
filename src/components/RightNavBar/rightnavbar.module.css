@@ -104,3 +104,9 @@
   font-weight: 400;
   line-height: 20px;
 }
+
+@media all and (max-width: 1078px) {
+  .navigator {
+    display: none;
+  }
+}

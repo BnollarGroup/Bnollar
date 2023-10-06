@@ -5,6 +5,7 @@ import style from "../nftCollection2/nftCollection2.module.css";
 import NftPic from "../../resources/images/icons/nfts.png";
 import NftFilterMenu from "../../components/NftCollectionFilter/NftCollectionFilter";
 import Rightnavbar from "../../components/RightNavBar/rightnavbar";
+import Chevron from "../../resources/images/icons/chevron-right.svg";
 
 interface NftFilterMenuProps {
   showNewestFilter: boolean;
@@ -73,7 +74,9 @@ function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
     <section>
       <Navbar />
       <div className={style.nftcollection2_main}>
-        <Rightnavbar />
+        <div>
+          <Rightnavbar />
+        </div>
         <div className={style.leftside}>
           <div className={style.description}>
             <h1 onClick={handleNftsClick}>NFTs</h1>
@@ -100,12 +103,18 @@ function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
                 <div className={style.nfts_cols_loop}>
                   {nftCollectionSecond.map((element, index) => {
                     return (
-                      <div key={index} className={style.nft_postition}>
+                      <div key={index} className={style.nft_position}>
                         <div className={style.nft_element}>
+                          {/* <div className={style.nft_img_name_wrap}> */}
                           <div className={style.nft_img_name}>
                             <img src={element.img} />
                             <h1>{element.name}</h1>
                           </div>
+                          <img
+                            src={Chevron}
+                            className={style.right_arrow}
+                            alt="Right arrow"
+                          />
                           <div className={style.volume_percent}>
                             <h1>{element.volume}</h1>
                             <h2>{element.percent}</h2>
@@ -114,6 +123,43 @@ function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
                           <h1 className={style.owners}>{element.owners}</h1>
                           <h1 className={style.items}>{element.items}</h1>
                         </div>
+
+                        <div className={style.nft_element_mobile}>
+                          <div className={style.nft_element_mobile_flex}>
+                            <div className={style.nft_img_name_wrap}>
+                              <div className={style.nft_img_name}>
+                                <img src={element.img} />
+                                <h1>{element.name}</h1>
+                              </div>
+                              <img
+                                src={Chevron}
+                                className={style.right_arrow}
+                                alt="Right arrow"
+                              />
+                            </div>
+                            <div className={style.nfts_sections_mobile_wrap}>
+                              <div className={style.nfts_sections_mobile}>
+                                {/* <h1>Collection</h1> */}
+                                <h1>Day volume</h1>
+                                <h1>Floor price</h1>
+                                <h1>Owners</h1>
+                                <h1>Items</h1>
+                              </div>
+                              <div className={style.info_wrap}>
+                                <div className={style.volume_percent}>
+                                  <h1>{element.volume}</h1>
+                                  <h2>{element.percent}</h2>
+                                </div>
+                                <h1 className={style.price}>{element.price}</h1>
+                                <h1 className={style.owners}>
+                                  {element.owners}
+                                </h1>
+                                <h1 className={style.items}>{element.items}</h1>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                         <div className={style.line}></div>
                       </div>
                     );

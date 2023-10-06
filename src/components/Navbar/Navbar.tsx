@@ -1,14 +1,15 @@
 import React from "react";
 import classes from "./Navbar.module.css";
 import Logo from "../../resources/images/logo/bnollar_logo.svg";
+import Plus from "../../resources/images/icons/plus.svg";
 import Search from "./../../resources/images/Navbar/search.svg";
 import Notifications from "../../resources/images/Navbar/notifications.svg";
 import Messanger from "../../resources/images/Navbar/messanger.svg";
+import AvatarImg from "../../resources/images/Navbar/avatar.png";
 
 function Navbar() {
   return (
     <nav className={classes.navbar}>
-
       <div className={classes.left_cont}>
         <div className={classes.logo_cont}>
           <img src={Logo} alt="Logo" />
@@ -18,24 +19,22 @@ function Navbar() {
           <input type="text" placeholder="Search" />
         </div>
       </div>
+
       <div className={classes.right_cont}>
         <div className={classes.create}>
-          <span>+</span>
-          Create
+          <img src={Plus} alt="Plus" />
+          <p>Create</p>
         </div>
         <div className={classes.notifications}>
           <img src={Notifications} alt="notifications" />
+          <img src={Plus} alt="notifications" />
         </div>
-        <div className={classes.messanger}>
-          <img src={Messanger} alt="messanger" />
+        <div className={classes.messenger}>
+          <img src={Messanger} alt="messenger" />
+          <img src={Search} alt="messenger" />
         </div>
         <div className={classes.avatar}>
-          <img
-            src={
-              "https://www.elitesingles.co.uk/wp-content/uploads/sites/59/2019/11/2b_en_articleslide_sm2-350x264.jpg"
-            }
-            alt="avatar"
-          />
+          <img src={AvatarImg} alt="avatar" />
         </div>
       </div>
     </nav>
@@ -43,5 +42,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-

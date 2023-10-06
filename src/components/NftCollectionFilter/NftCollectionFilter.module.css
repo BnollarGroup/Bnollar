@@ -29,6 +29,7 @@
   align-items: center;
   column-gap: 4px;
   cursor: pointer;
+  width: 80px;
 }
 
 .breakDownbtn {
@@ -312,4 +313,28 @@
   top: 50px;
   left: 0;
   width: 100px;
+}
+
+@media all and (max-width: 1080px) {
+  .nftmenuWrapper {
+    column-gap: 8px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .nftmenuMain::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .nftmenuMain {
+    overflow-x: auto;
+  }
+
+  .nftmenuWrapper {
+    overflow-x: auto;
+  }
+
+  .nftmenuWrapper::-webkit-scrollbar {
+    width: 0;
+  }
 }
