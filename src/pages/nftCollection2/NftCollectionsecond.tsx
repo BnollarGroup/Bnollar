@@ -105,7 +105,6 @@ function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
                     return (
                       <div key={index} className={style.nft_position}>
                         <div className={style.nft_element}>
-                          {/* <div className={style.nft_img_name_wrap}> */}
                           <div className={style.nft_img_name}>
                             <img src={element.img} />
                             <h1>{element.name}</h1>
@@ -139,7 +138,6 @@ function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
                             </div>
                             <div className={style.nfts_sections_mobile_wrap}>
                               <div className={style.nfts_sections_mobile}>
-                                {/* <h1>Collection</h1> */}
                                 <h1>Day volume</h1>
                                 <h1>Floor price</h1>
                                 <h1>Owners</h1>

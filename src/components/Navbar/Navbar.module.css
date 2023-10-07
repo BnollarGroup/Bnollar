@@ -103,12 +103,6 @@
   border-radius: 50%;
 }
 
-/* @media all and (max-width: 974px) {
-  .navbar { */
-/* padding-left: 46px; */
-/* }
-} */
-
 @media all and (max-width: 768px) {
   .search_input_cont {
     display: none;

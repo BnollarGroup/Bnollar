@@ -1,7 +1,7 @@
 main {
   display: flex;
   column-gap: 25px;
-  padding: 0px 32px;
+  padding: 0px 32px 154px 32px;
 }
 
 .nftcollectionhead {
@@ -28,10 +28,6 @@ main {
   line-height: 32px;
   cursor: pointer;
 }
-
-/* .nft_text {
-  padding: 5px 5px 10px 10px;
-} */
 
 .search {
   margin-bottom: 25px;
@@ -64,27 +60,18 @@ main {
 
 .nft_market {
   margin-top: 25px;
-  /* margin-top: 5px; */
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  /* margin-left: -10px; */
 }
 
 .nft_description {
-  /* width: 245px;
-  height: 327px;
-  margin-left: 20px;
-  margin-top: 20px; */
-  /* border-radius: 5px; */
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
 .nft_description_img img {
-  /* height: 245px;
-  width: 245px; */
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 100%;
@@ -123,7 +110,6 @@ main {
   main {
     column-gap: 0px;
   }
-
   .nftCollectioncontainer {
     width: 100%;
   }
@@ -134,24 +120,13 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .nft_description_img img {
-    /* height: 205px;
-    width: 205px; */
-  }
 }
 
 @media all and (max-width: 393px) {
   main {
-    padding: 0px 16px;
-    /* margin-top: 34px; */
+    padding: 0px 16px 50px 16px;
   }
-
   .nft_market {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .nft_description_img img {
-    /* height: 176px;
-    width: 176px; */
   }
 }
