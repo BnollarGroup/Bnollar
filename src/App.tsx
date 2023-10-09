@@ -28,7 +28,10 @@ const App = () => {
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
         <Route path="/nft-collection" element={<NftCollection />} />
-        <Route path="/nft-collectionprice" element={<NftCollectionsecond />} />
+        <Route
+          path="/nft-collectionprice"
+          element={<NftCollectionsecond showNewestFilter={true} />}
+        />
         <Route path="/profile" element={<Profile />} />
         <Route path="/joincommunity" element={<JoinCommunity />} />
         <Route path="/grouppage" element={<Profile_2 />} />

@@ -1,6 +1,10 @@
 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.33335 2.5L6.66669 17.5" stroke="#6E6E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13.3334 2.5L11.6667 17.5" stroke="#6E6E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M2.91669 7.5H17.9167" stroke="#6E6E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M2.08331 12.5H17.0833" stroke="#6E6E70" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="vuesax/linear/hashtag">
+<g id="hashtag">
+<path id="Vector" d="M8.33366 2.5L6.66699 17.5" stroke="white" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M13.3337 2.5L11.667 17.5" stroke="white" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M2.91699 7.5H17.917" stroke="white" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M2.08301 12.5H17.083" stroke="white" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>
