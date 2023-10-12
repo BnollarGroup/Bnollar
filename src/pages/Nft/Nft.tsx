@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Nft.module.css";
 import nft1 from "../../resources/images/icons/nftImage.svg";
 import userIcon1 from "../../resources/images/icons/userIcon3.svg";
 import userIcon2 from "../../resources/images/icons/userIcon4.svg";
 import transfer from "../../resources/images/icons/transfer.svg";
+import icon from "../../resources/images/icons/nav_arrow.svg"
 const Description = () => {
   const [showDescription, setShowDescription] = React.useState(true);
   const handleClick =()=>{
@@ -13,7 +14,7 @@ const Description = () => {
   return (
     <div className={styles.nftModuleWrapper}>
       <div className={styles.moduleName}>
-        Description <button onClick={handleClick}>asd</button>
+        Description <button onClick={handleClick}> <img src={icon} /> </button>
       </div>
       {showDescription && (
         <div className={styles.moduleBody}>
@@ -26,53 +27,86 @@ const Description = () => {
     </div>
   );
 };
+
+
 const Properties = () => {
-  const Item = () => {
+    const [showProperties, setShowProperties] = useState(true);
+
+    const handleClick = () => {
+        setShowProperties((prevState) => !prevState);
+    };
+
+    const Item = () => {
+        return (
+            <div className={styles.propertieItem}>
+                <div className={styles.propertieItemTop}>Backgorund</div>
+                <div className={styles.propertieItemCenter}>Purple</div>
+                <div className={styles.propertieItemBottom}>1.3%</div>
+            </div>
+        );
+    };
+
     return (
-      <div className={styles.propertieItem}>
-        <div className={styles.propertieItemTop}>Backgorund</div>
-        <div className={styles.propertieItemCenter}>Purple</div>
-        <div className={styles.propertieItemBottom}>1.3%</div>
-      </div>
+        <div className={styles.propertiesWrapper}>
+            <div className={styles.propertiesName}>
+                Properties{" "}
+                <button onClick={handleClick}>
+                    {" "}
+                    <img src={icon} alt="Toggle Properties" />{" "}
+                </button>
+            </div>
+            {showProperties && (
+                <div className={styles.propertieItems}>
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                    <Item />
+                </div>
+            )}
+        </div>
     );
-  };
-  return (
-    <div className={styles.propertiesWrapper}>
-      <div className={styles.propertiesName}>Properties</div>
-      <div className={styles.propertieItems}>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-      </div>
-    </div>
-  );
 };
+
+
 const Details = () => {
-  return (
-    <div className={styles.detailsWrapper}>
-      <div className={styles.detailsName}>Token details</div>
-      <div className={styles.detailsItems}>
-        <div className={styles.detailsItem}>
-          <div className={styles.itemName}>Contract Address</div>
-          <div className={styles.itemValue}>0x7E091b…031A</div>
+    const [showDetails, setShowDetails] = useState(true);
+
+    const handleClick = () => {
+        setShowDetails((prevState) => !prevState);
+    };
+
+    return (
+        <div className={styles.detailsWrapper}>
+            <div className={styles.detailsName}>
+                Token details
+                <button onClick={handleClick}>
+                    {" "}
+                    <img src={icon} alt="Toggle Details" />{" "}
+                </button>
+            </div>
+            {showDetails && (
+                <div className={styles.detailsItems}>
+                    <div className={styles.detailsItem}>
+                        <div className={styles.itemName}>Contract Address</div>
+                        <div className={styles.itemValue}>0x7E091b…031A</div>
+                    </div>
+                    <div className={styles.detailsItem}>
+                        <div className={styles.itemName}>Token ID</div>
+                        <div className={styles.itemValue}>4502665</div>
+                    </div>
+                    <div className={styles.detailsItem}>
+                        <div className={styles.itemName}>Blockchain</div>
+                        <div className={styles.itemValue}>BNB Chain</div>
+                    </div>
+                    <div className={styles.detailsItem}>
+                        <div className={styles.itemName}>Token Standard</div>
+                        <div className={styles.itemValue}>ERC-721</div>
+                    </div>
+                </div>
+            )}
         </div>
-        <div className={styles.detailsItem}>
-          <div className={styles.itemName}>Token ID</div>
-          <div className={styles.itemValue}>4502665</div>
-        </div>
-        <div className={styles.detailsItem}>
-          <div className={styles.itemName}>Blockchain</div>
-          <div className={styles.itemValue}>BNB Chain</div>
-        </div>
-        <div className={styles.detailsItem}>
-          <div className={styles.itemName}>Token Standard</div>
-          <div className={styles.itemValue}>ERC-721</div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 const NftHistory = () => {
   return (

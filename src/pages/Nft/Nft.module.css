@@ -24,6 +24,7 @@
   margin: 24px 0px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
+
 }
 .moduleName {
   font-family: "Inter";
@@ -31,7 +32,10 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
-  /* identical to box height, or 147% */
+  flex-direction: row;
+  display: flex;
+  gap: 420px;
+
 
   color: #ffffff;
 }
@@ -55,9 +59,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  margin-bottom: 24px;
+  
 }
 .detailsName {
   font-family: "Inter";
@@ -65,10 +70,12 @@
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
-  /* identical to box height, or 147% */
-  margin-bottom: 24px;
+  flex-direction: row;
+  display: flex;
 
   color: #ffffff;
+
+
 }
 .detailsItems {
   display: flex;
@@ -123,6 +130,9 @@
   line-height: 22px;
   /* identical to box height, or 147% */
   margin-bottom: 24px;
+  flex-direction: row;
+  display: flex;
+  gap: 420px;
 
   color: #ffffff;
 }
@@ -145,6 +155,8 @@
 .propertieItem div {
   margin: 4px 0px;
 }
+
+
 .propertieItemTop {
   font-family: "Inter";
   font-style: normal;

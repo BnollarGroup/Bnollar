@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import styles from './Landing.module.css'
 import bnollarLogo from '../../resources/images/logo/bnollar_logo.svg'
-import frame from '../../resources/images/landing/frame.png'
+import frame from '../../resources/images/landing/frame.svg'
 import icon1 from '../../resources/images/landing/icon1.svg'
 import icon2 from '../../resources/images/landing/icon2.svg'
 import icon6 from '../../resources/images/landing/icon6.svg'
 import { Link } from 'react-router-dom'
-
+import Home from "../Home/Home"
 
 const Landing: FC = () => {
   
@@ -14,9 +14,7 @@ const Landing: FC = () => {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <img src={bnollarLogo} alt="bnollar" />
-        <button className={styles.getStarted}>
-          <p className={styles.getStartedText}>Get started</p>
-        </button>
+
         <Link to={'/connect-wallet'}>
           <button className={styles.getStarted}>Get started</button>
         </Link>
@@ -33,31 +31,32 @@ const Landing: FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles.footerWrapper}>
-        <div className={styles.left}>
-            <div><img src={icon6} alt='nft' /></div>
-            <div><img src={icon1} alt='nft'/></div>
-            <div><img src={icon2} alt='nft'/></div>
-          <Link to={'/connect-wallet'}>
-            <button className={styles.welcomeGetStarted}>Get started</button>
-          </Link>
+
+        <div className={styles.footerWrapper}>
+            <div className={styles.grid}>
+                <div className={styles.icon1}><img src={icon6} alt='nft' /></div>
+                <div className={styles.iconhid}><img src={icon1} alt='nft'/></div>
+                <div className={styles.iconhid}><img src={icon2} alt='nft'/></div>
+                <div className={styles.icon4}><img src={icon6} alt='nft' /></div>
+                <div className={styles.icon}><img src={icon1} alt='nft'/></div>
+                <div className={styles.iconhid} ><img src={icon2} alt='nft'/></div>
+                <div className={styles.iconhid}><img src={icon6} alt='nft' /></div>
+                <div className={styles.icon8}><img src={icon1} alt='nft'/></div>
+                <div className={styles.icon9}><img src={icon2} alt='nft'/></div>
+                <div className={styles.iconhid}><img src={icon2} alt='nft'/></div>
+                <div className={styles.iconhid}><img src={icon6} alt='nft' /></div>
+                <div className={styles.icon9}><img src={icon2} alt='nft'/></div>
+
+
+            </div>
         </div>
-      </div>
-      <div className={styles.footerWrapper}>
-        <div className={styles.left}>
-          <img className={styles.landingIcon} src={icon6} alt="nft" />
-          <img className={styles.landingIcon} src={icon1} alt="nft" />
-          <img className={styles.landingIcon} src={icon2} alt="nft" />
+
+        <div className={styles.homeWrapper}>
+            <div className={styles.frame}>
+                <Home />
+            </div>
         </div>
-        <div className={styles.center}>
-          <img src={frame} />
-        </div>
-        <div className={styles.right}>
-            <div><img src={icon6} alt='nft'/></div>
-            <div><img src={icon1} alt='nft'/></div>
-            <div><img src={icon2} alt='nft'/></div>
-        </div>
-      </div>
+
     </div>
   );
 };
