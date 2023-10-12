@@ -1,39 +1,94 @@
-import React from 'react'
-import style from '../RightNavBar/rightnavbar.module.css'
-import HomeLogo from '../../resources/images/icons/home-simple-door.png'
-import Hashtag from "../../resources/images/icons/hashtag.png"
-import NFT from "../../resources/images/icons/stats-report.png"
-import Group from '../../resources/images/icons/group.png'
-import SettingsLogo from '../../resources/images/icons/settings.png'
-import NftLogo from '../../resources/images/icons/Rectangle.png'
-import NftMonkey from '../../resources/images/icons/monkey.png'
+import React, { useState } from "react";
+import style from "../RightNavBar/rightnavbar.module.css";
+import Home from "../../svg/Home";
+import Hashtag from "../../svg/Hashtag";
+import Statistics from "../../svg/Statistics";
+import Wheel from "../../svg/Wheel";
+import Group from "../../svg/Group";
 
-function rightnavbar() {
+function Rightnavbar() {
+  const [activeItem, setActiveItem] = useState("");
+
+  const handleNavbarItemClick = (itemName: string) => {
+    setActiveItem(itemName);
+  };
+
   return (
     <div className={style.navigator}>
-        <div className={style.navcontainer}>
-        <div className={style.home}>
-          <img src={HomeLogo}/>
+      <div className={style.navcontainer}>
+        <div
+          className={`${style.navbar} ${
+            activeItem === "Home" ? style.active : ""
+          }`}
+          onClick={() => handleNavbarItemClick("Home")}
+        >
+          <Home
+            color={
+              activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
+            }
+          />
           <h1>Home</h1>
         </div>
-        <div className={style.navbar}>
-          <img src={Hashtag}/>
+        <div
+          className={`${style.navbar} ${
+            activeItem === "Explore" ? style.active : ""
+          }`}
+          onClick={() => handleNavbarItemClick("Explore")}
+        >
+          <Hashtag
+            color={
+              activeItem === "Explore"
+                ? "#ffffff"
+                : "rgba(255, 255, 255, 0.403)"
+            }
+          />
           <h1>Explore</h1>
         </div>
-        <div className={style.navbar}>
-          <img src={NFT}/>
+        <div
+          className={`${style.navbar} ${
+            activeItem === "NFT" ? style.active : ""
+          }`}
+          onClick={() => handleNavbarItemClick("NFT")}
+        >
+          <Statistics
+            color={
+              activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
+            }
+          />
           <h1>NFT</h1>
         </div>
-        <div className={style.navbar}>
-          <img src={Group}/>
+        <div
+          className={`${style.navbar} ${
+            activeItem === "Community" ? style.active : ""
+          }`}
+          onClick={() => handleNavbarItemClick("Community")}
+        >
+          <Group
+            color={
+              activeItem === "Community"
+                ? "#ffffff"
+                : "rgba(255, 255, 255, 0.403)"
+            }
+          />
           <h1>Community</h1>
         </div>
-        <div className={style.navbar}>
-          <img src={SettingsLogo}/>
+        <div
+          className={`${style.navbar} ${
+            activeItem === "Setting" ? style.active : ""
+          }`}
+          onClick={() => handleNavbarItemClick("Setting")}
+        >
+          <Wheel
+            color={
+              activeItem === "Setting"
+                ? "#ffffff"
+                : "rgba(255, 255, 255, 0.403)"
+            }
+          />
           <h1>Setting</h1>
         </div>
-        </div>
-       <div className={style.desc}>
+      </div>
+      <div className={style.desc}>
         <div className={style.about}>
           <h2>About</h2>
           <h2>Blog</h2>
@@ -47,9 +102,9 @@ function rightnavbar() {
         <div className={style.allright}>
           <h3>© 2023 Bnollar</h3>
         </div>
-       </div>
       </div>
-  )
+    </div>
+  );
 }
 
-export default rightnavbar
+export default Rightnavbar;

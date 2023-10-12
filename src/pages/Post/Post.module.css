@@ -67,7 +67,7 @@
 }
 
 .commentCard::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.8rem;
 }
 
 .commentCard::-webkit-scrollbar-thumb {

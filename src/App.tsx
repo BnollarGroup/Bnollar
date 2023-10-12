@@ -1,4 +1,3 @@
-import "./App.css";
 import Landing from "./pages/landing/Landing";
 import SignIn from "./pages/SignIn/SignIn";
 import { Routes, Route } from "react-router-dom";
@@ -17,19 +16,6 @@ import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
 import Explore from "./pages/Explore/Explore";
 import Settings from "./pages/Settings/Settings";
 
-// const App = () => {
-//   return (
-//     <div className="App" >
-//       <Routes>
-//         <Route path="/" element={<SignIn />} />
-//         <Route path="/landing" element={<Landing />} />
-//         <Route path="/register" element={<Register />} />
-
-// import Settings from "./pages/Settings/Settings";
-// import ProfileChat from "./pages/ProfileChat/ProfileChat";
-// import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
-// import Explore from "./pages/Explore/Explore";
-
 const App = () => {
   return (
     <div className="App">
@@ -41,11 +27,14 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/post" element={<Post />} />
         <Route path="/nft" element={<Nft />} />
-        <Route path="/nft-collection" element={<NftCollection/>} />
-        <Route path="/nft-collectionprice" element={<NftCollectionsecond/>} />
-        <Route path="/profile" element={<Profile/>} />
-        <Route path="/joincommunity" element={<JoinCommunity/>} />
-        <Route path="/grouppage" element={<Profile_2/>} />
+        <Route path="/nft-collection" element={<NftCollection />} />
+        <Route
+          path="/nft-collectionprice"
+          element={<NftCollectionsecond showNewestFilter={true} />}
+        />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/joincommunity" element={<JoinCommunity />} />
+        <Route path="/grouppage" element={<Profile_2 />} />
         <Route path="/settings/:type" element={<Settings />} />
         <Route path="/profile-chat" element={<ProfileChat />} />
         <Route path="/profile-chat/videocall" element={<VideoCall />} />

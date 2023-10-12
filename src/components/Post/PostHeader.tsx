@@ -35,26 +35,3 @@ const PostHeader = (props: any) => {
 export default PostHeader;
 
 
-
-//           <div className={styles.verifieBadge}>
-//             <img src={verify} />
-//           </div>
-//           <div className={styles.date}>Dec 14</div>
-//         </div>
-//         <div className={styles.description}>
-//           <span>#Bitcoin</span> seems to be doing exactly what its done for
-//           about a year. Strong sell-off, consolidate & slow grind up, create a
-//           bear flag, RSI breaks down its trend line, bear flag breaks down for
-//           another strong sell-off and the cycle begins again.
-//         </div>
-//         <div className={styles.buttons}>
-//           <UpvoteButton />
-//           <CommnetButton />
-//           <ShareButton />
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-// export default PostHeader
-
