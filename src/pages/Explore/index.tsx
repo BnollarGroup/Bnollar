@@ -1,10 +1,10 @@
-import WithNavigation from "../../hoc/WithNavigation";
+import WithNavigation from "hoc/WithNavigation";
 import styles from "./Explore.module.css";
 import { useState } from "react";
-import { dataBase } from "../../components/Explore/data";
-import { DataType } from "../../components/Explore/types";
-import Post from "../../components/Explore/Post/Post";
-import RightSideBar from "../../components/Explore/RightSideBar/RightSideBar";
+import { dataBase } from "components/Explore/data";
+import { DataType } from "components/Explore/types";
+import Post from "components/Explore/Post/Post";
+import RightSideBar from "components/Explore/RightSideBar/RightSideBar";
 
 function Explore() {
   const [data] = useState<DataType[]>(dataBase);
