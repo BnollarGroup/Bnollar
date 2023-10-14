@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../RightNavBar/rightnavbar.module.css";
+import style from "./RightNavbar.module.css";
 import Home from "../../lib/resources/svg/Home";
 import Hashtag from "../../lib/resources/svg/Hashtag";
 import Statistics from "../../lib/resources/svg/Statistics";

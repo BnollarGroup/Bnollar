@@ -1,4 +1,4 @@
-import styles from "./SideNav.module.css";
+import styles from "./Sidenav.module.css";
 import nft from "../../lib/resources/images/icons/nft.svg";
 import home from "../../lib/resources/images/icons/home.svg";
 import community from "../../lib/resources/images/icons/comunity.svg";

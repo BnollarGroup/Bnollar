@@ -23,7 +23,7 @@ export default function BlockchainContainer({
       }}
     >
       <img
-        src={require(`../../../../resources/images/upload-nft/chooseBlockchain/${image}`)}
+        src={require(`../../../../lib/resources/images/upload-nft/chooseBlockchain/${image}`)}
         alt={`${text} icon`}
       />
       <span className={styles.text}>{text}</span>

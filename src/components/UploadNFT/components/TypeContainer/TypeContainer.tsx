@@ -17,7 +17,7 @@ export default function TypeContainer({
   return (
     <div className={styles.container} onClick={() => setPage("createNewNFT")}>
       <img
-        src={require(`../../../../resources/images/upload-nft/chooseType/${image}`)}
+        src={require(`../../../../lib/resources/images/upload-nft/chooseType/${image}`)}
         alt={`${title} choose type`}
         className={styles.icon}
       />
