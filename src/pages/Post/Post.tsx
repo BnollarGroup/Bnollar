@@ -9,33 +9,25 @@ import WriteComment from "../../components/Post/WriteComment";
 const Post = () => {
   return (
     <div className={styles.postWrapper}>
-
       <Navbar />
 
       <div className={styles.container}>
+        <div className={styles.post}>
+          <div className={styles.postImage}>
+            <img src={nft1} />
+          </div>
 
-      <div className={styles.post}>
+          <div className={styles.sideBar}>
+            <div className={styles.commentCard}>
+              <PostHeader />
+              <PostComment reply={<PostComment />} />
 
-        <div className={styles.postImage}>
-          <img src={nft1} />
-        </div>
-
-        <div className={styles.sideBar}>
-          <div className={styles.commentCard}>
-            <PostHeader />
-            <PostComment reply={<PostComment />} />
-
-            <WriteComment />
+              <WriteComment />
+            </div>
           </div>
         </div>
       </div>
-      </div>
-
-
     </div>
   );
 };
 export default Post;
-
-
-

@@ -9,13 +9,12 @@
     display: flex;
     flex-direction: column;
   }
-} 
-
-.container{
-  display: flex;
-  flex-display: row;;
 }
 
+.container {
+  display: flex;
+  flex-display: row;
+}
 
 .post {
   display: flex;
@@ -74,8 +73,6 @@
   background-color: #000000;
   border-radius: 8px;
 }
-
-
 
 @media (max-width: 1024px) {
   .container {

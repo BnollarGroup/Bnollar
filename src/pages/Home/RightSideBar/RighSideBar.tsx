@@ -11,7 +11,8 @@ const RighSideBar = () => {
         <ul>
           <li>
             <img src={user1} alt="user icon" />
-            <img src={active} className={styles.activeUser} /> <span>Calvin May</span>
+            <img src={active} className={styles.activeUser} />{" "}
+            <span>Calvin May</span>
           </li>
           <li>
             <img src={user1} alt="user icon" /> <span>Pedro Clark</span>
@@ -43,7 +44,8 @@ const RighSideBar = () => {
             <img src={nft1} alt="user icon" /> <span>Otherdeed</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> <span>MutantApeYachtClub Williams</span>
+            <img src={nft1} alt="user icon" />{" "}
+            <span>MutantApeYachtClub Williams</span>
           </li>
           <li>
             <img src={nft1} alt="user icon" /> <span>Bored Ape Yacht Club</span>

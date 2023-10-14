@@ -7,12 +7,12 @@ import FeedCard from "../../../components/Home/FeedCard";
 const Feed = () => {
   return (
     <div className={styles.feedWrapper}>
-        <FeedHeader/>
-        <FeedCard/>
-        <FeedCard isNft={true}/>
-        <FeedCard/>
-        <FeedCard/>
-        <FeedCard/>
+      <FeedHeader />
+      <FeedCard />
+      <FeedCard isNft={true} />
+      <FeedCard />
+      <FeedCard />
+      <FeedCard />
     </div>
   );
 };

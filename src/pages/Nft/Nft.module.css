@@ -24,7 +24,6 @@
   margin: 24px 0px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-
 }
 .moduleName {
   font-family: "Inter";
@@ -35,7 +34,6 @@
   flex-direction: row;
   display: flex;
   gap: 420px;
-
 
   color: #ffffff;
 }
@@ -62,7 +60,6 @@
   width: 100%;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  
 }
 .detailsName {
   font-family: "Inter";
@@ -74,8 +71,6 @@
   display: flex;
 
   color: #ffffff;
-
-
 }
 .detailsItems {
   display: flex;
@@ -155,7 +150,6 @@
 .propertieItem div {
   margin: 4px 0px;
 }
-
 
 .propertieItemTop {
   font-family: "Inter";
