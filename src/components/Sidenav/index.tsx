@@ -4,7 +4,7 @@ import home from "lib/resources/images/icons/home.svg";
 import community from "lib/resources/images/icons/comunity.svg";
 import settings from "lib/resources/images/icons/settings.svg";
 import hashtag from "lib/resources/images/icons/hashtag.svg";
-import SideNavLink from "../SideNavLink/SideNavLink";
+import SideNavLink from "../SideNavLink";
 import { useLocation } from "react-router-dom";
 
 const SideNav = () => {

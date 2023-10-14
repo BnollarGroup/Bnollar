@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import style from "./NFTCollection.module.css";
 import Navbar from "components/Navbar/Navbar";
 import NftMonkey from "lib/resources/images/icons/nft.png";
-import Rightnavbar from "components/RightNavbar/RightNavbar";
+import Rightnavbar from "components/RightNavbar";
 import NftFilterMenu from "components/NftCollectionFilter/NftCollectionFilter";
 
 function NftCollection() {

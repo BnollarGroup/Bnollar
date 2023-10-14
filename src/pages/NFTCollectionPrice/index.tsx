@@ -4,7 +4,7 @@ import Navbar from "components/Navbar/Navbar";
 import style from "./NFTCollectionPrice.module.css";
 import NftPic from "lib/resources/images/icons/nfts.png";
 import NftFilterMenu from "components/NftCollectionFilter/NftCollectionFilter";
-import Rightnavbar from "components/RightNavbar/RightNavbar";
+import Rightnavbar from "components/RightNavbar";
 import Chevron from "lib/resources/images/icons/chevron-right.svg";
 
 function NftCollectionsecond() {

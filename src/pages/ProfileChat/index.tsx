@@ -1,4 +1,4 @@
-import WithNavigation from "HOC/WithNavigation/WithNavigation";
+import WithNavigation from "HOC/WithNavigation";
 import styles from "./ProfileChat.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";

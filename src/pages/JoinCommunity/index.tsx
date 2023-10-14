@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
 import style from "./JoinCommunity.module.css";
-import RighSideBar from "components/RightNavbar/RightNavbar";
+import RighSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";
 
 function JoinCommunity() {

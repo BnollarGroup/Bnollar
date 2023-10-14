@@ -1,5 +1,5 @@
 import Navbar from "components/Navbar/Navbar";
-import SideNav from "components/Sidenav/Sidenav";
+import SideNav from "components/Sidenav";
 import { ComponentType } from "react";
 import styles from "./WithNavigation.module.css";
 

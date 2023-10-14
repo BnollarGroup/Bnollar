@@ -1,4 +1,4 @@
-import SideNavLink from "components/SideNavLink/SideNavLink";
+import SideNavLink from "components/SideNavLink";
 import styles from "./SettingsNav.module.css";
 
 interface SettingsNavProps {
