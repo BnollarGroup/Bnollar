@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import TypeContainer from "../components/TypeContainer/TypeContainer";
-import styles from "./chooseType.module.css";
+import styles from "./ChooseType.module.css";
 import { Dispatch, SetStateAction } from "react";
 
 const data = [

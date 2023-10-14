@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  max-height:100%;
+  max-height: 100%;
   background-color: black;
   background-color: #0d0e11;
 }
@@ -37,13 +37,13 @@
   color: #ffffff;
 }
 
-  /* padding: 20px 120px 60px 120px; */
+/* padding: 20px 120px 60px 120px; */
 
 .getStarted {
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 40px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 13px;
@@ -57,8 +57,8 @@
   width: 100%;
   justify-content: center;
   position: center;
-  margin:20px;
-  gap:4px;
+  margin: 20px;
+  gap: 4px;
 }
 
 .welcome {
@@ -74,7 +74,7 @@
 }
 
 .welcomeHeader {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -84,14 +84,14 @@
 }
 
 .welcomeText {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
   color: rgba(255, 255, 255, 0.4);
-  width:364px;
+  width: 364px;
   height: 60px;
 }
 
@@ -106,7 +106,7 @@
   height: 44px;
   background: #ef8031;
   border-radius: 40px;
-}  
+}
 
 .welcomeGetStarted button {
   font-family: "Inter";
@@ -120,7 +120,7 @@
 }
 
 .welcomeGetStarted button {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 11px;
@@ -129,13 +129,13 @@
   border: none;
   color: #ffffff;
   cursor: pointer;
-  width:140px;
+  width: 140px;
 }
 
 .footerWrapper {
   width: 100%;
   height: 100%;
-  display: flex; 
+  display: flex;
   align-items: center;
   position: center;
   padding: 40px;
@@ -149,8 +149,8 @@
   position: center;
   row-gap: 50px;
   column-gap: 288px;
-  margin-left:20px;
-  width:100%;
+  margin-left: 20px;
+  width: 100%;
 }
 .grid {
   display: grid;
@@ -159,10 +159,9 @@
   position: center;
   row-gap: 50px;
   column-gap: 288px;
-  margin-left:20px;
-  width:100%;
+  margin-left: 20px;
+  width: 100%;
 }
-
 
 @media (max-width: 1023px) {
   .grid {
@@ -172,8 +171,8 @@
     position: center;
     row-gap: 10px;
     column-gap: 10px;
-    margin-left:20px;
-    width:300px;
+    margin-left: 20px;
+    width: 300px;
   }
 }
 
@@ -188,44 +187,40 @@
   height: auto;
 }
 
-
-.icon{
+.icon {
   margin-left: 140px;
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
 }
 
-.icon9{
-
-  width:100px;
-  height:100px;
+.icon9 {
+  width: 100px;
+  height: 100px;
   margin-left: 90px;
 }
 
-.icon4{
-  width:100px;
-  height:100px;
+.icon4 {
+  width: 100px;
+  height: 100px;
   margin-left: 160px;
 }
 
-.icon8{
-  width:100px;
-  height:100px;
+.icon8 {
+  width: 100px;
+  height: 100px;
   margin-right: 200px;
-
 }
 
-.icon1{
-  width:100px;
-  height:100px;
+.icon1 {
+  width: 100px;
+  height: 100px;
 }
 
-.iconhid{
+.iconhid {
   visibility: hidden;
-  width:100px;
-  height:100px;
+  width: 100px;
+  height: 100px;
 }
-
 
 .homeWrapper {
   position: absolute;
@@ -234,8 +229,6 @@
   transform: translate(-50%, -50%);
   width: 1000px;
   border-radius: 20px;
-
-
 }
 
 .frame {
@@ -245,12 +238,11 @@
   transform: translate(-50%, -50%);
   width: 1100px;
 
-  background-color:#292A2D;
+  background-color: #292a2d;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  padding:10px;
+  padding: 10px;
 }
-
 
 @media (max-width: 640px) {
   .homeWrapper {
@@ -260,8 +252,6 @@
     transform: translate(-50%, -50%);
     width: 300px;
     border-radius: 20px;
-
-
   }
 
   .frame {
@@ -271,7 +261,7 @@
     transform: translate(-50%, -50%);
     width: 300px;
 
-    background-color: #292A2D;
+    background-color: #292a2d;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -286,8 +276,6 @@
     transform: translate(-50%, -50%);
     width: 500px;
     border-radius: 20px;
-
-
   }
 
   .frame {
@@ -297,7 +285,7 @@
     transform: translate(-50%, -50%);
     width: 500px;
 
-    background-color: #292A2D;
+    background-color: #292a2d;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px;
@@ -312,11 +300,8 @@
     transform: translate(-50%, -50%);
     width: 800px;
     border-radius: 20px;
-    margin-top:70px;
+    margin-top: 70px;
     margin-left: 30px;
-
-
-
   }
 
   .frame {
@@ -325,10 +310,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 800px;
-    background-color: #292A2D;
+    background-color: #292a2d;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 10px;
   }
 }
-

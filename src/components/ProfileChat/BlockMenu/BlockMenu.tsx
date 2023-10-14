@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./BlockMenu.module.css";
-import cancelIcon from "../../../resources/images/profile-chat/cancel-block.svg";
-import exclamationCircleIcon from "../../../resources/images/profile-chat/exclaimation-circle.svg";
-import arrowRightIcon from "../../../resources/images/profile-chat/arrow-right-block.svg";
+import cancelIcon from "lib/resources/images/profile-chat/cancel-block.svg";
+import exclamationCircleIcon from "lib/resources/images/profile-chat/exclaimation-circle.svg";
+import arrowRightIcon from "lib/resources/images/profile-chat/arrow-right-block.svg";
 
 interface BlockMenuProps {
   setBlockIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

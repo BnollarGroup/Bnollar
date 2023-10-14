@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
-import style from "../nftCollection2/nftCollection2.module.css";
-import NftPic from "../../resources/images/icons/nfts.png";
-import NftFilterMenu from "../../components/NftCollectionFilter/NftCollectionFilter";
-import Rightnavbar from "../../components/RightNavBar/rightnavbar";
-import Chevron from "../../resources/images/icons/chevron-right.svg";
+import Navbar from "components/Navbar/Navbar";
+import style from "./NFTCollectionPrice.module.css";
+import NftPic from "lib/resources/images/icons/nfts.png";
+import NftFilterMenu from "components/NftCollectionFilter/NftCollectionFilter";
+import Rightnavbar from "components/RightNavbar/RightNavbar";
+import Chevron from "lib/resources/images/icons/chevron-right.svg";
 
-interface NftFilterMenuProps {
-  showNewestFilter: boolean;
-}
-
-function NftCollectionsecond({ showNewestFilter }: NftFilterMenuProps) {
-  const [nftCollectionSecond, setNftCollectionSecond] = useState([
+function NftCollectionsecond() {
+  let showNewestFilter = true;
+  const [nftCollectionSecond] = useState([
     {
       img: NftPic,
       name: "Potatoz",

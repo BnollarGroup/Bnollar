@@ -1,24 +1,22 @@
-import contStyles from '../SettingsContainer.module.css'
-import styles from './Security.module.css'
-import ToggleCard from '../ToggleCard/ToggleCard'
-import Dropdown from './Dropdown/Dropdown'
-import LinkCard from './LinkCard/LinkCard'
-import { useState } from 'react'
-import goBack from '../../../resources/images/Settings/goBack.png'
-import { Link } from 'react-router-dom'
-import Buttons from '../Buttons/Buttons'
+import contStyles from "../SettingsContainer.module.css";
+import styles from "./Security.module.css";
+import Dropdown from "./Dropdown/Dropdown";
+import { useState } from "react";
+import goBack from "lib/resources/images/Settings/goBack.png";
+import { Link } from "react-router-dom";
+import Buttons from "../Buttons/Buttons";
 
 interface NotificationControlsProps {
-  type: string
+  type: string;
 }
 
 const NotificationControls = ({ type }: NotificationControlsProps) => {
-  const [phone, setPhone] = useState('Chat')
-  const [follow, setFollow] = useState('Chat')
-  const [fOF, setFOF] = useState('Chat')
-  const [others, setOthers] = useState('Message requests')
+  const [phone, setPhone] = useState("Chat");
+  const [follow, setFollow] = useState("Chat");
+  const [fOF, setFOF] = useState("Chat");
+  const [others, setOthers] = useState("Message requests");
 
-  const dropdownItems = ['Chat', 'Message requests', 'someitem']
+  const dropdownItems = ["Chat", "Message requests", "someitem"];
   return (
     <div className={contStyles.containerWrapper}>
       <div className={contStyles.settingsContainer}>
@@ -53,7 +51,7 @@ const NotificationControls = ({ type }: NotificationControlsProps) => {
         <Buttons updateButtonTitle="Save information" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotificationControls
+export default NotificationControls;

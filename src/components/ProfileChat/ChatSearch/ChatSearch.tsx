@@ -1,7 +1,6 @@
 import styles from "./ChatSearch.module.css";
-import searchLogoChat from "../../../resources/images/profile-chat/search-logo-chat.svg";
-import arrowSearchChatLogo from "../../../resources/images/profile-chat/arrow-chat-search.svg";
-import { useState } from "react";
+import searchLogoChat from "lib/resources/images/profile-chat/search-logo-chat.svg";
+import arrowSearchChatLogo from "lib/resources/images/profile-chat/arrow-chat-search.svg";
 
 interface ChatSearchProps {
   setSearchIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

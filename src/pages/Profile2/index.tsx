@@ -1,24 +1,24 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "components/Navbar/Navbar";
 import style from "./Profile_2.module.css";
-import LeftNavBar from "../../components/RightNavBar/rightnavbar";
-import CoverPicture from "../../resources/images/icons/coverpic.png";
-import Instagram from "../../resources/images/icons/instagram.png";
-import Verifed from "../../resources/images/icons/verified.svg";
-import Member from "../../resources/images/icons/memeber.png";
-import UserPic from "../../resources/images/icons/Ellipse 1.png";
-import attachment from "../../resources/images/icons/attachment.png";
-import emoji from "../../resources/images/icons/emoji.png";
-import statreport from "../../resources/images/icons/stats-report.png";
-import PostImg from "../../resources/images/icons/post-img.png";
-import UserFeedPic from "../../resources/images/icons/userfeedpic.png";
-import language from "../../resources/images/icons/language.png";
-import Feed from "../../resources/images/icons/view-grid.png";
-import Members from "../../resources/images/icons/memebers.png";
-import Media from "../../resources/images/icons/stats-report.png";
-import File from "../../resources/images/icons/folder.png";
-import Twitter from "../../resources/images/icons/_Twitter (2).png";
-import Discord from "../../resources/images/icons/Discord.png";
+import LeftNavBar from "components/RightNavbar/RightNavbar";
+import CoverPicture from "lib/resources/images/icons/coverpic.png";
+import Instagram from "lib/resources/images/icons/instagram.png";
+import Verifed from "lib/resources/images/icons/verified.svg";
+import Member from "lib/resources/images/icons/memeber.png";
+import UserPic from "lib/resources/images/icons/Ellipse 1.png";
+import attachment from "lib/resources/images/icons/attachment.png";
+import emoji from "lib/resources/images/icons/emoji.png";
+import statreport from "lib/resources/images/icons/stats-report.png";
+import PostImg from "lib/resources/images/icons/post-img.png";
+import UserFeedPic from "lib/resources/images/icons/userfeedpic.png";
+import language from "lib/resources/images/icons/language.png";
+import Feed from "lib/resources/images/icons/view-grid.png";
+import Members from "lib/resources/images/icons/memebers.png";
+import Media from "lib/resources/images/icons/stats-report.png";
+import File from "lib/resources/images/icons/folder.png";
+import Twitter from "lib/resources/images/icons/_Twitter (2).png";
+import Discord from "lib/resources/images/icons/Discord.png";
 
 function Profile_2() {
   return (

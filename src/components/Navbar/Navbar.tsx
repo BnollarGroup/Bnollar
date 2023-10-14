@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-import Logo from "../../resources/images/logo/bnollar_logo.svg";
-import Plus from "../../resources/images/icons/plus.svg";
-import Search from "./../../resources/images/Navbar/search.svg";
-import Notifications from "../../resources/images/Navbar/notifications.svg";
-import Messanger from "../../resources/images/Navbar/messanger.svg";
-import AvatarImg from "../../resources/images/Navbar/avatar.png";
+import Logo from "lib/resources/images/logo/bnollar_logo.svg";
+import Plus from "lib/resources/images/icons/plus.svg";
+import Search from "lib/resources/images/Navbar/search.svg";
+import Notifications from "lib/resources/images/Navbar/notifications.svg";
+import Messanger from "lib/resources/images/Navbar/messanger.svg";
+import AvatarImg from "lib/resources/images/Navbar/avatar.png";
 
 function Navbar() {
   return (

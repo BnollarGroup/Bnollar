@@ -1,10 +1,11 @@
-import styles from './WalletItem.module.css'
-import contStyles from '../SettingsContainer.module.css'
-import dots from '../../../resources/images/Settings/dots.png'
+import styles from "./WalletItem.module.css";
+import contStyles from "../SettingsContainer.module.css";
+import dots from "lib/resources/images/Settings/dots.png";
+
 interface WalletItemProps {
-  iconColor: string
-  id: string
-  name: string
+  iconColor: string;
+  id: string;
+  name: string;
 }
 
 const WalletItem = ({ iconColor, id, name }: WalletItemProps) => {
@@ -24,7 +25,7 @@ const WalletItem = ({ iconColor, id, name }: WalletItemProps) => {
         <img src={dots} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WalletItem
+export default WalletItem;

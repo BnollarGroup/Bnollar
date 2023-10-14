@@ -1,9 +1,10 @@
-import styles from './FeedHeader.module.css'
-import user1 from '../../../resources/images/icons/user1.svg'
-import attach from '../../../resources/images/icons/atach.svg'
-import nft from '../../../resources/images/icons/nft.svg'
-import emoji from '../../../resources/images/icons/emoji.svg'
-import language from '../../../resources/images/icons/language.svg'
+import styles from "./FeedHeader.module.css";
+import user1 from "lib/resources/images/icons/user1.svg";
+import attach from "lib/resources/images/icons/atach.svg";
+import nft from "lib/resources/images/icons/nft.svg";
+import emoji from "lib/resources/images/icons/emoji.svg";
+import language from "lib/resources/images/icons/language.svg";
+
 const FeedHeader = () => {
   return (
     <div className={styles.feedHeader}>
@@ -32,6 +33,6 @@ const FeedHeader = () => {
         </div>
       </div>
     </div>
-  )
-}
-export default FeedHeader
+  );
+};
+export default FeedHeader;

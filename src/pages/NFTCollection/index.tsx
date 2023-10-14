@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import style from "../nftCollection/NftCollection.module.css";
-import Navbar from "../../components/Navbar/Navbar";
-import NftMonkey from "../../resources/images/icons/nft.png";
-import Rightnavbar from "../../components/RightNavBar/rightnavbar";
-import NftFilterMenu from "../../components/NftCollectionFilter/NftCollectionFilter";
+import style from "./NFTCollection.module.css";
+import Navbar from "components/Navbar/Navbar";
+import NftMonkey from "lib/resources/images/icons/nft.png";
+import Rightnavbar from "components/RightNavbar/RightNavbar";
+import NftFilterMenu from "components/NftCollectionFilter/NftCollectionFilter";
 
 function NftCollection() {
   const [nftPicture, setNftPicture] = useState([

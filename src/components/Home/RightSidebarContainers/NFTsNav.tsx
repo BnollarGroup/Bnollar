@@ -1,6 +1,6 @@
-import styles from './ContactsNav.module.css'
-import nft1 from '../../../resources/images/icons/nft1.svg'
-import NFTItem from './NFTItem/NFTItem'
+import styles from "./ContactsNav.module.css";
+import nft1 from "lib/resources/images/icons/nft1.svg";
+import NFTItem from "./NFTItem/NFTItem";
 
 const NFTsNav = () => {
   return (
@@ -13,7 +13,7 @@ const NFTsNav = () => {
         <NFTItem image={nft1} name="fourth NFT" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NFTsNav
+export default NFTsNav;

@@ -4,445 +4,440 @@
 } */
 
 .profilemain {
-    display: flex;
+  display: flex;
 }
 
-
 .profileleft {
-    margin-left: 50px;
-    width: 80%;
+  margin-left: 50px;
+  width: 80%;
 }
 
 .profilecover {
-    width: 100%;
-    height: 300px;
-    position: relative;
+  width: 100%;
+  height: 300px;
+  position: relative;
 }
 
 .profilecover img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.editcoverpicture  {
-    position: absolute;
-    background: url('../../resources/images/icons/edit.png');
-    background-repeat: no-repeat;
-    background-position: 25px center;
-    background-color: white;
-    top: 20px;
-    right: 20px;
-    width: 200px;
-    border-radius: 20px;
-    color: black;
-    font-weight: bold;
+.editcoverpicture {
+  position: absolute;
+  background: url("../../lib/resources/images/icons/edit.png");
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  background-color: white;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 .opencovereditdrop {
-    position: absolute;
-    background-color: #17181B;
-    z-index: 11;
-    width: 220px;
-    height: 140px;
-    border-radius: 10px;
-    top: 60px;
-    right: 20px;
-    font-weight: bold;
+  position: absolute;
+  background-color: #17181b;
+  z-index: 11;
+  width: 220px;
+  height: 140px;
+  border-radius: 10px;
+  top: 60px;
+  right: 20px;
+  font-weight: bold;
 }
 
 .dropcoverbtn {
-    margin-top: 6px;
-    width: 100%;
-    color: white;
-    font-weight: bold;
-    background-color: transparent;
+  margin-top: 6px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
 }
 
 .aboutuser {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .userimg {
-    position: relative;
-    background-color: red;
-    width: 100px;
-    border-radius: 50%;
-    width: 144px;
-    height: 144px;
+  position: relative;
+  background-color: red;
+  width: 100px;
+  border-radius: 50%;
+  width: 144px;
+  height: 144px;
 }
 
 .aboutuserright {
-    z-index: 11;
-    margin-top: -70px;
+  z-index: 11;
+  margin-top: -70px;
 }
 
 .edit {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    z-index: 11;
-    width: 30px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 11;
+  width: 30px;
 }
 
 .profilepicedit {
-    position: absolute;
-    right: -170px;
-    border-radius: 10px;
-    height: 90px;
-    bottom: -90px;
-    z-index: 11;
-    width: 200px;
-    background-color: #17181B;
+  position: absolute;
+  right: -170px;
+  border-radius: 10px;
+  height: 90px;
+  bottom: -90px;
+  z-index: 11;
+  width: 200px;
+  background-color: #17181b;
 }
 
 .user_name {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user_name h1 {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .user_name img {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-    margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .user_about {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .user_about p {
-    font-size: 13px;
-    color: #FFFFFF;
+  font-size: 13px;
+  color: #ffffff;
 }
 
 .user_ceo {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .user_ceo h1 {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .user_ceo span {
-    font-size: 13px;
-    color: #EF8031;
-    margin-left: 10px;
+  font-size: 13px;
+  color: #ef8031;
+  margin-left: 10px;
 }
 
 .followers_following {
-    width: 260px;
-    height: 52px;
-    background-color: #3a3737;
-    margin-top: 20px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 260px;
+  height: 52px;
+  background-color: #3a3737;
+  margin-top: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .followers_following h1 {
-    font-size: 16px;
-    color: #FFFFFF;
-    margin-left: 20px;
+  font-size: 16px;
+  color: #ffffff;
+  margin-left: 20px;
 }
 
 .followers_following h2 {
-    font-size: 16px;
-    color: #FFFFFF;
-    margin-right: 20px;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 20px;
 }
 
 .aboutuserleft {
-    display: flex;
-    margin-top: 20px;
+  display: flex;
+  margin-top: 20px;
 }
 
-
 .aboutuserleft img {
-    width: 44px;
-    height: 44px;
+  width: 44px;
+  height: 44px;
 }
 
 .aboutuserleft button {
-    width: 88px;
-    height: 44px;
-    background-color: white;
-    border-radius: 20px;
-    color: black;
-    font-weight: bolder;
+  width: 88px;
+  height: 44px;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  font-weight: bolder;
 }
 
-.aboutuserleft .dotbtn{
-    width: 60px;
-    height: 40px;
-    background-color: #16181C;
-    color: white;
-    border-radius: 20px;
+.aboutuserleft .dotbtn {
+  width: 60px;
+  height: 40px;
+  background-color: #16181c;
+  color: white;
+  border-radius: 20px;
 }
 
 .user_feed {
-    margin-top: 50px;
-    height: 53px;
+  margin-top: 50px;
+  height: 53px;
 }
 
 .feed_box {
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 52px;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
 }
 
 .news {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .menuline {
-    background-color: #EF8031;
-    height: 2px;
-    
+  background-color: #ef8031;
+  height: 2px;
 }
 
 .newsexmpl {
-    height: 100%;
+  height: 100%;
 }
 
 .newsflex {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .newsflex h1 {
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .news h1 {
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 hr {
-    margin-top: 10px;
-    color: grey;
-    width: 100%;
+  margin-top: 10px;
+  color: grey;
+  width: 100%;
 }
 
-
 .news_feed {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .feed_rightside {
-    width: 80%;
-    margin-top: 20px;
+  width: 80%;
+  margin-top: 20px;
 }
 
 .upload_news {
-    width: 90%;
-    height: 176px;
-    background-color: #16181C;
-    border-radius: 5px;
-    display: flex;
-    padding: 15px 0 0 15px;
+  width: 90%;
+  height: 176px;
+  background-color: #16181c;
+  border-radius: 5px;
+  display: flex;
+  padding: 15px 0 0 15px;
 }
 
 .upload_news_desc {
-    margin-left: 10px;
-    width: 100%;
-    background-color: #16181C;
+  margin-left: 10px;
+  width: 100%;
+  background-color: #16181c;
 }
 
 .upload_news_desc p {
-    font-weight: bold;
-    margin-top: 10px;
-    color: white;
-    line-height: 1.5;
+  font-weight: bold;
+  margin-top: 10px;
+  color: white;
+  line-height: 1.5;
 }
 
 .line {
-    height: 1px;
-    background-color: #3a3737;
+  height: 1px;
+  background-color: #3a3737;
 }
 
 .rate_btns {
-    display: flex;
-    width: 85%;
-    justify-content: space-between;
-}
-
-.upvote  button {
-    width: 162px;
-    height: 40px;
-    font-weight: bolder;
-    margin-top: 20px;
-}
-
-.upvote button:hover {
-    background-color: #EF8031;
-    opacity: .3;
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
 }
 
 .upvote button {
-    background: rgba(255, 255, 255, 0.04);
-    background: url('../../resources/images/icons/arrow-up-circled.png');
-    background-repeat: no-repeat;
-    background-position: 30px center;
-    font-weight: bolder;
+  width: 162px;
+  height: 40px;
+  font-weight: bolder;
+  margin-top: 20px;
 }
 
+.upvote button:hover {
+  background-color: #ef8031;
+  opacity: 0.3;
+}
+
+.upvote button {
+  background: rgba(255, 255, 255, 0.04);
+  background: url("../../lib/resources/images/icons/arrow-up-circled.png");
+  background-repeat: no-repeat;
+  background-position: 30px center;
+  font-weight: bolder;
+}
 
 .comment button {
-    width: 162px;
-    height: 40px;
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.04);
-    background: url('../../resources/images/icons/chat-lines.png');
-    background-repeat: no-repeat;
-    background-position: 25px center;
-    font-weight: bolder;
+  width: 162px;
+  height: 40px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  background: url("../../lib/resources/images/icons/chat-lines.png");
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  font-weight: bolder;
 }
 
 .share button {
-    width: 162px;
-    height: 40px;
-    margin-top: 20px;
-    background: rgba(255, 255, 255, 0.04);
-    background: url('../../resources/images/icons/share-ios.png');
-    background-repeat: no-repeat;
-    background-position: 25px center;
-    font-weight: bolder;
+  width: 162px;
+  height: 40px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  background: url("../../lib/resources/images/icons/share-ios.png");
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  font-weight: bolder;
 }
 
-.about_box  {
-    width: 325px;
-    height: 182px;
-    background-color: #3a3737;
-    margin-top: 20px;
-    margin-right: 20px;
-    border-radius: 5px;
-    padding: 10px 15px 0 10px;
+.about_box {
+  width: 325px;
+  height: 182px;
+  background-color: #3a3737;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding: 10px 15px 0 10px;
 }
 
-.edit_info  {
-    display: flex;
-    justify-content: space-between;
+.edit_info {
+  display: flex;
+  justify-content: space-between;
 }
 
 .edit_info h1 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .about_user_desc h1 {
-    font-size: 13px;
-    margin-top: 15px;
-    margin-left: 10px;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .about_user_desc {
-    display: flex;
-    align-items: center;
-    height: 30px;
-    margin-top: 5px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-top: 5px;
 }
 
 .about_user_desc img {
-    width: 20px;
-    height: 20px;
-    margin-top: 10px;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
 }
 
-.post  {
-    margin-top: 20px;
+.post {
+  margin-top: 20px;
 }
 
 .post_box {
-    width: 90%;
-    background-color: #16181C;
-    border-radius: 5px;
-    display: flex;
-    padding: 15px 0 0 15px;
+  width: 90%;
+  background-color: #16181c;
+  border-radius: 5px;
+  display: flex;
+  padding: 15px 0 0 15px;
 }
 
 .post_img {
-    width: 90%;
-    margin-top: 10px;
+  width: 90%;
+  margin-top: 10px;
 }
 
 .post_img img {
-    width: 100%;
-    height: 90%;
+  width: 100%;
+  height: 90%;
 }
 
 .friend_box {
-    position: relative;
-    background-color: #3a3737;
-    width: 325px;
-    height: 56px;
-    margin-top: 20px;
-    border-radius: 5px;
+  position: relative;
+  background-color: #3a3737;
+  width: 325px;
+  height: 56px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .friend_box h1 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .friends {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 0 0 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 0 0 15px;
 }
 
 .buy_now {
-    width: 90%;
-    background-color: #4E525A;
-    margin-top: 20px;
-    height: 80px;
-    border-radius: 10px;
+  width: 90%;
+  background-color: #4e525a;
+  margin-top: 20px;
+  height: 80px;
+  border-radius: 10px;
 }
 
 .buy_now {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .price {
-    padding-left: 15px;
+  padding-left: 15px;
 }
 
 .price h1 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .buy_btn button {
-    width: 150px;
-    height: 60px;
-    background-color: white;
-    font-weight: bold;
-    color: black;
-    margin-right: 20px;
+  width: 150px;
+  height: 60px;
+  background-color: white;
+  font-weight: bold;
+  color: black;
+  margin-right: 20px;
 }
 
 .btns {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }

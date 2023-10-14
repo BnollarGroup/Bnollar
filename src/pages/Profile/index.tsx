@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import style from "../Profile/profile.module.css";
-import Rightnavbar from "../../components/RightNavBar/rightnavbar";
-import Cover from "../../resources/images/icons/cover (2).png";
-import UserIcon from "../../resources/images/icons/user-icon.png";
-import Verifed from "../../resources/images/icons/twitter-verified-badge.png";
-import Instagram from "../../resources/images/icons/instagram.png";
-import Grid from "../../resources/images/icons/view-grid.png";
-import UserFeedPic from "../../resources/images/icons/userfeedpic.png";
-import PostImg from "../../resources/images/icons/post-img.png";
-import Upvote from "../../resources/images/icons/upvote.png";
-import MeriaLogo from "../../resources/images/icons/briefcase.png";
-import Edit from "../../resources/images/icons/edit (2).png";
-import Twitter from "../../resources/images/icons/_Twitter (2).png";
-import Discord from "../../resources/images/icons/Discord.png";
-import Feed from "../../resources/images/icons/view-grid.png";
-import StatsReport from "../../resources/images/icons/stats-report.png";
+import Navbar from "components/Navbar/Navbar";
+import style from "../Profile/Profile.module.css";
+import Rightnavbar from "components/RightNavbar/RightNavbar";
+import Cover from "lib/resources/images/icons/cover (2).png";
+import UserIcon from "lib/resources/images/icons/user-icon.png";
+import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
+import Instagram from "lib/resources/images/icons/instagram.png";
+import Grid from "lib/resources/images/icons/view-grid.png";
+import UserFeedPic from "lib/resources/images/icons/userfeedpic.png";
+import PostImg from "lib/resources/images/icons/post-img.png";
+import MeriaLogo from "lib/resources/images/icons/briefcase.png";
+import Edit from "lib/resources/images/icons/edit (2).png";
+import Twitter from "lib/resources/images/icons/_Twitter (2).png";
+import Discord from "lib/resources/images/icons/Discord.png";
+import StatsReport from "lib/resources/images/icons/stats-report.png";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);

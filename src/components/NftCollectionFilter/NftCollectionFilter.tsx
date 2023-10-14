@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import NftMonkey from "../../resources/images/icons/nft.png";
-import Circle from "../../resources/images/icons/circle.png";
-import ArrowDown from "../../resources/images/icons/nav-arrow-down.png";
-import RaribleLogo from "../../resources/images/nft-collection/rarible.png";
-import OpenSeaLogo from "../../resources/images/nft-collection/open_sea.png";
-import X2y2Logo from "../../resources/images/nft-collection/x2y2.png";
-import LooksRareLogo from "../../resources/images/nft-collection/looks_rare.png";
-import SudoSwapLogo from "../../resources/images/nft-collection/sudoswap.png";
-import SearchIcon from "../../resources/images/icons/search.png";
+import NftMonkey from "lib/resources/images/icons/nft.png";
+import Circle from "lib/resources/images/icons/circle.png";
+import ArrowDown from "lib/resources/images/icons/nav-arrow-down.png";
+import RaribleLogo from "lib/resources/images/nft-collection/rarible.png";
+import OpenSeaLogo from "lib/resources/images/nft-collection/open_sea.png";
+import X2y2Logo from "lib/resources/images/nft-collection/x2y2.png";
+import LooksRareLogo from "lib/resources/images/nft-collection/looks_rare.png";
+import SudoSwapLogo from "lib/resources/images/nft-collection/sudoswap.png";
+import SearchIcon from "lib/resources/images/icons/search.png";
 import style from "./NftCollectionFilter.module.css";
 
 interface NftFilterMenuProps {
