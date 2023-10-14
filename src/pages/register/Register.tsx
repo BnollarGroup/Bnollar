@@ -2,15 +2,15 @@ import React, { FC, useState, useEffect, useRef } from "react";
 import styles from "./Register.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Logo from "../../lib/resources/images/logo/bnollar_logo.svg";
-import registerBg from "../../lib/resources/images/registration/register_bg.svg";
-import imgIcon from "../../lib/resources/images/registration/imgIcon.svg";
-import addIcon from "../../lib/resources/images/registration/addIcon.svg";
-import Cancel from "../../lib/resources/images/icons/cancel.svg";
-import ok from "../../lib/resources/images/registration/ok.svg";
-import Edit from "../../lib/resources/images/icons/edit (2).png";
+import Logo from "lib/resources/images/logo/bnollar_logo.svg";
+import registerBg from "lib/resources/images/registration/register_bg.svg";
+import imgIcon from "lib/resources/images/registration/imgIcon.svg";
+import addIcon from "lib/resources/images/registration/addIcon.svg";
+import Cancel from "lib/resources/images/icons/cancel.svg";
+import ok from "lib/resources/images/registration/ok.svg";
+import Edit from "lib/resources/images/icons/edit (2).png";
 import { useNavigate } from "react-router-dom";
-import registerSchema from "../../lib/schemas/registerSchema";
+import registerSchema from "lib/schemas/registerSchema";
 
 interface Category {
   id: number;

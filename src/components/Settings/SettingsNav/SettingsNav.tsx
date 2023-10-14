@@ -1,8 +1,8 @@
-import SideNavLink from '../../SideNavLink/SideNavLink'
-import styles from './SettingsNav.module.css'
+import SideNavLink from "components/SideNavLink/SideNavLink";
+import styles from "./SettingsNav.module.css";
 
 interface SettingsNavProps {
-  active: string
+  active: string;
 }
 
 const SettingsNav = ({ active }: SettingsNavProps) => {
@@ -12,31 +12,31 @@ const SettingsNav = ({ active }: SettingsNavProps) => {
         <SideNavLink
           to="/settings/profile"
           name="Profile"
-          active={active === 'profile'}
+          active={active === "profile"}
         />
         <SideNavLink
           to="/settings/manage_wallets"
           name="Manage wallets"
-          active={active === 'manage_wallets'}
+          active={active === "manage_wallets"}
         />
 
         <SideNavLink
           to="/settings/notification"
           name="Notifications"
-          active={active === 'notification'}
+          active={active === "notification"}
         />
         <SideNavLink
           name="Privacy & Security"
           to="/settings/privacy&security"
           active={
-            active === 'privacy&security' ||
-            active === 'privacy&security_messages' ||
-            active === 'privacy&security_comments'
+            active === "privacy&security" ||
+            active === "privacy&security_messages" ||
+            active === "privacy&security_comments"
           }
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SettingsNav
+export default SettingsNav;

@@ -1,12 +1,12 @@
 import { DataType } from "./types";
-import currentUserImage from "../../lib/resources/images/explore/current-user.png";
-import userOneImage from "../../lib/resources/images/explore/post-user1.png";
-import userTwoImage from "../../lib/resources/images/explore/post-user2.png";
-import userThreeImage from "../../lib/resources/images/explore/post-user3.png";
-import postTwoUserImage from "../../lib/resources/images/explore/post2-user.png";
-import postThreeUserImage from "../../lib/resources/images/explore/post3-user.png";
-import postTwoAttachment from "../../lib/resources/images/explore/post2-attachment.png";
-import postThreeAttachment from "../../lib/resources/images/explore/post3-attachment.png";
+import currentUserImage from "lib/resources/images/explore/current-user.png";
+import userOneImage from "lib/resources/images/explore/post-user1.png";
+import userTwoImage from "lib/resources/images/explore/post-user2.png";
+import userThreeImage from "lib/resources/images/explore/post-user3.png";
+import postTwoUserImage from "lib/resources/images/explore/post2-user.png";
+import postThreeUserImage from "lib/resources/images/explore/post3-user.png";
+import postTwoAttachment from "lib/resources/images/explore/post2-attachment.png";
+import postThreeAttachment from "lib/resources/images/explore/post3-attachment.png";
 
 export const dataBase: DataType[] = [
   {

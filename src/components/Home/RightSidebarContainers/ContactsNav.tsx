@@ -1,6 +1,6 @@
-import styles from './ContactsNav.module.css'
-import user1 from '../../../resources/images/icons/user1.svg'
-import ContactItem from './ContactItem/ContactItem'
+import styles from "./ContactsNav.module.css";
+import user1 from "lib/resources/images/icons/user1.svg";
+import ContactItem from "./ContactItem/ContactItem";
 
 const ContactsNav = () => {
   return (
@@ -12,7 +12,7 @@ const ContactsNav = () => {
         <ContactItem image={user1} name="Third User" active={true} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactsNav
+export default ContactsNav;

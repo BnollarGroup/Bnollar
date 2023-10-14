@@ -1,20 +1,24 @@
-import { useState } from 'react'
-import styles from './FeedCard.module.css'
-import user1 from '../../../resources/images/icons/user1.svg'
-import verified from '../../../resources/images/icons/verified.svg'
-import post1 from '../../../resources/images/posts/postImg1.svg'
-import menuIcon from '../../../resources/images/icons/more-horiz.svg'
-import { UpvoteButton, CommnetButton, ShareButton } from '../../Buttons/Buttons'
-import Upperdropdown from './Dropdowns/Upperdropdown'
+import { useState } from "react";
+import styles from "./FeedCard.module.css";
+import user1 from "lib/resources/images/icons/user1.svg";
+import verified from "lib/resources/images/icons/verified.svg";
+import post1 from "lib/resources/images/posts/postImg1.svg";
+import menuIcon from "lib/resources/images/icons/more-horiz.svg";
+import {
+  UpvoteButton,
+  CommnetButton,
+  ShareButton,
+} from "../../Buttons/Buttons";
+import Upperdropdown from "./Dropdowns/Upperdropdown";
 
 const FeedCard = (props: any) => {
-  const [showMenuDropDown, setShowMenuDropDown] = useState(false)
+  const [showMenuDropDown, setShowMenuDropDown] = useState(false);
 
   const handleMenuClick = () => {
-    setShowMenuDropDown((prevState) => !prevState)
-  }
+    setShowMenuDropDown((prevState) => !prevState);
+  };
 
-  const isNft = props.isNft
+  const isNft = props.isNft;
   return (
     <div className={styles.feedCardWrapper}>
       <div className={styles.feedCard_user}>
@@ -66,6 +70,6 @@ const FeedCard = (props: any) => {
         </div>
       </div>
     </div>
-  )
-}
-export default FeedCard
+  );
+};
+export default FeedCard;

@@ -1,19 +1,19 @@
-import { useNavigate } from 'react-router-dom'
-import styles from './CategorySelect.module.css'
+import { useNavigate } from "react-router-dom";
+import styles from "./CategorySelect.module.css";
 
 interface Category {
-  id: number
-  name: string
-  selected: boolean
+  id: number;
+  name: string;
+  selected: boolean;
 }
 
 interface CategorySelectParams {
-  categories: Category[]
-  toggleSelect: (id: number) => void
+  categories: Category[];
+  toggleSelect: (id: number) => void;
 }
 
 const CategorySelet = ({ categories, toggleSelect }: CategorySelectParams) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <>
@@ -33,13 +33,13 @@ const CategorySelet = ({ categories, toggleSelect }: CategorySelectParams) => {
         ))}
       </div>
       <button
-        onClick={() => navigate('/register/finished')}
+        onClick={() => navigate("/register/finished")}
         className={styles.continue}
       >
         Continue
       </button>
     </>
-  )
-}
+  );
+};
 
-export default CategorySelet
+export default CategorySelet;

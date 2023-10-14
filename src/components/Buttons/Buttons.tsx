@@ -33,11 +33,11 @@
 
 import { useState } from "react";
 import styles from "./Buttons.module.css";
-import upvote from "../../lib/resources/images/icons/upvote.svg";
-import upvoteOn from "../../lib/resources/images/icons/arrow-up-circled.svg";
-import chat from "../../lib/resources/images/icons/chat.svg";
-import chatOn from "../../lib/resources/images/icons/chatOn.svg";
-import share from "../../lib/resources/images/icons/share.svg";
+import upvote from "lib/resources/images/icons/upvote.svg";
+import upvoteOn from "lib/resources/images/icons/arrow-up-circled.svg";
+import chat from "lib/resources/images/icons/chat.svg";
+import chatOn from "lib/resources/images/icons/chatOn.svg";
+import share from "lib/resources/images/icons/share.svg";
 
 export const UpvoteButton = () => {
   const [showUpVote, setShowUpVote] = useState(false);

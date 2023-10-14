@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import style from "./RightNavbar.module.css";
-import Home from "../../lib/resources/svg/Home";
-import Hashtag from "../../lib/resources/svg/Hashtag";
-import Statistics from "../../lib/resources/svg/Statistics";
-import Wheel from "../../lib/resources/svg/Wheel";
-import Group from "../../lib/resources/svg/Group";
+import Home from "lib/resources/svg/Home";
+import Hashtag from "lib/resources/svg/Hashtag";
+import Statistics from "lib/resources/svg/Statistics";
+import Wheel from "lib/resources/svg/Wheel";
+import Group from "lib/resources/svg/Group";
 
 function Rightnavbar() {
   const [activeItem, setActiveItem] = useState("");

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PostComment.module.css";
-import user1 from "../../lib/resources/images/icons/user1.svg";
-import heart from "../../lib/resources/images/icons/heart.svg";
-import heartTr from "../../lib/resources/images/icons/heartTr.svg";
+import user1 from "lib/resources/images/icons/user1.svg";
+import heart from "lib/resources/images/icons/heart.svg";
+import heartTr from "lib/resources/images/icons/heartTr.svg";
 
 const PostComment = (props: any) => {
   const Reply = props.reply;

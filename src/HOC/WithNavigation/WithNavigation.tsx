@@ -1,6 +1,6 @@
+import Navbar from "components/Navbar/Navbar";
+import SideNav from "components/Sidenav/Sidenav";
 import { ComponentType } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import SideNav from "../../components/Sidenav/Sidenav";
 import styles from "./WithNavigation.module.css";
 
 const withNavigation = (WrappedComponent: ComponentType<any>) => {

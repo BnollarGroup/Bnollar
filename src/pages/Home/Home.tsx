@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Feed from "./Feed/Feed";
 import styles from "./Home.module.css";

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mute.module.css";
-import muteCloseLogo from "../../../lib/resources/images/profile-chat/cancel-mute.svg";
+import muteCloseLogo from "lib/resources/images/profile-chat/cancel-mute.svg";
 
 interface MuteProps {
   setMuteIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

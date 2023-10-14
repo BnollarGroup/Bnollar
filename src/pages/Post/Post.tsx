@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "components/Navbar/Navbar";
 import styles from "./Post.module.css";
-import nft1 from "../../lib/resources/images/posts/postImg2.svg";
-import PostHeader from "../../components/Post/PostHeader";
-import PostComment from "../../components/Post/PostComment";
-import WriteComment from "../../components/Post/WriteComment";
+import nft1 from "lib/resources/images/posts/postImg2.svg";
+import PostHeader from "components/Post/PostHeader";
+import PostComment from "components/Post/PostComment";
+import WriteComment from "components/Post/WriteComment";
 
 const Post = () => {
   return (

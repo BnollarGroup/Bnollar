@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./LeftSideBar.module.css";
-import nft from "../../../lib/resources/images/icons/nft.svg";
-import home from "../../../lib/resources/images/icons/home.svg";
-import comunity from "../../../lib/resources/images/icons/comunity.svg";
-import settings from "../../../lib/resources/images/icons/settings.svg";
-import hashtag from "../../../lib/resources/images/icons/hashtag.svg";
+import nft from "lib/resources/images/icons/nft.svg";
+import home from "lib/resources/images/icons/home.svg";
+import comunity from "lib/resources/images/icons/comunity.svg";
+import settings from "lib/resources/images/icons/settings.svg";
+import hashtag from "lib/resources/images/icons/hashtag.svg";
 
 const LeftSideBar = () => {
   return (

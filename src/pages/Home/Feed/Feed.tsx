@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Feed.module.css";
 
-import FeedHeader from "../../../components/Home/FeedHeader";
-import FeedCard from "../../../components/Home/FeedCard";
+import FeedHeader from "components/Home/FeedHeader";
+import FeedCard from "components/Home/FeedCard";
 
 const Feed = () => {
   return (

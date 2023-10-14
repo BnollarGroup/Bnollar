@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styles from "./Dropdown.module.css";
-import arrow from "../../../../lib/resources/images/Settings/arrow.png";
+import arrow from "lib/resources/images/Settings/arrow.png";
 
 interface DropdownProps {
   items: string[];

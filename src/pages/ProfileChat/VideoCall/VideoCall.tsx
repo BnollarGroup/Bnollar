@@ -1,13 +1,13 @@
 import styles from "./VideoCall.module.css";
 import { Link } from "react-router-dom";
-import contactPhoto from "../../../lib/resources/images/profile-chat/video-call/contact-photo.png";
-import userPhoto from "../../../lib/resources/images/profile-chat/video-call/user-photo.png";
-import addPeopleIcon from "../../../lib/resources/images/profile-chat/video-call/add-people.svg";
-import cameraIcon from "../../../lib/resources/images/profile-chat/video-call/camera.svg";
-import chatIcon from "../../../lib/resources/images/profile-chat/video-call/chat.svg";
-import microphoneIcon from "../../../lib/resources/images/profile-chat/video-call/microphone.svg";
-import phoneIcon from "../../../lib/resources/images/profile-chat/video-call/phone.svg";
-import videoCallIcon from "../../../lib/resources/images/profile-chat/video-call/video-call-icon.png";
+import contactPhoto from "lib/resources/images/profile-chat/video-call/contact-photo.png";
+import userPhoto from "lib/resources/images/profile-chat/video-call/user-photo.png";
+import addPeopleIcon from "lib/resources/images/profile-chat/video-call/add-people.svg";
+import cameraIcon from "lib/resources/images/profile-chat/video-call/camera.svg";
+import chatIcon from "lib/resources/images/profile-chat/video-call/chat.svg";
+import microphoneIcon from "lib/resources/images/profile-chat/video-call/microphone.svg";
+import phoneIcon from "lib/resources/images/profile-chat/video-call/phone.svg";
+import videoCallIcon from "lib/resources/images/profile-chat/video-call/video-call-icon.png";
 
 function VideoCall() {
   return (

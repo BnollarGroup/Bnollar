@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./uploadPicture.module.css";
-// import FeedHeader from "../../components/Home/Feed/FeedHeader";
-import user1 from "../../resources/images/icons/user1.svg";
-import attach from "../../resources/images/icons/atach.svg";
-import nft from "../../resources/images/icons/nft.svg";
-import emoji from "../../resources/images/icons/emoji.svg";
-import language from "../../resources/images/icons/language.svg";
-import Woman from "../../resources/images/uploadvideo/woman-chat.png";
-import Cross from "../../resources/images/uploadvideo/cancel.svg";
-import Play from "../../resources/images/uploadvideo/play.svg";
+// import FeedHeader from "lib/components/Home/Feed/FeedHeader";
+import user1 from "lib/resources/images/icons/user1.svg";
+import attach from "lib/resources/images/icons/atach.svg";
+import nft from "lib/resources/images/icons/nft.svg";
+import emoji from "lib/resources/images/icons/emoji.svg";
+import language from "lib/resources/images/icons/language.svg";
+import Woman from "lib/resources/images/uploadvideo/woman-chat.png";
+import Cross from "lib/resources/images/uploadvideo/cancel.svg";
+import Play from "lib/resources/images/uploadvideo/play.svg";
 
 function UploadVideo() {
   return (

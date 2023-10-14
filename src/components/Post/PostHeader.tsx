@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PostHeader.module.css";
-import user1 from "../../lib/resources/images/icons/user1.svg";
+import user1 from "lib/resources/images/icons/user1.svg";
 import { CommnetButton, ShareButton, UpvoteButton } from "../Buttons/Buttons";
-import verify from "../../lib/resources/images/icons/verified.svg";
+import verify from "lib/resources/images/icons/verified.svg";
 
 const PostHeader = (props: any) => {
   return (
