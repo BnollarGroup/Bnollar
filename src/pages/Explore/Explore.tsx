@@ -7,12 +7,13 @@ import Post from "../../components/Explore/Post/Post";
 import RightSideBar from "../../components/Explore/RightSideBar/RightSideBar";
 
 function Explore() {
-  const [data, setData] = useState<DataType[]>(dataBase);
+  const [data] = useState<DataType[]>(dataBase);
 
   return (
     <div className={styles.container}>
       <div className={styles.newsFeedContainer}>
         <h1 className={styles.title}>Explore</h1>
+
         <div className={styles.categoryButtons}>
           <button className={styles.categoryButton}>Recommended</button>
           <button className={styles.categoryButton}>Business</button>
@@ -21,6 +22,7 @@ function Explore() {
           <button className={styles.categoryButton}>Entertainment</button>
           <button className={styles.categoryButton}>Fashion & Beauty</button>
         </div>
+
         <div className={styles.newsFeed}>
           {data.map((dataItem: DataType, index: number) => {
             return (

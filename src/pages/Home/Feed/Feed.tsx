@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
 import styles from "./Feed.module.css";
 
 import FeedHeader from "../../../components/Home/FeedHeader";

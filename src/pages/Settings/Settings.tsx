@@ -1,7 +1,8 @@
 import SettingsNav from "../../components/Settings/SettingsNav/SettingsNav";
 import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
-import useSettings from "../../Hooks/useSettings";
+import useSettings from "../../hooks/useSettings";
 import styles from "./Settings.module.css";
+
 const Settings = () => {
   const { type, component } = useSettings();
   return (

@@ -7,6 +7,7 @@ import Security from "../components/Settings/Security/Security";
 
 const useSettings = () => {
   const { type } = useParams();
+
   const getComponent = () => {
     switch (type) {
       case "profile":
@@ -23,6 +24,7 @@ const useSettings = () => {
         return <NotificationControls type="Comment" />;
     }
   };
+
   return {
     component: getComponent(),
     type: typeof type === "string" ? type : "error",
