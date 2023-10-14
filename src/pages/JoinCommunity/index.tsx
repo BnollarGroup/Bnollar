@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
 import style from "./JoinCommunity.module.css";
 import RighSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";
 
 function JoinCommunity() {
-  const [JoinCommunity] = useState([
+  const [joinCommunity] = useState([
     { img: Cover, title: "Title", member: "Member 24" },
     { img: Cover, title: "Title", member: "Member 24" },
     { img: Cover, title: "Title", member: "Member 24" },
@@ -103,7 +103,7 @@ function JoinCommunity() {
             </div>
           </div>
           <div className={style.join_community_box}>
-            {JoinCommunity.map((element) => {
+            {joinCommunity.map((element) => {
               return (
                 <div className={style.join_box}>
                   <div className={style.join_picture}>
