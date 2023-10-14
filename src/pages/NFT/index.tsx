@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
-import styles from "./Nft.module.css";
+import styles from "./NFT.module.css";
 import nft1 from "lib/resources/images/icons/nftImage.svg";
 import userIcon1 from "lib/resources/images/icons/userIcon3.svg";
 import userIcon2 from "lib/resources/images/icons/userIcon4.svg";

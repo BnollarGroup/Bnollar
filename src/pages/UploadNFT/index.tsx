@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
 import ChooseBlockchain from "components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
 import ChooseType from "components/UploadNFT/ChooseType/ChooseType";
-import styles from "./UploadNft.module.css";
+import styles from "./UploadNFT.module.css";
 // import addIcon from "resources/images/icons/addicon.png"
 // import Fruit from 'resources/images/icons/watermelon.png'
 // import UploadImgMiddleLogo from 'resources/images/icons/uploadimgmiddlelogo.png'

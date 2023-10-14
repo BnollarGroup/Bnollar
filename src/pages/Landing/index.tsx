@@ -5,7 +5,7 @@ import icon1 from "lib/resources/images/landing/icon1.svg";
 import icon2 from "lib/resources/images/landing/icon2.svg";
 import icon6 from "lib/resources/images/landing/icon6.svg";
 import { Link } from "react-router-dom";
-import Home from "../Home/Home";
+import Home from "../Home";
 
 const Landing: FC = () => {
   return (
