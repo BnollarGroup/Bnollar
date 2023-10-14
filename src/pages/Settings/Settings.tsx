@@ -1,5 +1,5 @@
 import SettingsNav from "../../components/Settings/SettingsNav/SettingsNav";
-import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
+import WithNavigation from "../../HOC/WithNavigation/WithNavigation";
 import useSettings from "../../hooks/useSettings";
 import styles from "./Settings.module.css";
 

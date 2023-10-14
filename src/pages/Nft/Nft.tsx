@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Nft.module.css";
-import nft1 from "../../resources/images/icons/nftImage.svg";
-import userIcon1 from "../../resources/images/icons/userIcon3.svg";
-import userIcon2 from "../../resources/images/icons/userIcon4.svg";
-import transfer from "../../resources/images/icons/transfer.svg";
-import icon from "../../resources/images/icons/nav_arrow.svg";
+import nft1 from "../../lib/resources/images/icons/nftImage.svg";
+import userIcon1 from "../../lib/resources/images/icons/userIcon3.svg";
+import userIcon2 from "../../lib/resources/images/icons/userIcon4.svg";
+import transfer from "../../lib/resources/images/icons/transfer.svg";
+import icon from "../../lib/resources/images/icons/nav_arrow.svg";
+
 const Description = () => {
   const [showDescription, setShowDescription] = React.useState(true);
   const handleClick = () => {

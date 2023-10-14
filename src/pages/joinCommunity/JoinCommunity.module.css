@@ -28,7 +28,7 @@
 }
 
 .join_community_button {
-  background: url("../../resources/images/icons/plus.png");
+  background: url("../../lib/resources/images/icons/plus.png");
   background-repeat: no-repeat;
   background-position: 24px center;
   background-color: orange;

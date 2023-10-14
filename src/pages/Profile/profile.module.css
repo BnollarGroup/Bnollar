@@ -25,7 +25,7 @@
 
 .editcoverpicture {
   position: absolute;
-  background: url("../../resources/images/icons/edit.png");
+  background: url("../../lib/resources/images/icons/edit.png");
   background-repeat: no-repeat;
   background-position: 25px center;
   background-color: white;
@@ -297,7 +297,7 @@ hr {
 
 .upvote button {
   background: rgba(255, 255, 255, 0.04);
-  background: url("../../resources/images/icons/arrow-up-circled.png");
+  background: url("../../lib/resources/images/icons/arrow-up-circled.png");
   background-repeat: no-repeat;
   background-position: 30px center;
   font-weight: bolder;
@@ -308,7 +308,7 @@ hr {
   height: 40px;
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.04);
-  background: url("../../resources/images/icons/chat-lines.png");
+  background: url("../../lib/resources/images/icons/chat-lines.png");
   background-repeat: no-repeat;
   background-position: 25px center;
   font-weight: bolder;
@@ -319,7 +319,7 @@ hr {
   height: 40px;
   margin-top: 20px;
   background: rgba(255, 255, 255, 0.04);
-  background: url("../../resources/images/icons/share-ios.png");
+  background: url("../../lib/resources/images/icons/share-ios.png");
   background-repeat: no-repeat;
   background-position: 25px center;
   font-weight: bolder;

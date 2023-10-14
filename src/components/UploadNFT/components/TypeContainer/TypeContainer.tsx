@@ -1,4 +1,4 @@
-import styles from "./typeContainer.module.css";
+import styles from "./TypeContainer.module.css";
 import { Dispatch, SetStateAction } from "react";
 
 type TypeContainerProps = {

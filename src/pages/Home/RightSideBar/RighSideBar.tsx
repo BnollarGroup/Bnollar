@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
 import styles from "./RightSideBar.module.css";
-import user1 from "../../../resources/images/icons/user1.svg";
-import nft1 from "../../../resources/images/icons/nft1.svg";
-import active from "../../../resources/images/icons/active.svg";
+import user1 from "../../../lib/resources/images/icons/user1.svg";
+import nft1 from "../../../lib/resources/images/icons/nft1.svg";
+import active from "../../../lib/resources/images/icons/active.svg";
+
 const RighSideBar = () => {
   return (
     <div className={styles.rightSideBarWrapper}>

@@ -1,5 +1,4 @@
-import { set } from "react-hook-form";
-import styles from "./blockchainContainer.module.css";
+import styles from "./BlockchainContainer.module.css";
 import { Dispatch, SetStateAction } from "react";
 
 type BlockchainContainerProps = {

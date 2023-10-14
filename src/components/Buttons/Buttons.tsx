@@ -1,12 +1,10 @@
-
 // import React, { useState } from "react";
 // import styles from "./Buttons.module.css";
-// import upvote from "../../resources/images/icons/upvote.svg";
-// import upvoteOn from "../../resources/images/icons/arrow-up-circled.svg";
-// import chat from "../../resources/images/icons/chat.svg";
-// import chatOn from "../../resources/images/icons/chatOn.svg";
-// import share from "../../resources/images/icons/share.svg";
-
+// import upvote from "../../lib/resources/images/icons/upvote.svg";
+// import upvoteOn from "../../lib/resources/images/icons/arrow-up-circled.svg";
+// import chat from "../../lib/resources/images/icons/chat.svg";
+// import chatOn from "../../lib/resources/images/icons/chatOn.svg";
+// import share from "../../lib/resources/images/icons/share.svg";
 
 // export const UpvoteButton = () => {
 //   const [showUpVote, setShowUpVote] = useState(false);
@@ -33,53 +31,52 @@
 //       <button
 //       className={showComment ? styles.upvote : "none"}
 
-import { useState } from 'react'
-import styles from './Buttons.module.css'
-import upvote from '../../resources/images/icons/upvote.svg'
-import upvoteOn from '../../resources/images/icons/arrow-up-circled.svg'
-import chat from '../../resources/images/icons/chat.svg'
-import chatOn from '../../resources/images/icons/chatOn.svg'
-import share from '../../resources/images/icons/share.svg'
+import { useState } from "react";
+import styles from "./Buttons.module.css";
+import upvote from "../../lib/resources/images/icons/upvote.svg";
+import upvoteOn from "../../lib/resources/images/icons/arrow-up-circled.svg";
+import chat from "../../lib/resources/images/icons/chat.svg";
+import chatOn from "../../lib/resources/images/icons/chatOn.svg";
+import share from "../../lib/resources/images/icons/share.svg";
 
 export const UpvoteButton = () => {
-  const [showUpVote, setShowUpVote] = useState(false)
+  const [showUpVote, setShowUpVote] = useState(false);
   const handleUpvoteClick = () => {
-    setShowUpVote((prevState) => !prevState)
-  }
+    setShowUpVote((prevState) => !prevState);
+  };
   return (
     <button
-      className={showUpVote ? styles.upvote : 'none'}
+      className={showUpVote ? styles.upvote : "none"}
       onClick={handleUpvoteClick}
     >
       <img src={showUpVote ? upvoteOn : upvote} alt="vote" />
-      {showUpVote ? '442' : 'Upvote'}
+      {showUpVote ? "442" : "Upvote"}
     </button>
-  )
-}
+  );
+};
 
 export const CommnetButton = () => {
-  const [showComment, setShowComment] = useState(false)
+  const [showComment, setShowComment] = useState(false);
   const handleCommentClick = () => {
-    setShowComment((prevState) => !prevState)
-  }
+    setShowComment((prevState) => !prevState);
+  };
   return (
     <button
-      className={showComment ? styles.upvote : 'none'}
+      className={showComment ? styles.upvote : "none"}
       onClick={handleCommentClick}
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />
       Comment
     </button>
-
-    )
-}
+  );
+};
 
 export const ShareButton = () => {
-  const [showShare, setShowShare] = useState(false)
+  const [showShare, setShowShare] = useState(false);
 
   const handleShareClick = () => {
-    setShowShare((prevState) => !prevState)
-  }
+    setShowShare((prevState) => !prevState);
+  };
 
   return (
     <>
@@ -107,8 +104,8 @@ export const ShareButton = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 // export const ShareButton = ()=>{
 //   const [showShare, setShowShare] = useState(false);

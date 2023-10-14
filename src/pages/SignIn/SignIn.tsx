@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import classes from "./SignIn.module.css";
-import Nft_1 from "../../resources/images/SignIn/nft_1.svg";
-import Logo from "../../resources/images/logo/bnollar_logo.svg";
-import coinbase from "../../resources/images/SignIn/wallets/coinbase.svg";
-import walletconnect from "../../resources/images/SignIn/wallets/walletconnect.svg";
-import metamask from "../../resources/images/SignIn/wallets/metamask.svg";
+import Nft_1 from "../../lib/resources/images/SignIn/nft_1.svg";
+import Logo from "../../lib/resources/images/logo/bnollar_logo.svg";
+import coinbase from "../../lib/resources/images/SignIn/wallets/coinbase.svg";
+import walletconnect from "../../lib/resources/images/SignIn/wallets/walletconnect.svg";
+import metamask from "../../lib/resources/images/SignIn/wallets/metamask.svg";
 import WalletItem from "../../components/WalletItem/WalletItem";
 
 const SignIn: FC = () => {

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from "./EditNicknameMenu.module.css";
-import cancelIcon from "../../../resources/images/profile-chat/cancel-edit.svg";
-import editUserIcon from "../../../resources/images/profile-chat/edit-user-icon.png";
-import editButtonIcon from "../../../resources/images/profile-chat/edit-nickname.svg";
-import confirmIcon from "../../../resources/images/profile-chat/white-edit-confirm.svg";
+import cancelIcon from "../../../lib/resources/images/profile-chat/cancel-edit.svg";
+import editUserIcon from "../../../lib/resources/images/profile-chat/edit-user-icon.png";
+import editButtonIcon from "../../../lib/resources/images/profile-chat/edit-nickname.svg";
+import confirmIcon from "../../../lib/resources/images/profile-chat/white-edit-confirm.svg";
 
 interface EditNickNameMenuProps {
   setEditMenuIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

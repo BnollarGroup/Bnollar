@@ -1,8 +1,8 @@
-import contStyles from '../SettingsContainer.module.css'
-import styles from './ManageWallets.module.css'
-import WalletItem from '../WalletItem/WalletItem'
-import plus from '../../../resources/images/Settings/plus.png'
-import Buttons from '../Buttons/Buttons'
+import contStyles from "../SettingsContainer.module.css";
+import styles from "./ManageWallets.module.css";
+import WalletItem from "../WalletItem/WalletItem";
+import plus from "../../../lib/resources/images/Settings/plus.png";
+import Buttons from "../Buttons/Buttons";
 
 const ManageWallets = () => {
   return (
@@ -33,7 +33,7 @@ const ManageWallets = () => {
         <Buttons updateButtonTitle="Save information" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ManageWallets
+export default ManageWallets;

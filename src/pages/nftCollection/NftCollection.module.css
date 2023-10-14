@@ -42,7 +42,7 @@ main {
   border-radius: 40px;
   border: none;
   padding-left: 30px;
-  background: url("../../resources/images/icons/search.png");
+  background: url("../../lib/resources/images/icons/search.png");
   background-color: rgba(255, 255, 255, 0.137);
   background-repeat: no-repeat;
   background-position: 10px center;

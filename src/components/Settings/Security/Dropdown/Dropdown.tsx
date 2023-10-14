@@ -1,31 +1,31 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import styles from './Dropdown.module.css'
-import arrow from '../../../../resources/images/Settings/arrow.png'
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import styles from "./Dropdown.module.css";
+import arrow from "../../../../lib/resources/images/Settings/arrow.png";
 
 interface DropdownProps {
-  items: string[]
-  active: string
-  set: Dispatch<SetStateAction<string>>
+  items: string[];
+  active: string;
+  set: Dispatch<SetStateAction<string>>;
 }
 
 const Dropdown = ({ items, active, set }: DropdownProps) => {
-  const [showItems, setShowItems] = useState(false)
+  const [showItems, setShowItems] = useState(false);
 
   const clickHandler = () => {
-    setShowItems(!showItems)
-  }
+    setShowItems(!showItems);
+  };
   useEffect(() => {
     const hideDropdown = (event: any) => {
-      if (showItems && event.target.id !== 'toggler') {
-        setShowItems(false)
+      if (showItems && event.target.id !== "toggler") {
+        setShowItems(false);
       }
-    }
-    window.addEventListener('click', hideDropdown)
+    };
+    window.addEventListener("click", hideDropdown);
 
     return () => {
-      window.removeEventListener('click', hideDropdown)
-    }
-  }, [showItems])
+      window.removeEventListener("click", hideDropdown);
+    };
+  }, [showItems]);
   return (
     <div className={styles.dropdown_wrapper}>
       <div
@@ -53,7 +53,7 @@ const Dropdown = ({ items, active, set }: DropdownProps) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;

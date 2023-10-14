@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { DataType } from "../types";
 import styles from "./Post.module.css";
 import Comment from "../Comment/Comment";
-import verifiedIcon from "../../../resources/images/explore/verified-icon.png";
-import arrowUpIcon from "../../../resources/images/explore/arrow-up.svg";
-import chatIcon from "../../../resources/images/explore/chat-icon.svg";
-import postShareIcon from "../../../resources/images/explore/post-share-icon.svg";
+import verifiedIcon from "../../../lib/resources/images/explore/verified-icon.png";
+import arrowUpIcon from "../../../lib/resources/images/explore/arrow-up.svg";
+import chatIcon from "../../../lib/resources/images/explore/chat-icon.svg";
+import postShareIcon from "../../../lib/resources/images/explore/post-share-icon.svg";
 
 interface PostProps {
   dataItem: DataType;

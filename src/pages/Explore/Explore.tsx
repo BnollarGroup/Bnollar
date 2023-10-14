@@ -1,4 +1,4 @@
-import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
+import WithNavigation from "../../HOC/WithNavigation/WithNavigation";
 import styles from "./Explore.module.css";
 import { useState } from "react";
 import { dataBase } from "../../components/Explore/data";

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./PostComment.module.css";
-import user1 from "../../resources/images/icons/user1.svg";
-import heart from "../../resources/images/icons/heart.svg";
-import heartTr from "../../resources/images/icons/heartTr.svg";
-import WriteComment from "./WriteComment";
+import user1 from "../../lib/resources/images/icons/user1.svg";
+import heart from "../../lib/resources/images/icons/heart.svg";
+import heartTr from "../../lib/resources/images/icons/heartTr.svg";
+
 const PostComment = (props: any) => {
   const Reply = props.reply;
   const [like, setLike] = React.useState(false);
