@@ -4,11 +4,7 @@ import user1 from "lib/resources/images/icons/user1.svg";
 import verified from "lib/resources/images/icons/verified.svg";
 import post1 from "lib/resources/images/posts/postImg1.svg";
 import menuIcon from "lib/resources/images/icons/more-horiz.svg";
-import {
-  UpvoteButton,
-  CommnetButton,
-  ShareButton,
-} from "../../Buttons/Buttons";
+import { UpvoteButton, CommnetButton, ShareButton } from "../../Buttons";
 import Upperdropdown from "./Dropdowns/Upperdropdown";
 
 const FeedCard = (props: any) => {
