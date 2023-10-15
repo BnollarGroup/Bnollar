@@ -1,0 +1,340 @@
+.nftmenuWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nftmenu {
+  display: flex;
+  column-gap: 8px;
+}
+
+.chains {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  border: 1px solid #32353b;
+  border-radius: 40px;
+  padding: 8px 14px 8px 10px;
+  position: relative;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+}
+
+.breakDown {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.breakDownbtn {
+  width: 100%;
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.breakDownArrow {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.chainsFilterBox {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 10px;
+  background: #17181b;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 175%;
+}
+
+.optionBox {
+  display: flex;
+  padding: 8px 14px;
+  column-gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.optionBox:hover,
+.optionBox:active {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+}
+
+.options {
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.nftmenubtn {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  border: 1px solid #32353b;
+  border-radius: 40px;
+  padding: 10px 14px;
+  position: relative;
+}
+
+.nftmenubutton {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+.statusFilterBox {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 10px;
+  background: #17181b;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 175%;
+}
+
+.priceFilterBox {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 10px;
+  row-gap: 16px;
+  background: #17181b;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 256px;
+}
+
+.CalculationBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.minMaxContent {
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 14px 10px 10px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  width: 50%;
+}
+
+.chooseBox {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.minMaxContent::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dash {
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 8px;
+}
+
+.leftPart {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.cryptoChoice {
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.applybtn {
+  border-radius: 6px;
+  background: #ef8031 !important;
+  padding: 10px 14px;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  width: 100%;
+}
+
+.checkBox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff33;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.checkBox::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.checkBox:checked::before {
+  background-color: #fff;
+  border: none;
+  background-image: url("../../lib/resources/images/icons/check.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-1.8px, -1.8px);
+}
+
+.marketplaceLogo {
+  width: 24px;
+  height: 24px;
+}
+
+.CollectionFilterBox {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 10px;
+  background: #17181b;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 274px;
+}
+
+.nftPiece {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.place {
+  color: #fff;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.subtext {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.collectionFilterSearch {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  align-items: center;
+  padding: 10px 14px;
+  column-gap: 4px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.collectionFilterSearchInput {
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+}
+
+.collectionFilterSearchInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.dateFilterBox {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 10px;
+  background: #17181b;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100px;
+}
+
+@media all and (max-width: 1080px) {
+  .nftmenuWrapper {
+    column-gap: 8px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .nftmenuMain::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .nftmenuMain {
+    overflow-x: auto;
+  }
+
+  .nftmenuWrapper {
+    overflow-x: auto;
+  }
+
+  .nftmenuWrapper::-webkit-scrollbar {
+    width: 0;
+  }
+}

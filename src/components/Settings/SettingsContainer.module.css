@@ -1,0 +1,57 @@
+.containerWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 8rem;
+}
+
+.settingsContainer {
+  max-width: 680px;
+  width: 100%;
+  background: #17181b;
+  border-radius: 10px;
+  padding: 24px;
+  height: max-content;
+  color: #6e6e70;
+}
+
+.contHeader {
+  font-size: 18px;
+  font-weight: 600px;
+  color: white;
+}
+
+.arrow_header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: white !important;
+}
+
+.message {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6e6e70;
+  margin-top: 4px;
+  line-height: 20px;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px 0 24px 0;
+}
+
+.itemsWrapper {
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

@@ -1,0 +1,69 @@
+import contStyles from '../SettingsContainer.module.css'
+import styles from './Security.module.css'
+import ToggleCard from '../ToggleCard/ToggleCard'
+import Dropdown from './Dropdown/Dropdown'
+import LinkCard from './LinkCard/LinkCard'
+import { useState } from 'react'
+import Buttons from '../Buttons/Buttons'
+
+const Security = () => {
+  const [activeMention, setActiveMention] = useState('Everyone')
+  const [activeTags, setActiveTags] = useState('Everyone')
+
+  const dropdownItems = ['Everyone', 'Friends', 'Only me', 'Friends of friends']
+  return (
+    <div className={contStyles.containerWrapper}>
+      <div className={contStyles.settingsContainer}>
+        <h2 className={contStyles.contHeader}>Privacy & Policy</h2>
+        <div className={contStyles.line} />
+        <div className={contStyles.itemsWrapper}>
+          <ToggleCard
+            title="Private account"
+            description="When your account is private, only people you approve can see your photos and videos on Instagram. Your existing followers won't be affected."
+          />
+          <ToggleCard
+            title="Activity status"
+            description="Allow accounts that you follow and anyone you message to see when you were last active or are currently active on Instagram apps. When this is turned off, you won't be able to see the activity status of other accounts."
+          />
+          <div className={styles.flex_between}>
+            <div>
+              <h5 className={contStyles.label}>Mention</h5>
+              <p className={contStyles.message}>Allow @mentions from</p>
+            </div>
+            <Dropdown
+              items={dropdownItems}
+              active={activeTags}
+              set={setActiveTags}
+            />
+          </div>
+          <div className={styles.flex_between}>
+            <div>
+              <h5 className={contStyles.label}>Tags</h5>
+              <p className={contStyles.message}>Allow tags from</p>
+            </div>
+            <Dropdown
+              items={dropdownItems}
+              active={activeMention}
+              set={setActiveMention}
+            />
+          </div>
+          <LinkCard
+            title="Messages"
+            description="Manage message settings"
+            path="/settings/privacy&security_messages"
+          />
+          <LinkCard
+            title="Comments"
+            description="Edit comment settings"
+            path="/settings/privacy&security_comments"
+          />
+        </div>
+        <div className={contStyles.line} />
+
+        <Buttons updateButtonTitle="Save information" />
+      </div>
+    </div>
+  )
+}
+
+export default Security

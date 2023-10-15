@@ -1,0 +1,398 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 0 32px;
+  column-gap: 25px;
+}
+
+.rightSideBar {
+  display: flex;
+  width: 100%;
+  min-width: 1028px;
+  padding: 16px 24px 20px 16px;
+  background: inherit;
+}
+
+.messagesList {
+  width: fit-content;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  column-gap: 8px;
+  margin-bottom: 28px;
+}
+
+.searchInput {
+  width: 280px;
+  height: 40px;
+  border-radius: 36px;
+  padding: 8px 14px 8px 40px;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  outline: none;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.searchInput::placeholder {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.searchImg {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+}
+
+.editButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 182px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+.messages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  padding: 0 32px 0 16px;
+}
+
+.messagesContent {
+  display: flex;
+  align-items: center;
+  position: relative;
+  column-gap: 8px;
+}
+
+.messagesDot {
+  height: 6px;
+  width: 6px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translate(0, -50%);
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+}
+
+.messageInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.messagesAuthor {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.messagesText {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.messagesTime {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  align-self: end;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.chatWindow {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  row-gap: 114px;
+}
+
+.chatWindowContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatWindowNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatWindowUserInfo {
+  display: flex;
+  column-gap: 12px;
+}
+
+.usernameInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.usernameActiveTime {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.chatWindowButtons {
+  display: flex;
+  column-gap: 8px;
+}
+
+.actionButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.actionButtonInner {
+  position: absolute;
+  top: 40%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 2.5px;
+}
+
+.chatMessagesContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.chatMessages {
+  display: flex;
+  flex-direction: column;
+  row-gap: 19px;
+}
+
+.currentUser {
+  display: flex;
+  column-gap: 10px;
+}
+
+.currentUserAvatar {
+  width: 28px;
+  height: 28px;
+  align-self: end;
+}
+
+.currentUserMessage {
+  max-width: 390px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 16px 16px 16px 2px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.currentUserAttachment {
+}
+
+.currentUserVideo {
+  width: 160px;
+  height: 200px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.currentUserVideoPlayButton {
+  width: 36px;
+  height: 36px;
+  background: inherit;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.currentUserVoiceMessage {
+  width: 218px;
+  height: 36px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.currentUserVoiceMessageButton {
+  background: rgba(255, 255, 255, 0.2);
+  width: 24px;
+  height: 24px;
+  border-radius: 31px;
+  padding: 2px 1px 2px 3px;
+}
+
+.currentUserVoiceMessageTime {
+  width: 42px;
+  height: 24px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  font-family: "Inter";
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answeredMessage {
+  max-width: 321px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 16px 16px 2px 16px;
+  color: #ffffff;
+  background: #ef8031;
+  align-self: end;
+}
+
+.answeredAttachment {
+  align-self: end;
+}
+
+.answeredVoiceMessage {
+  width: 218px;
+  height: 36px;
+  border-radius: 100px;
+  background: #ef8031;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.answeredVoiceMessageButton {
+  background: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 31px;
+  padding: 2px 1px 2px 3px;
+}
+
+.answeredVoiceMessageTime {
+  width: 42px;
+  height: 24px;
+  border-radius: 40px;
+  background: #ffffff;
+  font-family: "Inter";
+  font-size: 12px;
+  line-height: 16px;
+  color: #ef8031;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sendMessage {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  margin-top: auto;
+}
+
+.sendMessageContainer {
+  display: flex;
+  min-width: 574px;
+  width: 100%;
+}
+
+.messageInput {
+  min-width: 478px;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px 0 0 10px;
+  padding: 10px 12px 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  resize: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+}
+
+.inputButtons {
+  height: 40px;
+  display: flex;
+  column-gap: 11.5px;
+  border-radius: 0;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding-right: 12px;
+}
+
+.inputButton {
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+}
+
+.sendMessageButton {
+  width: 32px;
+  height: 32px;
+  background: #ef8031;
+  border-radius: 50%;
+}

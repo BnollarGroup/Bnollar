@@ -1,0 +1,78 @@
+.signIn {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d0e11;
+  display: flex;
+  flex-direction: column;
+  row-gap: 62px;
+  overflow-y: hidden;
+}
+
+.rightSignIn {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.logo {
+  padding: 21.5px 0 0 16px;
+}
+
+.maskImg {
+  display: none;
+}
+
+.signInWrapper {
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #fff;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 22px;
+  margin-top: 16px;
+  width: 300px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.signInContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+  margin-top: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .signIn {
+    flex-direction: row;
+    overflow-y: hidden;
+  }
+
+  .leftImage {
+    flex: 0.5;
+  }
+
+  .rightSignIn {
+    align-items: center;
+    flex: 0.5;
+  }
+
+  .maskImg {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .logo {
+    display: none;
+  }
+}

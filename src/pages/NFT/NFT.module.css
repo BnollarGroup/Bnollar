@@ -1,0 +1,421 @@
+.nftWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.imgWrapper {
+  width: 100%;
+}
+.imgWrapper img {
+  width: 100%;
+  height: auto;
+}
+.leftPanel {
+  width: 40%;
+}
+.rightPanel {
+  width: 40%;
+}
+.nftModuleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  margin: 24px 0px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.moduleName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  flex-direction: row;
+  display: flex;
+  gap: 420px;
+
+  color: #ffffff;
+}
+.moduleBody {
+  margin-top: 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+/* detalis */
+.detailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.detailsName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  flex-direction: row;
+  display: flex;
+
+  color: #ffffff;
+}
+.detailsItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detailsItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0px;
+}
+.itemName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+.itemValue {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+/* properties */
+.propertiesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.propertiesName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+  margin-bottom: 24px;
+  flex-direction: row;
+  display: flex;
+  gap: 420px;
+
+  color: #ffffff;
+}
+.propertieItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+.propertieItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  margin: 8px 12px 8px 0px;
+  width: 31.6%;
+}
+.propertieItem div {
+  margin: 4px 0px;
+}
+
+.propertieItemTop {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+.propertieItemCenter {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+.propertieItemBottom {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+/* history */
+.historyWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 32px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.nftItemName {
+  width: 169px;
+  height: 32px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  color: #ffffff;
+}
+.nftCollectionName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  color: #ffffff;
+}
+.historyCollection {
+  display: flex;
+}
+.historyUserInfo {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+.historyUserInfo img {
+  float: left;
+  margin-right: 10px;
+}
+.historyDescription > :first-child {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+.historyDescription > :nth-child(2) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+.historyBody {
+  width: 100%;
+}
+.historyOwner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 32px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  margin-top: 32px;
+}
+.historyPrice {
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  width: 50%;
+}
+.historyPriceOwner {
+  padding-left: 45px;
+}
+.historyPrice div {
+  margin-bottom: 4px;
+}
+.historyItemTop {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+.historyItemCenter {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+.historyItemBottom {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+.buyButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 30px;
+  gap: 10px;
+
+  width: 100%;
+
+  background: #ffffff;
+  border-radius: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  color: #000000;
+  cursor: pointer;
+}
+/* activity */
+.activityWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 24px;
+
+  width: 100%;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+.activityName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  margin: 24px 0px;
+
+  color: #ffffff;
+}
+.activityCard {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+.activityCardName button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  background: rgba(239, 128, 49, 0.1);
+  color: #ef8031;
+}
+.activityCardFooter {
+  display: flex;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+.activityCardFooter div {
+  margin-right: 24px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+.activityCardFooter div span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.4);
+}

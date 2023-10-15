@@ -1,0 +1,29 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar li {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 13px;
+  line-height: 27px;
+  color: rgba(255, 255, 255, 0.4);
+  list-style: none;
+  flex-grow: 1;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #2e2e2e;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.navbar li:hover {
+  color: #fff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.active_nav {
+  color: #fff !important;
+  border-bottom: 1px solid #ffffff !important;
+}

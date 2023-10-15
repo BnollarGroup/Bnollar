@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  column-gap: 25px;
+  padding: 0 16px 0 25px;
+}
+
+.title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #ffffff;
+}
+
+.categoryButtons {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  margin: 24px 0;
+}
+
+.categoryButton {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 10px 16px;
+  background: inherit;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsFeed {
+  width: 712px;
+  background: rgba(255, 255, 255, 0.04);
+}

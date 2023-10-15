@@ -1,0 +1,23 @@
+.side_nav_link {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #6e6e70;
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 17px;
+  border-radius: 10px;
+  width: 100%;
+  transition: 500ms;
+}
+.side_nav_link img {
+  width: 20px;
+  height: 20px;
+}
+.side_nav_link.active,
+.side_nav_link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+}

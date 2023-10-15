@@ -1,0 +1,21 @@
+.walletIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.justify_bet {
+  justify-content: space-between;
+}
+
+.dotsWrapper {
+  padding: 6px;
+  cursor: pointer;
+  background-color: #ffffff0a;
+  border-radius: 8px;
+}
