@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import Feed from "./Feed/Feed";
 import styles from "./Home.module.css";
 import LeftSideBar from "./Leftsidebar/LeftSideBar";

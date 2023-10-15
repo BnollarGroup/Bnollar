@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Navbar.module.css";
 import Logo from "lib/resources/images/logo/bnollar_logo.svg";
 import Plus from "lib/resources/images/icons/plus.svg";

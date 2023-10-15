@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import ChooseBlockchain from "components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
 import ChooseType from "components/UploadNFT/ChooseType/ChooseType";
 import styles from "./UploadNFT.module.css";

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import style from "./NFTCollectionPrice.module.css";
 import NftPic from "lib/resources/images/icons/nfts.png";
-import NftFilterMenu from "components/NftCollectionFilter/NftCollectionFilter";
+import NftFilterMenu from "components/NftCollectionFilter";
 import Rightnavbar from "components/RightNavbar";
 import Chevron from "lib/resources/images/icons/chevron-right.svg";
 

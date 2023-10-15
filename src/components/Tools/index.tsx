@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Tools.module.css";
 import verified from "lib/resources/images/icons/verified.svg";
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import style from "./JoinCommunity.module.css";
 import RighSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";

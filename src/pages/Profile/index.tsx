@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
 import Rightnavbar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover (2).png";

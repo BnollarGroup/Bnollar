@@ -1,4 +1,4 @@
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import SideNav from "components/Sidenav";
 import { ComponentType } from "react";
 import styles from "./WithNavigation.module.css";

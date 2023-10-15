@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "components/Navbar/Navbar";
+import Navbar from "components/Navbar";
 import style from "./Profile_2.module.css";
 import LeftNavBar from "components/RightNavbar";
 import CoverPicture from "lib/resources/images/icons/coverpic.png";
