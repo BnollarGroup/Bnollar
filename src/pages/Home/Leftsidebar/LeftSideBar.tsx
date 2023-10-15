@@ -41,8 +41,8 @@ const LeftSideBar = () => {
           <li>Blog</li>
           <li>Career</li>
           <li>Help</li>
-          <li>Privacy policy</li>
-          <li>Terms & conditions</li>
+          <li>Privacy Policy</li>
+          <li>Terms & Conditions</li>
         </ul>
         <span>© 2023 Bnollar</span>
       </div>
