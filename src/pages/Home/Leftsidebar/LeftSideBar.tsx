@@ -10,23 +10,27 @@ const LeftSideBar = () => {
   return (
     <div className={styles.leftSideBarWrapper}>
       <div className={styles.leftMenu}>
-        <button>
+        <button className={styles.leftMenuButton}>
           <img src={home} alt="home" />
           Home
         </button>
-        <button>
+
+        <button className={styles.leftMenuButton}>
           <img src={hashtag} alt="Explore" />
           Explore
         </button>
-        <button>
+
+        <button className={styles.leftMenuButton}>
           <img src={nft} alt="NFT" />
           NFT
         </button>
-        <button>
+
+        <button className={styles.leftMenuButton}>
           <img src={comunity} alt="Community" />
           Community
         </button>
-        <button>
+
+        <button className={styles.leftMenuButton}>
           <img src={settings} alt="Settings" />
           Settings
         </button>

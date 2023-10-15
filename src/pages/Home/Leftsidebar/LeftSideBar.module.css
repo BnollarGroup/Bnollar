@@ -4,6 +4,7 @@
   background-color: black;
   flex-direction: column;
 }
+
 .leftMenu {
   background: rgba(255, 255, 255, 0.04);
   display: flex;
@@ -12,7 +13,8 @@
   padding: 10px;
   border-radius: 10px;
 }
-.leftMenu button {
+
+.leftMenuButton {
   background: none;
   font-family: "Inter";
   font-style: normal;
@@ -27,29 +29,38 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  width: 100%;
+  justify-content: flex-start;
 }
-.leftMenu button img {
+
+.leftMenuButton img {
   margin-right: 20px;
 }
-.leftMenu button.active {
+
+.leftMenuButton.active {
   background: rgba(255, 255, 255, 0.04);
 }
-.leftMenu button:hover {
+
+.leftMenuButton:hover {
   background: rgba(255, 255, 255, 0.04);
   color: white;
 }
+
 .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .info ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
+
 .info ul li {
   font-family: "Inter";
   font-style: normal;
@@ -64,6 +75,7 @@
   color: rgba(255, 255, 255, 0.3);
   margin: 10px;
 }
+
 .info span {
   font-family: "Inter";
   font-style: normal;
