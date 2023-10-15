@@ -87,8 +87,8 @@ function Profile() {
               </div>
               <div className={style.user_about}>
                 <p>
-                  I am a hard-working and driven individual who isn't afraid to
-                  face a challenge.
+                  I am a hard-working and driven individual who {`isn't`} afraid
+                  to face a challenge.
                 </p>
                 <div className={style.user_ceo}>
                   <h1>CEO at</h1>

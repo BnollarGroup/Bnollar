@@ -36,15 +36,17 @@ function BlockMenu(props: BlockMenuProps) {
             <div className={styles.info}>
               <h2 className={styles.title}>Block messages and calls</h2>
               <p className={styles.text}>
-                Your Bnollar account won't receive messages or calls from Owen's
+                Your Bnollar account {`won't`} receive messages or calls from{" "}
+                {`Owen's`}
                 Bnollar account.
               </p>
               <p className={styles.text}>
-                This account won't be blocked on Bnollar. You may still be able
-                to see Owen’s posts, comments and reactions on Bnollar.
+                This account {`won't`} be blocked on Bnollar. You may still be
+                able to see Owen’s posts, comments and reactions on Bnollar.
               </p>
               <p className={styles.text}>
-                If you're in shared groups or rooms with this account, you'll
+                If {`you're`} in shared groups or rooms with this account,{" "}
+                {`you'll`}
                 still be able to see and communicate with each other. You can
                 leave groups or rooms anytime.
               </p>
@@ -65,7 +67,7 @@ function BlockMenu(props: BlockMenuProps) {
             <div className={styles.info}>
               <h2 className={styles.title}>Block messages and calls</h2>
               <p className={styles.text}>
-                If you're friends, blocking Owen will unfriend them.
+                If {`you're`} friends, blocking Owen will unfriend them.
               </p>
               <p className={styles.text}>
                 Owen’s messages and calls will also be blocked.

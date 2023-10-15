@@ -103,9 +103,9 @@ function JoinCommunity() {
             </div>
           </div>
           <div className={style.join_community_box}>
-            {joinCommunity.map((element) => {
+            {joinCommunity.map((element, i) => {
               return (
-                <div className={style.join_box}>
+                <div className={style.join_box} key={i}>
                   <div className={style.join_picture}>
                     <img src={element.img} />
                   </div>

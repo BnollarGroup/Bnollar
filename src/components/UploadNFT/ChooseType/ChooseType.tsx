@@ -31,13 +31,14 @@ export default function ChooseType({ setPage }: ChooseTypeProps) {
       />
 
       <div className={styles.main}>
-        {data.map((item) => {
+        {data.map((item, i) => {
           return (
             <TypeContainer
               image={item.image}
               title={item.title}
               text={item.text}
               setPage={setPage}
+              key={i}
             />
           );
         })}

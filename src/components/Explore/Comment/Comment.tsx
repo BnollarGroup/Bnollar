@@ -41,7 +41,7 @@ function Comment(props: CommentProps) {
           <div className={styles.postLine}></div>
           {repliesState.map((reply, index) => {
             return (
-              <div className={styles.postComments}>
+              <div className={styles.postComments} key={index}>
                 <div className={styles.postComment}>
                   <div className={styles.commentAvatarBlock}>
                     <img

@@ -2,7 +2,7 @@ interface HomeProps {
   color: string;
 }
 
-const Home: React.FC<HomeProps> = ({ color }) => {
+const Home = ({ color }: HomeProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -4,6 +4,7 @@ import { ComponentType } from "react";
 import styles from "./WithNavigation.module.css";
 
 const withNavigation = (WrappedComponent: ComponentType<any>) => {
+  // eslint-disable-next-line react/display-name
   return (props: any) => {
     return (
       <div

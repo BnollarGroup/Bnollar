@@ -2,7 +2,7 @@ interface WheelProps {
   color: string;
 }
 
-const Wheel: React.FC<WheelProps> = ({ color }) => {
+const Wheel = ({ color }: WheelProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

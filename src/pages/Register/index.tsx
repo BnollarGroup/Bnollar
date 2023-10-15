@@ -348,7 +348,7 @@ const Register: FC = () => {
                     type="text"
                     placeholder="Username"
                     {...register("username", {
-                      onChange: (e) => {
+                      onChange: (e: any) => {
                         setUserName(e.target.value);
                       },
                     })}
@@ -362,7 +362,7 @@ const Register: FC = () => {
                     type="text"
                     placeholder="Display name"
                     {...register("displayName", {
-                      onChange: (e) => {
+                      onChange: (e: any) => {
                         setDisplayName(e.target.value);
                       },
                     })}
@@ -426,8 +426,8 @@ const Register: FC = () => {
             <div>
               <h1 className={styles.title}>You’re all set</h1>
               <p className={styles.text}>
-                We're excited to have you on board. Your account is all set up
-                and ready for you to start using.
+                {`We're`} excited to have you on board. Your account is all set
+                up and ready for you to start using.
               </p>
             </div>
             <div className={styles.finish}>

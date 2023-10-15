@@ -2,7 +2,7 @@ interface StatisticsProps {
   color: string;
 }
 
-const Statistics: React.FC<StatisticsProps> = ({ color }) => {
+const Statistics = ({ color }: StatisticsProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

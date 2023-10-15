@@ -67,8 +67,8 @@ function Mute(props: MuteProps) {
             </label>
           </div>
           <p className={styles.checkboxInfo}>
-            Chat windows will stay closed, and you won't get push notifications
-            on your devices.
+            Chat windows will stay closed, and you {`won't`} get push
+            notifications on your devices.
           </p>
         </div>
         <div className={styles.muteButtons}>

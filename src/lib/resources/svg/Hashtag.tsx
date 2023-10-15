@@ -2,7 +2,7 @@ interface HashtagProps {
   color: string;
 }
 
-const Hashtag: React.FC<HashtagProps> = ({ color }) => {
+const Hashtag = ({ color }: HashtagProps) => {
   return (
     <svg
       width="20"
