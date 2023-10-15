@@ -1,6 +1,7 @@
 .rightSideBarWrapper {
   display: flex;
-  flex: 0.224;
+  flex: 1.5;
+  margin-right: 3em;
   background-color: black;
   flex-direction: column;
 }

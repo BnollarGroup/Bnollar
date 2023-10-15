@@ -1,10 +1,10 @@
 .feedWrapper {
   display: flex;
-  flex: 0.472;
   background-color: black;
   flex-direction: column;
   overflow-y: scroll;
   height: 100vh;
+  flex: 3;
 }
 .feedWrapper::-webkit-scrollbar {
   width: 0.2em;

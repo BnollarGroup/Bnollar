@@ -14,6 +14,7 @@ import Edit from "lib/resources/images/icons/edit (2).png";
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
+import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
@@ -52,7 +53,8 @@ function Profile() {
       <Navbar />
       <div className={style.profilemain}>
         <div className={style.profileright}>
-          <Rightnavbar />
+          {/* <Rightnavbar /> */}
+          <LeftSideBar />
         </div>
         <div className={style.profileleft}>
           <div className={style.profilecover}>

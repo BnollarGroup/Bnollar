@@ -1,8 +1,10 @@
 .leftSideBarWrapper {
   display: flex;
-  flex: 0.224;
-  background-color: black;
+  background-color: transparent;
   flex-direction: column;
+  flex: 1.5;
+
+  margin-left: 3em;
 }
 
 .leftMenu {
