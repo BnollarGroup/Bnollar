@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
-import Rightnavbar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover (2).png";
 import UserIcon from "lib/resources/images/icons/user-icon.png";
 import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
@@ -15,9 +14,8 @@ import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
-import Icon from "../../lib/resources/images/icons/edit.png"
-import Layout from "components/Layout";
-
+import Icon from "../../lib/resources/images/icons/edit.png";
+import Layout from "providers/Layout";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
@@ -30,7 +28,6 @@ function Profile() {
         <button className={style.dropcoverbtn}>Remove</button>
       </div>
     );
-    
   }
 
   function openCoverEdit() {
@@ -66,12 +63,14 @@ function Profile() {
               <img src={Cover} alt="Cover" />
               <div className={style.editButtonContainer}>
                 <img src={Icon} alt="" className={style.editIcon} />
-                <button onClick={openCoverEdit} className={style.editcoverpicture}>
+                <button
+                  onClick={openCoverEdit}
+                  className={style.editcoverpicture}
+                >
                   Edit Cover Photo
                 </button>
               </div>
               {editcover}
-
             </div>
           </div>
           <div className={style.aboutuser}>

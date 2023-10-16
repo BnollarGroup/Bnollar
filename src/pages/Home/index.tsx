@@ -1,26 +1,24 @@
-import React, { FC } from "react";
 import Navbar from "components/Navbar";
 import Feed from "./Feed/Feed";
 import styles from "./Home.module.css";
 import LeftSideBar from "./Leftsidebar/LeftSideBar";
 import RighSideBar from "./RightSideBar/RighSideBar";
-import Layout from "components/Layout";
+import Layout from "providers/Layout";
 
-const Home: FC = () => {
+export default function Home() {
   return (
     <Layout>
-    <div className={styles.homeWrapper}>
-      <Navbar />
-      <div className={styles.main}>
-        <LeftSideBar />
-        <Feed />
-        <RighSideBar />
-      </div>
+      <div className={styles.homeWrapper}>
+        <Navbar />
+        <div className={styles.main}>
+          <LeftSideBar />
+          <Feed />
+          <RighSideBar />
+        </div>
       </div>
     </Layout>
   );
-};
-export default Home;
+}
 
 // import { FC } from 'react'
 // import Feed from 'components/Home/Feed/Feed'
