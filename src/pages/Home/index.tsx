@@ -4,9 +4,11 @@ import Feed from "./Feed/Feed";
 import styles from "./Home.module.css";
 import LeftSideBar from "./Leftsidebar/LeftSideBar";
 import RighSideBar from "./RightSideBar/RighSideBar";
+import Layout from "components/Layout";
 
 const Home: FC = () => {
   return (
+    <Layout>
     <div className={styles.homeWrapper}>
       <Navbar />
       <div className={styles.main}>
@@ -14,7 +16,8 @@ const Home: FC = () => {
         <Feed />
         <RighSideBar />
       </div>
-    </div>
+      </div>
+    </Layout>
   );
 };
 export default Home;

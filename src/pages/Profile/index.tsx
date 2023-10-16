@@ -15,6 +15,9 @@ import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
+import Icon from "../../lib/resources/images/icons/edit.png"
+import Layout from "components/Layout";
+
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
@@ -27,6 +30,7 @@ function Profile() {
         <button className={style.dropcoverbtn}>Remove</button>
       </div>
     );
+    
   }
 
   function openCoverEdit() {
@@ -49,7 +53,7 @@ function Profile() {
   }
 
   return (
-    <div>
+    <Layout>
       <Navbar />
       <div className={style.profilemain}>
         <div className={style.profileright}>
@@ -58,15 +62,16 @@ function Profile() {
         </div>
         <div className={style.profileleft}>
           <div className={style.profilecover}>
-            <img src={Cover} />
-            <div>
-              <button
-                onClick={openCoverEdit}
-                className={style.editcoverpicture}
-              >
-                Edit Cover Photo
-              </button>
+            <div className={style.coverContent}>
+              <img src={Cover} alt="Cover" />
+              <div className={style.editButtonContainer}>
+                <img src={Icon} alt="" className={style.editIcon} />
+                <button onClick={openCoverEdit} className={style.editcoverpicture}>
+                  Edit Cover Photo
+                </button>
+              </div>
               {editcover}
+
             </div>
           </div>
           <div className={style.aboutuser}>
@@ -235,7 +240,7 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 

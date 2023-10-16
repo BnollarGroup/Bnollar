@@ -3,6 +3,7 @@
     font-family: 'Inter';
 } */
 
+
 .profilemain {
   display: flex;
 }
@@ -23,30 +24,61 @@
   height: 100%;
 }
 
-.editcoverpicture {
+.coverContent {
+  position: relative;
+}
+
+.editButtonContainer {
   position: absolute;
-  background: url("../../lib/resources/images/icons/edit.png");
-  background-repeat: no-repeat;
-  background-position: 25px center;
-  background-color: white;
   top: 20px;
-  right: 20px;
-  width: 200px;
+  right: 50px;
+  background-color: white;
   border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
   color: black;
-  font-weight: bold;
+}
+
+.editIcon {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 8px;
 }
 
 .opencovereditdrop {
   position: absolute;
-  background-color: #17181b;
-  z-index: 11;
-  width: 220px;
-  height: 140px;
+  background-color: #17181B;
   border-radius: 10px;
-  top: 60px;
   right: 20px;
-  font-weight: bold;
+  top: 60px;
+  padding: 8px;
+}
+
+.opencovereditdrop button {
+  padding: 10px 108px 10px 10px;
+  cursor: pointer;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  font-family: Inter;
+  border-radius: 6px;
+}
+
+
+.editButtonContainer button {
+  background-color: transparent;
+  color: black; 
+  border: none; 
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: Inter;
+}
+
+.opencovereditdrop  button:hover{
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .dropcoverbtn {
@@ -62,6 +94,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 110px;
 }
 
 .userimg {
@@ -103,6 +136,7 @@
 }
 
 .user_name h1 {
+  color: #fff;
   font-size: 22px;
 }
 

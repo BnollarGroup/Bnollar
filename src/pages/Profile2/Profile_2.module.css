@@ -250,6 +250,7 @@
 }
 
 .user_name h1 {
+  
   font-size: 22px;
   margin-right: 20px;
 }
@@ -396,6 +397,10 @@
 }
 
 .line {
+
+
+
+
   height: 1px;
   background-color: #3a3737;
 }
