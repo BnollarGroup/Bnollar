@@ -54,7 +54,6 @@ function Profile() {
       <Navbar />
       <div className={style.profilemain}>
         <div className={style.profileright}>
-          {/* <Rightnavbar /> */}
           <LeftSideBar />
         </div>
         <div className={style.profileleft}>
@@ -244,3 +243,4 @@ function Profile() {
 }
 
 export default Profile;
+

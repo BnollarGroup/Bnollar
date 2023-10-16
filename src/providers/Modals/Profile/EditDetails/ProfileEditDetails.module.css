@@ -1,4 +1,6 @@
 .editDetailContainer {
+  max-width: 60em;
+  width: 100%;
   padding: 1.5em;
   border-radius: 16px;
   background: #272727;

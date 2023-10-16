@@ -7,7 +7,7 @@ interface ModalState {
 }
 
 const initialState: ModalState = {
-  modal: null,
+  modal: "profile-editDetails",
 };
 
 export const modalSlice = createSlice({
