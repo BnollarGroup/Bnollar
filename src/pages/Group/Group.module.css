@@ -1,7 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
 * {
-    font-family: 'Inter';
+  font-family: "Inter";
+}
+
+.title {
+  color: var(--white-color);
+}
+
+.titleWithBadge {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.4);
+
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  font-weight: 500;
+}
+
+.badge span {
+  margin-right: 0.5em;
+}
+
+.subTitle {
+  width: 100%;
+  max-width: 38em;
+
+  font-size: 1.25em;
+  line-height: 1.5em;
+
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .profile_2_main {
@@ -28,10 +62,6 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-
-.groupname h1 {
-  font-size: 14px;
 }
 
 .social {
@@ -250,7 +280,6 @@
 }
 
 .user_name h1 {
-  
   font-size: 22px;
   margin-right: 20px;
 }
@@ -397,10 +426,6 @@
 }
 
 .line {
-
-
-
-
   height: 1px;
   background-color: #3a3737;
 }

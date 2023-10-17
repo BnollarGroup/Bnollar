@@ -1,7 +1,5 @@
-import React from "react";
 import Navbar from "components/Navbar";
-import style from "./Profile_2.module.css";
-import LeftNavBar from "components/RightNavbar";
+import style from "./Group.module.css";
 import CoverPicture from "lib/resources/images/icons/coverpic.png";
 import Instagram from "lib/resources/images/icons/instagram.png";
 import Verifed from "lib/resources/images/icons/verified.svg";
@@ -19,21 +17,30 @@ import Media from "lib/resources/images/icons/stats-report.png";
 import File from "lib/resources/images/icons/folder.png";
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
+import Layout from "providers/Layout";
+import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 
-function Profile_2() {
+function Group() {
   return (
-    <section>
+    <Layout>
       <Navbar />
       <div className={style.profile_2_main}>
         <div className={style.profile_2_leftnavbar}>
-          <LeftNavBar />
+          <LeftSideBar />
         </div>
         <div className={style.profile_2_middle}>
           <div className={style.coverpicture}>
             <img src={CoverPicture} alt="" />
           </div>
           <div className={style.groupname}>
-            <h1>BlockChain Developer</h1>
+            <div className={style.titleWithBadge}>
+              <h1 className={style.title}>Blockchain Developers</h1>
+
+              <div className={style.badge}>
+                <span>{">_"}</span> For Developers
+              </div>
+            </div>
+
             <div className={style.social}>
               <img src={Instagram} alt="" />
               <img src={Twitter} alt="" />
@@ -42,7 +49,7 @@ function Profile_2() {
               <button className={style.dotbtn}>...</button>
             </div>
           </div>
-          <div className={style.info}>
+          <div className={style.subTitle}>
             <p>
               Welcome to the Blockchain Developers group! This is a community
               for developers who are interested in blockchain technology and
@@ -215,8 +222,8 @@ function Profile_2() {
           </div>
         </div>
       </div>
-    </section>
+    </Layout>
   );
 }
 
-export default Profile_2;
+export default Group;

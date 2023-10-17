@@ -6,7 +6,7 @@ export default function Modals() {
   const modals = useAppSelector((state) => state.modals);
 
   useEffect(() => {
-    if (!modals) return document.body.classList.remove("modal-open");
+    if (!modals.modal) return document.body.classList.remove("modal-open");
 
     document.body.classList.add("modal-open");
   }, [modals]);

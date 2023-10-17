@@ -61,7 +61,7 @@ export const publicRoutes = [
   {
     title: "Group Page",
     path: routes.groupPage,
-    component: lazy(() => import("pages/Profile2")),
+    component: lazy(() => import("pages/Group")),
   },
   {
     title: "Settings with Type",
