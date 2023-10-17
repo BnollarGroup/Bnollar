@@ -102,41 +102,37 @@
 .menu {
   display: flex;
   margin-top: 20px;
-  height: 70px;
+  height: 60px;
+
+  color: var(--white-color);
 }
 
-.img_namefirst {
+.active {
   position: relative;
-  height: 80px;
-}
-
-.img_namefirstbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  height: 80%;
+  height: 100%;
 }
 
 .menuline {
   background-color: #ef8031;
   height: 2px;
-  margin-top: -6px;
+  width: 100%;
+  position: absolute;
+
+  border-radius: 2px 2px 0px 0px;
+  bottom: 0;
 }
 
-.img_namefirst h1 {
-  font-size: 12px;
-  margin-left: 5px;
-}
-
-.img_name {
+.menuItem {
   display: flex;
   align-items: center;
   margin-left: 25px;
   margin-bottom: 10px;
   height: 100%;
+
+  cursor: pointer;
 }
 
-.img_name h1 {
+.menuItem h1 {
   font-size: 12px;
   margin-left: 5px;
 }

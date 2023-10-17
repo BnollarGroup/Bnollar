@@ -11,16 +11,26 @@ import statreport from "lib/resources/images/icons/stats-report.png";
 import PostImg from "lib/resources/images/icons/post-img.png";
 import UserFeedPic from "lib/resources/images/icons/userfeedpic.png";
 import language from "lib/resources/images/icons/language.png";
-import Feed from "lib/resources/images/icons/view-grid.png";
-import Members from "lib/resources/images/icons/memebers.png";
-import Media from "lib/resources/images/icons/stats-report.png";
-import File from "lib/resources/images/icons/folder.png";
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import Layout from "providers/Layout";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
+import { useState } from "react";
+import { capitalize } from "lib/utils";
+import clsx from "clsx";
+
+export enum GroupIcons {
+  "Feed" = "view-grid",
+  "Members" = "memebers",
+  "Media" = "stats-report",
+  "Files" = "folder",
+}
+
+export type Page = "feed" | "members" | "media" | "files";
 
 function Group() {
+  const pages: Page[] = ["feed", "members", "media", "files"];
+
   const groupData = {
     name: "Blockchain Developers",
     badge: "For Developers",
@@ -41,6 +51,8 @@ function Group() {
       },
     ],
   };
+
+  const [currentPage, setCurrentPage] = useState<Page>("feed");
 
   return (
     <Layout>
@@ -78,13 +90,36 @@ function Group() {
             <p>{groupData.description}</p>
           </div>
           <div className={style.menu}>
-            <div className={style.img_namefirst}>
+            {pages.map((page, i) => (
+              <div
+                className={clsx(
+                  style.menuItem,
+                  page === currentPage && style.active
+                )}
+                key={i}
+                onClick={() => setCurrentPage(page)}
+              >
+                <img
+                  src={require(`lib/resources/images/icons/${
+                    // @ts-ignore
+                    GroupIcons[capitalize(page)] || "view-grid"
+                  }.png`)}
+                  alt=""
+                />
+                <h1>{capitalize(page)}</h1>
+
+                {page === currentPage && <div className={style.menuline}></div>}
+              </div>
+            ))}
+
+            {/* <div className={style.img_namefirst}>
               <div className={style.img_namefirstbox}>
                 <img src={Feed} alt="" />
                 <h1>Feed</h1>
               </div>
               <div className={style.menuline}></div>
             </div>
+
             <div className={style.img_name}>
               <img src={Members} alt="" />
               <h1>Memebers</h1>
@@ -96,8 +131,9 @@ function Group() {
             <div className={style.img_name}>
               <img src={File} alt="" />
               <h1>Files</h1>
-            </div>
+            </div> */}
           </div>
+
           <div className={style.line}></div>
           <div className={style.mainbox}>
             <div className={style.left_profile_side}>
