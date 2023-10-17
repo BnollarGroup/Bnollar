@@ -46,6 +46,7 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
+
 .editWork p {
   color: #FFF;
   font-family: Inter;
@@ -53,10 +54,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px; 
-}
-
-.editBtn{
-
 }
 
 input:checked + .slider {
