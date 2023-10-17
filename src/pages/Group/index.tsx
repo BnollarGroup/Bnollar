@@ -21,6 +21,27 @@ import Layout from "providers/Layout";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 
 function Group() {
+  const groupData = {
+    name: "Blockchain Developers",
+    badge: "For Developers",
+    description:
+      "Welcome to the Blockchain Developers group! This is a community for developers who are interested in blockchain technology and building decentralized applications.",
+    tags: [
+      {
+        title: "Smart Contracts",
+        count: 7,
+      },
+      {
+        title: "Ethereum",
+        count: 23,
+      },
+      {
+        title: "Web3",
+        count: 11,
+      },
+    ],
+  };
+
   return (
     <Layout>
       <Navbar />
@@ -34,27 +55,27 @@ function Group() {
           </div>
           <div className={style.groupname}>
             <div className={style.titleWithBadge}>
-              <h1 className={style.title}>Blockchain Developers</h1>
+              <h1 className={style.title}>{groupData.name}</h1>
 
               <div className={style.badge}>
-                <span>{">_"}</span> For Developers
+                <span>{">_"}</span> {groupData.badge}
               </div>
             </div>
 
             <div className={style.social}>
               <img src={Instagram} alt="" />
+
               <img src={Twitter} alt="" />
+
               <img src={Discord} alt="" />
+
               <button>Subscribe</button>
+
               <button className={style.dotbtn}>...</button>
             </div>
           </div>
           <div className={style.subTitle}>
-            <p>
-              Welcome to the Blockchain Developers group! This is a community
-              for developers who are interested in blockchain technology and
-              building decentralized applications.
-            </p>
+            <p>{groupData.description}</p>
           </div>
           <div className={style.menu}>
             <div className={style.img_namefirst}>
@@ -100,7 +121,7 @@ function Group() {
                     <button className={style.postbtn}>POST</button>
                   </div>
                 </div>
-                {/* asd */}
+
                 <div className={style.upload_news}>
                   <div className={style.upload_news_author_pic}>
                     <img src={UserFeedPic} />
@@ -165,23 +186,14 @@ function Group() {
             </div>
             <div className={style.right_profile_side}>
               <div className={style.tags}>
-                <h1>Tags</h1>
-                <div className={style.tag_list}>
-                  <h1>Hashtag</h1>
-                  <h3>3 Post</h3>
-                </div>
-                <div className={style.tag_list}>
-                  <h1>Hashtag</h1>
-                  <h3>3 Post</h3>
-                </div>
-                <div className={style.tag_list}>
-                  <h1>Hashtag</h1>
-                  <h3>3 Post</h3>
-                </div>
-                <div className={style.tag_list}>
-                  <h1>Hashtag</h1>
-                  <h3>3 Post</h3>
-                </div>
+                <h1 className={style.tagsTitle}>Tags</h1>
+
+                {groupData.tags.map((tag, i) => (
+                  <div className={style.tag_list} key={i}>
+                    <h1>{tag.title}</h1>
+                    <h3>{tag.count} Post</h3>
+                  </div>
+                ))}
               </div>
               <div className={style.memberbox}>
                 <div className={style.membercount}>

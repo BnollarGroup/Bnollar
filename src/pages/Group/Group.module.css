@@ -300,13 +300,17 @@
 .tags {
   width: 90%;
   margin-left: 5px;
-  background-color: #16181c;
+
+  background-color: var(--bar-color);
+  color: var(--white-color);
+
   border-radius: 5px;
-  padding: 10px;
+  padding: 2em;
 }
 
-.tags h1 {
-  font-size: 18px;
+.tagsTitle {
+  font-size: 1.6em;
+  margin-bottom: 1.25em;
 }
 
 .tag_list {
