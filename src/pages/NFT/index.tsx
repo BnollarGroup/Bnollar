@@ -6,6 +6,7 @@ import userIcon1 from "lib/resources/images/icons/userIcon3.svg";
 import userIcon2 from "lib/resources/images/icons/userIcon4.svg";
 import transfer from "lib/resources/images/icons/transfer.svg";
 import icon from "lib/resources/images/icons/nav_arrow.svg";
+import shareIcon from "lib/resources/images/icons/share-ios.png";
 
 const Description = () => {
   const [showDescription, setShowDescription] = React.useState(true);
@@ -16,7 +17,7 @@ const Description = () => {
     <div className={styles.nftModuleWrapper}>
       <div className={styles.moduleName}>
         Description{" "}
-        <button onClick={handleClick}>
+        <button onClick={handleClick} className={styles.navArrowDownBtn}>
           {" "}
           <img src={icon} />{" "}
         </button>
@@ -54,7 +55,7 @@ const Properties = () => {
     <div className={styles.propertiesWrapper}>
       <div className={styles.propertiesName}>
         Properties{" "}
-        <button onClick={handleClick}>
+        <button onClick={handleClick} className={styles.navArrowDownBtn}>
           {" "}
           <img src={icon} alt="Toggle Properties" />{" "}
         </button>
@@ -83,7 +84,7 @@ const Details = () => {
     <div className={styles.detailsWrapper}>
       <div className={styles.detailsName}>
         Token details
-        <button onClick={handleClick}>
+        <button onClick={handleClick} className={styles.navArrowDownBtn}>
           {" "}
           <img src={icon} alt="Toggle Details" />{" "}
         </button>
@@ -115,20 +116,25 @@ const NftHistory = () => {
   return (
     <div className={styles.historyWrapper}>
       <div className={styles.historyHeader}>
-        <div className={styles.nftItemName}>CloneX #9378</div>
-        <div className={styles.nftCollectionName}>CloneX</div>
+        <div>
+          <div className={styles.nftItemName}>CloneX #9378</div>
+          <div className={styles.nftCollectionName}>CloneX</div>
+        </div>
+        <button className={styles.shareIconBtn}>
+          <img src={shareIcon} alt="share" />
+        </button>
       </div>
       <div className={styles.historyBody}>
         <div className={styles.historyCollection}>
           <div className={styles.historyUserInfo}>
-            <img src={userIcon1} />
+            <img src={userIcon1} alt="image 1"/>
             <div className={styles.historyDescription}>
               <p>Collection</p>
               <p>0x423...32X3</p>
             </div>
           </div>
           <div className={styles.historyUserInfo}>
-            <img src={userIcon2} />
+            <img src={userIcon2} alt="image 1"/>
             <div className={styles.historyDescription}>
               <p>Owner</p>
               <p>0x423...32X3</p>
@@ -157,17 +163,17 @@ const Activity = () => {
     return (
       <div className={styles.activityCard}>
         <div className={styles.activityCardName}>
-          <button>
-            <img src={transfer} />
+          <button className={styles.transferBtn}>
+            <img src={transfer} alt="transfer"/>
             Transfer
           </button>
         </div>
         <div className={styles.activityCardFooter}>
           <div>
-            <span>From</span> Katama
+            <span>From</span>Katama
           </div>
           <div>
-            <span>To</span> Zamara
+            <span>To</span>Zamara
           </div>
           <div>
             <span>1 day ago</span>
@@ -182,7 +188,6 @@ const Activity = () => {
       <ActivityCard />
       <ActivityCard />
       <ActivityCard />
-      <ActivityCard />
     </div>
   );
 };
@@ -192,7 +197,7 @@ const Nft = () => {
       <Navbar />
       <div className={styles.leftPanel}>
         <div className={styles.imgWrapper}>
-          <img src={nft1} />
+          <img src={nft1} alt="NFT"/>
         </div>
         <Description />
         <Details />
