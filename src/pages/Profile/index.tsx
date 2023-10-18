@@ -121,6 +121,7 @@ function Profile() {
                   <h2>100 Following</h2>
                 </div>
               </div>
+             
             </div>
             <div className={style.aboutuserleft}>
               <img src={Instagram} />
@@ -136,10 +137,16 @@ function Profile() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
+              <div className={style.tabsLine}></div>
 
           <div className={style.news_feed}>
             <div className={style.feed_rightside}>
-              <div className={style.upload_news}>
+              <div className={style.post}>
+                <div className={style.upload_news_author_pic}>
+                  <img src={UserFeedPic} />
+                </div>
+              </div>
+              {/* <div className={style.upload_news}>
                 <div className={style.upload_news_author_pic}>
                   <img src={UserFeedPic} />
                 </div>
@@ -167,8 +174,8 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className={style.post}>
+              </div> */}
+              {/* <div className={style.post}>
                 <div className={style.post_box}>
                   <div className={style.upload_news_author_pic}>
                     <img src={UserFeedPic} />
@@ -205,13 +212,13 @@ function Profile() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className={style.feed_leftsideinformation}>
               <div className={style.about_box}>
                 <div className={style.edit_info}>
                   <p>About</p>
-                  <p>Edit Information</p>
+                  <a href="" className={style.editInfo}>Edit Information</a>
                 </div>
                 <div className={style.user_description}>
                   <div className={style.about_user_desc}>
@@ -235,7 +242,7 @@ function Profile() {
               <div className={style.friend_box}>
                 <div className={style.friends}>
                   <p>Friends</p>
-                  <p>133</p>
+                  <p className={style.friendMembers}>133</p>
                 </div>
               </div>
             </div>
