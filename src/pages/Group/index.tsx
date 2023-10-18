@@ -20,8 +20,7 @@ import Discord from "lib/resources/images/icons/Discord.png";
 import Layout from "providers/Layout";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 import { useState } from "react";
-import { capitalize } from "lib/utils";
-import clsx from "clsx";
+import Tabs from "components/Tabs";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -94,25 +93,12 @@ function Group() {
           <div className={style.subTitle}>
             <p>{groupData.description}</p>
           </div>
-          <div className={style.menu}>
-            {pages.map((page, i) => (
-              <div
-                className={clsx(
-                  style.menuItem,
-                  page.page === currentPage && style.active
-                )}
-                key={i}
-                onClick={() => setCurrentPage(page.page)}
-              >
-                <img src={page.icon} alt="" />
-                <h1>{capitalize(page.page)}</h1>
 
-                {page.page === currentPage && (
-                  <div className={style.menuline}></div>
-                )}
-              </div>
-            ))}
-          </div>
+          <Tabs
+            pages={pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
 
           <div className={style.line}></div>
           <div className={style.mainbox}>
