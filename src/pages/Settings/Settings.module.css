@@ -3,3 +3,10 @@
   gap: 25px;
   width: 100%;
 }
+
+@media all and (max-width: 768px) {
+  .settingsWrapper {
+    justify-content: center;
+    display: block;
+  }
+}

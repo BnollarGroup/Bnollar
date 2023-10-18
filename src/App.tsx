@@ -1,6 +1,6 @@
 import Landing from "./pages/landing/Landing";
 import SignIn from "./pages/SignIn/SignIn";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import Register from "./pages/register/Register";
 import UploadNft from "./pages/uploadNft/UploadNft";
 import Home from "./pages/Home/Home";
@@ -15,6 +15,7 @@ import ProfileChat from "./pages/ProfileChat/ProfileChat";
 import VideoCall from "./pages/ProfileChat/VideoCall/VideoCall";
 import Explore from "./pages/Explore/Explore";
 import Settings from "./pages/Settings/Settings";
+import WithNavigation from "./HOCs/WithNavigation/WithNavigation";
 
 const App = () => {
   return (

@@ -1,19 +1,19 @@
-import styles from './ToggleCard.module.css'
-import contStyles from '../SettingsContainer.module.css'
+import styles from "./ToggleCard.module.css";
+import contStyles from "../SettingsContainer.module.css";
 
 interface ToggleCardProps {
-  title: string
-  description: string
-  linkName?: string
+  title: string;
+  description: string;
+  linkName?: string;
 }
 
 const ToggleCard = ({ title, description, linkName }: ToggleCardProps) => {
   return (
     <div className={styles.card}>
-      <div>
+      <div className={contStyles.labelWrap}>
         <h5 className={contStyles.label}>{title}</h5>
-        <p className={contStyles.message}>
-          {description}{' '}
+        <p className={contStyles.messageEdit}>
+          {description}{" "}
           {linkName && (
             <a href="#" className={styles.link}>
               {linkName}
@@ -26,7 +26,7 @@ const ToggleCard = ({ title, description, linkName }: ToggleCardProps) => {
         <span className={styles.slider} />
       </label>
     </div>
-  )
-}
+  );
+};
 
-export default ToggleCard
+export default ToggleCard;
