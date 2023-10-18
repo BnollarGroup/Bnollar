@@ -16,9 +16,22 @@ import StatsReport from "lib/resources/images/icons/stats-report.png";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
+import clsx from "clsx";
+import { capitalize } from "lib/utils";
+
+
+export enum GroupIcons {
+  "Feed" = "view-grid",
+  "NFTs" = "stats-report",  
+  "media" = "stats-report",
+}
+
+
+export type Page = "feed" | "NFTs" | "media";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
+  const pages: Page[] = ["feed", "NFTs", "media"];
   let editcover;
   if (openCover) {
     editcover = (
@@ -48,7 +61,7 @@ function Profile() {
   function openProfile() {
     setProfilePic(true);
   }
-
+  const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
     <Layout>
       <Navbar />
@@ -87,7 +100,7 @@ function Profile() {
                 </div>
               </div>
               <div className={style.user_name}>
-                <h1>Christopher Reinger</h1>
+                <h1>Christoh1her Reinger</h1>
                 <img src={Verifed} />
               </div>
               <div className={style.user_about}>
@@ -96,11 +109,11 @@ function Profile() {
                   to face a challenge.
                 </p>
                 <div className={style.user_ceo}>
-                  <h1>CEO at</h1>
+                  <p>CEO at</p>
                   <span>SAMSDS</span>
                 </div>
                 <div className={style.followers_following}>
-                  <h1>124 Follower</h1>
+                  <p>124 Follower</p>
                   <span>|</span>
                   <h2>100 Following</h2>
                 </div>
@@ -114,25 +127,28 @@ function Profile() {
               <button className={style.dotbtn}>...</button>
             </div>
           </div>
-          <div className={style.user_feed}>
-            <div className={style.feed_box}>
-              <div className={style.newsexmpl}>
-                <div className={style.newsflex}>
-                  <img src={Grid} />
-                  <h1>Feed</h1>
-                </div>
-                <div className={style.menuline}></div>
+          <div className={style.profileMenu}>
+          {pages.map((page, i) => (
+              <div
+                className={clsx(
+                  style.profileMenuItem,
+                  page === currentPage && style.active
+                )}
+                key={i}
+                onClick={() => setCurrentPage(page)}
+              >
+                <img
+                  src={require(`lib/resources/images/icons/${
+                    // @ts-ignore
+                    GroupIcons[capitalize(page)] || "view-grid"
+                  }.png`)}
+                  alt=""
+                />
+                <h1>{capitalize(page)}</h1>
+
+                {page === currentPage && <div className={style.menuline}></div>}
               </div>
-              <div className={style.news}>
-                <img src={StatsReport} />
-                <h1>NFTs</h1>
-              </div>
-              <div className={style.news}>
-                <img src={StatsReport} />
-                <h1>Media</h1>
-              </div>
-            </div>
-            <div className={style.line}></div>
+            ))}
           </div>
           <div className={style.news_feed}>
             <div className={style.feed_rightside}>
@@ -142,7 +158,7 @@ function Profile() {
                 </div>
                 <div className={style.upload_news_desc}>
                   <div className={style.user_name}>
-                    <h1>Christopher Williams</h1>
+                    <p>Christopher Williams</p>
                     <img src={Verifed} />
                     <span>14 Dec</span>
                   </div>
@@ -172,7 +188,7 @@ function Profile() {
                   </div>
                   <div className={style.upload_news_desc}>
                     <div className={style.user_name}>
-                      <h1>Christopher Williams</h1>
+                      <p>Christopher Williams</p>
                       <img src={Verifed} />
                       <span>14 Dec</span>
                     </div>
@@ -182,8 +198,8 @@ function Profile() {
                     </div>
                     <div className={style.buy_now}>
                       <div className={style.price}>
-                        <h1>Clone X</h1>
-                        <h1>445 ETH</h1>
+                        <p>Clone X</p>
+                        <p>445 ETH</p>
                       </div>
                       <div className={style.buy_btn}>
                         <button>BUY NOW</button>
@@ -207,31 +223,32 @@ function Profile() {
             <div className={style.feed_leftsideinformation}>
               <div className={style.about_box}>
                 <div className={style.edit_info}>
-                  <h1>About</h1>
-                  <h1>Edit Information</h1>
+                  <p>About</p>
+                  <p>Edit Information</p>
                 </div>
                 <div className={style.user_description}>
                   <div className={style.about_user_desc}>
                     <img src={MeriaLogo} />
-                    <h1>Worked at Meria</h1>
+                    <p>Worked at Meria</p>
                   </div>
                   <div className={style.about_user_desc}>
                     <img src={MeriaLogo} />
-                    <h1>Former Pianist at Alla Pugacheva Band</h1>
+                    <p>Former Pianist at Alla Pugacheva Band</p>
                   </div>
                   <div className={style.about_user_desc}>
                     <img src={MeriaLogo} />
-                    <h1>Studied at Georgian Technical University</h1>
+                    <p>Studied at Georgian Technical University</p>
                   </div>
                   <div className={style.about_user_desc}>
                     <img src={MeriaLogo} />
-                    <h1>Lives in Yerevan, Armenia </h1>
+                    <p>Lives in Yerevan, Armenia </p>
                   </div>
                 </div>
               </div>
               <div className={style.friend_box}>
                 <div className={style.friends}>
-                  <h1>Friends 133</h1>
+                  <p>Friends</p>
+                  <p>133</p>
                 </div>
               </div>
             </div>

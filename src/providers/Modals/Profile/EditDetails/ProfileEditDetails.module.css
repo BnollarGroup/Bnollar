@@ -53,7 +53,10 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; 
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 input:checked + .slider {
@@ -140,6 +143,7 @@ h3 {
 
 .orangeBtn{
   background: #EF8031;
+  width: 100%;
 }
 .btnContainer .cancelBtn {
   background-color: transparent;

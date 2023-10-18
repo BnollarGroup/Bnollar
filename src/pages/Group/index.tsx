@@ -21,8 +21,7 @@ import clsx from "clsx";
 
 export enum GroupIcons {
   "Feed" = "view-grid",
-  "Members" = "memebers",
-  "Media" = "stats-report",
+  "Members" = "memebers",  
   "Files" = "folder",
 }
 
