@@ -16,22 +16,25 @@ import StatsReport from "lib/resources/images/icons/stats-report.png";
 import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
 import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
-import clsx from "clsx";
-import { capitalize } from "lib/utils";
-
-
-export enum GroupIcons {
-  "Feed" = "view-grid",
-  "NFTs" = "stats-report",  
-  "media" = "stats-report",
-}
-
+import Tabs from "components/Tabs";
 
 export type Page = "feed" | "NFTs" | "media";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
-  const pages: Page[] = ["feed", "NFTs", "media"];
+
+  const pages: { page: Page; icon: any }[] = [
+    {
+      page: "feed",
+      icon: Grid,
+    },
+    {
+      page: "NFTs",
+      icon: StatsReport,
+    },
+    { page: "media", icon: StatsReport },
+  ];
+
   let editcover;
   if (openCover) {
     editcover = (
@@ -127,29 +130,13 @@ function Profile() {
               <button className={style.dotbtn}>...</button>
             </div>
           </div>
-          <div className={style.profileMenu}>
-          {pages.map((page, i) => (
-              <div
-                className={clsx(
-                  style.profileMenuItem,
-                  page === currentPage && style.active
-                )}
-                key={i}
-                onClick={() => setCurrentPage(page)}
-              >
-                <img
-                  src={require(`lib/resources/images/icons/${
-                    // @ts-ignore
-                    GroupIcons[capitalize(page)] || "view-grid"
-                  }.png`)}
-                  alt=""
-                />
-                <h1>{capitalize(page)}</h1>
 
-                {page === currentPage && <div className={style.menuline}></div>}
-              </div>
-            ))}
-          </div>
+          <Tabs
+            pages={pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+
           <div className={style.news_feed}>
             <div className={style.feed_rightside}>
               <div className={style.upload_news}>
@@ -260,4 +247,3 @@ function Profile() {
 }
 
 export default Profile;
-
