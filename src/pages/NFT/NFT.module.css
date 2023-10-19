@@ -1,10 +1,14 @@
 .nftWrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-bottom: 196px;
 }
 .imgWrapper {
   width: 100%;
+}
+.nftInfoWrapper {
+  align-items: center;
 }
 .imgWrapper img {
   width: 100%;
@@ -32,11 +36,16 @@
   font-size: 15px;
   line-height: 22px;
   flex-direction: row;
+  justify-content: space-between;
   display: flex;
-  gap: 420px;
-
+  width: 100%;
   color: #ffffff;
 }
+
+.navArrowDownBtn {
+  background-color: rgba(255, 255, 255, 0);
+}
+
 .moduleBody {
   margin-top: 24px;
   font-family: "Inter";
@@ -61,26 +70,32 @@
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
 }
+
 .detailsName {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
   line-height: 22px;
+
   flex-direction: row;
+  justify-content: space-between;
   display: flex;
 
+  width: 100%;
   color: #ffffff;
+  margin-bottom: 24px;
 }
 .detailsItems {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
 }
 .detailsItem {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 8px 0px;
 }
 .itemName {
   font-family: "Inter";
@@ -101,7 +116,6 @@
   font-size: 14px;
   line-height: 20px;
   /* identical to box height, or 143% */
-
   display: flex;
   align-items: center;
 
@@ -116,6 +130,7 @@
   width: 100%;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
+  margin-top: 24px;
 }
 .propertiesName {
   font-family: "Inter";
@@ -127,8 +142,8 @@
   margin-bottom: 24px;
   flex-direction: row;
   display: flex;
-  gap: 420px;
-
+  justify-content: space-between;
+  width: 100%;
   color: #ffffff;
 }
 .propertieItems {
@@ -194,11 +209,20 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
-  gap: 32px;
 
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
 }
+
+.historyHeader {
+  margin-bottom: 32px;
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #ffffff;
+}
+
 .nftItemName {
   width: 169px;
   height: 32px;
@@ -212,6 +236,7 @@
 
   color: #ffffff;
 }
+
 .nftCollectionName {
   font-family: "Inter";
   font-style: normal;
@@ -222,8 +247,18 @@
 
   color: #ffffff;
 }
+
+.shareIconBtn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
 .historyCollection {
   display: flex;
+  margin-bottom: 16px;
 }
 .historyUserInfo {
   color: #ffffff;
@@ -272,6 +307,8 @@
   width: 100%;
   background: rgba(255, 255, 255, 0.04);
   margin-top: 32px;
+  border-radius: 10px;
+  margin-bottom: 16px;
 }
 .historyPrice {
   border-right: 1px solid rgba(255, 255, 255, 0.04);
@@ -363,8 +400,8 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  width: 100%;
   /* identical to box height, or 133% */
-  margin: 24px 0px;
 
   color: #ffffff;
 }
@@ -372,6 +409,17 @@
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
+
+.transferBtn {
+  width: 86px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
 .activityCardName button {
   font-family: "Inter";
   font-style: normal;
@@ -413,9 +461,44 @@
   font-size: 13px;
   line-height: 20px;
   /* identical to box height, or 154% */
-  padding-right: 20px;
+  padding-right: 4px;
   display: flex;
   align-items: center;
 
   color: rgba(255, 255, 255, 0.4);
+}
+@media all and (max-width: 768px) {
+  .nftWrapper {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .imgWrapper {
+    padding: 0 16px 16px 16px;
+  }
+
+  .activityCardFooter div {
+    padding-right: 0;
+  }
+
+  .nftModuleWrapper {
+    margin: 16px 0;
+  }
+
+  .propertiesWrapper {
+    margin-top: 16px;
+  }
+
+  .propertieItem {
+    width: 45.59%;
+    margin: 0;
+  }
+
+  .propertieItems {
+    gap: 12px;
+    align-items: center;
+  }
+  .nftInfoWrapper {
+    width: 100%;
+  }
 }
