@@ -1,9 +1,9 @@
 import styles from "./RightSideBar.module.css";
-import followUser1 from "../../../resources/images/explore/follow-user1.png";
-import followUser2 from "../../../resources/images/explore/follow-user2.png";
-import followUser3 from "../../../resources/images/explore/follow-user3.png";
-import followUser4 from "../../../resources/images/explore/follow-user4.png";
-import followUser5 from "../../../resources/images/explore/follow-user5.png";
+import followUser1 from "lib/resources/images/explore/follow-user1.png";
+import followUser2 from "lib/resources/images/explore/follow-user2.png";
+import followUser3 from "lib/resources/images/explore/follow-user3.png";
+import followUser4 from "lib/resources/images/explore/follow-user4.png";
+import followUser5 from "lib/resources/images/explore/follow-user5.png";
 
 function RightSideBar() {
   const trends = [

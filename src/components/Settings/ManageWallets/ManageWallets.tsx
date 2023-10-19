@@ -1,9 +1,9 @@
 import contStyles from "../SettingsContainer.module.css";
 import styles from "./ManageWallets.module.css";
 import WalletItem from "../WalletItem/WalletItem";
-import plus from "../../../resources/images/Settings/plus.png";
+import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
+import plus from "lib/resources/images/Settings/plus.png";
 import Buttons from "../Buttons/Buttons";
-import ChevronLeft from "../../../resources/images/icons/arrow-left.svg";
 
 const ManageWallets = () => {
   return (

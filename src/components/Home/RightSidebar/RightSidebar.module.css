@@ -4,6 +4,7 @@
   padding: 0 25px 0 32px;
   position: relative;
 }
+
 .rightSidebarCont {
   position: fixed;
   max-width: 323px;
@@ -24,6 +25,7 @@
   background-color: #000000;
   border-radius: 8px;
 }
+
 .rightSidebarCont::-webkit-scrollbar-track {
   background-color: #17181b;
   border-radius: 8px;

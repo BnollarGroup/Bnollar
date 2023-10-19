@@ -1,5 +1,6 @@
-import DropdownItem from './DropdownItem'
-import styles from './Dropdowns.module.css'
+import DropdownItem from "./DropdownItem";
+import styles from "./Dropdowns.module.css";
+
 const Upperdropdown = () => {
   return (
     <div className={styles.dropdownWrapper}>
@@ -7,7 +8,7 @@ const Upperdropdown = () => {
       <DropdownItem label="Copy link" />
       <DropdownItem label="Add to favourites" />
     </div>
-  )
-}
+  );
+};
 
-export default Upperdropdown
+export default Upperdropdown;

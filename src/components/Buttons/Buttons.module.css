@@ -33,10 +33,10 @@ button {
   border-radius: 10px;
   width: 35%;
 }
+
 .shareButton {
   box-sizing: border-box;
 }
-
 .styled_button {
   display: flex;
   flex-direction: row;
@@ -68,6 +68,7 @@ button {
   border-radius: 10px;
   width: 213px;
 }
+
 .shareButton {
   box-sizing: border-box;
   display: flex;
@@ -92,6 +93,7 @@ button {
   justify-content: flex-start;
   width: 100%;
 }
+
 .shareButton button:hover {
   background: rgba(255, 255, 255, 0.04) !important;
 }

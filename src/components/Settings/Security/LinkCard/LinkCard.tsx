@@ -1,6 +1,6 @@
 import globalStyles from "../Security.module.css";
 import contStyles from "../../SettingsContainer.module.css";
-import arrow from "../../../../resources/images/Settings/arrow.png";
+import arrow from "lib/resources/images/Settings/arrow.png";
 import { Link } from "react-router-dom";
 
 interface LinkCardProps {

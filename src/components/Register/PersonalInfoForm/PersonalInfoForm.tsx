@@ -1,19 +1,19 @@
-import imgIcon from '../../../resources/images/registration/imgIcon.svg'
-import addIcon from '../../../resources/images/registration/addIcon.svg'
-import styles from './PersonalInfoForm.module.css'
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import Dropzone from 'react-dropzone'
+import imgIcon from "lib/resources/images/registration/imgIcon.svg";
+import addIcon from "lib/resources/images/registration/addIcon.svg";
+import styles from "./PersonalInfoForm.module.css";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Dropzone from "react-dropzone";
 
 interface PersonalInfoFormProps {
-  userName: string
-  setUserName: Dispatch<SetStateAction<string>>
-  displayName: string
-  setDisplayName: Dispatch<SetStateAction<string>>
-  image: string
-  setImage: Dispatch<SetStateAction<string>>
-  coverImage: string
-  setCoverImage: Dispatch<SetStateAction<string>>
+  userName: string;
+  setUserName: Dispatch<SetStateAction<string>>;
+  displayName: string;
+  setDisplayName: Dispatch<SetStateAction<string>>;
+  image: string;
+  setImage: Dispatch<SetStateAction<string>>;
+  coverImage: string;
+  setCoverImage: Dispatch<SetStateAction<string>>;
 }
 
 const PersonalInfoForm = ({
@@ -26,58 +26,58 @@ const PersonalInfoForm = ({
   coverImage,
   setCoverImage,
 }: PersonalInfoFormProps) => {
-  const [canCreate, setCanCreate] = useState(false)
-  const { step } = useParams()
-  const dropzoneRef = useRef(null)
+  const [canCreate, setCanCreate] = useState(false);
+  const { step } = useParams();
+  const dropzoneRef = useRef(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const imageHandler = (file: File, imageName: string) => {
-    const reader = new FileReader()
+    const reader = new FileReader();
 
-    reader.addEventListener('load', () => {
-      if (typeof reader.result === 'string') {
-        if (imageName === 'profile') {
-          setImage(reader.result)
-        } else if (imageName === 'cover') {
-          setCoverImage(reader.result)
+    reader.addEventListener("load", () => {
+      if (typeof reader.result === "string") {
+        if (imageName === "profile") {
+          setImage(reader.result);
+        } else if (imageName === "cover") {
+          setCoverImage(reader.result);
         }
       }
-    })
-    reader.readAsDataURL(file)
-  }
+    });
+    reader.readAsDataURL(file);
+  };
 
   useEffect(() => {
     if (userName?.length > 3 && displayName?.length > 3) {
-      setCanCreate(true)
+      setCanCreate(true);
     } else {
-      setCanCreate(false)
+      setCanCreate(false);
     }
-  }, [userName, displayName, step])
+  }, [userName, displayName, step]);
 
   const handleClick = () => {
     if (canCreate) {
-      navigate('/register/category')
+      navigate("/register/category");
     }
-  }
+  };
 
   const openDialog = () => {
     if (dropzoneRef.current) {
-      ;(dropzoneRef.current as any).open()
+      (dropzoneRef.current as any).open();
     }
-  }
+  };
 
   return (
     <div>
       <Dropzone
         ref={dropzoneRef}
-        onDrop={(acceptedFiles) => imageHandler(acceptedFiles[0], 'cover')}
+        onDrop={(acceptedFiles) => imageHandler(acceptedFiles[0], "cover")}
         noClick
         noKeyboard
         accept={{
-          'image/png': ['.png'],
-          'image/jpg': ['.jpg'],
-          'image/jpeg': ['.jpeg'],
+          "image/png": [".png"],
+          "image/jpg": [".jpg"],
+          "image/jpeg": [".jpeg"],
         }}
       >
         {({ getRootProps, getInputProps }) => {
@@ -88,14 +88,14 @@ const PersonalInfoForm = ({
                 <img className={styles.coverImage} src={coverImage} alt="" />
               ) : (
                 <p>
-                  Drop image here, or{' '}
+                  Drop image here, or{" "}
                   <span className={styles.browse} onClick={openDialog}>
                     browse
                   </span>
                 </p>
               )}
             </div>
-          )
+          );
         }}
       </Dropzone>
       <div className={styles.addImg}>
@@ -107,8 +107,8 @@ const PersonalInfoForm = ({
         <input
           type="file"
           id="file-input"
-          onChange={(e) => imageHandler((e.target as any).files[0], 'profile')}
-          style={{ display: 'none' }}
+          onChange={(e) => imageHandler((e.target as any).files[0], "profile")}
+          style={{ display: "none" }}
         />
         <label className={styles.plusButton} htmlFor="file-input">
           <img src={addIcon} alt="Upload File" />
@@ -136,7 +136,7 @@ const PersonalInfoForm = ({
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PersonalInfoForm
+export default PersonalInfoForm;

@@ -1,5 +1,4 @@
-import { set } from "react-hook-form";
-import styles from "./blockchainContainer.module.css";
+import styles from "./BlockchainContainer.module.css";
 import { Dispatch, SetStateAction } from "react";
 
 type BlockchainContainerProps = {
@@ -24,7 +23,7 @@ export default function BlockchainContainer({
       }}
     >
       <img
-        src={require(`../../../../resources/images/upload-nft/chooseBlockchain/${image}`)}
+        src={require(`../../../../lib/resources/images/upload-nft/chooseBlockchain/${image}`)}
         alt={`${text} icon`}
       />
       <span className={styles.text}>{text}</span>

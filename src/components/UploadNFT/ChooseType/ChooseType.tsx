@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import TypeContainer from "../components/TypeContainer/TypeContainer";
-import styles from "./chooseType.module.css";
+import styles from "./ChooseType.module.css";
 import { Dispatch, SetStateAction } from "react";
 
 const data = [
@@ -31,13 +31,14 @@ export default function ChooseType({ setPage }: ChooseTypeProps) {
       />
 
       <div className={styles.main}>
-        {data.map((item) => {
+        {data.map((item, i) => {
           return (
             <TypeContainer
               image={item.image}
               title={item.title}
               text={item.text}
               setPage={setPage}
+              key={i}
             />
           );
         })}

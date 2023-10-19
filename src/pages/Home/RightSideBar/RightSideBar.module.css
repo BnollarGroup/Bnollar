@@ -1,6 +1,7 @@
 .rightSideBarWrapper {
   display: flex;
-  flex: 0.224;
+  flex: 1.5;
+  margin-right: 3em;
   background-color: black;
   flex-direction: column;
 }
@@ -20,17 +21,14 @@
 .contactsWrapper::-webkit-scrollbar {
   width: 0.2em;
   background-color: #110e0e;
-  
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb {
   background-color: #000000;
- 
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
- 
 }
 
 .contactsWrapper h2 {

@@ -5,7 +5,7 @@ import Dropdown from "./Dropdown/Dropdown";
 import LinkCard from "./LinkCard/LinkCard";
 import { useState } from "react";
 import Buttons from "../Buttons/Buttons";
-import ChevronLeft from "../../../resources/images/icons/arrow-left.svg";
+import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 
 const Security = () => {
   const [activeMention, setActiveMention] = useState("Everyone");

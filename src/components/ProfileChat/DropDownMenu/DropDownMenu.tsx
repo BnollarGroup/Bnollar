@@ -1,8 +1,8 @@
 import styles from "./DropDownMenu.module.css";
-import editNickname from "../../../resources/images/profile-chat/edit-nickname.svg";
-import dropdownSearch from "../../../resources/images/profile-chat/search-dropdown.svg";
-import unmute from "../../../resources/images/profile-chat/unmute.svg";
-import deleteIcon from "../../../resources/images/profile-chat/delete.svg";
+import editNickname from "lib/resources/images/profile-chat/edit-nickname.svg";
+import dropdownSearch from "lib/resources/images/profile-chat/search-dropdown.svg";
+import unmute from "lib/resources/images/profile-chat/unmute.svg";
+import deleteIcon from "lib/resources/images/profile-chat/delete.svg";
 
 interface DropDownMenuProps {
   setSearchIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

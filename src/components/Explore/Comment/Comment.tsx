@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { PostsData } from "../types";
 import styles from "./Comment.module.css";
-import nonClickedHeart from "../../../resources/images/explore/nonclicked-heart.png";
-import ClickedHeart from "../../../resources/images/explore/clicked-heart.png";
-import arrow from "../../../resources/images/explore/arrow.png";
-import attachment from "../../../resources/images/explore/attachment.svg";
-import statsReport from "../../../resources/images/explore/stats-report.svg";
-import emoji from "../../../resources/images/explore/emoji.svg";
-import currentUser from "../../../resources/images/explore/current-user.png";
+import nonClickedHeart from "lib/resources/images/explore/nonclicked-heart.png";
+import ClickedHeart from "lib/resources/images/explore/clicked-heart.png";
+import arrow from "lib/resources/images/explore/arrow.png";
+import attachment from "lib/resources/images/explore/attachment.svg";
+import statsReport from "lib/resources/images/explore/stats-report.svg";
+import emoji from "lib/resources/images/explore/emoji.svg";
+import currentUser from "lib/resources/images/explore/current-user.png";
 
 interface CommentProps {
   post: PostsData;
@@ -41,7 +41,7 @@ function Comment(props: CommentProps) {
           <div className={styles.postLine}></div>
           {repliesState.map((reply, index) => {
             return (
-              <div className={styles.postComments}>
+              <div className={styles.postComments} key={index}>
                 <div className={styles.postComment}>
                   <div className={styles.commentAvatarBlock}>
                     <img

@@ -1,9 +1,8 @@
-import sharedStyles from "../shared.module.css";
-import styles from "./chooseBlockchain.module.css";
-import Header from "../components/Header/Header";
-import BlockchainContainer from "../components/BlockchainContainer/BlockchainContainer";
+import styles from "./ChooseBlockchain.module.css";
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
+import Header from "../components/Header/Header";
+import BlockchainContainer from "../components/BlockchainContainer/BlockchainContainer";
 
 const data = [
   {

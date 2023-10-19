@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mute.module.css";
-import muteCloseLogo from "../../../resources/images/profile-chat/cancel-mute.svg";
+import muteCloseLogo from "lib/resources/images/profile-chat/cancel-mute.svg";
 
 interface MuteProps {
   setMuteIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -67,8 +67,8 @@ function Mute(props: MuteProps) {
             </label>
           </div>
           <p className={styles.checkboxInfo}>
-            Chat windows will stay closed, and you won't get push notifications
-            on your devices.
+            Chat windows will stay closed, and you {`won't`} get push
+            notifications on your devices.
           </p>
         </div>
         <div className={styles.muteButtons}>

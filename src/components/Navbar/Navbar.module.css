@@ -1,9 +1,9 @@
 .navbar {
   width: 100%;
-  padding: 20px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .left_cont {

@@ -1,8 +1,9 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
 import styles from "./RightSideBar.module.css";
-import user1 from "../../../resources/images/icons/user1.svg";
-import nft1 from "../../../resources/images/icons/nft1.svg";
-import active from "../../../resources/images/icons/active.svg";
+import user1 from "../../../lib/resources/images/icons/user1.svg";
+import nft1 from "../../../lib/resources/images/icons/nft1.svg";
+import active from "../../../lib/resources/images/icons/active.svg";
+
 const RighSideBar = () => {
   return (
     <div className={styles.rightSideBarWrapper}>
@@ -11,7 +12,8 @@ const RighSideBar = () => {
         <ul>
           <li>
             <img src={user1} alt="user icon" />
-            <img src={active} className={styles.activeUser} /> <span>Calvin May</span>
+            <img src={active} className={styles.activeUser} />{" "}
+            <span>Calvin May</span>
           </li>
           <li>
             <img src={user1} alt="user icon" /> <span>Pedro Clark</span>
@@ -43,7 +45,8 @@ const RighSideBar = () => {
             <img src={nft1} alt="user icon" /> <span>Otherdeed</span>
           </li>
           <li>
-            <img src={nft1} alt="user icon" /> <span>MutantApeYachtClub Williams</span>
+            <img src={nft1} alt="user icon" />{" "}
+            <span>MutantApeYachtClub Williams</span>
           </li>
           <li>
             <img src={nft1} alt="user icon" /> <span>Bored Ape Yacht Club</span>
