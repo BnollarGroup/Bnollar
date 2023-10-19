@@ -40,6 +40,10 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
+.leftMenuButtonActive {
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .leftMenuButton:hover {
   background: rgba(255, 255, 255, 0.04);
   color: white;

@@ -13,7 +13,7 @@ import Edit from "lib/resources/images/icons/edit (2).png";
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
-import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
