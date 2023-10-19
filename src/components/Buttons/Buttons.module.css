@@ -1,41 +1,21 @@
-button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 10px;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 8px;
-    border: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 20px;
-    /* identical to box height, or 154% */
-    color: rgba(255, 255, 255, 0.6);
-    width: 30%;
-    cursor: pointer;
-  }
-  
-  .shareDropDown {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px;
-    position: absolute;
-    right: 0;
-    top: 45px;
-    z-index: 1000;
-    background: #17181B;
-    box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1), 0px 10px 60px -4px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    width: 35%;
-  }
-  .shareButton {
-    box-sizing: border-box;
+.shareDropDown {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  z-index: 1000;
+  background: #17181B;
+  box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1), 0px 10px 60px -4px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 35%;
+}
 
+.shareButton {
+  box-sizing: border-box;
+}
 .styled_button {
   display: flex;
   flex-direction: row;
@@ -51,7 +31,6 @@ button {
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
-  /* identical to box height, or 154% */
   color: rgba(255, 255, 255, 0.6);
   width: 30%;
 }
@@ -68,10 +47,9 @@ button {
   border-radius: 10px;
   width: 213px;
 }
+
 .shareButton {
   box-sizing: border-box;
-
-  /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -79,22 +57,15 @@ button {
   gap: 10px;
   border-radius: 6px;
 
-  }
-  .shareButton button {
-
 }
+
 .shareButton button {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
-  /* identical to box height, or 154% */
-
   color: #FFFFFF;
-
-  color: #ffffff;
-
   border: black;
   background: none;
   padding: 10px 14px 10px 10px;
@@ -102,25 +73,12 @@ button {
   justify-content: flex-start;
   width: 100%;
 
-  }
-  .shareButton button:hover {
-    background: rgba(255, 255, 255, 0.04)!important;
-  }
-  .upvote {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 10px;
-    gap: 10px;
-    background: rgba(239, 128, 49, 0.1) !important;
-    border-radius: 8px;
-  }
-
 }
+
 .shareButton button:hover {
   background: rgba(255, 255, 255, 0.04) !important;
 }
+
 .upvote {
   display: flex;
   flex-direction: row;
@@ -132,3 +90,17 @@ button {
   border-radius: 8px;
 }
 
+.shareButton button:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.upvote {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  background: rgba(239, 128, 49, 0.1) !important;
+  border-radius: 8px;
+}
