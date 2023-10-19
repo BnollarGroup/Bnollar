@@ -5,17 +5,47 @@ import Hashtag from "lib/resources/svg/Hashtag";
 import Statistics from "lib/resources/svg/Statistics";
 import Wheel from "lib/resources/svg/Wheel";
 import Group from "lib/resources/svg/Group";
+import { useNavigate } from "react-router-dom";
 
 function Rightnavbar() {
   const [activeItem, setActiveItem] = useState("");
+  const [page, setPage] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleNavbarItemClick = (itemName: string) => {
     setActiveItem(itemName);
+    if (activeItem === "Home") {
+      navigate("/home");
+      console.log(activeItem);
+    } else if (activeItem === "Explore") {
+      navigate("/explore");
+    } else if (activeItem === "NFT") {
+      navigate("/NFT");
+    } else if (activeItem === "Community") {
+      navigate("/grouppage");
+    } else {
+      navigate("/settings");
+    }
   };
 
   return (
-    <div className={style.navigator}>
-      <div className={style.navcontainer}>
+    <div className={style.container}>
+      <div className={style.content}>
+        <button
+          className={`${style.navbar} ${
+            activeItem === "Home" ? style.active : ""
+          }`}
+        >
+          <Home
+            color={
+              activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
+            }
+          />
+          <span>Home</span>
+        </button>
+      </div>
+      {/* <div className={style.navcontainer}>
         <div
           className={`${style.navbar} ${
             activeItem === "Home" ? style.active : ""
@@ -87,7 +117,7 @@ function Rightnavbar() {
           />
           <h1>Setting</h1>
         </div>
-      </div>
+      </div> */}
       <div className={style.desc}>
         <div className={style.about}>
           <h2>About</h2>

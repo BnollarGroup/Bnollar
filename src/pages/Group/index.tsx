@@ -18,7 +18,7 @@ import File from "lib/resources/images/icons/folder.png";
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import Layout from "providers/Layout";
-import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
 

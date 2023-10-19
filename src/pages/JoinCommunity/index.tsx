@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "components/Navbar";
 import style from "./JoinCommunity.module.css";
-import RighSideBar from "components/RightNavbar";
+import RightSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";
 
 function JoinCommunity() {
@@ -64,7 +64,7 @@ function JoinCommunity() {
       <Navbar />
       <div className={style.join_main}>
         <div className="rightnavbar">
-          <RighSideBar />
+          <RightSideBar />
         </div>
         <div className={style.join_left_side}>
           <div className={style.join_search}>
