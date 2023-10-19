@@ -7,12 +7,15 @@ import userIcon2 from "lib/resources/images/icons/userIcon4.svg";
 import transfer from "lib/resources/images/icons/transfer.svg";
 import icon from "lib/resources/images/icons/nav_arrow.svg";
 import shareIcon from "lib/resources/images/icons/share-ios.png";
+import { useScreenSize } from "hooks/useScreenSize";
+import Layout from "providers/Layout";
 
 const Description = () => {
   const [showDescription, setShowDescription] = React.useState(true);
   const handleClick = () => {
     setShowDescription((prevState) => !prevState);
   };
+
   return (
     <div className={styles.nftModuleWrapper}>
       <div className={styles.moduleName}>
@@ -193,38 +196,46 @@ const Activity = () => {
 };
 
 const Nft = () => {
-  if (window.innerWidth > 1111) {
+  const size = useScreenSize();
+
+  if (size === "lg") {
     return (
-      <div className={styles.nftWrapper}>
-        <Navbar />
-        <div className={styles.leftPanel}>
-          <div className={styles.imgWrapper}>
-            <img src={nft1} alt="NFT" />
+      <Layout>
+        <div className={styles.nftWrapper}>
+          <Navbar />
+          <div className={styles.leftPanel}>
+            <div className={styles.imgWrapper}>
+              <img src={nft1} alt="NFT" />
+            </div>
+            <Description />
+            <Details />
+            <Properties />
           </div>
-          <Description />
-          <Details />
-          <Properties />
+          <div className={styles.rightPanel}>
+            <NftHistory />
+            <Activity />
+          </div>
         </div>
-        <div className={styles.rightPanel}>
-          <NftHistory />
-          <Activity />
-        </div>
-      </div>
+      </Layout>
     );
   }
+
   return (
-    <div className={styles.nftWrapper}>
-      <Navbar />
-      <div className={styles.imgWrapper}>
-        <img src={nft1} alt="NFT" />
+    <Layout>
+      <div className={styles.nftWrapper}>
+        <Navbar />
+        <div className={styles.imgWrapper}>
+          <img src={nft1} alt="NFT" />
+        </div>
+        <div className={styles.nftInfoWrapper}>
+          <NftHistory />
+          <Activity />
+          <Description />
+          <Properties />
+        </div>
       </div>
-      <div className={styles.nftInfoWrapper}>
-        <NftHistory />
-        <Activity />
-        <Description />
-        <Properties />
-      </div>
-    </div>
+    </Layout>
   );
 };
+
 export default Nft;
