@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
 * {
-    font-family: 'Inter';
+  font-family: 'Inter';
 }
 
 .profilemain {
@@ -27,7 +28,12 @@
 .coverContent {
   position: relative;
 }
-
+.rate_btns div {
+  width: 100%;
+}
+.rate_btns div  button{
+  width: 100%;
+}
 .editButtonContainer {
   position: absolute;
   top: 20px;
@@ -63,7 +69,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: Inter;
   border-radius: 6px;
 }
 
@@ -73,7 +78,6 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-family: Inter;
 }
 
 .opencovereditdrop button:hover {
@@ -99,11 +103,17 @@
 
 .userimg {
   position: relative;
-  background-color: red;
   width: 100px;
   border-radius: 50%;
   width: 144px;
   height: 144px;
+}
+
+.userPostImage {
+  width: 34px;
+  height: 34px;
+  border-radius: 34px;
+  border: 6px solid #0D0E11;
 }
 
 .aboutuserright {
@@ -113,14 +123,15 @@
   flex-direction: column;
   gap: 24px;
 }
-.aboutuserright h1{
+
+.aboutuserright h1 {
   color: #fff;
-  font-family: Inter;
   font-size: 22px;
   font-style: normal;
   font-weight: 500;
-  line-height: 22px; 
+  line-height: 22px;
 }
+
 .edit {
   position: absolute;
   right: 10px;
@@ -139,13 +150,16 @@
   background-color: #17181b;
   padding: 8px;
 }
-.dropcoverbtn:hover{
+
+.dropcoverbtn:hover {
   background-color: rgba(255, 255, 255, 0.04);
 }
+
 .user_name {
   display: flex;
   align-items: center;
 }
+
 .user_name h1 {
   color: #fff;
   font-size: 22px;
@@ -158,8 +172,18 @@
   margin-top: 5px;
 }
 
+.about {
+  color: rgba(255, 255, 255, 0.40) !important;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 .user_about {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .user_about p {
@@ -170,11 +194,14 @@
 .user_ceo {
   display: flex;
   align-items: center;
-  margin-top: 15px;
 }
 
-.user_ceo h1 {
+.user_ceo p {
+  color: rgba(255, 255, 255, 0.40);
   font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .user_ceo span {
@@ -198,7 +225,8 @@
   font-size: 16px;
   color: #ffffff;
 }
-.followers_following span{
+
+.followers_following span {
   width: 1px;
   height: 20px;
   background: rgba(255, 255, 255, 0.10);
@@ -256,67 +284,160 @@ hr {
   gap: 16px;
 }
 
-.post{
-  width: 100% ;
+.postDiv {
   display: flex;
-  padding: 16px;
+  gap: 14px;
+}
+
+.post {
+  display: flex;
   flex-direction: column;
+  gap: 14px;
+  padding: 16px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
 }
 
-.tabsLine{
+.post_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #FFF;
+}
+
+.uploadPost {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postIcons img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.post_user_name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.horiz {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user_name_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_text {
+  color: #FFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.tabsLine {
   width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.10);
 }
 
-/* .rate_btns {
+.postBtn {
+  padding: 8px 36px;
+}
+
+.postBtnContainer {
   display: flex;
-  width: 85%;
+  align-items: center;
+  gap: 8px;
+}
+
+.postBtnContainer button {
+  display: flex;
+  padding: 6px 12px 6px 10px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: transparent;
+  color: #fff;
+}
+
+.postBtnContainer .publicBtn {
+  display: flex;
+  gap: 4px;
+  padding: 6px 12px 6px 10px !important;
+}
+
+.postBtn {
+  background: #EF8031 !important;
+  padding: 8px 36px !important;
+}
+
+.upload_news_author_pic {
+  display: flex;
+}
+
+.post_user_name h1 {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+}
+
+.post_user_name img {
+  width: 20px;
+  height: 20px;
+}
+
+.rate_btns {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-} */
-
-/* .upvote button {
-  width: 162px;
-  height: 40px;
-  font-weight: bolder;
-  margin-top: 20px;
+  gap: 7px;
 }
 
-.upvote button:hover {
-  background-color: #ef8031;
-  opacity: 0.3;
+.rate_btns {
+  width: 100%;
+
 }
 
-.upvote button {
-  background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/arrow-up-circled.png");
-  background-repeat: no-repeat;
-  background-position: 30px center;
-  font-weight: bolder;
-} */
-
-.comment button {
-  width: 162px;
+.rate_btns button {
+  display: flex;
+  width: 192px;
   height: 40px;
-  margin-top: 20px;
+  padding: 8px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/chat-lines.png");
-  background-repeat: no-repeat;
-  background-position: 25px center;
-  font-weight: bolder;
-}
-
-.share button {
-  width: 162px;
-  height: 40px;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/share-ios.png");
-  background-repeat: no-repeat;
-  background-position: 25px center;
-  font-weight: bolder;
 }
 
 .about_box {
@@ -337,20 +458,22 @@ hr {
   font-size: 14px;
   color: #fff;
 }
-.about_user_desc p{
+
+.about_user_desc p {
   font-size: 13px;
   margin-top: 15px;
   margin-left: 10px;
   color: #fff;
 }
-.editInfo{
-  color: rgba(255, 255, 255, 0.4) ;
-  font-family: Inter;
+
+.editInfo {
+  color: rgba(255, 255, 255, 0.4);
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; 
+  line-height: 20px;
 }
+
 .about_user_desc {
   display: flex;
   align-items: center;
@@ -393,16 +516,17 @@ hr {
 
 .friend_box h1 {
   font-size: 16px;
-  color: #fff ;
+  color: #fff;
 }
+
 .friend_box p {
   color: rgba(255, 255, 255, 0.4);
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
+
 .friends {
   display: flex;
   align-items: center;
@@ -413,17 +537,19 @@ hr {
   padding: 0 0 0 15px;
   color: #fff
 }
+
 .friends p {
   color: #fff;
 }
-.friends .friendMembers{
-  font-family: Inter;
+
+.friends .friendMembers {
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.4) !important;
 }
+
 .buy_now {
   width: 90%;
   background-color: #4e525a;
@@ -476,13 +602,14 @@ hr {
   margin-left: 25px;
   margin-bottom: 10px;
   height: 100%;
-
   cursor: pointer;
 }
-.coverContent{
+
+.coverContent {
   width: 100%;
   height: 33em;
 }
+
 .profileMenuItem h1 {
   font-size: 12px;
   margin-left: 5px;
