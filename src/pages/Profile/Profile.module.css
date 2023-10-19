@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
 * {
-    font-family: 'Inter';
+  font-family: 'Inter';
 }
 
 .profilemain {
   display: flex;
+  justify-content: space-between;
 }
 
 .profileleft {
@@ -26,7 +28,12 @@
 .coverContent {
   position: relative;
 }
-
+.rate_btns div {
+  width: 100%;
+}
+.rate_btns div  button{
+  width: 100%;
+}
 .editButtonContainer {
   position: absolute;
   top: 20px;
@@ -62,7 +69,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: Inter;
   border-radius: 6px;
 }
 
@@ -72,7 +78,6 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-family: Inter;
 }
 
 .opencovereditdrop button:hover {
@@ -93,21 +98,38 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 110px;
+  margin-top: 40px;
 }
 
 .userimg {
   position: relative;
-  background-color: red;
   width: 100px;
   border-radius: 50%;
   width: 144px;
   height: 144px;
 }
 
+.userPostImage {
+  width: 34px;
+  height: 34px;
+  border-radius: 34px;
+  border: 6px solid #0D0E11;
+}
+
 .aboutuserright {
   z-index: 11;
   margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aboutuserright h1 {
+  color: #fff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
 }
 
 .edit {
@@ -128,13 +150,16 @@
   background-color: #17181b;
   padding: 8px;
 }
-.dropcoverbtn:hover{
+
+.dropcoverbtn:hover {
   background-color: rgba(255, 255, 255, 0.04);
 }
+
 .user_name {
   display: flex;
   align-items: center;
 }
+
 .user_name h1 {
   color: #fff;
   font-size: 22px;
@@ -147,8 +172,18 @@
   margin-top: 5px;
 }
 
+.about {
+  color: rgba(255, 255, 255, 0.40) !important;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 .user_about {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .user_about p {
@@ -159,40 +194,47 @@
 .user_ceo {
   display: flex;
   align-items: center;
-  margin-top: 15px;
 }
 
-.user_ceo h1 {
+.user_ceo p {
+  color: rgba(255, 255, 255, 0.40);
   font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .user_ceo span {
   font-size: 13px;
   color: #ef8031;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .followers_following {
-  width: 260px;
-  height: 52px;
-  background-color: #3a3737;
+  background: rgba(255, 255, 255, 0.04);
   margin-top: 20px;
-  border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  padding: 16px 24px 16px 16px;
   align-items: center;
+  gap: 24px;
+  width: 27.5em;
+  border-radius: 10px;
 }
 
 .followers_following h1 {
   font-size: 16px;
   color: #ffffff;
-  margin-left: 20px;
+}
+
+.followers_following span {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .followers_following h2 {
   font-size: 16px;
   color: #ffffff;
-  margin-right: 20px;
 }
 
 .aboutuserleft {
@@ -229,91 +271,180 @@ hr {
 }
 
 .news_feed {
+  margin-top: 20px;
   display: flex;
   width: 100%;
+  gap: 14px;
 }
 
 .feed_rightside {
-  width: 80%;
-  margin-top: 20px;
-}
-
-.upload_news {
-  width: 90%;
-  height: 176px;
-  background-color: #16181c;
-  border-radius: 5px;
-  display: flex;
-  padding: 15px 0 0 15px;
-}
-
-.upload_news_desc {
-  margin-left: 10px;
   width: 100%;
-  background-color: #16181c;
-}
-
-.upload_news_desc p {
-  font-weight: bold;
-  margin-top: 10px;
-  color: white;
-  line-height: 1.5;
-}
-
-.rate_btns {
   display: flex;
-  width: 85%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.postDiv {
+  display: flex;
+  gap: 14px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.post_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #FFF;
+}
+
+.uploadPost {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
 }
 
-.upvote button {
-  width: 162px;
+.postIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.postIcons img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.post_user_name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.horiz {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user_name_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post_text {
+  color: #FFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.tabsLine {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.postBtn {
+  padding: 8px 36px;
+}
+
+.postBtnContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.postBtnContainer button {
+  display: flex;
+  padding: 6px 12px 6px 10px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: transparent;
+  color: #fff;
+}
+
+.postBtnContainer .publicBtn {
+  display: flex;
+  gap: 4px;
+  padding: 6px 12px 6px 10px !important;
+}
+
+.postBtn {
+  background: #EF8031 !important;
+  padding: 8px 36px !important;
+}
+
+.upload_news_author_pic {
+  display: flex;
+}
+
+.post_user_name h1 {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+}
+
+.post_user_name img {
+  width: 20px;
+  height: 20px;
+}
+
+.rate_btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.rate_btns {
+  width: 100%;
+
+}
+
+.rate_btns button {
+  display: flex;
+  width: 192px;
   height: 40px;
-  font-weight: bolder;
-  margin-top: 20px;
-}
-
-.upvote button:hover {
-  background-color: #ef8031;
-  opacity: 0.3;
-}
-
-.upvote button {
+  padding: 8px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/arrow-up-circled.png");
-  background-repeat: no-repeat;
-  background-position: 30px center;
-  font-weight: bolder;
-}
-
-.comment button {
-  width: 162px;
-  height: 40px;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/chat-lines.png");
-  background-repeat: no-repeat;
-  background-position: 25px center;
-  font-weight: bolder;
-}
-
-.share button {
-  width: 162px;
-  height: 40px;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  background: url("../../lib/resources/images/icons/share-ios.png");
-  background-repeat: no-repeat;
-  background-position: 25px center;
-  font-weight: bolder;
 }
 
 .about_box {
+  position: relative;
   width: 325px;
   height: 182px;
   background-color: #17181B;
-  margin-top: 20px;
-  margin-right: 20px;
   border-radius: 5px;
   padding: 10px 15px 0 10px;
 }
@@ -323,16 +454,24 @@ hr {
   justify-content: space-between;
 }
 
-.edit_info h1 {
+.edit_info p {
   font-size: 14px;
   color: #fff;
 }
 
-.about_user_desc h1 {
+.about_user_desc p {
   font-size: 13px;
   margin-top: 15px;
   margin-left: 10px;
   color: #fff;
+}
+
+.editInfo {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .about_user_desc {
@@ -346,10 +485,6 @@ hr {
   width: 20px;
   height: 20px;
   margin-top: 10px;
-}
-
-.post {
-  margin-top: 20px;
 }
 
 .post_box {
@@ -383,14 +518,15 @@ hr {
   font-size: 16px;
   color: #fff;
 }
+
 .friend_box p {
   color: rgba(255, 255, 255, 0.4);
-  font-family: Inter;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
+
 .friends {
   display: flex;
   align-items: center;
@@ -399,8 +535,20 @@ hr {
   top: 50%;
   transform: translateY(-50%);
   padding: 0 0 0 15px;
+  color: #fff
 }
 
+.friends p {
+  color: #fff;
+}
+
+.friends .friendMembers {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
 
 .buy_now {
   width: 90%;
@@ -454,8 +602,12 @@ hr {
   margin-left: 25px;
   margin-bottom: 10px;
   height: 100%;
-
   cursor: pointer;
+}
+
+.coverContent {
+  width: 100%;
+  height: 33em;
 }
 
 .profileMenuItem h1 {

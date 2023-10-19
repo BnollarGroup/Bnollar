@@ -6,4 +6,48 @@
   width: 100%;
   display: flex;
   padding-right: 32px;
+  padding-left: 32px;
+  column-gap: 25px;
+}
+
+.mobileSettings {
+  display: none;
+}
+
+.topNavMobile {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .mobileSettings {
+    display: block;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+  }
+
+  .mobileSettingsTitle {
+    color: #fff;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .topNavMobile {
+    display: block;
+    padding: 21px 16px 61px 16px;
+  }
+
+  .topNavMobile img {
+    padding: 10px;
+  }
 }

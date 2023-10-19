@@ -1,10 +1,11 @@
-import SettingsNav from "components/Settings/SettingsNav/SettingsNav";
-import WithNavigation from "hoc/WithNavigation";
-import useSettings from "hooks/useSettings";
 import styles from "./Settings.module.css";
+import useSettings from "hooks/useSettings";
+import SettingsNav from "components/Settings/SettingsNav/SettingsNav";
+import withNavigation from "hoc/WithNavigation";
 
 const Settings = () => {
   const { type, component } = useSettings();
+
   return (
     <div className={styles.settingsWrapper}>
       <SettingsNav active={type} />
@@ -13,4 +14,4 @@ const Settings = () => {
   );
 };
 
-export default WithNavigation(Settings);
+export default withNavigation(Settings);

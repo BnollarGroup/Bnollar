@@ -18,7 +18,7 @@ const WalletItem = ({ iconColor, id, name }: WalletItemProps) => {
         />
         <div className={styles.name_id}>
           <h4 className={contStyles.label}>{id}</h4>
-          <p className={contStyles.message}>{name}</p>
+          <p className={contStyles.messageEdit}>{name}</p>
         </div>
       </div>
       <div className={styles.dotsWrapper}>

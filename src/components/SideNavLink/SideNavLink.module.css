@@ -21,3 +21,11 @@
   background: rgba(255, 255, 255, 0.04);
   color: white;
 }
+
+@media all and (max-width: 768px) {
+  .side_nav_link.active,
+  .side_nav_link:hover {
+    background: transparent;
+    color: white;
+  }
+}

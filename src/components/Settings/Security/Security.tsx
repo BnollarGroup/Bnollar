@@ -1,18 +1,30 @@
-import contStyles from '../SettingsContainer.module.css'
-import styles from './Security.module.css'
-import ToggleCard from '../ToggleCard/ToggleCard'
-import Dropdown from './Dropdown/Dropdown'
-import LinkCard from './LinkCard/LinkCard'
-import { useState } from 'react'
-import Buttons from '../Buttons/Buttons'
+import contStyles from "../SettingsContainer.module.css";
+import styles from "./Security.module.css";
+import ToggleCard from "../ToggleCard/ToggleCard";
+import Dropdown from "./Dropdown/Dropdown";
+import LinkCard from "./LinkCard/LinkCard";
+import { useState } from "react";
+import Buttons from "../Buttons/Buttons";
+import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 
 const Security = () => {
-  const [activeMention, setActiveMention] = useState('Everyone')
-  const [activeTags, setActiveTags] = useState('Everyone')
+  const [activeMention, setActiveMention] = useState("Everyone");
+  const [activeTags, setActiveTags] = useState("Everyone");
 
-  const dropdownItems = ['Everyone', 'Friends', 'Only me', 'Friends of friends']
+  const dropdownItems = [
+    "Everyone",
+    "Friends",
+    "Only me",
+    "Friends of friends",
+  ];
   return (
     <div className={contStyles.containerWrapper}>
+      <div className={contStyles.mobileSettings}>
+        <a href="/settings/:type">
+          <img src={ChevronLeft} alt="" />
+        </a>
+        <h1 className={contStyles.mobileSettingsTitle}>Settings</h1>
+      </div>
       <div className={contStyles.settingsContainer}>
         <h2 className={contStyles.contHeader}>Privacy & Policy</h2>
         <div className={contStyles.line} />
@@ -26,9 +38,9 @@ const Security = () => {
             description="Allow accounts that you follow and anyone you message to see when you were last active or are currently active on Instagram apps. When this is turned off, you won't be able to see the activity status of other accounts."
           />
           <div className={styles.flex_between}>
-            <div>
+            <div className={contStyles.labelWrap}>
               <h5 className={contStyles.label}>Mention</h5>
-              <p className={contStyles.message}>Allow @mentions from</p>
+              <p className={contStyles.messageEdit}>Allow @mentions from</p>
             </div>
             <Dropdown
               items={dropdownItems}
@@ -37,9 +49,9 @@ const Security = () => {
             />
           </div>
           <div className={styles.flex_between}>
-            <div>
+            <div className={contStyles.labelWrap}>
               <h5 className={contStyles.label}>Tags</h5>
-              <p className={contStyles.message}>Allow tags from</p>
+              <p className={contStyles.messageEdit}>Allow tags from</p>
             </div>
             <Dropdown
               items={dropdownItems}
@@ -63,7 +75,7 @@ const Security = () => {
         <Buttons updateButtonTitle="Save information" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Security
+export default Security;

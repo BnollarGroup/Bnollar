@@ -1,12 +1,15 @@
 .containerWrapper {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: flex-start;
+  flex-grow: 1;
   padding-bottom: 8rem;
 }
 
+.mobileSettings {
+  display: none;
+}
+
 .settingsContainer {
-  max-width: 680px;
   width: 100%;
   background: #17181b;
   border-radius: 10px;
@@ -34,10 +37,25 @@
   color: white !important;
 }
 
+.messageEdit {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.headerBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .message {
   font-weight: 400;
   font-size: 14px;
-  color: #6e6e70;
+  color: #fff;
   margin-top: 4px;
   line-height: 20px;
 }
@@ -54,4 +72,45 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.labelWrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+@media all and (max-width: 768px) {
+  .settingsContainer {
+    background: transparent;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerWrapper {
+    flex-direction: column;
+    padding-bottom: 36px;
+  }
+
+  .topPart {
+    height: 90vh;
+  }
+
+  .mobileSettings {
+    display: block;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    padding: 16px 16px 32px 12px;
+  }
+
+  .mobileSettingsTitle {
+    color: #fff;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
 }

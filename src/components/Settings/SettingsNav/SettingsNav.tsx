@@ -1,13 +1,46 @@
-import SideNavLink from "components/SideNavLink";
 import styles from "./SettingsNav.module.css";
+import Logo from "lib/resources/images/logo/bnollar_logo.svg";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import SideNavLink from "components/SideNavLink";
 
 interface SettingsNavProps {
   active: string;
 }
 
 const SettingsNav = ({ active }: SettingsNavProps) => {
+  const { type } = useParams();
+  const [isTopNavVisible, setIsTopNavVisible] = useState(true);
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(true);
+
+  const handleLinkClick = () => {
+    setIsTopNavVisible(false);
+    setIsMobileNavVisible(false);
+  };
+
+  useEffect(() => {
+    if (
+      window.location.pathname === "/settings/profile" ||
+      window.location.pathname === "/settings/manage_wallets" ||
+      window.location.pathname === "/settings/notification" ||
+      window.location.pathname === "/settings/privacy&security"
+    ) {
+      handleLinkClick();
+    }
+  }, [handleLinkClick]);
+
   return (
     <div className={styles.settingsNavContainer}>
+      {isTopNavVisible && (
+        <div className={styles.topNavMobileWrapper}>
+          <div className={styles.topNavMobile}>
+            <img src={Logo} alt="" />
+          </div>
+          <div className={styles.mobileSettings}>
+            <h1 className={styles.mobileSettingsTitle}>Settings</h1>
+          </div>
+        </div>
+      )}
       <div className={styles.settingsNavWrapper}>
         <SideNavLink
           to="/settings/profile"

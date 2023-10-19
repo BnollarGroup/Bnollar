@@ -6,7 +6,6 @@ import UserIcon from "lib/resources/images/icons/user-icon.png";
 import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
 import Instagram from "lib/resources/images/icons/instagram.png";
 import Grid from "lib/resources/images/icons/view-grid.png";
-import UserFeedPic from "lib/resources/images/icons/userfeedpic.png";
 import PostImg from "lib/resources/images/icons/post-img.png";
 import MeriaLogo from "lib/resources/images/icons/briefcase.png";
 import Edit from "lib/resources/images/icons/edit (2).png";
@@ -17,12 +16,31 @@ import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
+import uploadIcon from "lib/resources/images/profile-chat/attachment.svg"
+import statsReport from "lib/resources/images/profile-chat/stats-report.svg"
+import emoji from "lib/resources/images/profile-chat/emoji.svg"
+import language from "lib/resources/images/profile-chat/language.png"
+import horiz from "lib/resources/images/profile-chat/more-horiz.png"
+import { UpvoteButton } from "components/Buttons";
+import chatLined from "lib/resources/images/profile-chat/chat-lines.png"
+import shareIcon from "lib/resources/images/profile-chat/share-ios.png"
+import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails"
+
+
 
 export type Page = "feed" | "NFTs" | "media";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const pages: { page: Page; icon: any }[] = [
     {
       page: "feed",
@@ -64,6 +82,8 @@ function Profile() {
   function openProfile() {
     setProfilePic(true);
   }
+
+
   const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
     <Layout>
@@ -102,12 +122,13 @@ function Profile() {
                   {profilePicEdit}
                 </div>
               </div>
-              <div className={style.user_name}>
-                <h1>Christoh1her Reinger</h1>
-                <img src={Verifed} />
-              </div>
+
               <div className={style.user_about}>
-                <p>
+                <div className={style.user_name}>
+                  <h1>Christoh1her Reinger</h1>
+                  <img src={Verifed} />
+                </div>
+                <p className={style.about}>
                   I am a hard-working and driven individual who {`isn't`} afraid
                   to face a challenge.
                 </p>
@@ -121,6 +142,7 @@ function Profile() {
                   <h2>100 Following</h2>
                 </div>
               </div>
+
             </div>
             <div className={style.aboutuserleft}>
               <img src={Instagram} />
@@ -130,77 +152,130 @@ function Profile() {
               <button className={style.dotbtn}>...</button>
             </div>
           </div>
-
           <Tabs
             pages={pages}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
           />
+          <div className={style.tabsLine}></div>
 
           <div className={style.news_feed}>
             <div className={style.feed_rightside}>
-              <div className={style.upload_news}>
-                <div className={style.upload_news_author_pic}>
-                  <img src={UserFeedPic} />
-                </div>
-                <div className={style.upload_news_desc}>
-                  <div className={style.user_name}>
-                    <p>Christopher Williams</p>
-                    <img src={Verifed} />
-                    <span>14 Dec</span>
+              <div className={style.post}>
+                <div className={style.postDiv}>
+                  <div className={style.upload_news_author_pic}>
+                    <img src={UserIcon} className={style.userPostImage} />
                   </div>
-                  <p>
-                    #Bitcoin seems to be doing exactly what its done for about a
-                    year. Strong sell-off, consolidate & slow grind up, create a
-                    bear flag, RSI breaks down its trend line, bear flag breaks
-                    down for another strong sell-off and the cycle begins again.
-                  </p>
-                  <div className={style.rate_btns}>
-                    <div className={style.upvote}>
-                      <button>Upvote</button>
+                  <input type="text" placeholder="Write you thought" />
+                </div>
+                <div className={style.tabsLine}></div>
+                <div>
+                  <div className={style.uploadPost}>
+                    <div className={style.postIcons}>
+                      <img src={uploadIcon} alt="" />
+                      <img src={statsReport} alt="" />
+                      <img src={emoji} alt="" />
                     </div>
-                    <div className={style.comment}>
-                      <button>Comment</button>
-                    </div>
-                    <div className={style.share}>
-                      <button>Share</button>
+                    <div className={style.postBtnContainer}>
+                      <button className={style.publicBtn}>
+                        <img src={language} alt="" />
+                        Public
+                      </button>
+                      <button className={style.postBtn}>
+                        Post
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
               <div className={style.post}>
-                <div className={style.post_box}>
+                <div className={style.postDiv}>
                   <div className={style.upload_news_author_pic}>
-                    <img src={UserFeedPic} />
+                    <img src={UserIcon} className={style.userPostImage} />
                   </div>
-                  <div className={style.upload_news_desc}>
-                    <div className={style.user_name}>
-                      <p>Christopher Williams</p>
-                      <img src={Verifed} />
-                      <span>14 Dec</span>
-                    </div>
-                    <p>I am selling this NFT from Clone x collection</p>
-                    <div className={style.post_img}>
-                      <img src={PostImg} />
-                    </div>
-                    <div className={style.buy_now}>
-                      <div className={style.price}>
-                        <p>Clone X</p>
-                        <p>445 ETH</p>
+                  <div className={style.post_container}>
+
+                    <div>
+                      <div className={style.user_name_container}>
+                        <div className={style.post_user_name}>
+                          <h1>Christopher Williams</h1>
+                          <img src={Verifed} />
+                          <span>Dec 14</span>
+                        </div>
+                        <div className={style.horiz}>
+                          <img src={horiz} alt="" />
+                        </div>
                       </div>
-                      <div className={style.buy_btn}>
-                        <button>BUY NOW</button>
+
+                      <div className={style.post_text}>
+                        <p>
+                          #Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, consolidate & slow grind up, create a bear flag, RSI breaks down its trend line, bear flag breaks down for another strong sell-off and the cycle begins again.
+                        </p>
                       </div>
                     </div>
-                    <div className={style.btns}>
+                    <div className={style.rate_btns}>
                       <div className={style.upvote}>
-                        <button>433</button>
+                        <UpvoteButton />
                       </div>
                       <div className={style.comment}>
-                        <button>Comment</button>
+                        <button>
+                          <img src={chatLined} alt="" />
+                          Comment
+                        </button>
                       </div>
                       <div className={style.share}>
-                        <button>Share</button>
+                        <button>
+                          <img src={shareIcon} alt="" />
+                          Share
+                        </button>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div className={style.post}>
+                <div className={style.postDiv}>
+                  <div className={style.upload_news_author_pic}>
+                    <img src={UserIcon} className={style.userPostImage} />
+                  </div>
+                  <div className={style.post_container}>
+
+                    <div>
+                      <div className={style.user_name_container}>
+                        <div className={style.post_user_name}>
+                          <h1>Christopher Williams</h1>
+                          <img src={Verifed} />
+                          <span>Dec 14</span>
+                        </div>
+                        <div className={style.horiz}>
+                          <img src={horiz} alt="" />
+                        </div>
+                      </div>
+
+                      <div className={style.post_text}>
+                        <p>
+                          #Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, consolidate & slow grind up, create a bear flag, RSI breaks down its trend line, bear flag breaks down for another strong sell-off and the cycle begins again.
+                        </p>
+                      </div>
+                    </div>
+                    <img src={PostImg} alt="" />
+                    <div className={style.rate_btns}>
+                      <div className={style.upvote}>
+                        <UpvoteButton />
+                      </div>
+                      <div className={style.comment}>
+                        <button>
+                          <img src={chatLined} alt="" />
+                          Comment
+                        </button>
+                      </div>
+                      <div className={style.share}>
+                        <button>
+                          <img src={shareIcon} alt="" />
+                          Share
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -211,7 +286,13 @@ function Profile() {
               <div className={style.about_box}>
                 <div className={style.edit_info}>
                   <p>About</p>
-                  <p>Edit Information</p>
+                  <a href="#" className={style.editInfo} onClick={openModal}>
+                    Edit Information
+                  </a>
+
+                  {isModalOpen && (
+                    <ProfileEditDetailsModal />
+                  )}
                 </div>
                 <div className={style.user_description}>
                   <div className={style.about_user_desc}>
@@ -235,7 +316,7 @@ function Profile() {
               <div className={style.friend_box}>
                 <div className={style.friends}>
                   <p>Friends</p>
-                  <p>133</p>
+                  <p className={style.friendMembers}>133</p>
                 </div>
               </div>
             </div>
