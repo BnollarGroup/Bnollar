@@ -198,7 +198,7 @@ const Activity = () => {
 const Nft = () => {
   const size = useScreenSize();
 
-  if (size === "lg") {
+  if (size === "xl") {
     return (
       <Layout>
         <div className={styles.nftWrapper}>
