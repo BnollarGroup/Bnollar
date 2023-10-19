@@ -1,6 +1,6 @@
 import WithNavigation from "../../HOCs/WithNavigation/WithNavigation";
 import SettingsNav from "../../components/Settings/SettingsNav/SettingsNav";
-import useSettings from "../../Hooks/useSettings";
+import useSettings from "../../hooks/useSettings";
 import styles from "./Settings.module.css";
 
 const Settings = () => {

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Home from "lib/resources/svg/Home";
 import Hashtag from "lib/resources/svg/Hashtag";
 import Statistics from "lib/resources/svg/Statistics";
 import Wheel from "lib/resources/svg/Wheel";
 import Group from "lib/resources/svg/Group";
-import style from "../SideNav/SideNav.module.css";
+import style from "./Sidenav.module.css";
 
 function Rightnavbar() {
   // const [activeItem, setActiveItem] = useState("");

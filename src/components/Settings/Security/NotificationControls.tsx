@@ -2,7 +2,7 @@ import contStyles from "../SettingsContainer.module.css";
 import styles from "./Security.module.css";
 import Dropdown from "./Dropdown/Dropdown";
 import { useState } from "react";
-import ChevronLeft from "../../../resources/images/icons/arrow-left.svg";
+import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 import goBack from "lib/resources/images/Settings/goBack.png";
 import { Link } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
