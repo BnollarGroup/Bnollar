@@ -31,3 +31,17 @@
 .input::placeholder {
   color: #6e6e70;
 }
+
+@media all and (max-width: 768px) {
+  .inputsFlex {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .inputsFlex {
+    flex-direction: column;
+    gap: 0;
+  }
+}

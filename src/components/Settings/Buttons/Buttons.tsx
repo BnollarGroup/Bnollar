@@ -1,7 +1,7 @@
-import styles from './Buttons.module.css'
+import styles from "./Buttons.module.css";
 
 interface ButtonsProps {
-  updateButtonTitle: string
+  updateButtonTitle: string;
 }
 
 const Buttons = ({ updateButtonTitle }: ButtonsProps) => {
@@ -14,7 +14,7 @@ const Buttons = ({ updateButtonTitle }: ButtonsProps) => {
         {updateButtonTitle}
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Buttons
+export default Buttons;

@@ -12,9 +12,9 @@ interface LinkCardProps {
 const LinkCard = ({ title, description, path }: LinkCardProps) => {
   return (
     <Link to={path} className={globalStyles.flex_between}>
-      <div>
+      <div className={contStyles.labelWrap}>
         <h5 className={contStyles.label}>{title}</h5>
-        <p className={contStyles.message}>{description}</p>
+        <p className={contStyles.messageEdit}>{description}</p>
       </div>
       <img src={arrow} alt="arrow" />
     </Link>
