@@ -127,14 +127,14 @@ const NftHistory = () => {
       <div className={styles.historyBody}>
         <div className={styles.historyCollection}>
           <div className={styles.historyUserInfo}>
-            <img src={userIcon1} alt="image 1"/>
+            <img src={userIcon1} alt="image 1" />
             <div className={styles.historyDescription}>
               <p>Collection</p>
               <p>0x423...32X3</p>
             </div>
           </div>
           <div className={styles.historyUserInfo}>
-            <img src={userIcon2} alt="image 1"/>
+            <img src={userIcon2} alt="image 1" />
             <div className={styles.historyDescription}>
               <p>Owner</p>
               <p>0x423...32X3</p>
@@ -164,7 +164,7 @@ const Activity = () => {
       <div className={styles.activityCard}>
         <div className={styles.activityCardName}>
           <button className={styles.transferBtn}>
-            <img src={transfer} alt="transfer"/>
+            <img src={transfer} alt="transfer" />
             Transfer
           </button>
         </div>
@@ -191,21 +191,38 @@ const Activity = () => {
     </div>
   );
 };
+
 const Nft = () => {
+  if (window.innerWidth > 1111) {
+    return (
+      <div className={styles.nftWrapper}>
+        <Navbar />
+        <div className={styles.leftPanel}>
+          <div className={styles.imgWrapper}>
+            <img src={nft1} alt="NFT" />
+          </div>
+          <Description />
+          <Details />
+          <Properties />
+        </div>
+        <div className={styles.rightPanel}>
+          <NftHistory />
+          <Activity />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className={styles.nftWrapper}>
       <Navbar />
-      <div className={styles.leftPanel}>
-        <div className={styles.imgWrapper}>
-          <img src={nft1} alt="NFT"/>
-        </div>
-        <Description />
-        <Details />
-        <Properties />
+      <div className={styles.imgWrapper}>
+        <img src={nft1} alt="NFT" />
       </div>
-      <div className={styles.rightPanel}>
+      <div className={styles.nftInfoWrapper}>
         <NftHistory />
         <Activity />
+        <Description />
+        <Properties />
       </div>
     </div>
   );

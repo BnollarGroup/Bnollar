@@ -7,6 +7,9 @@
 .imgWrapper {
   width: 100%;
 }
+.nftInfoWrapper {
+  align-items: center;
+}
 .imgWrapper img {
   width: 100%;
   height: auto;
@@ -463,4 +466,39 @@
   align-items: center;
 
   color: rgba(255, 255, 255, 0.4);
+}
+@media all and (max-width: 768px) {
+  .nftWrapper {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .imgWrapper {
+    padding: 0 16px 16px 16px;
+  }
+
+  .activityCardFooter div {
+    padding-right: 0;
+  }
+
+  .nftModuleWrapper {
+    margin: 16px 0;
+  }
+
+  .propertiesWrapper {
+    margin-top: 16px;
+  }
+
+  .propertieItem {
+    width: 45.59%;
+    margin: 0;
+  }
+
+  .propertieItems {
+    gap: 12px;
+    align-items: center;
+  }
+  .nftInfoWrapper {
+    width: 100%;
+  }
 }
