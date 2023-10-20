@@ -21,7 +21,7 @@ import statsReport from "lib/resources/images/profile-chat/stats-report.svg"
 import emoji from "lib/resources/images/profile-chat/emoji.svg"
 import language from "lib/resources/images/profile-chat/language.png"
 import horiz from "lib/resources/images/profile-chat/more-horiz.png"
-import { UpvoteButton } from "components/Buttons";
+import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
 import chatLined from "lib/resources/images/profile-chat/chat-lines.png"
 import shareIcon from "lib/resources/images/profile-chat/share-ios.png"
 import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails"
@@ -218,16 +218,10 @@ function Profile() {
                         <UpvoteButton />
                       </div>
                       <div className={style.comment}>
-                        <button>
-                          <img src={chatLined} alt="" />
-                          Comment
-                        </button>
+                        <CommnetButton/>
                       </div>
                       <div className={style.share}>
-                        <button>
-                          <img src={shareIcon} alt="" />
-                          Share
-                        </button>
+                        <ShareButton/>
                       </div>
                     </div>
 
@@ -266,16 +260,10 @@ function Profile() {
                         <UpvoteButton />
                       </div>
                       <div className={style.comment}>
-                        <button>
-                          <img src={chatLined} alt="" />
-                          Comment
-                        </button>
+                        <CommnetButton/>
                       </div>
                       <div className={style.share}>
-                        <button>
-                          <img src={shareIcon} alt="" />
-                          Share
-                        </button>
+                        <ShareButton/>
                       </div>
                     </div>
                   </div>
