@@ -198,22 +198,21 @@ const Activity = () => {
 const Nft = () => {
   const size = useScreenSize();
 
-  if (size === "lg") {
+  const isMobile = size === "md" || size === "sm" || size === "xs";
+
+  if (isMobile) {
     return (
       <Layout>
         <div className={styles.nftWrapper}>
           <Navbar />
-          <div className={styles.leftPanel}>
-            <div className={styles.imgWrapper}>
-              <img src={nft1} alt="NFT" />
-            </div>
-            <Description />
-            <Details />
-            <Properties />
+          <div className={styles.imgWrapper}>
+            <img src={nft1} alt="NFT" />
           </div>
-          <div className={styles.rightPanel}>
+          <div className={styles.nftInfoWrapper}>
             <NftHistory />
             <Activity />
+            <Description />
+            <Properties />
           </div>
         </div>
       </Layout>
@@ -224,14 +223,17 @@ const Nft = () => {
     <Layout>
       <div className={styles.nftWrapper}>
         <Navbar />
-        <div className={styles.imgWrapper}>
-          <img src={nft1} alt="NFT" />
+        <div className={styles.leftPanel}>
+          <div className={styles.imgWrapper}>
+            <img src={nft1} alt="NFT" />
+          </div>
+          <Description />
+          <Details />
+          <Properties />
         </div>
-        <div className={styles.nftInfoWrapper}>
+        <div className={styles.rightPanel}>
           <NftHistory />
           <Activity />
-          <Description />
-          <Properties />
         </div>
       </div>
     </Layout>
