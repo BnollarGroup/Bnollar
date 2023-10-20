@@ -22,8 +22,6 @@ import emoji from "lib/resources/images/profile-chat/emoji.svg"
 import language from "lib/resources/images/profile-chat/language.png"
 import horiz from "lib/resources/images/profile-chat/more-horiz.png"
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
-import chatLined from "lib/resources/images/profile-chat/chat-lines.png"
-import shareIcon from "lib/resources/images/profile-chat/share-ios.png"
 import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails"
 
 
@@ -159,7 +157,7 @@ function Profile() {
           />
           <div className={style.tabsLine}></div>
 
-          <div className={style.news_feed}>
+          {/* <div className={style.news_feed}>
             <div className={style.feed_rightside}>
               <div className={style.post}>
                 <div className={style.postDiv}>
@@ -308,7 +306,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>

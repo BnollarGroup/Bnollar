@@ -37,7 +37,7 @@
 .editButtonContainer {
   position: absolute;
   top: 20px;
-  right: 50px;
+  right: 20px;
   background-color: white;
   border-radius: 20px;
   padding: 8px 16px;
@@ -57,7 +57,7 @@
   position: absolute;
   background-color: #17181b;
   border-radius: 10px;
-  right: 50px;
+  right: 20px;
   top: 60px;
   padding: 8px;
 }
