@@ -157,7 +157,7 @@ function Profile() {
           />
           <div className={style.tabsLine}></div>
 
-          {/* <div className={style.news_feed}>
+          <div className={style.news_feed}>
             <div className={style.feed_rightside}>
               <div className={style.post}>
                 <div className={style.postDiv}>
@@ -306,7 +306,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </Layout>
