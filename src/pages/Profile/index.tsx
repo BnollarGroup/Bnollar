@@ -16,15 +16,13 @@ import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
-import uploadIcon from "lib/resources/images/profile-chat/attachment.svg"
-import statsReport from "lib/resources/images/profile-chat/stats-report.svg"
-import emoji from "lib/resources/images/profile-chat/emoji.svg"
-import language from "lib/resources/images/profile-chat/language.png"
-import horiz from "lib/resources/images/profile-chat/more-horiz.png"
+import uploadIcon from "lib/resources/images/profile-chat/attachment.svg";
+import statsReport from "lib/resources/images/profile-chat/stats-report.svg";
+import emoji from "lib/resources/images/profile-chat/emoji.svg";
+import language from "lib/resources/images/profile-chat/language.png";
+import horiz from "lib/resources/images/profile-chat/more-horiz.png";
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
-import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails"
-
-
+import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
 
 export type Page = "feed" | "NFTs" | "media";
 
@@ -33,8 +31,8 @@ function Profile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const pages: { page: Page; icon: any }[] = [
     {
@@ -78,15 +76,13 @@ function Profile() {
     setProfilePic(true);
   }
 
-
   const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
     <Layout>
-        <Navbar />
+      <Navbar />
       <div className={style.profilemain}>
-        <div className={style.profileright}>
-          <LeftSideBar />
-        </div>
+        <LeftSideBar />
+
         <div className={style.profileleft}>
           <div className={style.profilecover}>
             <div className={style.coverContent}>
@@ -137,7 +133,6 @@ function Profile() {
                   <h2>100 Following</h2>
                 </div>
               </div>
-
             </div>
             <div className={style.aboutuserleft}>
               <img src={Instagram} />
@@ -176,9 +171,7 @@ function Profile() {
                         <img src={language} alt="" />
                         Public
                       </button>
-                      <button className={style.postBtn}>
-                        Post
-                      </button>
+                      <button className={style.postBtn}>Post</button>
                     </div>
                   </div>
                 </div>
@@ -189,7 +182,6 @@ function Profile() {
                     <img src={UserIcon} className={style.userPostImage} />
                   </div>
                   <div className={style.post_container}>
-
                     <div>
                       <div className={style.user_name_container}>
                         <div className={style.post_user_name}>
@@ -204,17 +196,19 @@ function Profile() {
 
                       <div className={style.post_text}>
                         <p>
-                          #Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, consolidate & slow grind up, create a bear flag, RSI breaks down its trend line, bear flag breaks down for another strong sell-off and the cycle begins again.
+                          #Bitcoin seems to be doing exactly what its done for
+                          about a year. Strong sell-off, consolidate & slow
+                          grind up, create a bear flag, RSI breaks down its
+                          trend line, bear flag breaks down for another strong
+                          sell-off and the cycle begins again.
                         </p>
                       </div>
                     </div>
                     <div className={style.rate_btns}>
-                        <UpvoteButton />
-                        <CommnetButton/>
-                        <ShareButton/>
+                      <UpvoteButton />
+                      <CommnetButton />
+                      <ShareButton />
                     </div>
-
-
                   </div>
                 </div>
               </div>
@@ -224,7 +218,6 @@ function Profile() {
                     <img src={UserIcon} className={style.userPostImage} />
                   </div>
                   <div className={style.post_container}>
-
                     <div>
                       <div className={style.user_name_container}>
                         <div className={style.post_user_name}>
@@ -239,15 +232,19 @@ function Profile() {
 
                       <div className={style.post_text}>
                         <p>
-                          #Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, consolidate & slow grind up, create a bear flag, RSI breaks down its trend line, bear flag breaks down for another strong sell-off and the cycle begins again.
+                          #Bitcoin seems to be doing exactly what its done for
+                          about a year. Strong sell-off, consolidate & slow
+                          grind up, create a bear flag, RSI breaks down its
+                          trend line, bear flag breaks down for another strong
+                          sell-off and the cycle begins again.
                         </p>
                       </div>
                     </div>
                     <img src={PostImg} alt="" />
                     <div className={style.rate_btns}>
-                        <UpvoteButton />
-                        <CommnetButton/>
-                        <ShareButton/>
+                      <UpvoteButton />
+                      <CommnetButton />
+                      <ShareButton />
                     </div>
                   </div>
                 </div>
@@ -261,9 +258,7 @@ function Profile() {
                     Edit Information
                   </a>
 
-                  {isModalOpen && (
-                    <ProfileEditDetailsModal />
-                  )}
+                  {isModalOpen && <ProfileEditDetailsModal />}
                 </div>
                 <div className={style.user_description}>
                   <div className={style.about_user_desc}>
