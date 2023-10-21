@@ -2,9 +2,11 @@
 
 * {
   font-family: 'Inter';
+  /* border: 1px solid red; */
 }
 
 .profilemain {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -273,7 +275,7 @@ hr {
 .news_feed {
   margin-top: 20px;
   display: flex;
-  width: 100%;
+  max-width: 100%;
   gap: 14px;
 }
 
@@ -282,6 +284,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .postDiv {
@@ -367,10 +370,6 @@ hr {
   background: rgba(255, 255, 255, 0.10);
 }
 
-.postBtn {
-  padding: 8px 36px;
-}
-
 .postBtnContainer {
   display: flex;
   align-items: center;
@@ -423,10 +422,7 @@ hr {
   gap: 7px;
 }
 
-.rate_btns {
-  width: 100%;
 
-}
 
 .rate_btns button {
   display: flex;
@@ -487,24 +483,6 @@ hr {
   margin-top: 10px;
 }
 
-.post_box {
-  width: 90%;
-  background-color: #16181c;
-  border-radius: 5px;
-  display: flex;
-  padding: 15px 0 0 15px;
-}
-
-.post_img {
-  width: 90%;
-  margin-top: 10px;
-}
-
-.post_img img {
-  width: 100%;
-  height: 90%;
-}
-
 .friend_box {
   position: relative;
   background-color: #17181B;
@@ -550,84 +528,46 @@ hr {
   color: rgba(255, 255, 255, 0.4) !important;
 }
 
-.buy_now {
-  width: 90%;
-  background-color: #4e525a;
-  margin-top: 20px;
-  height: 80px;
-  border-radius: 10px;
-}
-
-.buy_now {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.price {
-  padding-left: 15px;
-}
-
-.price h1 {
-  font-size: 16px;
-}
-
-.buy_btn button {
-  width: 150px;
-  height: 60px;
-  background-color: white;
-  font-weight: bold;
-  color: black;
-  margin-right: 20px;
-}
-
-.btns {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.profileMenu {
-  display: flex;
-  margin-top: 20px;
-  height: 60px;
-
-  color: var(--white-color);
-}
-
-
-.profileMenuItem {
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  height: 100%;
-  cursor: pointer;
-}
-
 .coverContent {
   width: 100%;
   height: 33em;
 }
 
-.profileMenuItem h1 {
-  font-size: 12px;
-  margin-left: 5px;
+@media all and (max-width: 768px) {
+  .profilemain{
+    width: 100%;
+  }
+
+  .profileright{
+    display: none;
+  }
+
+  .feed_leftsideinformation{
+    display: none;
+  }
+
+  .aboutuserleft{
+    display: none;
+  }
+
+  .input-box {
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .post-content {
+    margin: 20px 0;
+    padding: 20px;
+  }
 }
 
 
+@media all and (max-width:1024px) {
+  .profileright{
+    display: none;
+  }
 
-.active {
-  position: relative;
-  height: 100%;
-}
-
-.menuline {
-  background-color: #ef8031;
-  height: 2px;
-  width: 100%;
-  position: absolute;
-
-  border-radius: 2px 2px 0px 0px;
-  bottom: 0;
+  .feed_leftsideinformation{
+    display: none;
+  }
 }

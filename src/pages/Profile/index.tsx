@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
 import Cover from "lib/resources/images/icons/cover (2).png";
@@ -33,12 +33,9 @@ function Profile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    setIsModalOpen(true);
-  };
+    setIsModalOpen(true)
+  }
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   const pages: { page: Page; icon: any }[] = [
     {
       page: "feed",
@@ -85,7 +82,7 @@ function Profile() {
   const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
     <Layout>
-      <Navbar />
+        <Navbar />
       <div className={style.profilemain}>
         <div className={style.profileright}>
           <LeftSideBar />
@@ -212,15 +209,9 @@ function Profile() {
                       </div>
                     </div>
                     <div className={style.rate_btns}>
-                      <div className={style.upvote}>
                         <UpvoteButton />
-                      </div>
-                      <div className={style.comment}>
                         <CommnetButton/>
-                      </div>
-                      <div className={style.share}>
                         <ShareButton/>
-                      </div>
                     </div>
 
 
@@ -254,15 +245,9 @@ function Profile() {
                     </div>
                     <img src={PostImg} alt="" />
                     <div className={style.rate_btns}>
-                      <div className={style.upvote}>
                         <UpvoteButton />
-                      </div>
-                      <div className={style.comment}>
                         <CommnetButton/>
-                      </div>
-                      <div className={style.share}>
                         <ShareButton/>
-                      </div>
                     </div>
                   </div>
                 </div>
