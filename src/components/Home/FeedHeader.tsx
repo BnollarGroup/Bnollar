@@ -11,7 +11,8 @@ const FeedHeader = () => {
     <div className={styles.feedHeader}>
       <div className={styles.headerSearch}>
         <img src={user1} />
-        <input type="text" placeholder="Write your thought"></input>
+          <textarea id="post" placeholder="Write your thought"></textarea>
+        
       </div>
       <div className={styles.headerButtons}>
         <div className={styles.leftButtons}>
