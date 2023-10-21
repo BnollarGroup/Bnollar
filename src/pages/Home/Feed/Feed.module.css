@@ -1,6 +1,6 @@
 .feedWrapper {
   display: flex;
-  background-color: black;
+  background-color: transparent;
   flex-direction: column;
   overflow-y: scroll;
   height: 100vh;

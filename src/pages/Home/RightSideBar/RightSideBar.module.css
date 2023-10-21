@@ -2,7 +2,6 @@
   display: flex;
   flex: 1.5;
   margin-right: 3em;
-  background-color: black;
   flex-direction: column;
 }
 .contactsWrapper {
@@ -19,16 +18,15 @@
   overflow-y: scroll;
 }
 .contactsWrapper::-webkit-scrollbar {
-  width: 0.2em;
-  background-color: #110e0e;
+  display: none;
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb {
-  background-color: #000000;
+  display: none;
 }
 
 .contactsWrapper::-webkit-scrollbar-thumb:hover {
-  background-color: #555555;
+  display: none;
 }
 
 .contactsWrapper h2 {
@@ -37,8 +35,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
-
   color: #ffffff;
 }
 .contactsWrapper ul {
@@ -62,8 +58,6 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 22px;
-  /* identical to box height, or 147% */
-
   color: #ffffff;
 }
 .activeUser {
