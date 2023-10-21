@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
 
 * {
-  font-family: 'Inter';
+  font-family: "Inter";
   /* border: 1px solid red; */
 }
 
@@ -33,7 +33,7 @@
 .rate_btns div {
   width: 100%;
 }
-.rate_btns div  button{
+.rate_btns div button {
   width: 100%;
 }
 .editButtonContainer {
@@ -115,7 +115,7 @@
   width: 34px;
   height: 34px;
   border-radius: 34px;
-  border: 6px solid #0D0E11;
+  border: 6px solid #0d0e11;
 }
 
 .aboutuserright {
@@ -175,7 +175,7 @@
 }
 
 .about {
-  color: rgba(255, 255, 255, 0.40) !important;
+  color: rgba(255, 255, 255, 0.4) !important;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -199,7 +199,7 @@
 }
 
 .user_ceo p {
-  color: rgba(255, 255, 255, 0.40);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -231,7 +231,7 @@
 .followers_following span {
   width: 1px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .followers_following h2 {
@@ -277,6 +277,7 @@ hr {
   display: flex;
   max-width: 100%;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 .feed_rightside {
@@ -317,7 +318,7 @@ hr {
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
-  color: #FFF;
+  color: #fff;
 }
 
 .uploadPost {
@@ -357,7 +358,7 @@ hr {
 }
 
 .post_text {
-  color: #FFF;
+  color: #fff;
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
@@ -367,7 +368,7 @@ hr {
 .tabsLine {
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .postBtnContainer {
@@ -382,7 +383,7 @@ hr {
   align-items: center;
   gap: 4px;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: transparent;
   color: #fff;
 }
@@ -394,7 +395,7 @@ hr {
 }
 
 .postBtn {
-  background: #EF8031 !important;
+  background: #ef8031 !important;
   padding: 8px 36px !important;
 }
 
@@ -422,8 +423,6 @@ hr {
   gap: 7px;
 }
 
-
-
 .rate_btns button {
   display: flex;
   width: 192px;
@@ -440,7 +439,7 @@ hr {
   position: relative;
   width: 325px;
   height: 182px;
-  background-color: #17181B;
+  background-color: #17181b;
   border-radius: 5px;
   padding: 10px 15px 0 10px;
 }
@@ -485,7 +484,7 @@ hr {
 
 .friend_box {
   position: relative;
-  background-color: #17181B;
+  background-color: #17181b;
   width: 325px;
   height: 56px;
   margin-top: 20px;
@@ -513,7 +512,7 @@ hr {
   top: 50%;
   transform: translateY(-50%);
   padding: 0 0 0 15px;
-  color: #fff
+  color: #fff;
 }
 
 .friends p {
@@ -534,19 +533,19 @@ hr {
 }
 
 @media all and (max-width: 768px) {
-  .profilemain{
+  .profilemain {
     width: 100%;
   }
 
-  .profileright{
+  .profileright {
     display: none;
   }
 
-  .feed_leftsideinformation{
+  .feed_leftsideinformation {
     display: none;
   }
 
-  .aboutuserleft{
+  .aboutuserleft {
     display: none;
   }
 
@@ -554,20 +553,19 @@ hr {
     margin: 10px 0;
     padding: 10px;
   }
-  
+
   .post-content {
     margin: 20px 0;
     padding: 20px;
   }
 }
 
-
-@media all and (max-width:1024px) {
-  .profileright{
+@media all and (max-width: 1024px) {
+  .profileright {
     display: none;
   }
 
-  .feed_leftsideinformation{
+  .feed_leftsideinformation {
     display: none;
   }
 }
