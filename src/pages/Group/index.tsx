@@ -62,14 +62,17 @@ function Group() {
   return (
     <Layout>
       <Navbar />
+
       <div className={style.profile_2_main}>
         <div className={style.profile_2_leftnavbar}>
           <LeftSideBar />
         </div>
+
         <div className={style.profile_2_middle}>
           <div className={style.coverpicture}>
             <img src={CoverPicture} alt="" />
           </div>
+
           <div className={style.groupname}>
             <div className={style.titleWithBadge}>
               <h1 className={style.title}>{groupData.name}</h1>
@@ -80,11 +83,11 @@ function Group() {
             </div>
 
             <div className={style.social}>
-              <img src={Instagram} alt="" />
+              <img src={Instagram} alt="" className={style.button} />
 
-              <img src={Twitter} alt="" />
+              <img src={Twitter} alt="" className={style.button} />
 
-              <img src={Discord} alt="" />
+              <img src={Discord} alt="" className={style.button} />
 
               <button>Subscribe</button>
 
@@ -187,6 +190,7 @@ function Group() {
                 </div>
               </div>
             </div>
+
             <div className={style.right_profile_side}>
               <GroupTags data={groupData} />
 

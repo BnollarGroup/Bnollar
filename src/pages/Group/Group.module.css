@@ -67,6 +67,7 @@
 .social {
   display: flex;
   align-items: center;
+  gap: 1em;
 }
 
 .social button {
@@ -81,14 +82,13 @@
 .social .dotbtn {
   width: 50px;
   height: 40px;
-  background-color: #16181c;
+  background-color: transparent;
   color: white;
-  margin-left: 5px;
+  margin-left: -10px;
 }
 
 .social img {
-  width: 30px;
-  height: 30px;
+  cursor: pointer;
 }
 
 .info {
@@ -356,6 +356,12 @@
   background: url("../../lib/resources/images/icons/share-ios.png");
   background-repeat: no-repeat;
   background-position: 25px center;
+}
+
+.button {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: cover;
 }
 
 .line {
