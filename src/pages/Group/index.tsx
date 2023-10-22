@@ -164,7 +164,7 @@ function Group() {
               </div>
             </div>
 
-            <div className={style.right_profile_side}>
+            <div className={style.asideContainer}>
               <GroupTags data={groupData} />
 
               <GroupMembers />
