@@ -21,6 +21,7 @@ import Layout from "providers/Layout";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
+import FeedHeader from "components/Home/FeedHeader";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -103,27 +104,7 @@ function Group() {
           <div className={style.line}></div>
           <div className={style.mainbox}>
             <div className={style.left_profile_side}>
-              <div className={style.post}>
-                <div className={style.writesomething}>
-                  <img src={UserPic} alt="" />
-                  <input type="text" placeholder="Write Something" />
-                </div>
-                <div className={style.line}></div>
-                <div className={style.addsomethinginpost}>
-                  <div className={style.attachment}>
-                    <img src={attachment} />
-                    <img className={style.postimg} src={statreport} />
-                    <img className={style.postimg} src={emoji} />
-                  </div>
-                  <div className={style.addbtn}>
-                    <div className={style.publiclanguage}>
-                      <img src={language} alt="" />
-                      <button className={style.public}>Public</button>
-                    </div>
-                    <button className={style.postbtn}>POST</button>
-                  </div>
-                </div>
-
+                <FeedHeader/>
                 <div className={style.upload_news}>
                   <div className={style.upload_news_author_pic}>
                     <img src={UserFeedPic} />
@@ -235,7 +216,6 @@ function Group() {
             </div>
           </div>
         </div>
-      </div>
     </Layout>
   );
 }

@@ -21,22 +21,8 @@
   margin: 17px 26px 15px 16px;
 }
 
-/* .headerSearch label {
-  width: 100%;
-} */
-
 .headerSearch textarea {
   resize: none;
-
-  /* background: none;
-  border: none;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 22px;
-  color: rgba(255, 255, 255, 0.3);
-  outline: none; */
   display: flex;
   align-items: center;
   justify-content: center;
