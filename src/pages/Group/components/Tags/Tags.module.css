@@ -1,6 +1,5 @@
 .container {
   width: 90%;
-  margin-left: 5px;
 
   background-color: var(--bar-color);
   color: var(--white-color);
