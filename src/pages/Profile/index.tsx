@@ -14,9 +14,9 @@ import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
 import horiz from "lib/resources/images/profile-chat/more-horiz.png";
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
-import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
+// import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
 import FeedHeader from "components/Home/FeedHeader";
-import UserInformation from "components/UserInformation"
+import UserInformation from "./components/UserInformation"
 import SocialNetworks from "components/SocialNetworks"
 
 export type Page = "feed" | "NFTs" | "media";
