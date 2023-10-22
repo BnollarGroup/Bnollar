@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 2em;
+}
+
+.titleWithBadge {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.title {
+  color: var(--white-color);
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.4);
+
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  font-weight: 500;
+}
+
+.badge span {
+  margin-right: 0.5em;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.button {
+  width: 111px;
+  border-radius: 20px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+}
+
+.dotbtn {
+  width: 50px;
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  margin-left: -10px;
+}
+
+.description {
+  width: 100%;
+  max-width: 38em;
+
+  font-size: 1.25em;
+  line-height: 1.5em;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.icon {
+  cursor: pointer;
+}

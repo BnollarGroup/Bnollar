@@ -1,9 +1,6 @@
 import Navbar from "components/Navbar";
 import style from "./Group.module.css";
-import CoverPicture from "lib/resources/images/icons/coverpic.png";
-import Instagram from "lib/resources/images/icons/instagram.png";
 import Verifed from "lib/resources/images/icons/verified.svg";
-import Member from "lib/resources/images/icons/memeber.png";
 import UserPic from "lib/resources/images/icons/Ellipse 1.png";
 import attachment from "lib/resources/images/icons/attachment.png";
 import emoji from "lib/resources/images/icons/emoji.png";
@@ -15,13 +12,15 @@ import Feed from "lib/resources/images/icons/view-grid.png";
 import Members from "lib/resources/images/icons/memebers.png";
 import Media from "lib/resources/images/icons/stats-report.png";
 import File from "lib/resources/images/icons/folder.png";
-import Twitter from "lib/resources/images/icons/_Twitter (2).png";
-import Discord from "lib/resources/images/icons/Discord.png";
 import Layout from "providers/Layout";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
 import FeedHeader from "components/Home/FeedHeader";
+import InformationSection from "./components/InformationSection";
+import Cover from "./components/Cover";
+import GroupTags from "./components/Tags";
+import GroupMembers from "./components/Members";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -62,38 +61,16 @@ function Group() {
   return (
     <Layout>
       <Navbar />
-      <div className={style.profile_2_main}>
-        <div className={style.profile_2_leftnavbar}>
+
+      <div className={style.container}>
+        <div className={style.leftSection}>
           <LeftSideBar />
         </div>
-        <div className={style.profile_2_middle}>
-          <div className={style.coverpicture}>
-            <img src={CoverPicture} alt="" />
-          </div>
-          <div className={style.groupname}>
-            <div className={style.titleWithBadge}>
-              <h1 className={style.title}>{groupData.name}</h1>
 
-              <div className={style.badge}>
-                <span>{">_"}</span> {groupData.badge}
-              </div>
-            </div>
+        <div className={style.rightSection}>
+          <Cover />
 
-            <div className={style.social}>
-              <img src={Instagram} alt="" />
-
-              <img src={Twitter} alt="" />
-
-              <img src={Discord} alt="" />
-
-              <button>Subscribe</button>
-
-              <button className={style.dotbtn}>...</button>
-            </div>
-          </div>
-          <div className={style.subTitle}>
-            <p>{groupData.description}</p>
-          </div>
+          <InformationSection data={groupData} />
 
           <Tabs
             pages={pages}
@@ -167,52 +144,11 @@ function Group() {
                 </div>
               </div>
             </div>
-            <div className={style.right_profile_side}>
-              <div className={style.tags}>
-                <h1 className={style.tagsTitle}>Tags</h1>
 
-                {groupData.tags.map((tag, i) => (
-                  <div className={style.tag_list} key={i}>
-                    <h1>{tag.title}</h1>
-                    <h3>{tag.count} Post</h3>
-                  </div>
-                ))}
-              </div>
-              <div className={style.memberbox}>
-                <div className={style.membercount}>
-                  <h1>Member</h1>
-                  <h3>4,222</h3>
-                </div>
-                <div className={style.memberimg}>
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                </div>
-              </div>
+            <div className={style.asideContainer}>
+              <GroupTags data={groupData} />
+
+              <GroupMembers />
             </div>
           </div>
         </div>
