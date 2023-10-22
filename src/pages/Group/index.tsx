@@ -3,7 +3,6 @@ import style from "./Group.module.css";
 import CoverPicture from "lib/resources/images/icons/coverpic.png";
 import Instagram from "lib/resources/images/icons/instagram.png";
 import Verifed from "lib/resources/images/icons/verified.svg";
-import Member from "lib/resources/images/icons/memeber.png";
 import UserPic from "lib/resources/images/icons/Ellipse 1.png";
 import attachment from "lib/resources/images/icons/attachment.png";
 import emoji from "lib/resources/images/icons/emoji.png";
@@ -21,6 +20,7 @@ import Layout from "providers/Layout";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
+import GroupMembers from "./components/Members";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -197,41 +197,8 @@ function Group() {
                   </div>
                 ))}
               </div>
-              <div className={style.memberbox}>
-                <div className={style.membercount}>
-                  <h1>Member</h1>
-                  <h3>4,222</h3>
-                </div>
-                <div className={style.memberimg}>
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                  <img src={Member} alt="" />
-                </div>
-              </div>
+
+              <GroupMembers />
             </div>
           </div>
         </div>
