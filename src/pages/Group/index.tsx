@@ -1,6 +1,5 @@
 import Navbar from "components/Navbar";
 import style from "./Group.module.css";
-import Instagram from "lib/resources/images/icons/instagram.png";
 import Verifed from "lib/resources/images/icons/verified.svg";
 import UserPic from "lib/resources/images/icons/Ellipse 1.png";
 import attachment from "lib/resources/images/icons/attachment.png";
@@ -13,8 +12,6 @@ import Feed from "lib/resources/images/icons/view-grid.png";
 import Members from "lib/resources/images/icons/memebers.png";
 import Media from "lib/resources/images/icons/stats-report.png";
 import File from "lib/resources/images/icons/folder.png";
-import Twitter from "lib/resources/images/icons/_Twitter (2).png";
-import Discord from "lib/resources/images/icons/Discord.png";
 import Layout from "providers/Layout";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
@@ -22,6 +19,7 @@ import Tabs from "components/Tabs";
 import GroupMembers from "./components/Members";
 import GroupTags from "./components/Tags";
 import Cover from "./components/Cover";
+import InformationSection from "./components/InformationSection";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -63,38 +61,15 @@ function Group() {
     <Layout>
       <Navbar />
 
-      <div className={style.profile_2_main}>
-        <div className={style.profile_2_leftnavbar}>
+      <div className={style.container}>
+        <div className={style.leftSection}>
           <LeftSideBar />
         </div>
 
-        <div className={style.profile_2_middle}>
+        <div className={style.rightSection}>
           <Cover />
 
-          <div className={style.groupname}>
-            <div className={style.titleWithBadge}>
-              <h1 className={style.title}>{groupData.name}</h1>
-
-              <div className={style.badge}>
-                <span>{">_"}</span> {groupData.badge}
-              </div>
-            </div>
-
-            <div className={style.social}>
-              <img src={Instagram} alt="" className={style.button} />
-
-              <img src={Twitter} alt="" className={style.button} />
-
-              <img src={Discord} alt="" className={style.button} />
-
-              <button>Subscribe</button>
-
-              <button className={style.dotbtn}>...</button>
-            </div>
-          </div>
-          <div className={style.subTitle}>
-            <p>{groupData.description}</p>
-          </div>
+          <InformationSection data={groupData} />
 
           <Tabs
             pages={pages}
