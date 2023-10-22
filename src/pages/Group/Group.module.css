@@ -48,16 +48,6 @@
   border-radius: 20px;
 }
 
-.coverpicture {
-  width: 100%;
-  height: 300px;
-}
-
-.coverpicture img {
-  width: 100%;
-  height: 100%;
-}
-
 .groupname {
   margin-top: 20px;
   display: flex;

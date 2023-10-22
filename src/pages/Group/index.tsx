@@ -1,6 +1,5 @@
 import Navbar from "components/Navbar";
 import style from "./Group.module.css";
-import CoverPicture from "lib/resources/images/icons/coverpic.png";
 import Instagram from "lib/resources/images/icons/instagram.png";
 import Verifed from "lib/resources/images/icons/verified.svg";
 import UserPic from "lib/resources/images/icons/Ellipse 1.png";
@@ -22,6 +21,7 @@ import { useState } from "react";
 import Tabs from "components/Tabs";
 import GroupMembers from "./components/Members";
 import GroupTags from "./components/Tags";
+import Cover from "./components/Cover";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -69,9 +69,7 @@ function Group() {
         </div>
 
         <div className={style.profile_2_middle}>
-          <div className={style.coverpicture}>
-            <img src={CoverPicture} alt="" />
-          </div>
+          <Cover />
 
           <div className={style.groupname}>
             <div className={style.titleWithBadge}>
