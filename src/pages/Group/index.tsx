@@ -21,6 +21,7 @@ import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
 import GroupMembers from "./components/Members";
+import GroupTags from "./components/Tags";
 
 export type Page = "feed" | "members" | "media" | "files";
 
@@ -187,16 +188,7 @@ function Group() {
               </div>
             </div>
             <div className={style.right_profile_side}>
-              <div className={style.tags}>
-                <h1 className={style.tagsTitle}>Tags</h1>
-
-                {groupData.tags.map((tag, i) => (
-                  <div className={style.tag_list} key={i}>
-                    <h1>{tag.title}</h1>
-                    <h3>{tag.count} Post</h3>
-                  </div>
-                ))}
-              </div>
+              <GroupTags data={groupData} />
 
               <GroupMembers />
             </div>

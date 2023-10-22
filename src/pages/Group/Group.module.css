@@ -255,35 +255,6 @@
   margin-right: 20px;
 }
 
-.tags {
-  width: 90%;
-  margin-left: 5px;
-
-  background-color: var(--bar-color);
-  color: var(--white-color);
-
-  border-radius: 10px;
-  padding: 2em;
-}
-
-.tagsTitle {
-  font-size: 1.6em;
-  margin-bottom: 1.25em;
-}
-
-.tag_list {
-  margin-top: 15px;
-}
-
-.tag_list h1 {
-  font-size: 14px;
-}
-
-.tag_list h3 {
-  color: gray;
-  font-size: 12px;
-}
-
 .memberbox {
   width: 90%;
   background-color: #16181c;
