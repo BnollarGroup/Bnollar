@@ -4,7 +4,7 @@
   padding: 16px;
   gap: 14px;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-top: 16px;
 }
 .feedCard_user img {
@@ -106,7 +106,7 @@
   background: #17181b;
   box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.15),
     0px 8px 8px -4px rgba(16, 24, 40, 0.15);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-top: 21px;
 }
 .menuDropDown ul li {
@@ -118,9 +118,9 @@
   width: 197px;
   height: 40px;
   background: #17181b;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
-.menuDropDown :hover {
+.menuDropDown li:hover {
   background: rgba(255, 255, 255, 0.04);
 }
 .upvote {
