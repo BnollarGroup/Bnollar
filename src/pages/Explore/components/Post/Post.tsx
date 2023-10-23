@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DataType } from "../types";
+import { DataType } from "../../types";
 import styles from "./Post.module.css";
 import Comment from "../Comment/Comment";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
