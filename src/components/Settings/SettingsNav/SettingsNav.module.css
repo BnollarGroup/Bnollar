@@ -3,11 +3,13 @@
   height: max-content;
   padding: 10px;
   border-radius: 10px;
+
   width: 323px;
 }
 
 .settingsNavContainer {
-  width: 323px;
+  width: 100%;
+  max-width: 323px;
 }
 
 .settingsNavWrapperMobile {
@@ -29,6 +31,7 @@
 
   .settingsNavContainer {
     width: 100%;
+    max-width: 100%;
   }
 
   .settingsNavWrapperMobile {
@@ -76,24 +79,25 @@
   }
 }
 
-@media all and (max-width: 900px) {
+@media all and (min-width: 769px) and (max-width: 900px) {
   .settingsNavWrapper {
     width: 200px;
   }
 
   .settingsNavContainer {
     max-width: 200px;
-    width: 200px;
+
+    width: 100%;
   }
 }
 
-@media all and (min-width: 900px) and (max-width: 1124px) {
+@media all and (min-width: 901px) and (max-width: 1124px) {
   .settingsNavWrapper {
     width: 220px;
   }
 
   .settingsNavContainer {
     max-width: 220px;
-    width: 220px;
+    width: 100%;
   }
 }

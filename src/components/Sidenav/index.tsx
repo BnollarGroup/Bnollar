@@ -7,7 +7,6 @@ import Group from "lib/resources/svg/Group";
 import style from "./Sidenav.module.css";
 
 function Rightnavbar() {
-  // const [activeItem, setActiveItem] = useState("");
   const [activeItem, setActiveItem] = useState("Settings");
   const [settingsActive, setSettingsActive] = useState(true);
 

@@ -1,5 +1,6 @@
 import styles from "./SettingsNav.module.css";
-import Logo from "lib/resources/images/logo/bnollar_logo.svg";
+import Chevron from "../../../lib/resources/images/icons/chevron-right.svg";
+import Logo from "../../../lib/resources/images/logo/bnollar_logo.svg";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SideNavLink from "components/SideNavLink";
@@ -68,6 +69,52 @@ const SettingsNav = ({ active }: SettingsNavProps) => {
           }
         />
       </div>
+
+      {isMobileNavVisible && (
+        <div className={styles.settingsNavWrapperMobile}>
+          <div className={styles.linkWrapper}>
+            <SideNavLink
+              to="/settings/profile"
+              name="Profile"
+              active={active === "profile"}
+              onClick={handleLinkClick}
+            />
+            <img src={Chevron} />
+          </div>
+          <div className={styles.linkWrapper}>
+            <SideNavLink
+              to="/settings/manage_wallets"
+              name="Manage wallets"
+              active={active === "manage_wallets"}
+              onClick={handleLinkClick}
+            />
+            <img src={Chevron} />
+          </div>
+          <div className={styles.linkWrapper}>
+            <SideNavLink
+              to="/settings/notification"
+              name="Notifications"
+              active={active === "notification"}
+              onClick={handleLinkClick}
+            />
+
+            <img src={Chevron} />
+          </div>
+          <div className={styles.linkWrapper}>
+            <SideNavLink
+              name="Privacy & Security"
+              to="/settings/privacy&security"
+              active={
+                active === "privacy&security" ||
+                active === "privacy&security_messages" ||
+                active === "privacy&security_comments"
+              }
+              onClick={handleLinkClick}
+            />
+            <img src={Chevron} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
