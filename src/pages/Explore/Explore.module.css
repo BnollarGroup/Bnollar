@@ -1,7 +1,17 @@
 .container {
   display: flex;
   column-gap: 25px;
-  padding: 0 16px 0 25px;
+  /* padding: 0 16px 0 25px; */
+}
+
+@media screen and (max-width: 768px) {
+  .leftSideBarContainer {
+    display: none;
+  }
+}
+
+.newsFeedContainer {
+  flex: 3 1;
 }
 
 .title {
@@ -33,6 +43,6 @@
 }
 
 .newsFeed {
-  width: 712px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.04);
 }

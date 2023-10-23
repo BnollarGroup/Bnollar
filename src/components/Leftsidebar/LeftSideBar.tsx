@@ -39,7 +39,6 @@ const LeftSideBar = () => {
               styles.leftMenuButton,
               activePage === button.text ? styles.leftMenuButtonActive : ""
             )}
-            // className={styles.leftMenuButton}
             key={i}
             onClick={() => {
               navigate(`/${button.text.toLowerCase()}`);
