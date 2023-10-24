@@ -25,8 +25,12 @@ const Post: React.FC<PostProps> = (props) => {
         return (
           <div key={index} className={styles.post}>
             <div className={styles.postInner}>
-              <img className={styles.postAvatar} src={post.user.image} alt="" />
               <div className={styles.postContent}>
+                <img
+                  className={styles.postAvatar}
+                  src={post.user.image}
+                  alt=""
+                />
                 <div className={styles.postContentInner}>
                   <div className={styles.postInfo}>
                     <div className={styles.postAuthor}>
