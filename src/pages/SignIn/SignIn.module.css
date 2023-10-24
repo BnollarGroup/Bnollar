@@ -49,7 +49,21 @@
   margin-top: 24px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+  .rightSignIn {
+    width: 100%;
+  }
+
+  .signInWrapper {
+    width: 100%;
+  }
+
+  .text {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
   .signIn {
     flex-direction: row;
     overflow-y: hidden;

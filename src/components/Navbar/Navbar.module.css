@@ -140,7 +140,7 @@
 }
 
 @media all and (max-width: 393px) {
-  .navbar {
+  /* .navbar {
     padding: 10px 16px 34px 16px;
-  }
+  } */
 }

@@ -161,6 +161,7 @@ const Register: FC = () => {
     e.preventDefault();
     setActive(false);
     console.log("iamai");
+    setIsCoverImageUploaded(true);
     const droppedFile = e.dataTransfer.files[0];
     if (droppedFile) {
       setCoverImage(droppedFile);
