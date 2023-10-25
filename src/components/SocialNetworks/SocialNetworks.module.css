@@ -1,8 +1,7 @@
 
 .aboutuserleft {
   display: flex;
-  margin-top: 20px;
-  gap: 10px;
+  gap: 8px;
 }
 
 .aboutuserleft img {

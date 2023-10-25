@@ -1,0 +1,71 @@
+.editButtonContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+  gap: 8PX;
+}
+
+.editButtonContainer button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 20px;
+}
+
+.editIcon {
+  width: 16px;
+  height: 16px;
+}
+.opencovereditdrop {
+  position: absolute;
+  background: #17181B;
+  border-radius: 10px;
+  right: 0px;
+  top: 45px;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+.opencovereditdrop button {
+  padding: 10px 108px 10px 10px;
+  cursor: pointer;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  color: #fff;
+  width: 100%;
+}
+
+.opencovereditdrop button:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.dropcoverbtn {
+  width: 100%;
+  padding: 10px 14px 10px 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: transparent;
+}
+.dropcoverbtn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+@media all and (max-width: 768px) {
+  .editButtonContainer {
+    top: 20px;
+    right: 16px;
+    padding: 8px 14px;
+  }
+  
+}

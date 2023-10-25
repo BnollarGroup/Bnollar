@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
-import Cover from "lib/resources/images/icons/cover (2).png";
 import UserIcon from "lib/resources/images/icons/user-icon.png";
 import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
 import Grid from "lib/resources/images/icons/view-grid.png";
@@ -9,7 +8,6 @@ import PostImg from "lib/resources/images/icons/post-img.png";
 import Edit from "lib/resources/images/icons/edit (2).png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
-import Icon from "../../lib/resources/images/icons/edit.png";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
 import horiz from "lib/resources/images/profile-chat/more-horiz.png";
@@ -17,7 +15,11 @@ import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
 // import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
 import FeedHeader from "components/Home/FeedHeader";
 import UserInformation from "./components/UserInformation"
-import SocialNetworks from "components/SocialNetworks"
+import Cover from "pages/Profile/components/ProfileCover";
+// import EditCoverImg from "./components/User/component/ProfileCover/EditCoverImg"
+import RighSideBar from "pages/Home/RightSideBar/RighSideBar";
+import AboutProfile from "pages/Profile/components/aboutProfile";
+import User from "./components/User"
 
 export type Page = "feed" | "NFTs" | "media";
 
@@ -73,27 +75,45 @@ function Profile() {
 
   const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
-    <Layout>
-      <Navbar />
+    <div className={style.Layout}>
+      <Layout>
+        <div className={style.Navbar}>
+          <Navbar />
+        </div>
+        <div className={style.MainContainer}>
+          <div className={style.LeftSideBar}>
+            <LeftSideBar />
+          </div>
+          <User/>
+
+        </div>
+        {/* <div className={style.MainContainer}>
+          
+          <User />
+          <div className={style.profileContainer}>
+            <div className={style.EditCoverImg}> */}
+              {/* <EditCoverImg /> */}
+              {/* <SocialNetworks/> */}
+
+            {/* </div> */}
+
+            {/* <Cover />
+          <AboutProfile />     */}
+{/* 
+          </div>
+        </div> */}
+
+
+
+        {/* <Navbar />
+      <EditCoverImg/>
       <div className={style.profilemain}>
         <div className={style.feed_leftsideinformation}>
           <LeftSideBar />
         </div>
         <div className={style.profileleft}>
           <div className={style.profilecover}>
-            <div className={style.coverContent}>
-              <img src={Cover} alt="Cover" />
-              <div className={style.editButtonContainer}>
-                <img src={Icon} alt="" className={style.editIcon} />
-                <button
-                  onClick={openCoverEdit}
-                  className={style.editcoverpicture}
-                >
-                  Edit Cover Photo
-                </button>
-              </div>
-              {editcover}
-            </div>
+          <Cover />
           </div>
           <div className={style.aboutuser}>
             <div className={style.aboutuserright}>
@@ -130,7 +150,6 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <SocialNetworks/>
           </div>
           <Tabs
             pages={pages}
@@ -221,8 +240,10 @@ function Profile() {
             <UserInformation />
           </div>
         </div>
-      </div>
-    </Layout>
+      </div> */}
+      </Layout>
+    </div>
+
   );
 }
 
