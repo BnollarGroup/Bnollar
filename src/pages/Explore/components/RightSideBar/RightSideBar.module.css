@@ -4,12 +4,6 @@
   row-gap: 24px;
 }
 
-@media screen and (max-width: 768px) {
-  .rightSidebar {
-    display: none;
-  }
-}
-
 .trends {
   width: 323px;
   height: 400px;
@@ -143,4 +137,10 @@
   font-size: 13px;
   line-height: 20px;
   color: #0d0e11;
+}
+
+@media screen and (max-width: 768px) {
+  .rightSidebar {
+    display: none;
+  }
 }
