@@ -1,0 +1,49 @@
+.user_name {
+    display: flex;
+    align-items: center;
+  }
+  .user_name h1 {
+    color: #fff;
+    font-size: 22px;
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+  }
+  .user_name img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  .about {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .user_ceo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_ceo p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  
+  .user_ceo span {
+    font-size: 13px;
+    color: #ef8031;
+    margin-left: 5px;
+  }
+@media all and (max-width: 768px) {
+  .SocialNetworks{
+    display: none;
+  }
+  
+}
