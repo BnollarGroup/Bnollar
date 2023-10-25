@@ -2,14 +2,21 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   padding: 16px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
 }
 
-.postInner {
-  /* display: flex;
-  column-gap: 14px; */
+.postFlex {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.postFlexInner {
+  display: flex;
+  column-gap: 14px;
 }
 
 .postAvatar {
@@ -21,6 +28,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  row-gap: 16px;
 }
 
 .postContentInner {
@@ -32,13 +40,19 @@
 
 .postInfo {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
 }
 
 .postAuthor {
   display: flex;
+  column-gap: 8px;
   margin-bottom: 6px;
+}
+
+.postAuthorNameInner {
+  display: flex;
+  column-gap: 4px;
 }
 
 .postAuthorName {
@@ -49,16 +63,11 @@
   color: #ffffff;
 }
 
-.verifiedUser {
-  margin-left: 4px;
-}
-
 .postDate {
   font-family: "Inter";
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
-  margin-left: 8px;
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -68,7 +77,15 @@
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
-  margin-bottom: 16px;
+}
+
+.postTextMobile {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  display: none;
 }
 
 .postSettings {
@@ -76,6 +93,7 @@
   height: 24px;
   background: inherit;
   position: relative;
+  align-self: baseline;
 }
 
 .postSettingsInner {
@@ -90,12 +108,11 @@
 .postButtons {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
   gap: 1em;
 }
 
 .postButton {
-  width: 192px;
+  width: 100%;
   height: 40px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
@@ -111,4 +128,22 @@
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
+}
+
+@media screen and (max-width: 425px) {
+  .postAuthor {
+    flex-direction: column;
+  }
+
+  .postText {
+    display: none;
+  }
+
+  .postSettings {
+    align-self: center;
+  }
+
+  .postTextMobile {
+    display: inline-block;
+  }
 }
