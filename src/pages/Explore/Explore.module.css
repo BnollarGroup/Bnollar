@@ -5,12 +5,6 @@
   min-height: 100vh;
 }
 
-@media screen and (max-width: 768px) {
-  .leftSideBarContainer {
-    display: none;
-  }
-}
-
 .newsFeedContainer {
   flex: 3 1;
   max-width: 100%;
@@ -54,5 +48,10 @@
 
 .newsFeed {
   width: 100%;
-  background: rgba(255, 255, 255, 0.04);
+}
+
+@media screen and (max-width: 768px) {
+  .leftSideBarContainer {
+    display: none;
+  }
 }
