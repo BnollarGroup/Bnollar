@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function Rightnavbar() {
   const [activeItem, setActiveItem] = useState("NFT");
-  const [page, setPage] = useState<string>("");
+  // const [page, setPage] = useState<string>("");
 
   const navigate = useNavigate();
 

@@ -250,6 +250,7 @@
   top: 50px;
   left: 0;
   width: 274px;
+  z-index: 999999;
 }
 
 .nftPiece {
@@ -336,5 +337,9 @@
 
   .nftmenuWrapper::-webkit-scrollbar {
     width: 0;
+  }
+
+  .CollectionFilterBox {
+    z-index: 9999;
   }
 }
