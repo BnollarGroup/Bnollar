@@ -5,6 +5,8 @@ import comunity from "lib/resources/images/icons/comunity.svg";
 import settings from "lib/resources/images/icons/settings.svg";
 import hashtag from "lib/resources/images/icons/hashtag.svg";
 import { useLocation, useNavigate } from "react-router-dom";
+import Home from "lib/resources/svg/Home";
+import Statistics from "lib/resources/svg/Statistics";
 
 const LeftSideBar = () => {
   const navigate = useNavigate();
@@ -12,24 +14,32 @@ const LeftSideBar = () => {
 
   const activePage = location.pathname || "/home";
 
-  const buttons: { text: string; icon: string; href: string }[] = [
+  const buttons: { text: string; icon: React.ReactNode; href: string }[] = [
     {
       text: "Home",
-      icon: home,
+      icon: <Home className={styles.icon} color="gray" />,
       href: "/home",
     },
     {
       text: "Explore",
-      icon: hashtag,
+      icon: <Home className={styles.icon} color="gray" />,
       href: "/explore",
     },
     {
       text: "NFT",
-      icon: nft,
+      icon: <Statistics className={styles.icon} color="gray" />,
       href: "/nft",
     },
-    { text: "Community", icon: comunity, href: "/grouppage" },
-    { text: "Settings", icon: settings, href: "/settings/:type" },
+    {
+      text: "Community",
+      icon: <Home className={styles.icon} color="gray" />,
+      href: "/grouppage",
+    },
+    {
+      text: "Settings",
+      icon: <Home className={styles.icon} color="gray" />,
+      href: "/settings/:type",
+    },
   ];
 
   return (
@@ -45,7 +55,7 @@ const LeftSideBar = () => {
             key={i}
             onClick={() => navigate(button.href)}
           >
-            <img src={button.icon} alt="home" />
+            {button.icon}
 
             {button.text}
           </button>

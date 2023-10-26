@@ -93,3 +93,12 @@
 .info ul li:hover {
   color: white;
 }
+
+.icon {
+  margin-right: 0.5em;
+}
+
+.leftMenuButtonActive svg path,
+.leftMenuButton:hover svg path {
+  fill: white;
+}
