@@ -1,8 +1,9 @@
 interface WheelProps {
-  color: string;
+  color?: string;
+  className?: string;
 }
 
-const Wheel = ({ color }: WheelProps) => {
+const Wheel = ({ color = "#0D0E11", className }: WheelProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +11,7 @@ const Wheel = ({ color }: WheelProps) => {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
+      className={className}
     >
       <g clipPath="url(#clip0_1716_449)">
         <path

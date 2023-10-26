@@ -1,8 +1,9 @@
 interface HashtagProps {
-  color: string;
+  color?: string;
+  className?: string;
 }
 
-const Hashtag = ({ color }: HashtagProps) => {
+const Hashtag = ({ color = "#0D0E11", className }: HashtagProps) => {
   return (
     <svg
       width="20"
@@ -10,6 +11,7 @@ const Hashtag = ({ color }: HashtagProps) => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g id="vuesax/linear/hashtag">
         <g id="hashtag">

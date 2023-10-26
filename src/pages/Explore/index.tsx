@@ -8,6 +8,7 @@ import RightSideBar from "pages/Explore/components/RightSideBar/RightSideBar";
 import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import MobileNavBar from "components/MobileNavBar";
 
 function Explore() {
   const [data] = useState<DataType[]>(dataBase);
@@ -43,6 +44,9 @@ function Explore() {
           </div>
         </div>
         <RightSideBar />
+      </div>
+      <div className={styles.MobileNavBarWrapper}>
+        <MobileNavBar />
       </div>
     </Layout>
   );

@@ -1,8 +1,9 @@
 interface GroupProps {
-  color: string;
+  color?: string;
+  className?: string;
 }
 
-const Group = ({ color }: GroupProps) => {
+const Group = ({ color = "#0D0E11", className }: GroupProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +11,7 @@ const Group = ({ color }: GroupProps) => {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
+      className={className}
     >
       <g>
         <path
