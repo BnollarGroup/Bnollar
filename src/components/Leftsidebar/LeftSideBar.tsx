@@ -11,23 +11,26 @@ import { useState } from "react";
 const LeftSideBar = () => {
   const navigate = useNavigate();
 
-  const [activePage, setActivePage] = useState<string>("");
+  const [activePage, setActivePage] = useState<string>("Home");
 
-  const buttons: { text: string; icon: string }[] = [
+  const buttons: { text: string; icon: string; href: string }[] = [
     {
       text: "Home",
       icon: home,
+      href: "/home",
     },
     {
       text: "Explore",
       icon: hashtag,
+      href: "/explore",
     },
     {
       text: "NFT",
       icon: nft,
+      href: "/nft",
     },
-    { text: "Community", icon: comunity },
-    { text: "Settings", icon: settings },
+    { text: "Community", icon: comunity, href: "/grouppage" },
+    { text: "Settings", icon: settings, href: "/settings/:type" },
   ];
 
   return (
@@ -35,13 +38,14 @@ const LeftSideBar = () => {
       <div className={styles.leftMenu}>
         {buttons.map((button, i) => (
           <button
-            className={clsx(
-              styles.leftMenuButton,
-              activePage === button.text ? styles.leftMenuButtonActive : ""
-            )}
+            className={
+              activePage === button.text
+                ? `${styles.leftMenuButton} ${styles.leftMenuButtonActive}`
+                : styles.leftMenuButton
+            }
             key={i}
             onClick={() => {
-              navigate(`/${button.text.toLowerCase()}`);
+              navigate(button.href);
               setActivePage(button.text);
               console.log(activePage);
             }}
