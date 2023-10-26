@@ -4,14 +4,13 @@ import home from "lib/resources/images/icons/home.svg";
 import comunity from "lib/resources/images/icons/comunity.svg";
 import settings from "lib/resources/images/icons/settings.svg";
 import hashtag from "lib/resources/images/icons/hashtag.svg";
-import { useNavigate } from "react-router-dom";
-import clsx from "clsx";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LeftSideBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [activePage, setActivePage] = useState<string>("Home");
+  const activePage = location.pathname || "/home";
 
   const buttons: { text: string; icon: string; href: string }[] = [
     {
@@ -39,16 +38,12 @@ const LeftSideBar = () => {
         {buttons.map((button, i) => (
           <button
             className={
-              activePage === button.text
+              activePage === button.href
                 ? `${styles.leftMenuButton} ${styles.leftMenuButtonActive}`
                 : styles.leftMenuButton
             }
             key={i}
-            onClick={() => {
-              navigate(button.href);
-              setActivePage(button.text);
-              console.log(activePage);
-            }}
+            onClick={() => navigate(button.href)}
           >
             <img src={button.icon} alt="home" />
 
