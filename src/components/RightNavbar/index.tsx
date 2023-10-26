@@ -8,62 +8,45 @@ import Group from "lib/resources/svg/Group";
 import { useNavigate } from "react-router-dom";
 
 function Rightnavbar() {
-  const [activeItem, setActiveItem] = useState("");
+  const [activeItem, setActiveItem] = useState("NFT");
   const [page, setPage] = useState<string>("");
 
   const navigate = useNavigate();
 
-  const handleNavbarItemClick = (itemName: string) => {
-    setActiveItem(itemName);
-    if (activeItem === "Home") {
-      navigate("/home");
-      console.log(activeItem);
-    } else if (activeItem === "Explore") {
-      navigate("/explore");
-    } else if (activeItem === "NFT") {
-      navigate("/NFT");
-    } else if (activeItem === "Community") {
-      navigate("/grouppage");
-    } else {
-      navigate("/settings");
-    }
+  const handleNavbarItemClick = (route: string) => {
+    navigate(route);
   };
 
   return (
     <div className={style.container}>
-      <div className={style.content}>
-        <button
-          className={`${style.navbar} ${
-            activeItem === "Home" ? style.active : ""
-          }`}
-        >
-          <Home
-            color={
-              activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
-            }
-          />
-          <span>Home</span>
-        </button>
-      </div>
-      {/* <div className={style.navcontainer}>
+      <div className={style.navcontainer}>
         <div
           className={`${style.navbar} ${
             activeItem === "Home" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Home")}
+          onClick={() => handleNavbarItemClick("/home")}
         >
           <Home
             color={
               activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Home</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Home"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Home
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "Explore" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Explore")}
+          onClick={() => handleNavbarItemClick("/explore")}
         >
           <Hashtag
             color={
@@ -72,26 +55,42 @@ function Rightnavbar() {
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Explore</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Explore"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Explore
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "NFT" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("NFT")}
+          onClick={() => handleNavbarItemClick("/nft-collection")}
         >
           <Statistics
             color={
               activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>NFT</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            NFT
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "Community" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Community")}
+          onClick={() => handleNavbarItemClick("/grouppage")}
         >
           <Group
             color={
@@ -100,24 +99,42 @@ function Rightnavbar() {
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Community</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Community"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Community
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
-            activeItem === "Setting" ? style.active : ""
+            activeItem === "Settings" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Setting")}
+          onClick={() => handleNavbarItemClick("/settings/:type")}
         >
           <Wheel
             color={
-              activeItem === "Setting"
+              activeItem === "Settings"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Setting</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Settings"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Settings
+          </h1>
         </div>
-      </div> */}
+      </div>
       <div className={style.desc}>
         <div className={style.about}>
           <h2>About</h2>

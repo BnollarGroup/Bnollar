@@ -5,6 +5,8 @@ import Navbar from "components/Navbar";
 import NftMonkey from "lib/resources/images/icons/nft.png";
 import Rightnavbar from "components/RightNavbar";
 import NftFilterMenu from "components/NftCollectionFilter";
+import Layout from "providers/Layout";
+import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 
 function NftCollection() {
   const [nftPicture, setNftPicture] = useState([
@@ -40,43 +42,46 @@ function NftCollection() {
   };
 
   return (
-    <section>
-      <Navbar />
-      <main>
-        <div className={style.menu}>
-          <Rightnavbar />
-        </div>
-        <div className={style.nftCollectioncontainer}>
-          <div className={style.nftcollectionhead}>
-            <h1 onClick={handleNftsClick}>NFTs </h1>
-            <h2 onClick={handleCollectionsClick}>Collections</h2>
+    <Layout>
+      <section>
+        <Navbar />
+        <main>
+          <div className={style.menu}>
+            <Rightnavbar />
+            {/* <LeftSideBar /> */}
           </div>
-          <div className={style.search}>
-            <input
-              className={style.searchInput}
-              type="text"
-              placeholder="Search NFTs"
-            />
-          </div>
-          <NftFilterMenu showNewestFilter={showNewestFilter} />
-          <div className={style.nft_market}>
-            {nftPicture.map((nft, index) => {
-              return (
-                <div key={index} className={style.nft_description}>
-                  <div className={style.nft_description_img}>
-                    <img src={nft.img} alt={nft.name} />
+          <div className={style.nftCollectioncontainer}>
+            <div className={style.nftcollectionhead}>
+              <h1 onClick={handleNftsClick}>NFTs </h1>
+              <h2 onClick={handleCollectionsClick}>Collections</h2>
+            </div>
+            <div className={style.search}>
+              <input
+                className={style.searchInput}
+                type="text"
+                placeholder="Search NFTs"
+              />
+            </div>
+            <NftFilterMenu showNewestFilter={showNewestFilter} />
+            <div className={style.nft_market}>
+              {nftPicture.map((nft, index) => {
+                return (
+                  <div key={index} className={style.nft_description}>
+                    <div className={style.nft_description_img}>
+                      <img src={nft.img} alt={nft.name} />
+                    </div>
+                    <div className={style.nft_text}>
+                      <h2>{nft.name}</h2>
+                      <h1>{nft.price}</h1>
+                    </div>
                   </div>
-                  <div className={style.nft_text}>
-                    <h2>{nft.name}</h2>
-                    <h1>{nft.price}</h1>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </main>
-    </section>
+        </main>
+      </section>
+    </Layout>
   );
 }
 
