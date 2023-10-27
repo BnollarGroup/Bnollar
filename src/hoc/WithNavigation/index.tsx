@@ -1,4 +1,3 @@
-import Navbar from "components/Navbar";
 import SettingsTopNav from "../../components/Settings/SettingsTopNav/SettingsTopNav";
 import SideNav from "components/Sidenav";
 import { ComponentType } from "react";

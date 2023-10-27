@@ -328,18 +328,16 @@
   }
 
   .nftmenuMain {
-    overflow-x: auto;
+    width: 100%;
+    overflow-x: scroll;
   }
 
   .nftmenuWrapper {
     overflow-x: auto;
+    position: relative;
   }
 
   .nftmenuWrapper::-webkit-scrollbar {
     width: 0;
-  }
-
-  .CollectionFilterBox {
-    z-index: 9999;
   }
 }
