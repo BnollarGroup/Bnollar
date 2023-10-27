@@ -1,7 +1,7 @@
 main {
   display: flex;
   column-gap: 25px;
-  padding: 0px 32px 154px 32px;
+  /* padding: 0px 32px 154px 32px; */
 }
 
 .nftcollectionhead {
@@ -106,7 +106,7 @@ main {
   padding: 16px;
 }
 
-@media all and (max-width: 1078px) {
+@media all and (max-width: 952px) {
   main {
     column-gap: 0px;
   }
@@ -123,10 +123,10 @@ main {
 }
 
 @media all and (max-width: 393px) {
-  main {
+  /* main {
     padding: 0px 16px 50px 16px;
-  }
+  } */
   .nft_market {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }

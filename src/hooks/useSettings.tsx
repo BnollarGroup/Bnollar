@@ -1,11 +1,16 @@
+import ManageWallets from "components/Settings/ManageWallets/ManageWallets";
+import Notifications from "components/Settings/Notifications/Notifications";
+import Profile from "components/Settings/Profile/Profile";
+import Security from "components/Settings/Security/Security";
 import { useParams } from "react-router-dom";
-import ManageWallets from "../components/Settings/ManageWallets/ManageWallets";
-import Notifications from "../components/Settings/Notifications/Notifications";
-import Profile from "../components/Settings/Profile/Profile";
 import NotificationControls from "../components/Settings/Security/NotificationControls";
-import Security from "../components/Settings/Security/Security";
 
-const useSettings = () => {
+interface SettingsData {
+  component: React.ReactNode;
+  type: string;
+}
+
+const useSettings = (): SettingsData => {
   const { type } = useParams();
 
   const getComponent = () => {
@@ -24,7 +29,6 @@ const useSettings = () => {
         return <NotificationControls type="Comment" />;
     }
   };
-
   return {
     component: getComponent(),
     type: typeof type === "string" ? type : "error",

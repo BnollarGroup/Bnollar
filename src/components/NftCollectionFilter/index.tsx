@@ -80,14 +80,14 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
     <div className={style.nftmenuMain}>
       <div className={style.nftmenuWrapper}>
         <div className={style.nftmenu}>
-          <div className={style.chains}>
+          <div className={style.chains} onClick={handleChainsFilter}>
             <img src={Circle} className={style.circle}></img>
             <div className={style.breakDown}>
               <button className={style.breakDownbtn}>All Chains</button>
               <img
                 src={ArrowDown}
                 className={style.breakDownArrow}
-                onClick={handleChainsFilter}
+                // onClick={handleChainsFilter}
               />
             </div>
             {showChainsFilter && (
@@ -130,12 +130,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn}>
+          <div className={style.nftmenubtn} onClick={handleStatusFilter}>
             <button className={style.nftmenubutton}>Status</button>
             <img
               src={ArrowDown}
               className={style.breakDownArrow}
-              onClick={handleStatusFilter}
+              // onClick={handleStatusFilter}
             />
             {showStatusFilter && (
               <div className={style.statusFilterBox}>
@@ -160,12 +160,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn}>
+          <div className={style.nftmenubtn} onClick={handlePriceFilter}>
             <button className={style.nftmenubutton}>Price</button>
             <img
               src={ArrowDown}
               className={style.breakDownArrow}
-              onClick={handlePriceFilter}
+              // onClick={handlePriceFilter}
             />
             {showPriceFilter && (
               <div className={style.priceFilterBox}>
@@ -190,12 +190,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn}>
+          <div className={style.nftmenubtn} onClick={handleMarketPlaceFilter}>
             <button className={style.nftmenubutton}>Marketplace</button>
             <img
               src={ArrowDown}
               className={style.breakDownArrow}
-              onClick={handleMarketPlaceFilter}
+              // onClick={handleMarketPlaceFilter}
             />
             {showMarketPlaceFilter && (
               <div className={style.chainsFilterBox}>
@@ -247,12 +247,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn}>
+          <div className={style.nftmenubtn} onClick={handleCollectionFilter}>
             <button className={style.nftmenubutton}>Collection</button>
             <img
               src={ArrowDown}
               className={style.breakDownArrow}
-              onClick={handleCollectionFilter}
+              // onClick={handleCollectionFilter}
             />
             {showCollectionFilter && (
               <div className={style.CollectionFilterBox}>
@@ -298,12 +298,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
           </div>
         </div>
         {showNewestFilter && (
-          <div className={style.nftmenubtn}>
+          <div className={style.nftmenubtn} onClick={handleDateFilter}>
             <button className={style.nftmenubutton}>Newest</button>
             <img
               src={ArrowDown}
               className={style.breakDownArrow}
-              onClick={handleDateFilter}
+              // onClick={handleDateFilter}
             />
             {showDateFilter && (
               <div className={style.dateFilterBox}>

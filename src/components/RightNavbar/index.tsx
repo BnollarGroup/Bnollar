@@ -5,35 +5,48 @@ import Hashtag from "lib/resources/svg/Hashtag";
 import Statistics from "lib/resources/svg/Statistics";
 import Wheel from "lib/resources/svg/Wheel";
 import Group from "lib/resources/svg/Group";
+import { useNavigate } from "react-router-dom";
 
 function Rightnavbar() {
-  const [activeItem, setActiveItem] = useState("");
+  const [activeItem, setActiveItem] = useState("NFT");
+  const [page, setPage] = useState<string>("");
 
-  const handleNavbarItemClick = (itemName: string) => {
-    setActiveItem(itemName);
+  const navigate = useNavigate();
+
+  const handleNavbarItemClick = (route: string) => {
+    navigate(route);
   };
 
   return (
-    <div className={style.navigator}>
+    <div className={style.container}>
       <div className={style.navcontainer}>
         <div
           className={`${style.navbar} ${
             activeItem === "Home" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Home")}
+          onClick={() => handleNavbarItemClick("/home")}
         >
           <Home
             color={
               activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Home</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Home"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Home
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "Explore" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Explore")}
+          onClick={() => handleNavbarItemClick("/explore")}
         >
           <Hashtag
             color={
@@ -42,26 +55,42 @@ function Rightnavbar() {
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Explore</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Explore"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Explore
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "NFT" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("NFT")}
+          onClick={() => handleNavbarItemClick("/nft-collection")}
         >
           <Statistics
             color={
               activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>NFT</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            NFT
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
             activeItem === "Community" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Community")}
+          onClick={() => handleNavbarItemClick("/grouppage")}
         >
           <Group
             color={
@@ -70,22 +99,40 @@ function Rightnavbar() {
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Community</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Community"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Community
+          </h1>
         </div>
         <div
           className={`${style.navbar} ${
-            activeItem === "Setting" ? style.active : ""
+            activeItem === "Settings" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Setting")}
+          onClick={() => handleNavbarItemClick("/settings/:type")}
         >
           <Wheel
             color={
-              activeItem === "Setting"
+              activeItem === "Settings"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
             }
           />
-          <h1>Setting</h1>
+          <h1
+            style={{
+              color:
+                activeItem === "Settings"
+                  ? "#ffffff"
+                  : "rgba(255, 255, 255, 0.403)",
+            }}
+          >
+            Settings
+          </h1>
         </div>
       </div>
       <div className={style.desc}>

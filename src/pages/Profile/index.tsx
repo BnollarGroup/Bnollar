@@ -1,24 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
-import Cover from "lib/resources/images/icons/cover (2).png";
 import UserIcon from "lib/resources/images/icons/user-icon.png";
 import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
-import Instagram from "lib/resources/images/icons/instagram.png";
 import Grid from "lib/resources/images/icons/view-grid.png";
-import UserFeedPic from "lib/resources/images/icons/userfeedpic.png";
 import PostImg from "lib/resources/images/icons/post-img.png";
-import MeriaLogo from "lib/resources/images/icons/briefcase.png";
 import Edit from "lib/resources/images/icons/edit (2).png";
-import Twitter from "lib/resources/images/icons/_Twitter (2).png";
-import Discord from "lib/resources/images/icons/Discord.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
-import LeftSideBar from "pages/Home/Leftsidebar/LeftSideBar";
-import Icon from "../../lib/resources/images/icons/edit.png";
+import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Layout from "providers/Layout";
+import Tabs from "components/Tabs";
+import horiz from "lib/resources/images/profile-chat/more-horiz.png";
+import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
+// import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
+import FeedHeader from "components/Home/FeedHeader";
+import UserInformation from "./components/UserInformation"
+import Cover from "pages/Profile/components/ProfileCover";
+// import EditCoverImg from "./components/User/component/ProfileCover/EditCoverImg"
+import RighSideBar from "pages/Home/RightSideBar/RighSideBar";
+import AboutProfile from "pages/Profile/components/aboutProfile";
+import User from "./components/User"
+
+export type Page = "feed" | "NFTs" | "media";
 
 function Profile() {
   const [openCover, setOperCover] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // const openModal = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  const pages: { page: Page; icon: any }[] = [
+    {
+      page: "feed",
+      icon: Grid,
+    },
+    {
+      page: "NFTs",
+      icon: StatsReport,
+    },
+    { page: "media", icon: StatsReport },
+  ];
+
   let editcover;
   if (openCover) {
     editcover = (
@@ -49,28 +73,47 @@ function Profile() {
     setProfilePic(true);
   }
 
+  const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
-    <Layout>
-      <Navbar />
+    <div className={style.Layout}>
+      <Layout>
+        <div className={style.Navbar}>
+          <Navbar />
+        </div>
+        <div className={style.MainContainer}>
+          <div className={style.LeftSideBar}>
+            <LeftSideBar />
+          </div>
+          <User/>
+
+        </div>
+        {/* <div className={style.MainContainer}>
+          
+          <User />
+          <div className={style.profileContainer}>
+            <div className={style.EditCoverImg}> */}
+              {/* <EditCoverImg /> */}
+              {/* <SocialNetworks/> */}
+
+            {/* </div> */}
+
+            {/* <Cover />
+          <AboutProfile />     */}
+{/* 
+          </div>
+        </div> */}
+
+
+
+        {/* <Navbar />
+      <EditCoverImg/>
       <div className={style.profilemain}>
-        <div className={style.profileright}>
+        <div className={style.feed_leftsideinformation}>
           <LeftSideBar />
         </div>
         <div className={style.profileleft}>
           <div className={style.profilecover}>
-            <div className={style.coverContent}>
-              <img src={Cover} alt="Cover" />
-              <div className={style.editButtonContainer}>
-                <img src={Icon} alt="" className={style.editIcon} />
-                <button
-                  onClick={openCoverEdit}
-                  className={style.editcoverpicture}
-                >
-                  Edit Cover Photo
-                </button>
-              </div>
-              {editcover}
-            </div>
+          <Cover />
           </div>
           <div className={style.aboutuser}>
             <div className={style.aboutuserright}>
@@ -86,161 +129,122 @@ function Profile() {
                   {profilePicEdit}
                 </div>
               </div>
-              <div className={style.user_name}>
-                <h1>Christopher Reinger</h1>
-                <img src={Verifed} />
-              </div>
+
               <div className={style.user_about}>
-                <p>
+                <div className={style.user_name}>
+                  <h1>Christoh1her Reinger</h1>
+                  <img src={Verifed} />
+                </div>
+                <p className={style.about}>
                   I am a hard-working and driven individual who {`isn't`} afraid
                   to face a challenge.
                 </p>
                 <div className={style.user_ceo}>
-                  <h1>CEO at</h1>
+                  <p>CEO at</p>
                   <span>SAMSDS</span>
                 </div>
                 <div className={style.followers_following}>
-                  <h1>124 Follower</h1>
+                  <p>124 Follower</p>
                   <span>|</span>
                   <h2>100 Following</h2>
                 </div>
               </div>
             </div>
-            <div className={style.aboutuserleft}>
-              <img src={Instagram} />
-              <img src={Twitter} />
-              <img src={Discord} />
-              <button>Follow</button>
-              <button className={style.dotbtn}>...</button>
-            </div>
           </div>
-          <div className={style.user_feed}>
-            <div className={style.feed_box}>
-              <div className={style.newsexmpl}>
-                <div className={style.newsflex}>
-                  <img src={Grid} />
-                  <h1>Feed</h1>
-                </div>
-                <div className={style.menuline}></div>
-              </div>
-              <div className={style.news}>
-                <img src={StatsReport} />
-                <h1>NFTs</h1>
-              </div>
-              <div className={style.news}>
-                <img src={StatsReport} />
-                <h1>Media</h1>
-              </div>
-            </div>
-            <div className={style.line}></div>
-          </div>
+          <Tabs
+            pages={pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+          <div className={style.tabsLine}></div>
+
           <div className={style.news_feed}>
             <div className={style.feed_rightside}>
-              <div className={style.upload_news}>
-                <div className={style.upload_news_author_pic}>
-                  <img src={UserFeedPic} />
-                </div>
-                <div className={style.upload_news_desc}>
-                  <div className={style.user_name}>
-                    <h1>Christopher Williams</h1>
-                    <img src={Verifed} />
-                    <span>14 Dec</span>
+              <div>
+                <FeedHeader />
+              </div>
+              <div className={style.post}>
+                <div className={style.postDiv}>
+                  <div className={style.upload_news_author_pic}>
+                    <img src={UserIcon} className={style.userPostImage} />
                   </div>
-                  <p>
-                    #Bitcoin seems to be doing exactly what its done for about a
-                    year. Strong sell-off, consolidate & slow grind up, create a
-                    bear flag, RSI breaks down its trend line, bear flag breaks
-                    down for another strong sell-off and the cycle begins again.
-                  </p>
-                  <div className={style.rate_btns}>
-                    <div className={style.upvote}>
-                      <button>Upvote</button>
+                  <div className={style.post_container}>
+                    <div>
+                      <div className={style.user_name_container}>
+                        <div className={style.post_user_name}>
+                          <h1>Christopher Williams</h1>
+                          <img src={Verifed} />
+                          <span>Dec 14</span>
+                        </div>
+                        <div className={style.horiz}>
+                          <img src={horiz} alt="" />
+                        </div>
+                      </div>
+
+                      <div className={style.post_text}>
+                        <p>
+                          #Bitcoin seems to be doing exactly what its done for
+                          about a year. Strong sell-off, consolidate & slow
+                          grind up, create a bear flag, RSI breaks down its
+                          trend line, bear flag breaks down for another strong
+                          sell-off and the cycle begins again.
+                        </p>
+                      </div>
                     </div>
-                    <div className={style.comment}>
-                      <button>Comment</button>
-                    </div>
-                    <div className={style.share}>
-                      <button>Share</button>
+                    <div className={style.rate_btns}>
+                      <UpvoteButton />
+                      <CommnetButton />
+                      <ShareButton />
                     </div>
                   </div>
                 </div>
               </div>
               <div className={style.post}>
-                <div className={style.post_box}>
+                <div className={style.postDiv}>
                   <div className={style.upload_news_author_pic}>
-                    <img src={UserFeedPic} />
+                    <img src={UserIcon} className={style.userPostImage} />
                   </div>
-                  <div className={style.upload_news_desc}>
-                    <div className={style.user_name}>
-                      <h1>Christopher Williams</h1>
-                      <img src={Verifed} />
-                      <span>14 Dec</span>
+                  <div className={style.post_container}>
+                    <div>
+                      <div className={style.user_name_container}>
+                        <div className={style.post_user_name}>
+                          <h1>Christopher Williams</h1>
+                          <img src={Verifed} />
+                          <span>Dec 14</span>
+                        </div>
+                        <div className={style.horiz}>
+                          <img src={horiz} alt="" />
+                        </div>
+                      </div>
+
+                      <div className={style.post_text}>
+                        <p>
+                          #Bitcoin seems to be doing exactly what its done for
+                          about a year. Strong sell-off, consolidate & slow
+                          grind up, create a bear flag, RSI breaks down its
+                          trend line, bear flag breaks down for another strong
+                          sell-off and the cycle begins again.
+                        </p>
+                      </div>
                     </div>
-                    <p>I am selling this NFT from Clone x collection</p>
-                    <div className={style.post_img}>
-                      <img src={PostImg} />
-                    </div>
-                    <div className={style.buy_now}>
-                      <div className={style.price}>
-                        <h1>Clone X</h1>
-                        <h1>445 ETH</h1>
-                      </div>
-                      <div className={style.buy_btn}>
-                        <button>BUY NOW</button>
-                      </div>
-                    </div>
-                    <div className={style.btns}>
-                      <div className={style.upvote}>
-                        <button>433</button>
-                      </div>
-                      <div className={style.comment}>
-                        <button>Comment</button>
-                      </div>
-                      <div className={style.share}>
-                        <button>Share</button>
-                      </div>
+                    <img src={PostImg} alt="" />
+                    <div className={style.rate_btns}>
+                      <UpvoteButton />
+                      <CommnetButton />
+                      <ShareButton />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className={style.feed_leftsideinformation}>
-              <div className={style.about_box}>
-                <div className={style.edit_info}>
-                  <h1>About</h1>
-                  <h1>Edit Information</h1>
-                </div>
-                <div className={style.user_description}>
-                  <div className={style.about_user_desc}>
-                    <img src={MeriaLogo} />
-                    <h1>Worked at Meria</h1>
-                  </div>
-                  <div className={style.about_user_desc}>
-                    <img src={MeriaLogo} />
-                    <h1>Former Pianist at Alla Pugacheva Band</h1>
-                  </div>
-                  <div className={style.about_user_desc}>
-                    <img src={MeriaLogo} />
-                    <h1>Studied at Georgian Technical University</h1>
-                  </div>
-                  <div className={style.about_user_desc}>
-                    <img src={MeriaLogo} />
-                    <h1>Lives in Yerevan, Armenia </h1>
-                  </div>
-                </div>
-              </div>
-              <div className={style.friend_box}>
-                <div className={style.friends}>
-                  <h1>Friends 133</h1>
-                </div>
-              </div>
-            </div>
+            <UserInformation />
           </div>
         </div>
-      </div>
-    </Layout>
+      </div> */}
+      </Layout>
+    </div>
+
   );
 }
 
 export default Profile;
-

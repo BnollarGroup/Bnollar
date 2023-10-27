@@ -1,8 +1,9 @@
 interface StatisticsProps {
-  color: string;
+  color?: string;
+  className?: string;
 }
 
-const Statistics = ({ color }: StatisticsProps) => {
+const Statistics = ({ color = "#0D0E11", className }: StatisticsProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +11,7 @@ const Statistics = ({ color }: StatisticsProps) => {
       height="20"
       viewBox="0 0 20 20"
       fill="none"
+      className={className}
     >
       <path
         d="M8.33333 7.5H5"

@@ -1,7 +1,13 @@
 .container {
   display: flex;
   column-gap: 25px;
-  padding: 0 16px 0 25px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.newsFeedContainer {
+  flex: 3 1;
+  max-width: 100%;
 }
 
 .title {
@@ -14,9 +20,16 @@
 
 .categoryButtons {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   column-gap: 8px;
   margin: 24px 0;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.categoryButtons::-webkit-scrollbar {
+  display: none;
 }
 
 .categoryButton {
@@ -30,9 +43,21 @@
   font-size: 13px;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.6);
+  text-wrap: nowrap;
 }
 
 .newsFeed {
-  width: 712px;
-  background: rgba(255, 255, 255, 0.04);
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .leftSideBarContainer {
+    display: none;
+  }
+
+  .MobileNavBarWrapper {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
 }

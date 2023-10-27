@@ -3,11 +3,101 @@
   height: max-content;
   padding: 10px;
   border-radius: 10px;
-  position: fixed;
+
   width: 323px;
 }
 
 .settingsNavContainer {
   width: 100%;
   max-width: 323px;
+}
+
+.settingsNavWrapperMobile {
+  display: none;
+}
+
+.mobileSettings {
+  display: none;
+}
+
+.topNavMobile {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .settingsNavWrapper {
+    display: none;
+  }
+
+  .settingsNavContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .settingsNavWrapperMobile {
+    display: block;
+    background: #17181b;
+    height: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .linkWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 16px;
+  }
+
+  .topNavMobileWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 62px;
+  }
+
+  .mobileSettings {
+    display: block;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .mobileSettingsTitle {
+    color: #fff;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+  }
+
+  .topNavMobile {
+    display: block;
+    padding: 21px 16px 0px 0px;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 900px) {
+  .settingsNavWrapper {
+    width: 200px;
+  }
+
+  .settingsNavContainer {
+    max-width: 200px;
+
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 901px) and (max-width: 1124px) {
+  .settingsNavWrapper {
+    width: 220px;
+  }
+
+  .settingsNavContainer {
+    max-width: 220px;
+    width: 100%;
+  }
 }

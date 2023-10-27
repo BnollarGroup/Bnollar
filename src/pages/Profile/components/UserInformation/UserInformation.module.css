@@ -1,0 +1,111 @@
+.aboutuser {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  
+.feed_rightsideinformation {
+    flex: 1;
+  }
+  
+  .about_box {
+    position: relative;
+    width: 100%;
+    background-color: #17181b;
+    border-radius: 5px;
+    padding: 10px 15px 15px 10px;
+  }
+
+  .edit_info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .edit_info p {
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .edit_info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .edit_info p {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+.about_user_desc {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: 5px;
+  }
+  
+  .about_user_desc img {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+  }
+
+  .about_user_desc p {
+    font-size: 13px;
+    margin-top: 15px;
+    margin-left: 10px;
+    color: #fff;
+  }
+  .friend_box {
+    position: relative;
+    background-color: #17181b;
+    width: 100%;
+    height: 56px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  .friend_box h1 {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .friend_box p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .friends {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 0 0 15px;
+    color: #fff;
+  }
+  
+  .friends p {
+    color: #fff;
+  }
+  
+  .friends .friendMembers {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.4) !important;
+  }
+  
+.editInfo {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }

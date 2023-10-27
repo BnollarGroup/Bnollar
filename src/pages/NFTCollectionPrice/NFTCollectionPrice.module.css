@@ -1,7 +1,7 @@
 .nftcollection2_main {
   display: flex;
   column-gap: 25px;
-  padding: 0px 32px 154px 32px;
+  /* padding: 0px 32px 154px 32px; */
 }
 
 .leftside {
@@ -339,16 +339,20 @@
 }
 
 @media all and (max-width: 1078px) {
-  .nftcollection2_main {
+  /* .nftcollection2_main {
     column-gap: 0px;
-  }
+  } */
 
   .leftside {
     width: 100%;
   }
+
+  .Rightnavbar_wrapper {
+    display: none;
+  }
 }
 
-@media all and (max-width: 730px) {
+@media all and (max-width: 705px) {
   .nfts {
     margin-top: 15px;
   }
@@ -456,7 +460,7 @@
 }
 
 @media all and (max-width: 393px) {
-  .nftcollection2_main {
+  /* .nftcollection2_main {
     padding: 0px 16px 50px 16px;
-  }
+  } */
 }

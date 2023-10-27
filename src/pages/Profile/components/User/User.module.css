@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+}
+.aboutUserProfile{
+    position: relative;
+    top: -40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

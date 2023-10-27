@@ -10,9 +10,9 @@ interface ToggleCardProps {
 const ToggleCard = ({ title, description, linkName }: ToggleCardProps) => {
   return (
     <div className={styles.card}>
-      <div>
+      <div className={contStyles.labelWrap}>
         <h5 className={contStyles.label}>{title}</h5>
-        <p className={contStyles.message}>
+        <p className={contStyles.messageEdit}>
           {description}{" "}
           {linkName && (
             <a href="#" className={styles.link}>

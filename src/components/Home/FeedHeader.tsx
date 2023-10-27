@@ -7,11 +7,21 @@ import emoji from "lib/resources/images/icons/emoji.svg";
 import language from "lib/resources/images/icons/language.svg";
 
 const FeedHeader = () => {
+  const [thought, setThought] = React.useState("");
+
   return (
     <div className={styles.feedHeader}>
       <div className={styles.headerSearch}>
         <img src={user1} />
-        <input type="text" placeholder="Write your thought"></input>
+        <textarea
+          id="post"
+          placeholder="Write your thought"
+          value={thought}
+          onChange={(e) => setThought(e.target.value)}
+          style={{
+            height: !thought ? "auto" : "3.5em",
+          }}
+        ></textarea>
       </div>
       <div className={styles.headerButtons}>
         <div className={styles.leftButtons}>

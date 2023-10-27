@@ -2,7 +2,7 @@
   display: flex;
   background-color: transparent;
   flex-direction: column;
-  flex: 1.5;
+  flex: 1;
 }
 
 .leftMenu {
@@ -38,6 +38,11 @@
 
 .leftMenuButton.active {
   background: rgba(255, 255, 255, 0.04);
+}
+
+.leftMenuButtonActive {
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
 }
 
 .leftMenuButton:hover {
@@ -87,4 +92,13 @@
 }
 .info ul li:hover {
   color: white;
+}
+
+.icon {
+  margin-right: 0.5em;
+}
+
+.leftMenuButtonActive svg path,
+.leftMenuButton:hover svg path {
+  fill: white;
 }

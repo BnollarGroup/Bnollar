@@ -1,9 +1,10 @@
 import Navbar from "components/Navbar";
 import Feed from "./Feed/Feed";
 import styles from "./Home.module.css";
-import LeftSideBar from "./Leftsidebar/LeftSideBar";
 import RighSideBar from "./RightSideBar/RighSideBar";
 import Layout from "providers/Layout";
+import Rightnavbar from "components/RightNavbar";
+import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 
 export default function Home() {
   return (
