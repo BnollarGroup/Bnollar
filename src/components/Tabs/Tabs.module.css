@@ -1,8 +1,6 @@
 .menu {
   display: flex;
-  margin-top: 20px;
   height: 60px;
-
   color: var(--white-color);
 }
 

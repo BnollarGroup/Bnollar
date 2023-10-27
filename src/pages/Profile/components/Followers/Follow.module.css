@@ -2,7 +2,7 @@
   background: rgba(255, 255, 255, 0.04);
   display: flex;
   padding: 16px 24px 16px 16px;
-  align-items: center;
+  justify-content: center;
   gap: 24px;
   width: 29.5em;
   border-radius: 10px;
@@ -17,11 +17,6 @@
   width: 1px;
   height: 20px;
   background: rgba(255, 255, 255, 0.1);
-}
-
-.followers_following h2 {
-  font-size: 16px;
-  color: #ffffff;
 }
 
 @media all and (width:768px){
