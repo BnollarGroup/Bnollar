@@ -42,6 +42,7 @@
 
 .leftMenuButtonActive {
   background: rgba(255, 255, 255, 0.04);
+  color: white;
 }
 
 .leftMenuButton:hover {
@@ -91,4 +92,13 @@
 }
 .info ul li:hover {
   color: white;
+}
+
+.icon {
+  margin-right: 0.5em;
+}
+
+.leftMenuButtonActive svg path,
+.leftMenuButton:hover svg path {
+  fill: white;
 }

@@ -1,0 +1,15 @@
+/* .userimg{
+  position: absolute;
+  top: 340px;
+} */
+.userimg img{
+    border-radius: 50%;
+    width: 132px;
+    height: 132px;
+  }
+  
+@media all and (max-width: 768px) {
+  .userimg{
+    top: 160px;
+  }
+}

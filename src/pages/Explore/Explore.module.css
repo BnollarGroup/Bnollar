@@ -54,4 +54,10 @@
   .leftSideBarContainer {
     display: none;
   }
+
+  .MobileNavBarWrapper {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
 }
