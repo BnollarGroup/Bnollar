@@ -16,21 +16,20 @@
 }
 
 .createnftwidth {
-  width: 60%;
+  width: 100%;
+  max-width: 80%;
   margin: auto;
   display: flex;
-  gap: 40px
+  gap: 10em;
 }
 
 .leftSide {
-  width: 60%;
   padding-left: 50px;
 }
 
 .rightSide {
-  width: 40%;
   border-radius: 10px;
-/* background: rgba(255, 255, 255, 0.04); */
+  /* background: rgba(255, 255, 255, 0.04); */
 }
 
 .createNewNft {
