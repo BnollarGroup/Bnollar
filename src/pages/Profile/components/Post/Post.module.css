@@ -44,10 +44,21 @@
   width: 100%;
 }
 
+.postUploadImg {
+  width: 100%;
+}
+
 .postAuthor {
   display: flex;
   column-gap: 8px;
   margin-bottom: 6px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.author {
+  display: flex;
+  gap: 8px;
 }
 
 .postAuthorNameInner {
@@ -69,6 +80,8 @@
   font-size: 13px;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
 }
 
 .postText {
@@ -77,6 +90,7 @@
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .postTextMobile {
@@ -105,18 +119,27 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.rate_btns{
+.rate_btns {
   display: flex;
   width: 100%;
+  justify-content: space-between;
+}
+
+.postContainerMobile {
+  display: none;
 }
 
 @media screen and (max-width: 425px) {
-  .postAuthor {
-    flex-direction: column;
+  .postContainer {
+    display: none;
   }
 
   .postText {
     display: none;
+  }
+
+  .postContainerMobile {
+    display: inline-block;
   }
 
   .postSettings {

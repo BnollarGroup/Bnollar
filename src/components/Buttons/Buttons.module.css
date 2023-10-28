@@ -17,6 +17,7 @@
 .shareButton {
   box-sizing: border-box;
 }
+
 .styled_button {
   display: flex;
   flex-direction: row;
@@ -49,15 +50,7 @@
   width: 213px;
 }
 
-.shareButton {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-  border-radius: 6px;
-}
+
 
 .shareButton button {
   font-family: "Inter";
