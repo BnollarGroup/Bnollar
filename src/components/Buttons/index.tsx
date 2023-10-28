@@ -46,7 +46,7 @@ export const UpvoteButton = () => {
   };
   return (
     <button
-      className={showUpVote ? styles.upvote : "none"}
+      className={showUpVote ? styles.upvote : styles.styled_button}
       onClick={handleUpvoteClick}
     >
       <img src={showUpVote ? upvoteOn : upvote} alt="vote" />
@@ -62,7 +62,7 @@ export const CommnetButton = () => {
   };
   return (
     <button
-      className={showComment ? styles.upvote : "none"}
+      className={showComment ? styles.upvote : styles.styled_button}
       onClick={handleCommentClick}
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />

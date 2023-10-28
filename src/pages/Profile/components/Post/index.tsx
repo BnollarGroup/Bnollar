@@ -37,39 +37,58 @@ const Post: React.FC<PostProps> = (props) => {
                   <div className={styles.postContentInner}>
                     <div className={styles.postInfo}>
                       <div className={styles.postAuthor}>
-                        <div className={styles.postAuthorNameInner}>
-                          <span className={styles.postAuthorName}>
-                            {post.user.name}
+                        <div className={styles.author}>
+                          <div className={styles.postAuthorNameInner}>
+                            <span className={styles.postAuthorName}>
+                              {post.user.name}
+                            </span>
+                            {post.verified ? (
+                              <img
+                                className={styles.verifiedUser}
+                                src={verifiedIcon}
+                                alt="verified user icon"
+                              />
+                            ) : null}
+
+                          </div>
+                          <span className={styles.postDate}>
+                            {post.createdAt}
                           </span>
-                          {post.verified ? (
-                            <img
-                              className={styles.verifiedUser}
-                              src={verifiedIcon}
-                              alt="verified user icon"
-                            />
-                          ) : null}
                         </div>
-                        <span className={styles.postDate}>
-                          {post.createdAt}
-                        </span>
+                        <button className={styles.postSettings}>
+                          <span className={styles.postSettingsInner}>...</span>
+                        </button>
                       </div>
-                      <p className={styles.postText}>{post.content}</p>
+                      <div className={styles.postContainer}>
+                        <p className={styles.postText}>{post.content}</p>
+                        {post.attachment.length > 0 ? (
+                          <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
+                        ) : null}
+                        <div className={styles.rate_btns}>
+                          <UpvoteButton />
+                          <CommnetButton />
+                          <ShareButton />
+                        </div>
+                      </div>
+
                     </div>
-                    <button className={styles.postSettings}>
-                      <span className={styles.postSettingsInner}>...</span>
-                    </button>
+
                   </div>
                 </div>
+                <div className={styles.postContainerMobile}>
                 <p className={styles.postTextMobile}>{post.content}</p>
-                {post.attachment.length > 0 ? (
-                  <img src={post.attachment} alt="attachment icon" />
-                ) : null}
+                        {post.attachment.length > 0 ? (
+                          <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
+                  ) : null}
+                  
+                        <div className={styles.rate_btns}>
+                          <UpvoteButton />
+                          <CommnetButton />
+                          <ShareButton />
+                        </div>
+                      </div>
               </div>
-              <div className={styles.rate_btns}>
-                <UpvoteButton />
-                <CommnetButton />
-                <ShareButton />
-              </div>
+
             </div>
           </div>
         );
