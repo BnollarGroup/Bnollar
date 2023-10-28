@@ -7,7 +7,7 @@ function index() {
         <div className={style.followers_following}>
             <p>124 Follower</p>
             <span>|</span>
-            <h2>100 Following</h2>
+            <p>100 Following</p>
         </div>
     )
 }

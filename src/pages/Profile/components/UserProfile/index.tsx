@@ -6,13 +6,6 @@ import FollowUser from "../FollowUser"
 function index() {
   return (
     <div>
-      <div className={style.flex}>
-
-        <div className={style.followUser}>
-          {/* <FollowUser /> */}
-        </div>
-      </div>
-
       <div className={style.user_name}>
         <h1>Christoh1her Reinger</h1>
 

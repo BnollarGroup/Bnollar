@@ -15,7 +15,7 @@ function User() {
                 <AboutUser />
                 <Followers />
             </div>
-            <div>
+            <div className={style.responsiveSocialNetwork}>
                 <SocialNetworks />
             </div>
         </div>

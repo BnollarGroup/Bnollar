@@ -11,7 +11,6 @@ import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
 import horiz from "lib/resources/images/profile-chat/more-horiz.png";
-import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
 // import ProfileEditDetailsModal from "providers/Modals/Profile/EditDetails";
 import FeedHeader from "components/Home/FeedHeader";
 import UserInformation from "./components/UserInformation"
@@ -20,12 +19,18 @@ import Cover from "pages/Profile/components/ProfileCover";
 import RighSideBar from "pages/Home/RightSideBar/RighSideBar";
 import AboutProfile from "pages/Profile/components/aboutProfile";
 import User from "./components/User"
+import Post from "./components/Post"
+import { dataBase } from "pages/Explore/data";
+import { DataType } from "pages/Explore/types";
+import WritePost from "components/Home/FeedHeader"
 
 export type Page = "feed" | "NFTs" | "media";
 
 function Profile() {
+
   const [openCover, setOperCover] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [data] = useState<DataType[]>(dataBase);
 
   // const openModal = () => {
   //   setIsModalOpen(true);
@@ -75,172 +80,47 @@ function Profile() {
 
   const [currentPage, setCurrentPage] = useState<Page>("feed");
   return (
-    <div className={style.Layout}>
+    <div className={style.mainContainer}>
       <Layout>
         <div className={style.Navbar}>
           <Navbar />
         </div>
-        <div className={style.MainContainer}>
+
+        <div className={style.container}>
           <div className={style.LeftSideBar}>
             <LeftSideBar />
           </div>
-          <User/>
+          <div className={style.userContainer}>
+            <User />
+            <Tabs
+              pages={pages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
 
-        </div>
-        {/* <div className={style.MainContainer}>
-          
-          <User />
-          <div className={style.profileContainer}>
-            <div className={style.EditCoverImg}> */}
-              {/* <EditCoverImg /> */}
-              {/* <SocialNetworks/> */}
-
-            {/* </div> */}
-
-            {/* <Cover />
-          <AboutProfile />     */}
-{/* 
-          </div>
-        </div> */}
-
-
-
-        {/* <Navbar />
-      <EditCoverImg/>
-      <div className={style.profilemain}>
-        <div className={style.feed_leftsideinformation}>
-          <LeftSideBar />
-        </div>
-        <div className={style.profileleft}>
-          <div className={style.profilecover}>
-          <Cover />
-          </div>
-          <div className={style.aboutuser}>
-            <div className={style.aboutuserright}>
-              <div className={style.userimg}>
-                <img src={UserIcon} />
-                <div>
-                  <img
-                    onClick={openProfile}
-                    className={style.edit}
-                    src={Edit}
-                    alt=""
-                  />
-                  {profilePicEdit}
+            <div className={style.gap}>
+              <div className={style.tabsLine}></div>
+              <div className={style.postContainer}>
+                <div className={style.posts}>
+                  <WritePost />
+                  {data.map((dataItem: DataType, index: number) => {
+                    return (
+                      <div key={index}>
+                        <Post dataItem={dataItem} />
+                      </div>
+                    );
+                  })}
                 </div>
-              </div>
-
-              <div className={style.user_about}>
-                <div className={style.user_name}>
-                  <h1>Christoh1her Reinger</h1>
-                  <img src={Verifed} />
-                </div>
-                <p className={style.about}>
-                  I am a hard-working and driven individual who {`isn't`} afraid
-                  to face a challenge.
-                </p>
-                <div className={style.user_ceo}>
-                  <p>CEO at</p>
-                  <span>SAMSDS</span>
-                </div>
-                <div className={style.followers_following}>
-                  <p>124 Follower</p>
-                  <span>|</span>
-                  <h2>100 Following</h2>
+                <div className={style.profileInformation}>
+                  <UserInformation />
                 </div>
               </div>
             </div>
-          </div>
-          <Tabs
-            pages={pages}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-          <div className={style.tabsLine}></div>
 
-          <div className={style.news_feed}>
-            <div className={style.feed_rightside}>
-              <div>
-                <FeedHeader />
-              </div>
-              <div className={style.post}>
-                <div className={style.postDiv}>
-                  <div className={style.upload_news_author_pic}>
-                    <img src={UserIcon} className={style.userPostImage} />
-                  </div>
-                  <div className={style.post_container}>
-                    <div>
-                      <div className={style.user_name_container}>
-                        <div className={style.post_user_name}>
-                          <h1>Christopher Williams</h1>
-                          <img src={Verifed} />
-                          <span>Dec 14</span>
-                        </div>
-                        <div className={style.horiz}>
-                          <img src={horiz} alt="" />
-                        </div>
-                      </div>
 
-                      <div className={style.post_text}>
-                        <p>
-                          #Bitcoin seems to be doing exactly what its done for
-                          about a year. Strong sell-off, consolidate & slow
-                          grind up, create a bear flag, RSI breaks down its
-                          trend line, bear flag breaks down for another strong
-                          sell-off and the cycle begins again.
-                        </p>
-                      </div>
-                    </div>
-                    <div className={style.rate_btns}>
-                      <UpvoteButton />
-                      <CommnetButton />
-                      <ShareButton />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={style.post}>
-                <div className={style.postDiv}>
-                  <div className={style.upload_news_author_pic}>
-                    <img src={UserIcon} className={style.userPostImage} />
-                  </div>
-                  <div className={style.post_container}>
-                    <div>
-                      <div className={style.user_name_container}>
-                        <div className={style.post_user_name}>
-                          <h1>Christopher Williams</h1>
-                          <img src={Verifed} />
-                          <span>Dec 14</span>
-                        </div>
-                        <div className={style.horiz}>
-                          <img src={horiz} alt="" />
-                        </div>
-                      </div>
 
-                      <div className={style.post_text}>
-                        <p>
-                          #Bitcoin seems to be doing exactly what its done for
-                          about a year. Strong sell-off, consolidate & slow
-                          grind up, create a bear flag, RSI breaks down its
-                          trend line, bear flag breaks down for another strong
-                          sell-off and the cycle begins again.
-                        </p>
-                      </div>
-                    </div>
-                    <img src={PostImg} alt="" />
-                    <div className={style.rate_btns}>
-                      <UpvoteButton />
-                      <CommnetButton />
-                      <ShareButton />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <UserInformation />
           </div>
         </div>
-      </div> */}
       </Layout>
     </div>
 
