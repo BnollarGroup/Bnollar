@@ -446,7 +446,6 @@ hr {
 .userContainer{
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 100%;
 }
 .newsFeed{
@@ -484,7 +483,9 @@ hr {
   background: rgba(255, 255, 255, 0.04);
 }
 
-
+.MobileNavBar{
+  display: none;
+}
 
 @media all and (max-width: 768px) {
   .LeftSideBar{
@@ -497,7 +498,12 @@ hr {
     padding: 0 !important;
     margin-top: 4.75em;
   }
-
+  .MobileNavBar{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: block;
+  }
 }
 @media all and (max-width: 1024px) {
   .profileInformation{

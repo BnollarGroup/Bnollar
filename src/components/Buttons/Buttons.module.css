@@ -1,23 +1,3 @@
-.shareDropDown {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 8px;
-  position: absolute;
-  right: 0;
-  top: 45px;
-  z-index: 1000;
-  background: #17181b;
-  box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1),
-    0px 10px 60px -4px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 35%;
-}
-
-.shareButton {
-  box-sizing: border-box;
-}
-
 .styled_button {
   display: flex;
   flex-direction: row;
@@ -36,7 +16,6 @@
   color: rgba(255, 255, 255, 0.6);
   width: 30%;
 }
-
 .shareDropDown {
   padding: 8px;
   position: absolute;
@@ -48,30 +27,46 @@
     0px 10px 60px -4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   width: 213px;
+} 
+
+.opencovereditdrop {
+  position: absolute;
+  background: #17181B;
+  border-radius: 10px;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  white-space: nowrap;
 }
 
-
-
-.shareButton button {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 20px;
-  color: #ffffff;
-  border: black;
-  background: none;
-  padding: 10px 14px 10px 10px;
+.opencovereditdrop button {
+  padding: 10px 108px 10px 10px;
+  cursor: pointer;
+  margin: 5px 0;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  color: #fff;
   width: 100%;
 }
 
-.shareButton button:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
+.opencovereditdrop button:hover {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
-.upvote {
+.dropcoverbtn {
+  width: 100%;
+  padding: 10px 14px 10px 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: transparent;
+}
+.dropcoverbtn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+ .upvote {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -80,19 +75,4 @@
   gap: 10px;
   background: rgba(239, 128, 49, 0.1) !important;
   border-radius: 8px;
-}
-
-.shareButton button:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-.upvote {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 10px;
-  gap: 10px;
-  background: rgba(239, 128, 49, 0.1) !important;
-  border-radius: 8px;
-}
+} 

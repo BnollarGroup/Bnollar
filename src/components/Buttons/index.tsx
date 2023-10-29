@@ -88,19 +88,11 @@ export const ShareButton = () => {
         Share
       </button>
       {showShare && (
-        <div className={styles.shareDropDown}>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Send</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Share to Facebook</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Share to Twitter</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Iframe</button>
-          </div>
+        <div className={styles.opencovereditdrop}>
+          <button className={styles.dropcoverbtn}>Send</button>
+          <button className={styles.dropcoverbtn}>Share to Facebook</button>
+          <button className={styles.dropcoverbtn}>Share to Twitter</button>
+          <button className={styles.dropcoverbtn}>Iframe</button>
         </div>
       )}
     </>

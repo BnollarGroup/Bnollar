@@ -23,6 +23,7 @@ import Post from "./components/Post"
 import { dataBase } from "pages/Explore/data";
 import { DataType } from "pages/Explore/types";
 import WritePost from "components/Home/FeedHeader"
+import MobileNavBar from "components/MobileNavBar";
 
 export type Page = "feed" | "NFTs" | "media";
 
@@ -116,9 +117,9 @@ function Profile() {
                 </div>
               </div>
             </div>
-
-
-
+            <div className={style.MobileNavBar}>
+              <MobileNavBar />
+            </div>
           </div>
         </div>
       </Layout>
