@@ -119,19 +119,23 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.rate_btns {
+.postBtns {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.postContainer{
+.postContainer {
   display: flex;
-    flex-direction: column;
-    gap: 16px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .postContainerMobile {
+  display: none;
+}
+
+.postBtnsMobile {
   display: none;
 }
 
@@ -139,12 +143,24 @@
   .postContainer {
     display: none;
   }
-  .author{
+
+  .author {
     display: block;
   }
+
   .postText {
     display: none;
   }
+
+  .postBtnsMobile {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.postBtns{
+  display: none;
+}
 
   .postContainerMobile {
     display: inline-block;

@@ -14,6 +14,12 @@
 .responsiveSocialNetwork {
     display: none;
 }
+.writePost{
+    display: none;
+}
+.UserInformation{
+    display: none;
+}
 
 @media all and (max-width:768px) {
     .container {
@@ -30,4 +36,19 @@
     .responsiveSocialNetwork{
         display: block;
     }
+    .writePost{
+        display: block;
+    }
+}
+@media all and (max-width:1200px){
+    .postInformation{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .UserInformation{
+        display: block;
+    }
+    
 }

@@ -50,7 +50,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .leftSideBarContainer {
     display: none;
   }
@@ -60,4 +60,4 @@
     bottom: 0;
     left: 0;
   }
-}
+} */

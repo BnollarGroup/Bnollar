@@ -5,9 +5,15 @@ import SocialNetworks from "components/SocialNetworks"
 function index() {
     return (
         <div className={style.followers_following}>
-            <p>124 Follower</p>
+            <div className={style.followerContainer}>
+                <p className={style.followerQuantity}>124</p>
+                <p className={style.follower}>Follower</p>
+            </div>
             <span>|</span>
-            <p>100 Following</p>
+            <div className={style.followerContainer}>
+                <p className={style.followerQuantity}>100</p>
+                <p className={style.follower}>Following</p>
+            </div>
         </div>
     )
 }

@@ -99,7 +99,10 @@ function Profile() {
               <div className={style.tabsLine}></div>
               <div className={style.postContainer}>
                 <div className={style.posts}>
+                  <div className={style.writePost}>
                   <WritePost />
+
+                  </div>
                   {data.map((dataItem: DataType, index: number) => {
                     return (
                       <div key={index}>
