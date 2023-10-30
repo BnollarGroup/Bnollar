@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PostHeader.module.css";
 import user1 from "lib/resources/images/icons/user1.svg";
-import { CommnetButton, ShareButton, UpvoteButton } from "../Buttons";
+// import { CommnetButton, ShareButton, UpvoteButton } from "../Buttons";
 import verify from "lib/resources/images/icons/verified.svg";
 
 const PostHeader = (props: any) => {
@@ -25,11 +25,11 @@ const PostHeader = (props: any) => {
           bear flag, RSI breaks down its trend line, bear flag breaks down for
           another strong sell-off and the cycle begins again.
         </div>
-        <div className={styles.buttons}>
+        {/* <div className={styles.buttons}>
           <UpvoteButton />
           <CommnetButton />
           <ShareButton />
-        </div>
+        </div> */}
       </div>
     </div>
   );

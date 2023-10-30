@@ -8,12 +8,14 @@ import share from "lib/resources/images/icons/share.svg";
 
 export const UpvoteButton = () => {
   const [showUpVote, setShowUpVote] = useState(false);
+
   const handleUpvoteClick = () => {
     setShowUpVote((prevState) => !prevState);
   };
+
   return (
     <button
-      className={showUpVote ? styles.upvote : styles.styled_button}
+      className={showUpVote ? styles.ClickedBtn : styles.Button}
       onClick={handleUpvoteClick}
     >
       <img src={showUpVote ? upvoteOn : upvote} alt="vote" />
@@ -24,12 +26,14 @@ export const UpvoteButton = () => {
 
 export const CommnetButton = () => {
   const [showComment, setShowComment] = useState(false);
+
   const handleCommentClick = () => {
     setShowComment((prevState) => !prevState);
   };
+  
   return (
     <button
-      className={showComment ? styles.upvote : styles.styled_button}
+      className={showComment ? styles.ClickedBtn : styles.Button}
       onClick={handleCommentClick}
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />
@@ -48,26 +52,18 @@ export const ShareButton = () => {
   return (
     <>
       <button
-        className={`${styles.share} ${styles.styled_button}`}
+        className={`${styles.share} ${styles.Button}`}
         onClick={handleShareClick}
       >
         <img src={share} alt="share" />
         Share
       </button>
       {showShare && (
-        <div className={styles.shareDropDown}>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Send</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Share to Facebook</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Share to Twitter</button>
-          </div>
-          <div className={styles.shareButton}>
-            <button className={styles.styled_button}>Iframe</button>
-          </div>
+        <div className={styles.opencovereditdrop}>
+          <button className={styles.dropcoverbtn}>Send</button>
+          <button className={styles.dropcoverbtn}>Share to Facebook</button>
+          <button className={styles.dropcoverbtn}>Share to Twitter</button>
+          <button className={styles.dropcoverbtn}>Iframe</button>
         </div>
       )}
     </>

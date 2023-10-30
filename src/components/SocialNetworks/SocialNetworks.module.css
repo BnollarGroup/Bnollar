@@ -2,6 +2,7 @@
 .aboutuserleft {
   display: flex;
   gap: 8px;
+  
 }
 
 .aboutuserleft img {
