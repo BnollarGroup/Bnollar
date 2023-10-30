@@ -1,17 +1,15 @@
 .feedCard_header_menu {
-    position: absolute;
     right: 10px;
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
   }
   .menuItem {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
   }
  .button {
     width: 111px;

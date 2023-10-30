@@ -14,10 +14,11 @@ function User() {
                 <UserProfile />
                 <AboutUser />
                 <Followers />
-            </div>
-            <div className={style.responsiveSocialNetwork}>
+                <div className={style.responsiveSocialNetwork}>
                 <SocialNetworks />
             </div>
+            </div>
+            
         </div>
     );
 }

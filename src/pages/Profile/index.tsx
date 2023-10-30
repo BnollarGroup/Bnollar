@@ -33,10 +33,6 @@ function Profile() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data] = useState<DataType[]>(dataBase);
 
-  // const openModal = () => {
-  //   setIsModalOpen(true);
-  // };
-
   const pages: { page: Page; icon: any }[] = [
     {
       page: "feed",

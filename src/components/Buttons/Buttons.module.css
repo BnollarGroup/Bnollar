@@ -1,4 +1,4 @@
-.styled_button {
+.Button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,6 +16,7 @@
   color: rgba(255, 255, 255, 0.6);
   width: 30%;
 }
+/* 
 .shareDropDown {
   padding: 8px;
   position: absolute;
@@ -27,7 +28,7 @@
     0px 10px 60px -4px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   width: 213px;
-} 
+}
 
 .opencovereditdrop {
   position: absolute;
@@ -62,17 +63,26 @@
   border-radius: 6px;
   background-color: transparent;
 }
+
 .dropcoverbtn:hover {
   background-color: rgba(255, 255, 255, 0.04);
 }
-
- .upvote {
+*/
+.ClickedBtn {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px 10px;
   gap: 10px;
-  background: rgba(239, 128, 49, 0.1) !important;
+  background: rgba(239, 128, 49, 0.10);
   border-radius: 8px;
-} 
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 30%;
+}  

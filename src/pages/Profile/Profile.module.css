@@ -437,6 +437,7 @@ hr {
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  flex: 1;
 }
 .tabsLine {
   width: 100%;
@@ -487,6 +488,7 @@ hr {
   display: none;
 }
 
+
 @media all and (max-width: 768px) {
   .LeftSideBar{
     display: none;
@@ -504,10 +506,14 @@ hr {
     bottom: 0;
     display: block;
   }
-}
-@media all and (max-width: 1024px) {
   .profileInformation{
     display: none;
   }
+}
+@media all and (max-width: 1024px) {
+  .LeftSideBar{
+    display: none;
+  }
+  
 }
 
