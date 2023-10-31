@@ -1,8 +1,84 @@
-.container {
+.leftSideBarWrapper {
+  min-width: 245px;
+}
+
+.newsFeedContainer {
+  width: 100%;
+}
+
+.rightSideBarWrapper {
+}
+
+.content {
+  display: flex;
+  column-gap: 25px;
+}
+
+.title {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #ffffff;
+}
+
+.categoryButtons {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin: 24px 0;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: auto;
+  position: relative;
+}
+.categoryButtons div {
+  display: flex;
+}
+
+.categoryButtons::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryButton {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 10px 16px;
+  background: inherit;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 890px) {
+  .leftSideBarWrapper {
+    min-width: 190px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px 16px;
+  }
+
+  .leftSideBarWrapper {
+    display: none;
+  }
+}
+
+/* .container {
   display: flex;
   column-gap: 25px;
   width: 100%;
   min-height: 100vh;
+}
+
+.leftSideBarContainer {
 }
 
 .newsFeedContainer {
@@ -50,14 +126,21 @@
   width: 100%;
 }
 
+.MobileNavBarWrapper {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .leftSideBarContainer {
     display: none;
   }
 
-  .MobileNavBarWrapper {
-    position: sticky;
-    bottom: 0;
-    left: 0;
+  @media screen and (max-width: 425px) {
+    .MobileNavBarWrapper {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      display: block;
+    }
   }
-}
+} */

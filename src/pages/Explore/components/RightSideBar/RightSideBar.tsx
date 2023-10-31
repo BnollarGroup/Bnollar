@@ -83,9 +83,11 @@ function RightSideBar() {
               <div key={index} className={styles.followItem}>
                 <div className={styles.followInfo}>
                   <img src={item.avatar} alt="" />
-                  <span className={styles.followName}>{item.name}</span>
+                  <div className={styles.followPerson}>
+                    <span className={styles.followName}>{item.name}</span>
+                    <button className={styles.followButton}>Follow</button>
+                  </div>
                 </div>
-                <button className={styles.followButton}>Follow</button>
               </div>
             );
           })}

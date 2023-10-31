@@ -79,6 +79,11 @@
   color: #ffffff;
 }
 
+.postAttachment {
+  max-width: 590px;
+  width: 100%;
+}
+
 .postTextMobile {
   font-family: "Inter";
   font-weight: 500;
