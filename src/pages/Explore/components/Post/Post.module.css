@@ -1,8 +1,13 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .post {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
   padding: 16px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
@@ -79,6 +84,21 @@
   color: #ffffff;
 }
 
+.postAttachment {
+  max-width: 590px;
+  width: 100%;
+}
+
+.postAndButtonsMobile {
+  display: none;
+}
+
+.postAndButtonsDesktop {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .postTextMobile {
   font-family: "Inter";
   font-weight: 500;
@@ -130,6 +150,28 @@
   color: #ffffff;
 }
 
+@media screen and (max-width: 1024px) {
+  .postAndButtonsDesktop {
+    display: none;
+  }
+
+  .postAndButtonsMobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .postTextMobile {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    padding: 16px 0;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .postAuthor {
     flex-direction: column;
@@ -141,9 +183,5 @@
 
   .postSettings {
     align-self: center;
-  }
-
-  .postTextMobile {
-    display: inline-block;
   }
 }
