@@ -1,0 +1,163 @@
+.post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.postFlex {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.postFlexInner {
+  display: flex;
+  column-gap: 14px;
+}
+
+.postAvatar {
+  width: 44px;
+  height: 44px;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+.postContentInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.postUploadImg {
+  width: 100%;
+}
+
+.postAuthor {
+  display: flex;
+  column-gap: 8px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author {
+  display: flex;
+  gap: 8px;
+}
+
+.postAuthorNameInner {
+  display: flex;
+  column-gap: 4px;
+}
+
+.postAuthorName {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.postDate {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+}
+
+.postText {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.postTextMobile {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  display: none;
+}
+
+.postSettings {
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  position: relative;
+  align-self: baseline;
+}
+
+.postSettingsInner {
+  position: absolute;
+  top: 35%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.rate_btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.postContainer{
+  display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.postContainerMobile {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .postContainer {
+    display: none;
+  }
+  .author{
+    display: block;
+  }
+  .postText {
+    display: none;
+  }
+
+  .postContainerMobile {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .postSettings {
+    align-self: center;
+  }
+
+  .postTextMobile {
+    display: inline-block;
+  }
+}

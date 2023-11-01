@@ -1,23 +1,4 @@
-.shareDropDown {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 8px;
-  position: absolute;
-  right: 0;
-  top: 45px;
-  z-index: 1000;
-  background: #17181b;
-  box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1),
-    0px 10px 60px -4px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 35%;
-}
-
-.shareButton {
-  box-sizing: border-box;
-}
-.styled_button {
+.Button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -35,7 +16,7 @@
   color: rgba(255, 255, 255, 0.6);
   width: 30%;
 }
-
+/* 
 .shareDropDown {
   padding: 8px;
   position: absolute;
@@ -49,57 +30,59 @@
   width: 213px;
 }
 
-.shareButton {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-  border-radius: 6px;
+.opencovereditdrop {
+  position: absolute;
+  background: #17181B;
+  border-radius: 10px;
+  right: 0;
+  top: 0;
+  padding: 8px;
+  white-space: nowrap;
 }
 
-.shareButton button {
+.opencovereditdrop button {
+  padding: 10px 108px 10px 10px;
+  cursor: pointer;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  color: #fff;
+  width: 100%;
+}
+
+.opencovereditdrop button:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.dropcoverbtn {
+  width: 100%;
+  padding: 10px 14px 10px 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.dropcoverbtn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+*/
+.ClickedBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 10px;
+  background: rgba(239, 128, 49, 0.10);
+  border-radius: 8px;
+  border: none;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 20px;
-  color: #ffffff;
-  border: black;
-  background: none;
-  padding: 10px 14px 10px 10px;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.shareButton button:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-.upvote {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 10px;
-  gap: 10px;
-  background: rgba(239, 128, 49, 0.1) !important;
-  border-radius: 8px;
-}
-
-.shareButton button:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-}
-
-.upvote {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 10px;
-  gap: 10px;
-  background: rgba(239, 128, 49, 0.1) !important;
-  border-radius: 8px;
-}
+  color: rgba(255, 255, 255, 0.6);
+  width: 30%;
+}  

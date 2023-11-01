@@ -1,10 +1,33 @@
 .container {
     width: 100%;
+    height: auto;
 }
-.aboutUserProfile{
+
+.aboutUserProfile {
     position: relative;
     top: -40px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.responsiveSocialNetwork {
+    display: none;
+}
+
+@media all and (max-width:768px) {
+    .container {
+        margin-top: 40px;
+    }
+    .aboutUserProfile {
+        position: relative;
+        top: -40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 0px 12px 0 12px;
+    }
+    .responsiveSocialNetwork{
+        display: block;
+    }
 }
