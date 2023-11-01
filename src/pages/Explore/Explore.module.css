@@ -69,6 +69,10 @@
   .leftSideBarWrapper {
     display: none;
   }
+
+  .content {
+    column-gap: 0;
+  }
 }
 
 /* .container {

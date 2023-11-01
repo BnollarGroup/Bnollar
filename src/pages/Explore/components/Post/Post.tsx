@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = (props) => {
   };
 
   return (
-    <>
+    <div className={styles.postContainer}>
       {dataItem.posts?.map((post, index) => {
         return (
           <div key={index} className={styles.post}>
@@ -52,31 +52,53 @@ const Post: React.FC<PostProps> = (props) => {
                           {post.createdAt}
                         </span>
                       </div>
-                      <p className={styles.postText}>{post.content}</p>
+                      <div className={styles.postAndButtonsDesktop}>
+                        <p className={styles.postText}>{post.content}</p>
+                        {post.attachment.length > 0 ? (
+                          <img
+                            className={styles.postAttachment}
+                            src={post.attachment}
+                            alt="attachment icon"
+                          />
+                        ) : null}
+                        <Buttons
+                          upScore={post.upScore}
+                          id={post.id}
+                          numberOfComments={post.numberOfComments}
+                          numberOfShares={post.numberOfShares}
+                          handleCommentClick={handleCommentClick}
+                        />
+                      </div>
                     </div>
                     <button className={styles.postSettings}>
                       <span className={styles.postSettingsInner}>...</span>
                     </button>
                   </div>
                 </div>
-                <p className={styles.postTextMobile}>{post.content}</p>
-                {post.attachment.length > 0 ? (
-                  <img className={styles.postAttachment} src={post.attachment} alt="attachment icon" />
-                ) : null}
+                <div className={styles.postAndButtonsMobile}>
+                  <p className={styles.postTextMobile}>{post.content}</p>
+                  {post.attachment.length > 0 ? (
+                    <img
+                      className={styles.postAttachment}
+                      src={post.attachment}
+                      alt="attachment icon"
+                    />
+                  ) : null}
+                  <Buttons
+                    upScore={post.upScore}
+                    id={post.id}
+                    numberOfComments={post.numberOfComments}
+                    numberOfShares={post.numberOfShares}
+                    handleCommentClick={handleCommentClick}
+                  />
+                </div>
               </div>
-              <Buttons
-                upScore={post.upScore}
-                id={post.id}
-                numberOfComments={post.numberOfComments}
-                numberOfShares={post.numberOfShares}
-                handleCommentClick={handleCommentClick}
-              />
             </div>
             <Comment post={post} isOpen={openComments[post.id]} />
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

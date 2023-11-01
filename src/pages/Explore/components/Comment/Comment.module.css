@@ -1,169 +1,166 @@
 .postLine {
-    width: 100%;
-    height: 1px;
-    background: rgba(217, 217, 217, 0.04);
-    margin: 14px 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(217, 217, 217, 0.04);
+  margin: 14px 0;
 }
 
 .postComments {
-    width: 100%;
+  width: 100%;
 }
 
 .postComment {
-    display: flex;
-    column-gap: 19px;
+  display: flex;
+  column-gap: 19px;
 }
 
 .commentAvatarBlock {
-    padding: 0 5px;
-    width: fit-content;
-    height: fit-content;
+  padding: 0 5px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .commentAvatar {
-    width: 34px;
-    height: 34px;
+  width: 34px;
+  height: 34px;
 }
 
 .commentInfo {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  width: 100%;
 }
 
 .commentAuthor {
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 20px;
-    color: #FFFFFF;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
 }
 
 .commentText {
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 20px;
-    color: #FFFFFF;
-    width: 590px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
 }
 
 .commentActionButtons {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .commentDate {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.4);
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .commentButtons {
-    display: flex;
-    column-gap: 8px;
+  display: flex;
+  column-gap: 8px;
 }
 
 .commentReply {
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    background: inherit;
-    border: none;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  background: inherit;
+  border: none;
 }
 
 .commentShare {
-    font-family: 'Inter';
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    background: inherit;
-    border: none;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  background: inherit;
+  border: none;
 }
 
 .likeButton {
-    width: 28px;
-    height: 18px;
-    background: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 4px;
+  width: 28px;
+  height: 18px;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
 }
 
 .numberOfLikes {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.4);
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .numberOfLikesActive {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 18px;
-    color: #EF8031;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ef8031;
 }
 
 .sendMessage {
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-    margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  margin-bottom: 16px;
 }
 
 .sendMessageContainer {
-    display: flex;
-    min-width: 574px;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .messageInput {
-    min-width: 478px;
-    width: 100%;
-    height: 40px;
-    border-radius: 10px 0 0 10px;
-    padding: 10px 12px 10px 12px;
-    background: rgba(255, 255, 255, 0.04);
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 20px;
-    resize: none;
-    border: none;
-    outline: none;
-    color: #FFFFFF;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px 0 0 10px;
+  padding: 10px 12px 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  resize: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
 }
 
 .inputButtons {
-    height: 40px;
-    display: flex;
-    column-gap: 11.5px;
-    border-radius: 0;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.04);
-    padding-right: 12px;
+  height: 40px;
+  display: flex;
+  column-gap: 11.5px;
+  border-radius: 0;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding-right: 12px;
 }
 
 .inputButton {
-    width: 16px;
-    height: 16px;
-    background: none;
-    border: none;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
 }
 
 .sendMessageButton {
-    width: 32px;
-    height: 32px;
-    background: #EF8031;
-    border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: #ef8031;
+  border-radius: 50%;
 }
