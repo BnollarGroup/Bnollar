@@ -1,12 +1,39 @@
 .followers_following {
   background: rgba(255, 255, 255, 0.04);
   display: flex;
-  padding: 16px 24px 16px 16px;
+  padding: 16px 16px 16px 16px;
   justify-content: center;
   gap: 24px;
   width: 29.5em;
   border-radius: 10px;
 }
+
+.followerContainer {
+  display: flex;
+  gap: 3px;
+}
+
+.followerContainer .followerQuantity {
+  color: #FFF;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+
+
+.followerContainer .follower {
+  color: rgba(255, 255, 255, 0.40);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
 
 .followers_following p {
   font-size: 16px;
@@ -19,9 +46,18 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-@media all and (width:768px){
-.FollowContainer{
-  gap: 24px;
+@media all and (max-width:768px) {
+  .FollowContainer {
+    gap: 24px;
+  }
+  .followers_following {
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    padding: 16px 16px 16px 16px;
+    justify-content: center;
+    gap: 24px;
+    width: 25em;
+    border-radius: 10px;
+  }
+  
 }
-}
-

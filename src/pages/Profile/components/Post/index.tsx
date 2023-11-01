@@ -7,7 +7,7 @@ import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
 // import chatIcon from "lib/resources/images/explore/chat-icon.svg";
 // import postShareIcon from "lib/resources/images/explore/post-share-icon.svg";
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
-
+import { UpvoteButtonMobile, CommnetButtonMobile, ShareButtonMobile } from "components/Buttons";
 
 interface PostProps {
   dataItem: DataType;
@@ -64,7 +64,7 @@ const Post: React.FC<PostProps> = (props) => {
                         {post.attachment.length > 0 ? (
                           <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
                         ) : null}
-                        <div className={styles.rate_btns}>
+                        <div className={styles.postBtns}>
                           <UpvoteButton />
                           <CommnetButton />
                           <ShareButton />
@@ -81,10 +81,10 @@ const Post: React.FC<PostProps> = (props) => {
                           <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
                   ) : null}
                   
-                        <div className={styles.rate_btns}>
-                          <UpvoteButton />
-                          <CommnetButton />
-                          <ShareButton />
+                        <div className={styles.postBtnsMobile}>
+                          <UpvoteButtonMobile />
+                          <CommnetButtonMobile />
+                          <ShareButtonMobile />
                         </div>
                       </div>
               </div>

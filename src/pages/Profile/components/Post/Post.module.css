@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  row-gap: 16px;
+  gap: 16px;
 }
 
 .postContentInner {
@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 4px;
 }
 
 .postUploadImg {
@@ -51,8 +52,8 @@
 .postAuthor {
   display: flex;
   column-gap: 8px;
-  margin-bottom: 6px;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -90,7 +91,6 @@
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
-  margin-bottom: 16px;
 }
 
 .postTextMobile {
@@ -119,13 +119,23 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.rate_btns {
+.postBtns {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .postContainerMobile {
+  display: none;
+}
+
+.postBtnsMobile {
   display: none;
 }
 
@@ -134,12 +144,29 @@
     display: none;
   }
 
+  .author {
+    display: block;
+  }
+
   .postText {
     display: none;
   }
 
+  .postBtnsMobile {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.postBtns{
+  display: none;
+}
+
   .postContainerMobile {
     display: inline-block;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .postSettings {

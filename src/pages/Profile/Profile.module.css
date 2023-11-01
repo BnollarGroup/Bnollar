@@ -425,41 +425,45 @@ hr {
 
 /* @media all and (max-width: 1024px) {
 
-} */ 
+} */
 
-.container{
+.container {
   display: flex;
   gap: 2em;
   width: 100%;
 }
-.posts{
+
+.posts {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  flex: 1;
 }
+
 .tabsLine {
   width: 100%;
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
 }
-.userContainer{
+
+.userContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   width: 100%;
 }
-.newsFeed{
+
+.newsFeed {
   display: flex;
 }
 
-.postContainer{
+.postContainer {
   width: 100%;
   display: flex;
   gap: 25px;
 }
 
-.gap{
+.gap {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -484,24 +488,39 @@ hr {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.MobileNavBar {
+  display: none;
+}
 
 
 @media all and (max-width: 768px) {
-  .LeftSideBar{
+  .LeftSideBar {
     display: none;
   }
-  .Navbar{
+
+  .writePost{
     display: none;
   }
-  .Layout{
+
+  .Navbar {
+    display: none;
+  }
+
+  .Layout {
     padding: 0 !important;
     margin-top: 4.75em;
   }
 
-}
-@media all and (max-width: 1024px) {
-  .profileInformation{
-    display: none;
+  .MobileNavBar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: block;
   }
 }
 
+@media all and (max-width: 1200px) {
+  .profileInformation {
+    display: none;
+  }
+}
