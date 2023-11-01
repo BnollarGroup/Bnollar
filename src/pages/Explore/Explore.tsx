@@ -22,7 +22,7 @@ function Explore() {
           <div className={styles.newsFeedContainer}>
             <h1 className={styles.title}>Explore</h1>
 
-            {/* <div className={styles.categoryButtons}>
+            <div className={styles.categoryButtons}>
               <button className={styles.categoryButton}>Recommended</button>
               <button className={styles.categoryButton}>Business</button>
               <button className={styles.categoryButton}>Creative</button>
@@ -31,7 +31,7 @@ function Explore() {
               <button className={styles.categoryButton}>
                 Fashion & Beauty
               </button>
-            </div> */}
+            </div>
 
             <div className={styles.newsFeed}>
               {data.map((dataItem: DataType, index: number) => {
