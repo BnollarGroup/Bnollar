@@ -1,4 +1,4 @@
-import WithNavigation from "hoc/WithNavigation";
+// import WithNavigation from "hoc/WithNavigation";
 import styles from "./ProfileChat.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -281,4 +281,4 @@ function ProfileChat() {
   );
 }
 
-export default WithNavigation(ProfileChat);
+export default ProfileChat;
