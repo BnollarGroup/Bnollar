@@ -148,7 +148,7 @@
   color: #0d0e11;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 930px) {
   .rightSidebar {
     display: none;
   }
@@ -177,5 +177,3 @@
     align-self: baseline;
   }
 }
-
-

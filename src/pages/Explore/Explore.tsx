@@ -7,6 +7,7 @@ import styles from "./Explore.module.css";
 import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Post from "./components/Post/Post";
 import RightSideBar from "./components/RightSideBar/RightSideBar";
+import MobileNavBar from "components/MobileNavBar";
 
 function Explore() {
   const [data] = useState<DataType[]>(dataBase);
@@ -47,6 +48,9 @@ function Explore() {
             <RightSideBar />
           </div>
         </div>
+      </div>
+      <div className={styles.MobileNavBarWrapper}>
+        <MobileNavBar />
       </div>
     </Layout>
   );

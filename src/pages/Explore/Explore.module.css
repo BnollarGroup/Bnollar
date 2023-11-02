@@ -24,17 +24,15 @@
 
 .categoryButtons {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  column-gap: 8px;
+  gap: 8px;
   margin: 24px 0;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-x: auto;
   position: relative;
-}
-.categoryButtons div {
-  display: flex;
 }
 
 .categoryButtons::-webkit-scrollbar {
@@ -55,9 +53,25 @@
   white-space: nowrap;
 }
 
-@media screen and (max-width: 890px) {
+.MobileNavBarWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 930px) {
+  .categoryButtons {
+    flex-wrap: nowrap;
+  }
+}
+
+/* @media screen and (max-width: 1370px) {
+  .rightSideBarWrapper {
+    display: none;
+  }
+} */
+
+@media screen and (max-width: 930px) {
   .leftSideBarWrapper {
-    min-width: 190px;
+    display: none;
   }
 }
 
@@ -66,12 +80,17 @@
     padding: 10px 16px;
   }
 
-  .leftSideBarWrapper {
-    display: none;
-  }
-
   .content {
     column-gap: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .MobileNavBarWrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: block;
   }
 }
 
