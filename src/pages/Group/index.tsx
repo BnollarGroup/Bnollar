@@ -17,10 +17,10 @@ import Cover from "./components/Cover";
 import GroupTags from "./components/Tags";
 import GroupMembers from "./components/Members";
 
-export type Page = "feed" | "members" | "media" | "files";
+export type TabPage = "feed" | "members" | "media" | "files";
 
 function Group() {
-  const pages: { page: Page; icon: any }[] = [
+  const pages: { page: TabPage; icon: any }[] = [
     {
       page: "feed",
       icon: Feed,
@@ -51,7 +51,7 @@ function Group() {
     ],
   };
 
-  const [currentPage, setCurrentPage] = useState<Page>("feed");
+  const [currentTab, setCurrentTab] = useState<TabPage>("feed");
 
   return (
     <Layout>
@@ -67,7 +67,7 @@ function Group() {
 
           <InformationSection data={groupData} />
 
-          <Tabs pages={pages} value={currentPage} onChange={setCurrentPage} />
+          <Tabs pages={pages} value={currentTab} onChange={setCurrentTab} />
 
           <div className={style.line}></div>
           <div className={style.mainbox}>
