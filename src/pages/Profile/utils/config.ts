@@ -1,12 +1,12 @@
+import { DataType } from "./types";
 import currentUserImage from "lib/resources/images/explore/current-user.png";
 import UserIcon from "lib/resources/images/icons/user-icon.png";
 import userTwoImage from "lib/resources/images/explore/post-user2.png";
 import userThreeImage from "lib/resources/images/explore/post-user3.png";
 import postTwoAttachment from "lib/resources/images/explore/post2-attachment.png";
 import postThreeAttachment from "lib/resources/images/explore/post3-attachment.png";
-import { DataType } from "pages/Profile/utils/types";
 
-export const dataBase: DataType[] = [
+export const data: DataType[] = [
   {
     currentUser: {
       image: currentUserImage,

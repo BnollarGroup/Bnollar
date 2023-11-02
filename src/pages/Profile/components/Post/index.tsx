@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import { DataType } from "./types.d";
 import styles from "./Post.module.css";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
-import { UpvoteButtonMobile, CommnetButtonMobile, ShareButtonMobile } from "components/Buttons";
-import Comment from "../PostComment/index"
-
+import {
+  UpvoteButtonMobile,
+  CommnetButtonMobile,
+  ShareButtonMobile,
+} from "components/Buttons";
+import Comment from "../PostComment/index";
+import { DataType } from "pages/Profile/utils/types";
 
 interface PostProps {
-  dataItem: DataType;
+  data: DataType;
 }
 
 const Post: React.FC<PostProps> = (props) => {
-  const { dataItem } = props;
+  const { data } = props;
 
   const [openComments, setOpenComments] = useState<Record<number, boolean>>({});
-  const handleCommentClick = (postId: number) => {
-    setOpenComments({ ...openComments, [postId]: !openComments[postId] });
-  };
+  // const handleCommentClick = (postId: number) => {
+  //   setOpenComments({ ...openComments, [postId]: !openComments[postId] });
+  // };
 
   return (
     <>
-      {dataItem.posts?.map((post, index) => {
+      {data.posts?.map((post, index) => {
         return (
           <div key={index} className={styles.post}>
             <div className={styles.postContent}>
@@ -30,7 +33,7 @@ const Post: React.FC<PostProps> = (props) => {
                   <img
                     className={styles.postAvatar}
                     src={post.user.image}
-                    alt=""
+                    alt={post.user.name}
                   />
                   <div className={styles.postContentInner}>
                     <div className={styles.postInfo}>
@@ -47,7 +50,6 @@ const Post: React.FC<PostProps> = (props) => {
                                 alt="verified user icon"
                               />
                             ) : null}
-
                           </div>
                           <span className={styles.postDate}>
                             {post.createdAt}
@@ -60,23 +62,29 @@ const Post: React.FC<PostProps> = (props) => {
                       <div className={styles.postContainer}>
                         <p className={styles.postText}>{post.content}</p>
                         {post.attachment.length > 0 ? (
-                          <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
+                          <img
+                            src={post.attachment}
+                            alt="attachment icon"
+                            className={styles.postUploadImg}
+                          />
                         ) : null}
                         <div className={styles.postBtns}>
                           <UpvoteButton />
-                          <CommnetButton  />
+                          <CommnetButton />
                           <ShareButton />
                         </div>
                       </div>
-
                     </div>
-
                   </div>
                 </div>
                 <div className={styles.postContainerMobile}>
                   <p className={styles.postTextMobile}>{post.content}</p>
                   {post.attachment.length > 0 ? (
-                    <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
+                    <img
+                      src={post.attachment}
+                      alt="attachment icon"
+                      className={styles.postUploadImg}
+                    />
                   ) : null}
 
                   <div className={styles.postBtnsMobile}>

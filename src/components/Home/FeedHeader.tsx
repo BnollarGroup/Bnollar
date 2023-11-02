@@ -6,7 +6,7 @@ import nft from "lib/resources/images/icons/nft.svg";
 import emoji from "lib/resources/images/icons/emoji.svg";
 import language from "lib/resources/images/icons/language.svg";
 
-const FeedHeader = () => {
+export default function WritePost() {
   const [thought, setThought] = React.useState("");
 
   return (
@@ -39,5 +39,4 @@ const FeedHeader = () => {
       </div>
     </div>
   );
-};
-export default FeedHeader;
+}

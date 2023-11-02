@@ -1,8 +1,7 @@
-import React from 'react'
-import style from './UserInformation.module.css'
+import style from "./UserInformation.module.css";
 import MeriaLogo from "lib/resources/images/icons/briefcase.png";
 
-const index = () => {
+export default function About() {
   return (
     <div>
       <div className={style.feed_rightsideinformation}>
@@ -40,7 +39,5 @@ const index = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default index

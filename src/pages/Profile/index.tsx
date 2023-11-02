@@ -7,12 +7,11 @@ import LeftSideBar from "components/Leftsidebar/LeftSideBar";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
 import UserInformation from "./components/UserInformation";
-import User from "./components/User";
 import Post from "./components/Post";
-import { dataBase as data } from "./components/Post/data";
-import { DataType } from "./components/Post/types.d";
 import WritePost from "components/Home/FeedHeader";
 import MobileNavBar from "components/MobileNavBar";
+import InformationSection from "./components/InformationSection";
+import { data } from "./utils/config";
 
 export type TabPage = "feed" | "NFTs" | "media";
 
@@ -30,6 +29,7 @@ function Profile() {
   ];
 
   const [currentTab, setCurrentTab] = useState<TabPage>("feed");
+
   return (
     <div className={style.mainContainer}>
       <Layout>
@@ -43,7 +43,7 @@ function Profile() {
           </div>
 
           <div className={style.userContainer}>
-            <User />
+            <InformationSection />
 
             <Tabs
               pages={tabsPages}
@@ -60,10 +60,10 @@ function Profile() {
                     <WritePost />
                   </div>
 
-                  {data.map((dataItem: DataType, index: number) => {
+                  {data.map((item, index: number) => {
                     return (
                       <div key={index}>
-                        <Post dataItem={dataItem} />
+                        <Post data={item} />
                       </div>
                     );
                   })}

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { PostsData } from "../Post/types.d";
 import styles from "./PostComment.module.css";
 import nonClickedHeart from "lib/resources/images/explore/nonclicked-heart.png";
 import ClickedHeart from "lib/resources/images/explore/clicked-heart.png";
@@ -8,6 +7,7 @@ import attachment from "lib/resources/images/explore/attachment.svg";
 import statsReport from "lib/resources/images/explore/stats-report.svg";
 import emoji from "lib/resources/images/explore/emoji.svg";
 import currentUser from "lib/resources/images/explore/current-user.png";
+import { PostsData } from "pages/Profile/utils/types";
 
 interface CommentProps {
   post: PostsData;
