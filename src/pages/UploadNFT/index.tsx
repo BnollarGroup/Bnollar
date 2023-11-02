@@ -61,7 +61,10 @@ function UploadNft() {
               </div>
               <div className={styles.shorturl}>
                 <h1>Short Url</h1>
-                <input type="text" placeholder="bnollar.com/@Name" />
+                <div>
+                  <input type="text" placeholder="bnollar.com/" />
+                  <span>@Name</span>
+                </div>
               </div>
             </div>
             <div className={styles.aboutcollection}>
@@ -179,7 +182,7 @@ function UploadNft() {
         <div className={styles.rightSide}>
           <div className={styles.pic_text}>
             <div className={styles.image}>
-              <img src={Fruit} className={styles.image}/>
+              <img src={Fruit} className={styles.image} />
             </div>
             <div className={styles.text}>
               <div className={styles.img_description}>
