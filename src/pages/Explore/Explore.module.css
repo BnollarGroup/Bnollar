@@ -6,9 +6,6 @@
   width: 100%;
 }
 
-.rightSideBarWrapper {
-}
-
 .content {
   display: flex;
   column-gap: 25px;
@@ -58,112 +55,44 @@
 }
 
 @media screen and (max-width: 930px) {
-  .categoryButtons {
-    flex-wrap: nowrap;
+  .title {
+    margin-top: 24px;
   }
-}
 
-/* @media screen and (max-width: 1370px) {
-  .rightSideBarWrapper {
-    display: none;
-  }
-} */
-
-@media screen and (max-width: 930px) {
   .leftSideBarWrapper {
     display: none;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 10px 16px;
   }
 
   .content {
     column-gap: 0;
   }
+
+  .categoryButtons {
+    flex-wrap: nowrap;
+  }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
+  .title {
+    margin-top: 14px;
+  }
+
   .MobileNavBarWrapper {
     width: 100%;
     position: fixed;
     bottom: 0;
     display: block;
   }
-}
 
-/* .container {
-  display: flex;
-  column-gap: 25px;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.leftSideBarContainer {
-}
-
-.newsFeedContainer {
-  flex: 3 1;
-  max-width: 100%;
-}
-
-.title {
-  font-family: "Inter";
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 44px;
-  color: #ffffff;
-}
-
-.categoryButtons {
-  display: flex;
-  align-items: center;
-  column-gap: 8px;
-  margin: 24px 0;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.categoryButtons::-webkit-scrollbar {
-  display: none;
-}
-
-.categoryButton {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 40px;
-  padding: 10px 16px;
-  background: inherit;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 20px;
-  color: rgba(255, 255, 255, 0.6);
-  text-wrap: nowrap;
-}
-
-.newsFeed {
-  width: 100%;
-}
-
-.MobileNavBarWrapper {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .leftSideBarContainer {
-    display: none;
+  .navbarWrapper {
+    padding: 10px 16px;
   }
 
-  @media screen and (max-width: 425px) {
-    .MobileNavBarWrapper {
-      width: 100%;
-      position: fixed;
-      bottom: 0;
-      display: block;
-    }
+  .title {
+    padding-left: 16px;
   }
-} */
+
+  .categoryButtons {
+    padding: 0 16px;
+  }
+}

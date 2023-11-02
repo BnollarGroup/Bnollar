@@ -84,8 +84,6 @@
 }
 
 .follow {
-  width: 323px;
-  height: 360px;
   background: #17181b;
   border-radius: 10px;
   padding: 16px;
@@ -119,6 +117,10 @@
   width: 100%;
 }
 
+.followAvatar {
+  align-self: baseline;
+}
+
 .followPerson {
   display: flex;
   width: 100%;
@@ -132,12 +134,10 @@
   font-size: 14px;
   line-height: 22px;
   color: #ffffff;
-  white-space: nowrap;
 }
 
 .followButton {
-  width: 72px;
-  height: 32px;
+  padding: 6px 16px;
   background: #ffffff;
   border: 4px solid #0d0e11;
   border-radius: 40px;

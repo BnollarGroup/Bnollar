@@ -49,10 +49,16 @@
   width: 100%;
 }
 
+.postAuthorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
 .postAuthor {
   display: flex;
   column-gap: 8px;
-  margin-bottom: 6px;
 }
 
 .postAuthorNameInner {
@@ -163,11 +169,9 @@
   .postTextMobile {
     display: inline-block;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .post {
-    padding: 16px 0;
+  .postAuthorWrapper {
+    margin-bottom: 0;
   }
 }
 

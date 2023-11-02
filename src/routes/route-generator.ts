@@ -81,6 +81,6 @@ export const publicRoutes = [
   {
     title: "Explore",
     path: routes.explore,
-    component: lazy(() => import("pages/Explore/Explore")),
+    component: lazy(() => import("pages/Explore")),
   },
 ];

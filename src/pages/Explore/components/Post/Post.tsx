@@ -3,9 +3,6 @@ import { DataType } from "../../types";
 import styles from "./Post.module.css";
 import Comment from "../Comment/Comment";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
-import arrowUpIcon from "lib/resources/images/explore/arrow-up.svg";
-import chatIcon from "lib/resources/images/explore/chat-icon.svg";
-import postShareIcon from "lib/resources/images/explore/post-share-icon.svg";
 import Buttons from "../Buttons/";
 
 interface PostProps {
@@ -35,22 +32,27 @@ const Post: React.FC<PostProps> = (props) => {
                   />
                   <div className={styles.postContentInner}>
                     <div className={styles.postInfo}>
-                      <div className={styles.postAuthor}>
-                        <div className={styles.postAuthorNameInner}>
-                          <span className={styles.postAuthorName}>
-                            {post.user.name}
+                      <div className={styles.postAuthorWrapper}>
+                        <div className={styles.postAuthor}>
+                          <div className={styles.postAuthorNameInner}>
+                            <span className={styles.postAuthorName}>
+                              {post.user.name}
+                            </span>
+                            {post.verified ? (
+                              <img
+                                className={styles.verifiedUser}
+                                src={verifiedIcon}
+                                alt="verified user icon"
+                              />
+                            ) : null}
+                          </div>
+                          <span className={styles.postDate}>
+                            {post.createdAt}
                           </span>
-                          {post.verified ? (
-                            <img
-                              className={styles.verifiedUser}
-                              src={verifiedIcon}
-                              alt="verified user icon"
-                            />
-                          ) : null}
                         </div>
-                        <span className={styles.postDate}>
-                          {post.createdAt}
-                        </span>
+                        <button className={styles.postSettings}>
+                          <span className={styles.postSettingsInner}>...</span>
+                        </button>
                       </div>
                       <div className={styles.postAndButtonsDesktop}>
                         <p className={styles.postText}>{post.content}</p>
@@ -70,9 +72,6 @@ const Post: React.FC<PostProps> = (props) => {
                         />
                       </div>
                     </div>
-                    <button className={styles.postSettings}>
-                      <span className={styles.postSettingsInner}>...</span>
-                    </button>
                   </div>
                 </div>
                 <div className={styles.postAndButtonsMobile}>
