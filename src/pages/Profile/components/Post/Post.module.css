@@ -139,7 +139,7 @@
   display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .postContainer {
     display: none;
   }
@@ -158,9 +158,9 @@
     justify-content: space-between;
   }
 
-.postBtns{
-  display: none;
-}
+  .postBtns {
+    display: none;
+  }
 
   .postContainerMobile {
     display: inline-block;

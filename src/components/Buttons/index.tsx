@@ -27,14 +27,9 @@ export const UpvoteButton = () => {
 export const CommnetButton = () => {
   const [showComment, setShowComment] = useState(false);
 
-  const handleCommentClick = () => {
-    setShowComment((prevState) => !prevState);
-  };
-  
   return (
     <button
       className={showComment ? styles.ClickedBtn : styles.Button}
-      onClick={handleCommentClick}
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />
       Comment

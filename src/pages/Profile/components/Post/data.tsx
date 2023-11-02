@@ -1,10 +1,8 @@
 import { DataType } from "./types.d";
 import currentUserImage from "lib/resources/images/explore/current-user.png";
-import userOneImage from "lib/resources/images/explore/post-user1.png";
+import UserIcon from "lib/resources/images/icons/user-icon.png";
 import userTwoImage from "lib/resources/images/explore/post-user2.png";
 import userThreeImage from "lib/resources/images/explore/post-user3.png";
-import postTwoUserImage from "lib/resources/images/explore/post2-user.png";
-import postThreeUserImage from "lib/resources/images/explore/post3-user.png";
 import postTwoAttachment from "lib/resources/images/explore/post2-attachment.png";
 import postThreeAttachment from "lib/resources/images/explore/post3-attachment.png";
 
@@ -17,10 +15,10 @@ export const dataBase: DataType[] = [
       {
         id: 1,
         user: {
-          name: "Feral",
-          image: userOneImage,
+          name: "Christopher Williams",
+          image: UserIcon,
         },
-        content: "Giving away a FREE NFT to someone who likes this tweet",
+        content: "#Bitcoin seems to be doing exactly what its done for about a year. Strong sell-off, consolidate & slow grind up, create a bear flag, RSI breaks down its trend line, bear flag breaks down for another strong sell-off and the cycle begins again.",
         createdAt: "Dec 14",
         verified: true,
         upScore: "17.k",
@@ -52,8 +50,8 @@ export const dataBase: DataType[] = [
       {
         id: 2,
         user: {
-          name: "Sonko Wa Mashamba",
-          image: postTwoUserImage,
+          name: "Christopher Williams",
+          image: UserIcon,
         },
         content: "Elon musk has changed Twitter like button from ❤️ to ❤️",
         createdAt: "Dec 14",
@@ -67,10 +65,10 @@ export const dataBase: DataType[] = [
       {
         id: 3,
         user: {
-          name: "CryptoBullet",
-          image: postThreeUserImage,
+          name: "Christopher Williams",
+          image: UserIcon,
         },
-        content: "Imagine if there’s no dip No way? Go watch Q2 2019 #Bitcoin",
+        content: "",
         createdAt: "Dec 14",
         verified: false,
         upScore: "7.3k",

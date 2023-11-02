@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { DataType } from "./types.d";
 import styles from "./Post.module.css";
-// import Comment from "../Comment/Comment";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
-// import arrowUpIcon from "lib/resources/images/explore/arrow-up.svg";
-// import chatIcon from "lib/resources/images/explore/chat-icon.svg";
-// import postShareIcon from "lib/resources/images/explore/post-share-icon.svg";
 import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
 import { UpvoteButtonMobile, CommnetButtonMobile, ShareButtonMobile } from "components/Buttons";
+import Comment from "../PostComment/index"
+
 
 interface PostProps {
   dataItem: DataType;
@@ -66,7 +64,7 @@ const Post: React.FC<PostProps> = (props) => {
                         ) : null}
                         <div className={styles.postBtns}>
                           <UpvoteButton />
-                          <CommnetButton />
+                          <CommnetButton  />
                           <ShareButton />
                         </div>
                       </div>
@@ -76,19 +74,19 @@ const Post: React.FC<PostProps> = (props) => {
                   </div>
                 </div>
                 <div className={styles.postContainerMobile}>
-                <p className={styles.postTextMobile}>{post.content}</p>
-                        {post.attachment.length > 0 ? (
-                          <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
+                  <p className={styles.postTextMobile}>{post.content}</p>
+                  {post.attachment.length > 0 ? (
+                    <img src={post.attachment} alt="attachment icon" className={styles.postUploadImg} />
                   ) : null}
-                  
-                        <div className={styles.postBtnsMobile}>
-                          <UpvoteButtonMobile />
-                          <CommnetButtonMobile />
-                          <ShareButtonMobile />
-                        </div>
-                      </div>
-              </div>
 
+                  <div className={styles.postBtnsMobile}>
+                    <UpvoteButtonMobile />
+                    <CommnetButtonMobile />
+                    <ShareButtonMobile />
+                  </div>
+                </div>
+              </div>
+              <Comment post={post} isOpen={openComments[post.id]} />
             </div>
           </div>
         );

@@ -20,8 +20,8 @@ import RighSideBar from "pages/Home/RightSideBar/RighSideBar";
 import AboutProfile from "pages/Profile/components/aboutProfile";
 import User from "./components/User"
 import Post from "./components/Post"
-import { dataBase } from "pages/Explore/data";
-import { DataType } from "pages/Explore/types";
+import { dataBase } from "./components/Post/data";
+import { DataType } from "./components/Post/types.d";
 import WritePost from "components/Home/FeedHeader"
 import MobileNavBar from "components/MobileNavBar";
 

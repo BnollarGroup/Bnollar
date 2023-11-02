@@ -104,3 +104,15 @@
   background: #ef8031 !important;
   border-radius: 28px;
 }
+
+@media all and (max-width: 320px) {
+  .postButton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 28px;
+    gap: 10px;
+    background: #ef8031 !important;
+    border-radius: 28px;
+  }
+}

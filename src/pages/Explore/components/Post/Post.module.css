@@ -97,9 +97,6 @@
 }
 
 .postSettingsInner {
-  position: absolute;
-  top: 35%;
-  left: 54%;
   transform: translate(-50%, -50%);
   letter-spacing: 2.5px;
   color: rgba(255, 255, 255, 0.4);
@@ -137,10 +134,6 @@
 
   .postText {
     display: none;
-  }
-
-  .postSettings {
-    align-self: center;
   }
 
   .postTextMobile {

@@ -1,5 +1,4 @@
 .feedCard_header_menu {
-    right: 10px;
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
@@ -12,7 +11,9 @@
     gap: 8px;
   }
  .button {
-    width: 111px;
+  display: flex;
+  align-items: center;
+    padding: 15px;
     border-radius: 20px;
     height: 40px;
     background-color: white;
