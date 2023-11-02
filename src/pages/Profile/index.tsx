@@ -14,10 +14,10 @@ import { DataType } from "./components/Post/types.d";
 import WritePost from "components/Home/FeedHeader";
 import MobileNavBar from "components/MobileNavBar";
 
-export type Page = "feed" | "NFTs" | "media";
+export type TabPage = "feed" | "NFTs" | "media";
 
 function Profile() {
-  const pages: { page: Page; icon: any }[] = [
+  const tabsPages: { page: TabPage; icon: any }[] = [
     {
       page: "feed",
       icon: Grid,
@@ -29,7 +29,7 @@ function Profile() {
     { page: "media", icon: StatsReport },
   ];
 
-  const [currentPage, setCurrentPage] = useState<Page>("feed");
+  const [currentTab, setCurrentTab] = useState<TabPage>("feed");
   return (
     <div className={style.mainContainer}>
       <Layout>
@@ -46,9 +46,9 @@ function Profile() {
             <User />
 
             <Tabs
-              pages={pages}
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
+              pages={tabsPages}
+              currentPage={currentTab}
+              setCurrentPage={setCurrentTab}
             />
 
             <div className={style.gap}>
