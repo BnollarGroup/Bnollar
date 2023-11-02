@@ -67,11 +67,7 @@ function Group() {
 
           <InformationSection data={groupData} />
 
-          <Tabs
-            pages={pages}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          <Tabs pages={pages} value={currentPage} onChange={setCurrentPage} />
 
           <div className={style.line}></div>
           <div className={style.mainbox}>

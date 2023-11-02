@@ -5,25 +5,23 @@ import style from "./Tabs.module.css";
 
 interface Props {
   pages: { page: string; icon: any }[];
-  currentPage: any;
-  setCurrentPage: Dispatch<SetStateAction<any>>;
+  value: any;
+  onChange: Dispatch<SetStateAction<any>>;
 }
-export default function Tabs({ pages, currentPage, setCurrentPage }: Props) {
+
+export default function Tabs({ pages, value, onChange }: Props) {
   return (
     <div className={style.menu}>
       {pages.map((page, i) => (
         <div
-          className={clsx(
-            style.menuItem,
-            page.page === currentPage && style.active
-          )}
+          className={clsx(style.menuItem, page.page === value && style.active)}
           key={i}
-          onClick={() => setCurrentPage(page.page)}
+          onClick={() => onChange(page.page)}
         >
           <img src={page.icon} alt={page.page} />
           <h1>{capitalize(page.page)}</h1>
 
-          {page.page === currentPage && <div className={style.menuline}></div>}
+          {page.page === value && <div className={style.menuline}></div>}
         </div>
       ))}
     </div>

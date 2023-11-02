@@ -47,8 +47,8 @@ function Profile() {
 
             <Tabs
               pages={tabsPages}
-              currentPage={currentTab}
-              setCurrentPage={setCurrentTab}
+              value={currentTab}
+              onChange={setCurrentTab}
             />
 
             <div className={style.gap}>
