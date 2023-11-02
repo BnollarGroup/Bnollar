@@ -1,9 +1,4 @@
 import styles from "./LeftSideBar.module.css";
-import nft from "lib/resources/images/icons/nft.svg";
-import home from "lib/resources/images/icons/home.svg";
-import comunity from "lib/resources/images/icons/comunity.svg";
-import settings from "lib/resources/images/icons/settings.svg";
-import hashtag from "lib/resources/images/icons/hashtag.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import Home from "lib/resources/svg/Home";
 import Statistics from "lib/resources/svg/Statistics";
