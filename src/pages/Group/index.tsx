@@ -8,7 +8,7 @@ import Members from "lib/resources/images/icons/memebers.png";
 import Media from "lib/resources/images/icons/stats-report.png";
 import File from "lib/resources/images/icons/folder.png";
 import Layout from "providers/Layout";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/LeftSidebar";
 import { useState } from "react";
 import Tabs from "components/Tabs";
 import FeedHeader from "components/Home/FeedHeader";

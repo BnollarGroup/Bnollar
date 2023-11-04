@@ -4,8 +4,8 @@ import SocialNetworks from "components/SocialNetworks";
 import WritePost from "components/Home/FeedHeader";
 import Cover from "../Cover";
 import Avatar from "../UserProfileImg";
-import UserInformation from "../aboutProfile";
 import About from "../UserInformation";
+import AboutProfile from "../AboutProfile";
 
 export default function InformationSection() {
   return (
@@ -14,7 +14,7 @@ export default function InformationSection() {
 
       <div className={style.aboutUserProfile}>
         <Avatar />
-        <UserInformation />
+        <AboutProfile />
         <Followers />
 
         <div className={style.responsiveSocialNetwork}>

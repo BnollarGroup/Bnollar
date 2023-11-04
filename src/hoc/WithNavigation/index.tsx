@@ -3,7 +3,7 @@ import SettingsTopNav from "../../components/Settings/SettingsTopNav/SettingsTop
 import SideNav from "components/Sidenav";
 import { ComponentType } from "react";
 import styles from "./WithNavigation.module.css";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/LeftSidebar";
 
 const withNavigation = (WrappedComponent: ComponentType<any>) => {
   // eslint-disable-next-line react/display-name

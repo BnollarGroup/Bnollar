@@ -7,8 +7,8 @@ import Post from "pages/Explore/components/Post/Post";
 import RightSideBar from "pages/Explore/components/RightSideBar/RightSideBar";
 import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
-import MobileNavBar from "components/MobileNavBar";
+import LeftSideBar from "components/LeftSidebar";
+import MobileNavBar from "components/MobileNavbar";
 
 function Explore() {
   const [data] = useState<DataType[]>(dataBase);

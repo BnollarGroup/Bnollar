@@ -4,7 +4,7 @@ import styles from "./Home.module.css";
 import RighSideBar from "./RightSideBar/RighSideBar";
 import Layout from "providers/Layout";
 import Rightnavbar from "components/RightNavbar";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/LeftSidebar";
 
 export default function Home() {
   return (

@@ -6,7 +6,7 @@ import NftMonkey from "lib/resources/images/icons/nft.png";
 import Rightnavbar from "components/RightNavbar";
 import NftFilterMenu from "components/NftCollectionFilter";
 import Layout from "providers/Layout";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import LeftSideBar from "components/LeftSidebar";
 
 function NftCollection() {
   const [nftPicture, setNftPicture] = useState([

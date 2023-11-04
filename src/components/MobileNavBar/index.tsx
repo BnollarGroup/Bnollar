@@ -6,7 +6,7 @@ import Group from "lib/resources/svg/Group";
 import Notification from "lib/resources/svg/Notification";
 import Messages from "lib/resources/svg/Messages";
 
-const MobileNavBar = () => {
+const MobileNavbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -62,4 +62,4 @@ const MobileNavBar = () => {
     </div>
   );
 };
-export default MobileNavBar;
+export default MobileNavbar;

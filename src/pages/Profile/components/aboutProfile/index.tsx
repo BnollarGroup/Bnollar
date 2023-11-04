@@ -1,8 +1,7 @@
-import React from "react";
-import style from "./aboutProfile.module.css";
+import style from "./AboutProfile.module.css";
 import Verifed from "lib/resources/images/icons/twitter-verified-badge.png";
 
-export default function UserInformation() {
+export default function AboutProfile() {
   return (
     <div className={style.profileContainer}>
       <div className={style.user_name}>

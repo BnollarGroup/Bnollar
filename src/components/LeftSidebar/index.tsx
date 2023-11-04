@@ -6,7 +6,7 @@ import Hashtag from "lib/resources/svg/Hashtag";
 import Group from "lib/resources/svg/Group";
 import Wheel from "lib/resources/svg/Wheel";
 
-const LeftSideBar = () => {
+const LeftSidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -74,4 +74,4 @@ const LeftSideBar = () => {
     </div>
   );
 };
-export default LeftSideBar;
+export default LeftSidebar;

@@ -3,13 +3,13 @@ import Navbar from "components/Navbar";
 import style from "./Profile.module.css";
 import Grid from "lib/resources/images/icons/view-grid.png";
 import StatsReport from "lib/resources/images/icons/stats-report.png";
-import LeftSideBar from "components/Leftsidebar/LeftSideBar";
+import LeftSidebar from "components/LeftSidebar";
 import Layout from "providers/Layout";
 import Tabs from "components/Tabs";
 import UserInformation from "./components/UserInformation";
 import Post from "./components/Post";
 import WritePost from "components/Home/FeedHeader";
-import MobileNavBar from "components/MobileNavBar";
+import MobileNavbar from "components/MobileNavbar";
 import InformationSection from "./components/InformationSection";
 import { data } from "./utils/config";
 
@@ -39,7 +39,7 @@ function Profile() {
 
         <div className={style.container}>
           <div className={style.LeftSideBar}>
-            <LeftSideBar />
+            <LeftSidebar />
           </div>
 
           <div className={style.userContainer}>
@@ -76,7 +76,7 @@ function Profile() {
             </div>
 
             <div className={style.MobileNavBar}>
-              <MobileNavBar />
+              <MobileNavbar />
             </div>
           </div>
         </div>
