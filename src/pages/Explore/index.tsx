@@ -3,10 +3,10 @@ import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
 import style from "./Explore.module.css";
 import LeftSidebar from "components/LeftSidebar";
-import Post from "./components/Post";
 import RightSidebar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
+import Post from "components/Post";
 
 function Explore() {
   const posts = data[0].posts;

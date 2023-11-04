@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Post as TPost } from "../../utils/types";
 import styles from "./Post.module.css";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
-import Buttons from "../Buttons";
+import { Post as TPost } from "pages/Explore/utils/types";
+import Buttons from "./components/Buttons";
 
 interface Props {
   data: TPost;
