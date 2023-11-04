@@ -77,6 +77,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
   };
 
   return (
+    // <div className={style.nftmenuContainer}>
     <div className={style.nftmenuMain}>
       <div className={style.nftmenuWrapper}>
         <div className={style.nftmenu}>
@@ -325,6 +326,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
         )}
       </div>
     </div>
+    // </div>
   );
 }
 

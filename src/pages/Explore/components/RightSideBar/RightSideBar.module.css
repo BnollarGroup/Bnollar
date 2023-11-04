@@ -84,8 +84,6 @@
 }
 
 .follow {
-  width: 323px;
-  height: 360px;
   background: #17181b;
   border-radius: 10px;
   padding: 16px;
@@ -116,6 +114,18 @@
   display: flex;
   align-items: center;
   column-gap: 14px;
+  width: 100%;
+}
+
+.followAvatar {
+  align-self: baseline;
+}
+
+.followPerson {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .followName {
@@ -127,8 +137,7 @@
 }
 
 .followButton {
-  width: 72px;
-  height: 32px;
+  padding: 6px 16px;
   background: #ffffff;
   border: 4px solid #0d0e11;
   border-radius: 40px;
@@ -139,8 +148,32 @@
   color: #0d0e11;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 930px) {
   .rightSidebar {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .rightSidebar {
+    width: 100%;
+  }
+
+  .follow,
+  .trends {
+    width: 100%;
+    min-width: 200px;
+  }
+
+  .followPerson {
+    flex-direction: column;
+  }
+
+  .followName {
+    align-self: baseline;
+  }
+
+  .followButton {
+    align-self: baseline;
   }
 }

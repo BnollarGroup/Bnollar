@@ -197,9 +197,8 @@ const Activity = () => {
 
 const Nft = () => {
   const size = useScreenSize();
-
+  
   const isMobile = size === "md" || size === "sm" || size === "xs";
-
   if (isMobile) {
     return (
       <Layout>

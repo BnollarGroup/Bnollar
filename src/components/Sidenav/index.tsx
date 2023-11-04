@@ -5,19 +5,25 @@ import Statistics from "lib/resources/svg/Statistics";
 import Wheel from "lib/resources/svg/Wheel";
 import Group from "lib/resources/svg/Group";
 import style from "./Sidenav.module.css";
+import { useNavigate } from "react-router-dom";
 
 function Rightnavbar() {
   const [activeItem, setActiveItem] = useState("Settings");
-  const [settingsActive, setSettingsActive] = useState(true);
+  // const [settingsActive, setSettingsActive] = useState(true);
+  const navigate = useNavigate();
 
-  const handleNavbarItemClick = (itemName: string) => {
-    if (itemName === "Settings") {
-      setSettingsActive(!settingsActive);
-    } else {
-      setSettingsActive(false);
-    }
+  // const handleNavbarItemClick = (itemName: string) => {
+  //   if (itemName === "Settings") {
+  //     setSettingsActive(!settingsActive);
+  //   } else {
+  //     setSettingsActive(false);
+  //   }
 
-    setActiveItem(itemName);
+  //   setActiveItem(itemName);
+  // };
+
+  const handleNavbarItemClick = (route: string) => {
+    navigate(route);
   };
 
   return (
@@ -27,7 +33,7 @@ function Rightnavbar() {
           className={`${style.navbar} ${
             activeItem === "Home" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Home")}
+          onClick={() => handleNavbarItemClick("/home")}
         >
           <Home
             color={
@@ -40,7 +46,7 @@ function Rightnavbar() {
           className={`${style.navbar} ${
             activeItem === "Explore" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Explore")}
+          onClick={() => handleNavbarItemClick("/explore")}
         >
           <Hashtag
             color={
@@ -55,7 +61,7 @@ function Rightnavbar() {
           className={`${style.navbar} ${
             activeItem === "NFT" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("NFT")}
+          onClick={() => handleNavbarItemClick("/nft-collection")}
         >
           <Statistics
             color={
@@ -68,7 +74,7 @@ function Rightnavbar() {
           className={`${style.navbar} ${
             activeItem === "Community" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Community")}
+          onClick={() => handleNavbarItemClick("/grouppage")}
         >
           <Group
             color={
@@ -81,13 +87,13 @@ function Rightnavbar() {
         </div>
         <div
           className={`${style.navbar} ${
-            settingsActive || activeItem === "Settings" ? style.active : ""
+            activeItem === "Settings" ? style.active : ""
           }`}
-          onClick={() => handleNavbarItemClick("Settings")}
+          onClick={() => handleNavbarItemClick("/settings/:type")}
         >
           <Wheel
             color={
-              settingsActive || activeItem === "Settings"
+              activeItem === "Settings"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
             }

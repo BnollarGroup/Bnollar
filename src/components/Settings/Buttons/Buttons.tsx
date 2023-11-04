@@ -7,10 +7,10 @@ interface ButtonsProps {
 const Buttons = ({ updateButtonTitle }: ButtonsProps) => {
   return (
     <div className={styles.buttonsWrapper}>
-      <button type="button" className={styles.cancelButton}>
+      <button type="submit" className={styles.cancelButton}>
         Cancel
       </button>
-      <button type="button" className={styles.updateButton}>
+      <button type="submit" className={styles.updateButton}>
         {updateButtonTitle}
       </button>
     </div>

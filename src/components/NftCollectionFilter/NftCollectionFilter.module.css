@@ -250,6 +250,7 @@
   top: 50px;
   left: 0;
   width: 274px;
+  z-index: 999999;
 }
 
 .nftPiece {
@@ -327,11 +328,13 @@
   }
 
   .nftmenuMain {
-    overflow-x: auto;
+    width: 100%;
+    overflow-x: scroll;
   }
 
   .nftmenuWrapper {
     overflow-x: auto;
+    position: relative;
   }
 
   .nftmenuWrapper::-webkit-scrollbar {

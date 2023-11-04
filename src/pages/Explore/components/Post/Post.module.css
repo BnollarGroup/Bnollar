@@ -1,8 +1,13 @@
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
 .post {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
   padding: 16px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.04);
@@ -44,10 +49,16 @@
   width: 100%;
 }
 
+.postAuthorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
 .postAuthor {
   display: flex;
   column-gap: 8px;
-  margin-bottom: 6px;
 }
 
 .postAuthorNameInner {
@@ -77,6 +88,20 @@
   font-size: 13px;
   line-height: 20px;
   color: #ffffff;
+}
+
+.postAttachment {
+  width: 100%;
+}
+
+.postAndButtonsMobile {
+  display: none;
+}
+
+.postAndButtonsDesktop {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .postTextMobile {
@@ -127,6 +152,26 @@
   color: #ffffff;
 }
 
+@media screen and (max-width: 1024px) {
+  .postAndButtonsDesktop {
+    display: none;
+  }
+
+  .postAndButtonsMobile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .postTextMobile {
+    display: inline-block;
+  }
+
+  .postAuthorWrapper {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .postAuthor {
     flex-direction: column;
@@ -136,7 +181,7 @@
     display: none;
   }
 
-  .postTextMobile {
-    display: inline-block;
+  .postSettings {
+    align-self: center;
   }
 }

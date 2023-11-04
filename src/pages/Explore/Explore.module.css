@@ -1,13 +1,14 @@
-.container {
-  display: flex;
-  column-gap: 25px;
-  width: 100%;
-  min-height: 100vh;
+.leftSideBarWrapper {
+  min-width: 245px;
 }
 
 .newsFeedContainer {
-  flex: 3 1;
-  max-width: 100%;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  column-gap: 25px;
 }
 
 .title {
@@ -20,12 +21,15 @@
 
 .categoryButtons {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  column-gap: 8px;
+  gap: 8px;
   margin: 24px 0;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: auto;
+  position: relative;
 }
 
 .categoryButtons::-webkit-scrollbar {
@@ -43,21 +47,52 @@
   font-size: 13px;
   line-height: 20px;
   color: rgba(255, 255, 255, 0.6);
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
-.newsFeed {
-  width: 100%;
+.MobileNavBarWrapper {
+  display: none;
 }
 
-/* @media screen and (max-width: 768px) {
-  .leftSideBarContainer {
+@media screen and (max-width: 930px) {
+  .title {
+    margin-top: 24px;
+  }
+
+  .leftSideBarWrapper {
     display: none;
   }
 
-  .MobileNavBarWrapper {
-    position: sticky;
-    bottom: 0;
-    left: 0;
+  .content {
+    column-gap: 0;
   }
-} */
+
+  .categoryButtons {
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    margin-top: 14px;
+  }
+
+  .MobileNavBarWrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: block;
+  }
+
+  .navbarWrapper {
+    padding: 10px 16px;
+  }
+
+  .title {
+    padding-left: 16px;
+  }
+
+  .categoryButtons {
+    padding: 0 16px;
+  }
+}

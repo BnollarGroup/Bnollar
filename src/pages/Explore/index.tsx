@@ -1,13 +1,12 @@
-import WithNavigation from "hoc/WithNavigation";
-import styles from "./Explore.module.css";
 import { useState } from "react";
-import { dataBase } from "pages/Explore/data";
-import { DataType } from "pages/Explore/types";
-import Post from "pages/Explore/components/Post/Post";
-import RightSideBar from "pages/Explore/components/RightSideBar/RightSideBar";
+import { DataType } from "./types";
+import { dataBase } from "./data";
 import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
+import styles from "./Explore.module.css";
 import LeftSideBar from "components/LeftSidebar";
+import Post from "./components/Post/Post";
+import RightSideBar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 
 function Explore() {
@@ -15,35 +14,42 @@ function Explore() {
 
   return (
     <Layout>
-      <Navbar />
       <div className={styles.container}>
-        <div className={styles.leftSideBarContainer}>
-          <LeftSideBar />
+        <div className={styles.navbarWrapper}>
+          <Navbar />
         </div>
-
-        <div className={styles.newsFeedContainer}>
-          <h1 className={styles.title}>Explore</h1>
-
-          <div className={styles.categoryButtons}>
-            <button className={styles.categoryButton}>Recommended</button>
-            <button className={styles.categoryButton}>Business</button>
-            <button className={styles.categoryButton}>Creative</button>
-            <button className={styles.categoryButton}>Education</button>
-            <button className={styles.categoryButton}>Entertainment</button>
-            <button className={styles.categoryButton}>Fashion & Beauty</button>
+        <div className={styles.content}>
+          <div className={styles.leftSideBarWrapper}>
+            <LeftSideBar />
           </div>
+          <div className={styles.newsFeedContainer}>
+            <h1 className={styles.title}>Explore</h1>
 
-          <div className={styles.newsFeed}>
-            {data.map((dataItem: DataType, index: number) => {
-              return (
-                <div key={index}>
-                  <Post dataItem={dataItem} />
-                </div>
-              );
-            })}
+            <div className={styles.categoryButtons}>
+              <button className={styles.categoryButton}>Recommended</button>
+              <button className={styles.categoryButton}>Business</button>
+              <button className={styles.categoryButton}>Creative</button>
+              <button className={styles.categoryButton}>Education</button>
+              <button className={styles.categoryButton}>Entertainment</button>
+              <button className={styles.categoryButton}>
+                Fashion & Beauty
+              </button>
+            </div>
+
+            <div className={styles.newsFeed}>
+              {data.map((dataItem: DataType, index: number) => {
+                return (
+                  <div key={index}>
+                    <Post dataItem={dataItem} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.rightSideBarWrapper}>
+            <RightSideBar />
           </div>
         </div>
-        <RightSideBar />
       </div>
       <div className={styles.MobileNavBarWrapper}>
         <MobileNavBar />
