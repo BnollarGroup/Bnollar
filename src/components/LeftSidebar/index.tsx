@@ -1,4 +1,4 @@
-import styles from "./LeftSideBar.module.css";
+import styles from "./LeftSidebar.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Home from "lib/resources/svg/Home";
 import Statistics from "lib/resources/svg/Statistics";
