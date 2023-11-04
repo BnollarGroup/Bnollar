@@ -1,11 +1,4 @@
-export type DataType = {
-  currentUser: {
-    image: string;
-  };
-  posts: PostsData[] | undefined;
-};
-
-export type PostsData = {
+export type Post = {
   id: number;
   user: {
     name: string;
@@ -18,10 +11,10 @@ export type PostsData = {
   numberOfComments: string;
   numberOfShares: string;
   attachment: string;
-  replies: RepliesData[] | undefined;
+  replies: Reply[] | undefined;
 };
 
-type RepliesData = {
+type Reply = {
   id: number;
   username: string;
   image: string;

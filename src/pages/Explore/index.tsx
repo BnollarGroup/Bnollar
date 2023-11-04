@@ -1,49 +1,47 @@
-import { useState } from "react";
-import { DataType } from "./utils/types";
-import { dataBase } from "./utils/config";
+import { data } from "./utils/config";
 import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
-import styles from "./Explore.module.css";
-import LeftSideBar from "components/LeftSidebar";
+import style from "./Explore.module.css";
+import LeftSidebar from "components/LeftSidebar";
 import Post from "./components/Post";
-import RightSideBar from "./components/RightSidebar";
+import RightSidebar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
 
 function Explore() {
-  const [data] = useState<DataType[]>(dataBase);
+  const posts = data[0].posts;
 
   return (
     <Layout>
-      <div className={styles.container}>
-        <div className={styles.navbarWrapper}>
+      <div className={style.container}>
+        <div className={style.navbarWrapper}>
           <Navbar />
         </div>
-        <div className={styles.content}>
-          <div className={styles.leftSideBarWrapper}>
-            <LeftSideBar />
+
+        <div className={style.content}>
+          <div className={style.leftSideBarWrapper}>
+            <LeftSidebar />
           </div>
-          <div className={styles.newsFeedContainer}>
-            <h1 className={styles.title}>Explore</h1>
+
+          <div className={style.newsFeedContainer}>
+            <h1 className={style.title}>Explore</h1>
 
             <CategoryButtons />
 
-            <div className={styles.newsFeed}>
-              {data.map((dataItem: DataType, index: number) => {
-                return (
-                  <div key={index}>
-                    <Post dataItem={dataItem} />
-                  </div>
-                );
-              })}
+            <div className={style.newsFeed}>
+              {posts?.map((post) => (
+                <Post data={post} key={post.id} />
+              ))}
             </div>
           </div>
-          <div className={styles.rightSideBarWrapper}>
-            <RightSideBar />
+
+          <div className={style.rightSideBarWrapper}>
+            <RightSidebar />
           </div>
         </div>
       </div>
-      <div className={styles.MobileNavBarWrapper}>
+
+      <div className={style.MobileNavBarWrapper}>
         <MobileNavBar />
       </div>
     </Layout>
