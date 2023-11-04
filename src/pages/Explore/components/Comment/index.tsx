@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PostsData } from "../../types";
+import { PostsData } from "../../utils/types";
 import styles from "./Comment.module.css";
 import nonClickedHeart from "lib/resources/images/explore/nonclicked-heart.png";
 import ClickedHeart from "lib/resources/images/explore/clicked-heart.png";

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { DataType } from "../../types";
+import { DataType } from "../../utils/types";
 import styles from "./Post.module.css";
-import Comment from "../Comment/Comment";
+import Comment from "../Comment";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
-import Buttons from "../Buttons/";
+import Buttons from "../Buttons";
 
 interface PostProps {
   dataItem: DataType;
