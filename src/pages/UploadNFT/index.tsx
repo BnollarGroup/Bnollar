@@ -6,6 +6,10 @@ import styles from "./UploadNFT.module.css";
 import addIcon from "lib/resources/images/icons/addicon.png";
 import Fruit from "lib/resources/images/icons/watermelon.png";
 import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.png";
+import ArrowDown from "lib/resources/svg/ArrowDown";
+import Select from "components/Select";
+import { useAppDispatch } from "hooks/useRedux";
+import { change } from "features/modal/modalSlice";
 
 // export default function UploadNft() {
 //   const [page, setPage] = useState<string>("chooseBlockchain");
@@ -23,69 +27,11 @@ import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.
 // }
 
 function UploadNft() {
-  const [browseNft, setopenBrowsenft] = useState(false);
-  let browsenft;
-  if (browseNft) {
-    browsenft = (
-      <div className={styles.browse}>
-        <div className={styles.container}>
-          <div className={styles.uploadcontainter}>
-            <input type="file" className={styles.uploadFileInput} />
-            <div className={styles.uploadtext}>
-              <h2>Drop image here, or</h2>
-              <h3 className={styles.browsetext}>browse</h3>
-            </div>
-            <div className={styles.nftimage}>
-              <img className={styles.addicon} src={addIcon} />
-              <img
-                className={styles.uploadmiddlelogo}
-                src={UploadImgMiddleLogo}
-              />
-            </div>
-          </div>
-          <div className={styles.nftdescription}>
-            <div className={styles.collection}>
-              <h1>Collection Name</h1>
-              <input
-                className={styles.collectioninput}
-                type="text"
-                placeholder="My collection"
-              />
-            </div>
-            <div className={styles.category_shorturl}>
-              <div className={styles.category}>
-                <h1>Cateogry</h1>
-                <select>
-                  <option value="">Select a category</option>
-                </select>
-              </div>
-              <div className={styles.shorturl}>
-                <h1>Short Url</h1>
-                <div>
-                  <input type="text" placeholder="bnollar.com/" />
-                  <span>@Name</span>
-                </div>
-              </div>
-            </div>
-            <div className={styles.aboutcollection}>
-              <h1>About Collection</h1>
-              <textarea placeholder="Provide detailed description of your collection."></textarea>
-            </div>
-            <button className={styles.createnft}>Create Item</button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function browseOpen() {
-    setopenBrowsenft(true);
-  }
+  const dispatch = useAppDispatch();
 
   return (
     <section className={styles.upload_nft}>
       <Navbar />
-      {browsenft}
       <div className={styles.createnftwidth}>
         <div className={styles.leftSide}>
           <div className={styles.createNewNft}>
@@ -106,7 +52,7 @@ function UploadNft() {
               <div className={styles.openBtn}>
                 <button
                   className={styles.uploadopenbutton}
-                  onClick={browseOpen}
+                  onClick={() => dispatch(change("uploadNFT-uploadFile"))}
                 >
                   Upload File
                 </button>
@@ -120,17 +66,21 @@ function UploadNft() {
               <textarea
                 className={styles.descriptionInput}
                 placeholder="Provide detailed description of your item."
-              ></textarea>
+              />
             </div>
+
             <div className={styles.collection}>
               <h1>Collection</h1>
-              <select className={styles.collectionSelect}>
-                <option value="">Select collection</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
+
+              <Select
+                data={[
+                  {
+                    value: "category",
+                    text: "Select a category",
+                  },
+                ]}
+                className={styles.collectionSelect}
+              />
             </div>
             <div className={styles.editorials_royalties}>
               <div className={styles.editorials}>
