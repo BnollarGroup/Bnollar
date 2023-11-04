@@ -27,7 +27,7 @@ function Rightnavbar() {
           onClick={() => handleNavbarItemClick("/home")}
         >
           <Home
-            color={
+            strokeColor={
               activeItem === "Home" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
@@ -49,7 +49,7 @@ function Rightnavbar() {
           onClick={() => handleNavbarItemClick("/explore")}
         >
           <Hashtag
-            color={
+            strokeColor={
               activeItem === "Explore"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
@@ -73,7 +73,7 @@ function Rightnavbar() {
           onClick={() => handleNavbarItemClick("/nft-collection")}
         >
           <Statistics
-            color={
+            strokeColor={
               activeItem === "NFT" ? "#ffffff" : "rgba(255, 255, 255, 0.403)"
             }
           />
@@ -93,7 +93,7 @@ function Rightnavbar() {
           onClick={() => handleNavbarItemClick("/grouppage")}
         >
           <Group
-            color={
+            strokeColor={
               activeItem === "Community"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
@@ -117,7 +117,7 @@ function Rightnavbar() {
           onClick={() => handleNavbarItemClick("/settings/:type")}
         >
           <Wheel
-            color={
+            strokeColor={
               activeItem === "Settings"
                 ? "#ffffff"
                 : "rgba(255, 255, 255, 0.403)"
