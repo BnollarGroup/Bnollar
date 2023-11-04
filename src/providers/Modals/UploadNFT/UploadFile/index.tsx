@@ -4,6 +4,7 @@ import style from "./UploadFile.module.css";
 import addIcon from "lib/resources/images/icons/addicon.png";
 import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.png";
 import Select from "components/Select";
+import { useState } from "react";
 
 export default function UploadNFTUploadFileModal() {
   const dispatch = useAppDispatch();
@@ -11,7 +12,7 @@ export default function UploadNFTUploadFileModal() {
   const handleClose = () => {
     dispatch(close());
   };
-
+const [ inputValue, setInputValue ] = useState<any>("");
   return (
     <div className={style.browse}>
       <div className={style.background} onClick={handleClose} />
@@ -61,8 +62,8 @@ export default function UploadNFTUploadFileModal() {
               <h1>Short Url</h1>
 
               <div>
-                <input type="text" placeholder="bnollar.com/" />
-                <span>@Name</span>
+                <input type="text" placeholder="bnollar.com/" onChange={(v) => setInputValue(v)} />
+                { inputValue.length < 1 ? <span>@Name</span> : null }
               </div>
             </div>
           </div>

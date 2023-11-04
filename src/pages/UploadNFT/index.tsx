@@ -3,10 +3,7 @@ import Navbar from "components/Navbar";
 import ChooseBlockchain from "components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
 import ChooseType from "components/UploadNFT/ChooseType/ChooseType";
 import styles from "./UploadNFT.module.css";
-import addIcon from "lib/resources/images/icons/addicon.png";
 import Fruit from "lib/resources/images/icons/watermelon.png";
-import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.png";
-import ArrowDown from "lib/resources/svg/ArrowDown";
 import Select from "components/Select";
 import { useAppDispatch } from "hooks/useRedux";
 import { change } from "features/modal/modalSlice";
@@ -98,6 +95,7 @@ function UploadNft() {
                     className={styles.royaltiesInput}
                     type="text"
                     placeholder="10"
+                    maxLength={3}
                   />
                   <h3>%</h3>
                 </div>
