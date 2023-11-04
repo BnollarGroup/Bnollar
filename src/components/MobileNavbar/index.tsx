@@ -1,4 +1,4 @@
-import styles from "./MobileNavBar.module.css";
+import styles from "./MobileNavbar.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Home from "lib/resources/svg/Home";
 import Hashtag from "lib/resources/svg/Hashtag";
