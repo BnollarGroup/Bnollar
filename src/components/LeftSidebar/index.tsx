@@ -15,27 +15,27 @@ const LeftSidebar = () => {
   const buttons: { text: string; icon: React.ReactNode; href: string }[] = [
     {
       text: "Home",
-      icon: <Home className={styles.icon} color="gray" />,
+      icon: <Home className={styles.icon} strokeColor="gray" />,
       href: "/home",
     },
     {
       text: "Explore",
-      icon: <Hashtag className={styles.icon} color="gray" />,
+      icon: <Hashtag className={styles.icon} strokeColor="gray" />,
       href: "/explore",
     },
     {
       text: "NFT",
-      icon: <Statistics className={styles.icon} color="gray" />,
+      icon: <Statistics className={styles.icon} strokeColor="gray" />,
       href: "/nft",
     },
     {
       text: "Community",
-      icon: <Group className={styles.icon} color="gray" />,
+      icon: <Group className={styles.icon} strokeColor="gray" />,
       href: "/grouppage",
     },
     {
       text: "Settings",
-      icon: <Wheel className={styles.icon} color="gray" />,
+      icon: <Wheel className={styles.icon} strokeColor="gray" />,
       href: "/settings/:type",
     },
   ];

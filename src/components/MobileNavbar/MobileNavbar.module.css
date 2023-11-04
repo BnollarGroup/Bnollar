@@ -53,5 +53,5 @@
 
 .leftMenuButtonActive svg path,
 .leftMenuButton:hover svg path {
-  fill: white;
+  stroke: white;
 }

@@ -15,27 +15,27 @@ const MobileNavbar = () => {
   const buttons: { text: string; icon: React.ReactNode; href: string }[] = [
     {
       text: "Home",
-      icon: <Home className={styles.icon} color="gray" />,
+      icon: <Home className={styles.icon} strokeColor="gray" />,
       href: "/home",
     },
     {
       text: "Explore",
-      icon: <Hashtag className={styles.icon} color="gray" />,
+      icon: <Hashtag className={styles.icon} strokeColor="gray" />,
       href: "/explore",
     },
     {
       text: "Messages",
-      icon: <Messages className={styles.icon} color="gray" />,
+      icon: <Messages className={styles.icon} strokeColor="gray" />,
       href: "/profile-chat",
     },
     {
       text: "Notification",
-      icon: <Notification className={styles.icon} color="gray" />,
+      icon: <Notification className={styles.icon} strokeColor="gray" />,
       href: "/profile-chat",
     },
     {
       text: "Community",
-      icon: <Group className={styles.icon} color="gray" />,
+      icon: <Group className={styles.icon} strokeColor="gray" />,
       href: "/grouppage",
     },
   ];
