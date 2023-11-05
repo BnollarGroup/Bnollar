@@ -4,12 +4,13 @@
   row-gap: 16px;
 }
 
-.leftSideBarWrapper {
-  min-width: 245px;
+.leftSideBarWrapper,
+.rightSideBarWrapper {
+  flex: 1;
 }
 
 .newsFeedContainer {
-  width: 100%;
+  flex: 2;
 }
 
 .content {
