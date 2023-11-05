@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+
+  position: sticky;
+  top: var(--space-for-sticking);
 }
 
 .trends {

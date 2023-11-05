@@ -1,9 +1,11 @@
 .container {
-  padding: 2em;
+  padding: 9em 2em;
+  padding-bottom: 2em;
 }
 
 @media all and (max-width: 768px) {
   .container {
     padding: 0;
+    padding-top: 5em;
   }
 }

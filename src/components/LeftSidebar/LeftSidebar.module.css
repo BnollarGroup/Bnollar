@@ -3,6 +3,9 @@
   background-color: transparent;
   flex-direction: column;
   flex: 1;
+
+  position: sticky;
+  top: var(--space-for-sticking);
 }
 
 .leftMenu {

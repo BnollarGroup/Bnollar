@@ -11,6 +11,7 @@
   --white-color: #fff;
   /* ex: sidebar, topics, badges and other stuff. */
   --bar-color: #17181b;
+  --space-for-sticking: 8em;
 }
 
 html {
