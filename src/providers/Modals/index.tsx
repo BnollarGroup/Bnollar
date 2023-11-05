@@ -1,6 +1,7 @@
 import { useAppSelector } from "hooks/useRedux";
 import { useEffect } from "react";
 import ProfileEditDetailsModal from "./Profile/EditDetails";
+import UploadNFTUploadFileModal from "./UploadNFT/UploadFile";
 
 export default function Modals() {
   const modals = useAppSelector((state) => state.modals);
@@ -12,6 +13,9 @@ export default function Modals() {
   }, [modals]);
 
   return (
-    <>{modals.modal === "profile-editDetails" && <ProfileEditDetailsModal />}</>
+    <>
+      {modals.modal === "profile-editDetails" && <ProfileEditDetailsModal />}
+      {modals.modal === "uploadNFT-uploadFile" && <UploadNFTUploadFileModal />}
+    </>
   );
 }

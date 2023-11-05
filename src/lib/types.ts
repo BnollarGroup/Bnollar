@@ -1,1 +1,1 @@
-export type Modal = "profile-editDetails";
+export type Modal = "profile-editDetails" | "uploadNFT-uploadFile";

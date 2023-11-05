@@ -1,0 +1,313 @@
+.browse {
+  width: 100%;
+  min-height: 100vh;
+
+  position: absolute;
+  z-index: 11;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.uploadcontainter {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 60px;
+}
+
+.uploadcontainter h2 {
+  font-family: "Inter";
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.container {
+  width: 720px;
+  max-height: 100vh;
+  height: 600px;
+  border-radius: 1.5em;
+  overflow-y: scroll;
+  background-color: #0d0e11;
+
+  position: relative;
+  z-index: 12;
+}
+
+.uploadFileInput {
+  margin-top: 10px;
+}
+
+.uploadFileInput {
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  color: transparent;
+  background-color: #17181b;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.uploadFileInput::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: "Inter";
+  font-size: 12px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.uploadtext {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.browsetext {
+  font-size: 13px;
+  margin-left: 5px;
+  color: #ef8031;
+}
+
+.nftimage {
+  background-color: #17181b;
+  border: 3.5px solid #0d0e11;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: -60px;
+  left: 38px;
+}
+
+.addicon {
+  position: absolute;
+  bottom: 5px;
+  left: 70%;
+  color: #797e89;
+}
+
+.uploadmiddlelogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nftdescription {
+  color: wheat;
+  width: 640px;
+  padding: 40px;
+  box-sizing: content-box;
+}
+
+.upload_nft {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d0e11;
+}
+
+.createnftwidth {
+  width: 100%;
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+}
+
+.leftSide {
+  padding-left: 50px;
+}
+
+.rightSide {
+  border-radius: 10px;
+}
+
+.createNewNft {
+  margin-top: 20px;
+}
+
+.containerOfInputsAndNames {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin: 44px 0;
+}
+
+.createNewNft h1 {
+  font-size: 24px;
+  font-family: "Inter";
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.collection option::selection {
+  color: black;
+}
+
+.collection h1 {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Inter";
+}
+
+.category {
+  width: 100%;
+}
+
+.categorySelectContainer {
+  margin-top: 13px;
+}
+
+.collectionSelect option {
+  color: #0d0e11;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.collectioninput {
+  width: 100%;
+  height: 52px;
+  margin-top: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 14px;
+}
+
+.collectioninput::placeholder {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.collection h1 {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Inter";
+}
+
+.category_shorturl {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.75em;
+}
+
+.shorturl input {
+  width: 312px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 14px;
+  margin-top: 8px;
+}
+
+.shorturl span {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.4);
+  top: 23.2px;
+  left: 96px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.shorturl div {
+  position: relative;
+}
+
+.shorturl input::placeholder {
+  color: #ffffff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.category h1,
+.shorturl h1 {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Inter";
+  margin-bottom: 5px;
+}
+
+.aboutcollection {
+  margin-top: 30px;
+}
+
+.aboutcollection textarea::placeholder {
+  font-weight: bolder;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.aboutcollection h1 {
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Inter";
+  margin-bottom: 5px;
+}
+
+.aboutcollection textarea {
+  margin-top: 8px;
+  width: 100%;
+  height: 130px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 13px 14px;
+  font-family: "Inter";
+  resize: none;
+}
+
+.createnft {
+  width: 100%;
+  height: 56px;
+  background-color: #ef8031;
+  color: #ffffff;
+  border-radius: 200px;
+  margin-top: 30px;
+}
