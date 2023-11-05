@@ -11,6 +11,8 @@
 
 .newsFeedContainer {
   flex: 2;
+
+  width: 100%;
 }
 
 .content {
