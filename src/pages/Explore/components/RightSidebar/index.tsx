@@ -46,10 +46,6 @@ function RightSideBar() {
       avatar: followUser4,
       name: "Neal Crist Jr.",
     },
-    {
-      avatar: followUser5,
-      name: "Guadalupe Conroy",
-    },
   ];
 
   return (
