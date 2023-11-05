@@ -5,8 +5,8 @@ import ChooseType from "components/UploadNFT/ChooseType/ChooseType";
 import styles from "./UploadNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
 import Select from "components/Select";
-import { useAppDispatch } from "hooks/useRedux";
-import { change } from "features/modal/modalSlice";
+
+
 
 // export default function UploadNft() {
 //   const [page, setPage] = useState<string>("chooseBlockchain");
@@ -24,7 +24,7 @@ import { change } from "features/modal/modalSlice";
 // }
 
 function UploadNft() {
-  const dispatch = useAppDispatch();
+  
 
   return (
     <section className={styles.upload_nft}>
@@ -44,12 +44,15 @@ function UploadNft() {
                 placeholder="Name"
               />
             </div>
+
             <div className={styles.upload}>
+            
               <h1>Upload File</h1>
               <div className={styles.openBtn}>
+              <input type="file" className={styles.uploadFileInput} />
                 <button
                   className={styles.uploadopenbutton}
-                  onClick={() => dispatch(change("uploadNFT-uploadFile"))}
+                  
                 >
                   Upload File
                 </button>
@@ -58,6 +61,7 @@ function UploadNft() {
                 </h1>
               </div>
             </div>
+            
             <div className={styles.description}>
               <h1>Description</h1>
               <textarea
@@ -75,6 +79,11 @@ function UploadNft() {
                     value: "category",
                     text: "Select a category",
                   },
+                 {
+                  value: "category",
+                  text: "Add category",
+                  addCategory: true,
+                 },
                 ]}
                 className={styles.collectionSelect}
               />

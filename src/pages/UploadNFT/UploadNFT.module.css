@@ -79,8 +79,8 @@
 .collection option::selection {
   color: black;
 }
-
-/* .upload {
+/* 
+.upload {
   margin-top: 10px;
 } */
 
@@ -101,6 +101,7 @@
   border-radius: 10px;
   border: 1px dashed rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  
 }
 
 .uploadopenbutton {
@@ -367,6 +368,16 @@ input[type="file"]::-webkit-file-upload-button {
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
+}
+
+.uploadFileInput {
+  position: absolute;
+  width: 455px;
+  height: 90px;
+  color: transparent;
+  background-color: #0d0e11;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .collection h1 {
