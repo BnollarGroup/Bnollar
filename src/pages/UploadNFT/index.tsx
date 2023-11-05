@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "components/Navbar";
-import ChooseBlockchain from "components/UploadNFT/ChooseBlockchain/ChooseBlockchain";
-import ChooseType from "components/UploadNFT/ChooseType/ChooseType";
 import styles from "./UploadNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
 import Select from "components/Select";
-
-
+import { useAppDispatch } from "hooks/useRedux";
+import { change } from "features/modal/modalSlice";
 
 // export default function UploadNft() {
 //   const [page, setPage] = useState<string>("chooseBlockchain");
@@ -24,7 +22,12 @@ import Select from "components/Select";
 // }
 
 function UploadNft() {
-  
+  const dispatch = useAppDispatch();
+  const [collection, setCollection] = useState("select-category");
+
+  useEffect(() => {
+    if (collection === "add-category") dispatch(change("uploadNFT-uploadFile"));
+  }, [collection]);
 
   return (
     <section className={styles.upload_nft}>
@@ -46,22 +49,16 @@ function UploadNft() {
             </div>
 
             <div className={styles.upload}>
-            
               <h1>Upload File</h1>
               <div className={styles.openBtn}>
-              <input type="file" className={styles.uploadFileInput} />
-                <button
-                  className={styles.uploadopenbutton}
-                  
-                >
-                  Upload File
-                </button>
+                <input type="file" className={styles.uploadFileInput} />
+                <button className={styles.uploadopenbutton}>Upload File</button>
                 <h1 className={styles.uploadopentext}>
                   PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
                 </h1>
               </div>
             </div>
-            
+
             <div className={styles.description}>
               <h1>Description</h1>
               <textarea
@@ -74,16 +71,17 @@ function UploadNft() {
               <h1>Collection</h1>
 
               <Select
+                value={collection}
+                onChange={(e) => setCollection(e.target.value as any)}
                 data={[
                   {
-                    value: "category",
+                    value: "select-category",
                     text: "Select a category",
                   },
-                 {
-                  value: "category",
-                  text: "Add category",
-                  addCategory: true,
-                 },
+                  {
+                    value: "add-category",
+                    text: "Add category",
+                  },
                 ]}
                 className={styles.collectionSelect}
               />

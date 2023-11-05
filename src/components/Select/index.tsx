@@ -1,39 +1,27 @@
 import style from "./Select.module.css";
 import clsx from "clsx";
 import ArrowDown from "lib/resources/svg/ArrowDown";
-import { useState } from "react";
-import { useAppDispatch } from "hooks/useRedux";
-import { change } from "features/modal/modalSlice";
 
 interface Props {
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   className?: string;
-  data: { value: string; text: string; addCategory?: boolean }[];
+  data: { value: string; text: string }[];
   showArrow?: boolean;
-  addCategory?: boolean;
 }
 
 export default function Select({
   className,
   data,
   showArrow = true,
-  addCategory,
+  value,
+  onChange,
 }: Props) {
-
-  const dispatch = useAppDispatch();
-
   return (
     <div className={clsx(className, style.container)}>
-      <select className={style.select}>
-        {data.map((item, index, addCategory) => (
-          <option
-            key={index}
-            value={item.value}
-            onClick={
-              addCategory
-                ? () => dispatch(change("uploadNFT-uploadFile"))
-                : () => {}
-            }
-          >
+      <select className={style.select} value={value} onChange={onChange}>
+        {data.map((item, index) => (
+          <option key={index} value={item.value}>
             {item.text}
           </option>
         ))}
