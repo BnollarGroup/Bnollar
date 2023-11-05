@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "components/Navbar";
 import styles from "./UploadNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
@@ -23,11 +23,8 @@ import { change } from "features/modal/modalSlice";
 
 function UploadNft() {
   const dispatch = useAppDispatch();
-  const [collection, setCollection] = useState("select-category");
 
-  useEffect(() => {
-    if (collection === "add-category") dispatch(change("uploadNFT-uploadFile"));
-  }, [collection]);
+  const [collection, setCollection] = useState("select-category");
 
   return (
     <section className={styles.upload_nft}>
@@ -81,6 +78,7 @@ function UploadNft() {
                   {
                     value: "add-category",
                     text: "Add category",
+                    onClick: () => dispatch(change("uploadNFT-uploadFile")),
                   },
                 ]}
                 className={styles.collectionSelect}
