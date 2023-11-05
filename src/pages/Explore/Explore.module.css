@@ -4,11 +4,14 @@
   row-gap: 16px;
 }
 
-.leftSideBarWrapper {
-  min-width: 245px;
+.leftSideBarWrapper,
+.rightSideBarWrapper {
+  flex: 1;
 }
 
 .newsFeedContainer {
+  flex: 2;
+
   width: 100%;
 }
 
