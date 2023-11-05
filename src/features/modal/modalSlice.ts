@@ -15,6 +15,8 @@ export const modalSlice = createSlice({
   initialState,
   reducers: {
     change: (state, action: PayloadAction<Modal>) => {
+      window.scrollTo(0, 0);
+
       state.modal = action.payload;
     },
 
