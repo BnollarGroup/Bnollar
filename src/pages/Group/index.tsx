@@ -54,7 +54,7 @@ function Group() {
   const [currentTab, setCurrentTab] = useState<TabPage>("feed");
 
   return (
-    <Layout hasPaddingOnMobile>
+    <Layout>
       <Navbar />
 
       <div className={style.container}>

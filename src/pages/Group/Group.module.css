@@ -40,6 +40,13 @@
   margin-top: 20px;
 }
 
+@media all and (max-width: 768px) {
+  .mainbox {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
 .post {
   background-color: #16181c;
   padding: 10px;

@@ -17,7 +17,7 @@ export default function InformationSection({ data }: { data: any }) {
           </div>
         </div>
 
-        <div className={style.social}>
+        <div className={clsx(style.social, style.socialOnDesktop)}>
           <img src={Instagram} alt="" className={style.icon} />
 
           <img src={Twitter} alt="" className={style.icon} />
@@ -29,8 +29,21 @@ export default function InformationSection({ data }: { data: any }) {
           <button className={clsx(style.button, style.dotbtn)}>...</button>
         </div>
       </div>
+
       <div className={style.description}>
         <p>{data.description}</p>
+      </div>
+
+      <div className={clsx(style.social, style.socialOnMobile)}>
+        <img src={Instagram} alt="" className={style.icon} />
+
+        <img src={Twitter} alt="" className={style.icon} />
+
+        <img src={Discord} alt="" className={style.icon} />
+
+        <button className={style.button}>Subscribe</button>
+
+        <button className={clsx(style.button, style.dotbtn)}>...</button>
       </div>
     </>
   );

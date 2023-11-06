@@ -65,3 +65,33 @@
 .icon {
   cursor: pointer;
 }
+
+.socialOnMobile {
+  display: none;
+}
+
+@media all and (max-width: 768px) {
+  .container,
+  .description {
+    padding-left: 2em;
+  }
+
+  .socialOnMobile {
+    display: flex;
+
+    padding: 1.5em 2em;
+  }
+
+  .socialOnDesktop {
+    display: none;
+  }
+
+  .description {
+    margin: 1em 0;
+  }
+
+  .titleWithBadge {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
