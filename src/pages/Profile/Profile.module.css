@@ -492,13 +492,8 @@ hr {
   display: none;
 }
 
-
 @media all and (max-width: 768px) {
-  .LeftSideBar {
-    display: none;
-  }
-
-  .writePost{
+  .writePost {
     display: none;
   }
 

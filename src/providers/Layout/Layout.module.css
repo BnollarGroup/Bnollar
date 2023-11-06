@@ -14,3 +14,10 @@
     padding-top: 5em;
   }
 }
+
+.paddingOnMobile {
+  @media all and (max-width: 768px) {
+    padding: 9em 2em !important;
+    padding-bottom: 2em !important;
+  }
+}

@@ -105,3 +105,9 @@
 .leftMenuButton:hover svg path {
   stroke: white;
 }
+
+@media all and (max-width: 930px) {
+  .leftSideBarWrapper {
+    display: none;
+  }
+}

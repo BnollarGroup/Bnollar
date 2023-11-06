@@ -4,9 +4,14 @@
   row-gap: 16px;
 }
 
-.leftSideBarWrapper,
 .rightSideBarWrapper {
   flex: 1;
+}
+
+@media all and (max-width: 930px) {
+  .rightSideBarWrapper {
+    flex: none;
+  }
 }
 
 .newsFeedContainer {
@@ -35,10 +40,6 @@
 @media screen and (max-width: 930px) {
   .title {
     margin-top: 24px;
-  }
-
-  .leftSideBarWrapper {
-    display: none;
   }
 
   .content {

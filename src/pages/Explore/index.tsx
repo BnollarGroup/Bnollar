@@ -19,9 +19,7 @@ function Explore() {
         </div>
 
         <div className={style.content}>
-          <div className={style.leftSideBarWrapper}>
-            <LeftSidebar />
-          </div>
+          <LeftSidebar />
 
           <div className={style.newsFeedContainer}>
             <h1 className={style.title}>Explore</h1>
