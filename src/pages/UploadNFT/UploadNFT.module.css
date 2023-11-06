@@ -101,7 +101,6 @@
   border-radius: 10px;
   border: 1px dashed rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  
 }
 
 .uploadopenbutton {
@@ -265,6 +264,12 @@
   font-size: 13px;
   color: #ffffff;
   font-family: "Inter";
+}
+
+.priceInput::-webkit-inner-spin-button,
+.editorialsInput::-webkit-inner-spin-button,
+.royaltiesInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .priceInput {

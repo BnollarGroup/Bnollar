@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "components/Navbar";
 import styles from "./UploadNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
@@ -25,6 +25,7 @@ function UploadNft() {
   const dispatch = useAppDispatch();
 
   const [collection, setCollection] = useState("select-category");
+  const [price, setPrice] = useState<any>(2.5);
 
   return (
     <section className={styles.upload_nft}>
@@ -89,7 +90,7 @@ function UploadNft() {
                 <h1>Number of editorials</h1>
                 <input
                   className={styles.editorialsInput}
-                  type="text"
+                  type="number"
                   placeholder="100"
                 />
               </div>
@@ -98,9 +99,8 @@ function UploadNft() {
                 <div className={styles.royaltiesPercent}>
                   <input
                     className={styles.royaltiesInput}
-                    type="text"
+                    type="number"
                     placeholder="10"
-                    maxLength={3}
                   />
                   <h3>%</h3>
                 </div>
@@ -111,8 +111,9 @@ function UploadNft() {
               <div className={styles.priceinpselect}>
                 <input
                   className={styles.priceInput}
-                  type="text"
+                  type="number"
                   placeholder="2.5"
+                  onChange={(v) => setPrice(v.target.value)}
                 />
                 <select>
                   <option>ETH</option>
@@ -126,7 +127,7 @@ function UploadNft() {
               </div>
               <div className={styles.receive}>
                 <h2>You will receive</h2>
-                <h3>2.4375 ETH</h3>
+                <h3>{(price * 2.5 )/ 100} ETH</h3>
               </div>
             </div>
           </div>
