@@ -3,7 +3,7 @@ import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
 import style from "./Explore.module.css";
 import LeftSidebar from "components/LeftSidebar";
-import RightSidebar from "./components/RightSidebar";
+import RightSidebar from "./components/RightSideBar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
 import Post from "components/Post";
