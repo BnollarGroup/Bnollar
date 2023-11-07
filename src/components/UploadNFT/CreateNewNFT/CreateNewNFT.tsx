@@ -4,12 +4,13 @@ import Fruit from "lib/resources/images/icons/watermelon.png";
 import Select from "components/Select";
 import { useAppDispatch } from "hooks/useRedux";
 import { change } from "features/modal/modalSlice";
+import clsx from "clsx";
 
 function CreateNewNFT() {
   const dispatch = useAppDispatch();
 
   const [collection, setCollection] = useState("select-category");
-  const [price, setPrice] = useState<any>(2.5);
+  const [price, setPrice] = useState("2.5");
   const [image, setImage] = useState<any>();
 
   return (
@@ -31,22 +32,35 @@ function CreateNewNFT() {
             </div>
 
             <div className={styles.upload}>
-              <h1>Upload File</h1>
-              <div className={styles.openBtn}>
-                <input
-                  type="file"
-                  className={styles.uploadFileInput}
-                  onChange={(e) => {
-                    const file = e.currentTarget.files?.[0];
-                    const url = URL.createObjectURL(file);
-                    setImage(url);
-                  }}
-                  {image ? <img src={image} /> : null}
-                />
-                <button className={styles.uploadopenbutton}>Upload File</button>
-                <h1 className={styles.uploadopentext}>
-                  PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
-                </h1>
+              {!image && <h1>Upload File</h1>}
+              <div className={clsx(styles.openBtn, image && styles.autoHeight)}>
+                {image ? (
+                  <img
+                    src={image}
+                    alt="Uploaded image"
+                    className={styles.uploadedImage}
+                  />
+                ) : (
+                  <>
+                    <input
+                      type="file"
+                      className={styles.uploadFileInput}
+                      onChange={(e) => {
+                        const file = e.currentTarget.files?.[0] as File;
+                        const url = URL.createObjectURL(file);
+
+                        setImage(url);
+                      }}
+                      accept="image/png image/gif image/webp video/mp4 audio/mp3"
+                    />
+                    <button className={styles.uploadopenbutton}>
+                      Upload File
+                    </button>
+                    <h1 className={styles.uploadopentext}>
+                      PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
+                    </h1>
+                  </>
+                )}
               </div>
             </div>
 
@@ -120,7 +134,7 @@ function CreateNewNFT() {
               </div>
               <div className={styles.receive}>
                 <h2>You will receive</h2>
-                <h3>{(price * 2.5) / 100} ETH</h3>
+                <h3>{(+price * 2.5) / 100} ETH</h3>
               </div>
             </div>
           </div>

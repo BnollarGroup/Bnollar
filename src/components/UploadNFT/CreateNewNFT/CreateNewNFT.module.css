@@ -505,3 +505,14 @@ input[type="file"]::-webkit-file-upload-button {
   font-size: 10px;
   color: #797e89;
 }
+
+.uploadedImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.autoHeight {
+  height: auto;
+}
