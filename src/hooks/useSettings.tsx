@@ -1,9 +1,9 @@
-import ManageWallets from "components/Settings/ManageWallets/ManageWallets";
-import Notifications from "components/Settings/Notifications/Notifications";
-import Profile from "components/Settings/Profile/Profile";
-import Security from "components/Settings/Security/Security";
+import ManageWallets from "pages/Settings/components/ManageWallets/ManageWallets";
+import Notifications from "pages/Settings/components/Notifications/Notifications";
+import Profile from "pages/Settings/components/Profile/Profile";
+import Security from "pages/Settings/components/Security/Security";
 import { useParams } from "react-router-dom";
-import NotificationControls from "../components/Settings/Security/NotificationControls";
+import NotificationControls from "../pages/Settings/components/Security/NotificationControls";
 
 interface SettingsData {
   component: React.ReactNode;

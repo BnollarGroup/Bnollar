@@ -4,10 +4,6 @@
   width: 100%;
 }
 
-.homeWrapper {
-  min-height: 100vh;
-}
-
 .main {
   width: 100%;
   display: flex;
@@ -48,7 +44,6 @@
 
   .topNavMobile {
     display: block;
-    padding: 21px 16px 61px 16px;
   }
 
   .topNavMobile img {
@@ -58,5 +53,13 @@
   .settingsWrapper {
     justify-content: center;
     display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .LeftSidebar {
+    display: none;
   }
 }

@@ -1,4 +1,4 @@
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import styles from "./ManageWallets.module.css";
 import WalletItem from "../WalletItem/WalletItem";
 import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";

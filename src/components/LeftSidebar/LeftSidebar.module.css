@@ -3,7 +3,6 @@
   background-color: transparent;
   flex-direction: column;
   flex: 1;
-
   position: sticky;
   top: var(--space-for-sticking);
 }
@@ -33,6 +32,7 @@
   cursor: pointer;
   width: 100%;
   justify-content: flex-start;
+  border-radius: 0.7em;
 }
 
 .leftMenuButton img {
@@ -73,7 +73,6 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
-
   display: flex;
   align-items: center;
   cursor: pointer;

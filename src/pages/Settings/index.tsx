@@ -1,10 +1,9 @@
 import styles from "./Settings.module.css";
 import useSettings from "hooks/useSettings";
-import SettingsNav from "components/Settings/SettingsNav/SettingsNav";
-import SettingsTopNav from "components/Settings/SettingsTopNav/SettingsTopNav";
-import SideNav from "components/Sidenav";
+import SettingsNav from "./components/SettingsNav/SettingsNav";
+import LeftSidebar from "components/LeftSidebar";
 import Layout from "providers/Layout";
-// import withNavigation from "hoc/WithNavigation";
+import Navbar from "components/Navbar";
 
 const Settings = () => {
   const { type, component } = useSettings();
@@ -15,10 +14,13 @@ const Settings = () => {
         style={{ backgroundColor: "#0d0e11" }}
         className={styles.homeWrapper}
       >
-        <SettingsTopNav />
+        <div className={styles.navbar}>
+          <Navbar />
+        </div>
         <div className={styles.main}>
-          <SideNav />
-          {/* <WrappedComponent {...props} /> */}
+          <div className={styles.LeftSidebar}>
+            <LeftSidebar />
+          </div>
           <div className={styles.settingsWrapper}>
             <SettingsNav active={type} />
             {component}

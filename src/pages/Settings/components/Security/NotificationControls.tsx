@@ -1,6 +1,6 @@
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import styles from "./Security.module.css";
-import Dropdown from "./Dropdown/Dropdown";
+import Dropdown from "./DropDown/Dropdown";
 import { useState } from "react";
 import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 import goBack from "lib/resources/images/Settings/goBack.png";
