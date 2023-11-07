@@ -1,7 +1,7 @@
 import styles from "./Settings.module.css";
 import useSettings from "hooks/useSettings";
 import SettingsNav from "./components/SettingsNav/SettingsNav";
-import SideNav from "components/Sidenav";
+import LeftSidebar from "components/LeftSidebar";
 import Layout from "providers/Layout";
 import Navbar from "components/Navbar";
 
@@ -18,8 +18,9 @@ const Settings = () => {
           <Navbar />
         </div>
         <div className={styles.main}>
-          <SideNav />
-          {/* <WrappedComponent {...props} /> */}
+          <div className={styles.LeftSidebar}>
+            <LeftSidebar />
+          </div>
           <div className={styles.settingsWrapper}>
             <SettingsNav active={type} />
             {component}

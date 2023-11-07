@@ -4,10 +4,6 @@
   width: 100%;
 }
 
-.homeWrapper {
-  min-height: 100vh;
-}
-
 .main {
   width: 100%;
   display: flex;
@@ -60,6 +56,10 @@
   }
 
   .navbar {
+    display: none;
+  }
+
+  .LeftSidebar {
     display: none;
   }
 }
