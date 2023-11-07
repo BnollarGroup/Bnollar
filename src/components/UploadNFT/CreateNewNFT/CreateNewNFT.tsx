@@ -10,6 +10,7 @@ function CreateNewNFT() {
 
   const [collection, setCollection] = useState("select-category");
   const [price, setPrice] = useState<any>(2.5);
+  const [image, setImage] = useState<any>();
 
   return (
     <section className={styles.upload_nft}>
@@ -32,7 +33,16 @@ function CreateNewNFT() {
             <div className={styles.upload}>
               <h1>Upload File</h1>
               <div className={styles.openBtn}>
-                <input type="file" className={styles.uploadFileInput} />
+                <input
+                  type="file"
+                  className={styles.uploadFileInput}
+                  onChange={(e) => {
+                    const file = e.currentTarget.files?.[0];
+                    const url = URL.createObjectURL(file);
+                    setImage(url);
+                  }}
+                  {image ? <img src={image} /> : null}
+                />
                 <button className={styles.uploadopenbutton}>Upload File</button>
                 <h1 className={styles.uploadopentext}>
                   PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
