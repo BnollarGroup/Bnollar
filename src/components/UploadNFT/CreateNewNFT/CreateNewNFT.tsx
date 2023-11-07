@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./CreateNewNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
+import emptyPic from "lib/resources/images/upload-nft/createNewNFT/emptyPic.png";
+import emptyText from "lib/resources/images/upload-nft/createNewNFT/emptyText.png";
 import Select from "components/Select";
 import { useAppDispatch } from "hooks/useRedux";
 import { change } from "features/modal/modalSlice";
@@ -12,6 +14,7 @@ function CreateNewNFT() {
   const [collection, setCollection] = useState("select-category");
   const [price, setPrice] = useState("2.5");
   const [image, setImage] = useState<any>();
+  const [description, setDescription] = useState("");
 
   return (
     <section className={styles.upload_nft}>
@@ -32,7 +35,8 @@ function CreateNewNFT() {
             </div>
 
             <div className={styles.upload}>
-              {!image && <h1>Upload File</h1>}
+              <h1>Upload File</h1>
+              {!image}
               <div className={clsx(styles.openBtn, image && styles.autoHeight)}>
                 {image ? (
                   <img
@@ -69,6 +73,7 @@ function CreateNewNFT() {
               <textarea
                 className={styles.descriptionInput}
                 placeholder="Provide detailed description of your item."
+                onChange={(v) => setDescription(v.target.value)}
               />
             </div>
 
@@ -143,11 +148,23 @@ function CreateNewNFT() {
         <div className={styles.rightSide}>
           <div className={styles.pic_text}>
             <div className={styles.image}>
-              <img src={Fruit} className={styles.image} />
+              {!image ? (
+                <img src={emptyPic} className={styles.image} />
+              ) : (
+                <img
+                  src={image}
+                  alt="Uploaded image"
+                  className={styles.uploadedImage}
+                />
+              )}
             </div>
             <div className={styles.text}>
               <div className={styles.img_description}>
-                <h1>Description</h1>
+                {description.length < 1 ? (
+                  <img src={emptyText} />
+                ) : (
+                  <h1>{description}</h1>
+                )}
               </div>
             </div>
           </div>
