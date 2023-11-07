@@ -1,6 +1,6 @@
 import styles from "./SettingsNav.module.css";
-import Chevron from "../../../lib/resources/images/icons/chevron-right.svg";
-import Logo from "../../../lib/resources/images/logo/bnollar_logo.svg";
+import Chevron from "lib/resources/images/icons/chevron-right.svg";
+import Logo from "lib/resources/images/logo/bnollar_logo.svg";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SideNavLink from "components/SideNavLink";

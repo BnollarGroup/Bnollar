@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Buttons from "../Buttons/Buttons";
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import styles from "./Profile.module.css";
 import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 import { useForm } from "react-hook-form";

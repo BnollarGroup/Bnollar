@@ -1,7 +1,7 @@
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import styles from "./Security.module.css";
 import ToggleCard from "../ToggleCard/ToggleCard";
-import Dropdown from "./Dropdown/Dropdown";
+import Dropdown from "./DropDown/Dropdown";
 import LinkCard from "./LinkCard/LinkCard";
 import { useState } from "react";
 import Buttons from "../Buttons/Buttons";

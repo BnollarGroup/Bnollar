@@ -1,5 +1,5 @@
 import styles from "./ToggleCard.module.css";
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 
 interface ToggleCardProps {
   title: string;

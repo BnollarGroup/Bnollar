@@ -1,5 +1,5 @@
 import Buttons from "../Buttons/Buttons";
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import ToggleCard from "../ToggleCard/ToggleCard";
 import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 

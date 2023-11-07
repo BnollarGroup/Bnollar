@@ -1,7 +1,6 @@
 .container {
   padding: 9em 2em;
   padding-bottom: 2em;
-
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -11,6 +10,5 @@
 @media all and (max-width: 768px) {
   .container {
     padding: 0;
-    padding-top: 5em;
   }
 }

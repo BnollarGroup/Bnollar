@@ -13,7 +13,9 @@ const Dropdown = ({ items, active, set }: DropdownProps) => {
 
   const clickHandler = () => {
     setShowItems(!showItems);
+    
   };
+
   useEffect(() => {
     const hideDropdown = (event: any) => {
       if (showItems && event.target.id !== "toggler") {
@@ -26,6 +28,7 @@ const Dropdown = ({ items, active, set }: DropdownProps) => {
       window.removeEventListener("click", hideDropdown);
     };
   }, [showItems]);
+  
   return (
     <div className={styles.dropdown_wrapper}>
       <div

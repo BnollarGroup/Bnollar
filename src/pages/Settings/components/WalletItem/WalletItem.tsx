@@ -1,5 +1,5 @@
 import styles from "./WalletItem.module.css";
-import contStyles from "../SettingsContainer.module.css";
+import contStyles from "../../SettingsContainer.module.css";
 import dots from "lib/resources/images/Settings/dots.png";
 
 interface WalletItemProps {
