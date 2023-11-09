@@ -3,6 +3,13 @@
   padding-bottom: 5.2rem;
 }
 
+@media all and (max-width: 768px) {
+  .container {
+    margin-top: 3em;
+    padding: 0 1.6rem 4.8rem;
+  }
+}
+
 .link {
   color: #ef8031;
   text-decoration: underline;

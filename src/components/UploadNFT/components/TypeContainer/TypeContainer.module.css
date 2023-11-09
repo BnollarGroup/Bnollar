@@ -11,6 +11,12 @@
   transition: 0.3s;
 }
 
+@media all and (max-width: 768px) {
+  .container {
+    padding: 3em;
+  }
+}
+
 .container:hover {
   background: rgba(186, 179, 179, 0.04);
 }

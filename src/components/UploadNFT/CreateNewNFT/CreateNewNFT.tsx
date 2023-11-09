@@ -19,7 +19,6 @@ function CreateNewNFT() {
   const [description, setDescription] = useState("");
 
   const isMobile = size === "md" || size === "sm" || size === "xs";
-  
 
   if (!isMobile) {
     return (
@@ -186,139 +185,135 @@ function CreateNewNFT() {
   }
   return (
     <>
-    <div className={styles.leftSide}>
-      <div className={styles.createNewNft}>
-        <h1>Create New NFT</h1>
-        <h3 className={styles.inscription}>Single edition on Etherium</h3>
-      </div>
-      <div className={styles.containerOfInputsAndNames}>
-        <div className={styles.name}>
-          <h1>Name</h1>
-          <input
-            className={styles.nameInput}
-            type="text"
-            placeholder="Name"
-          />
+      <div className={styles.leftSide}>
+        <div className={styles.createNewNft}>
+          <h1>Create New NFT</h1>
+          <h3 className={styles.inscription}>Single edition on Etherium</h3>
         </div>
-
-        <div className={styles.upload}>
-          <h1>Upload File</h1>
-          {!image}
-          <div
-            className={clsx(styles.openBtn, image && styles.autoHeight)}
-          >
-            {image ? (
-              <img
-                src={image}
-                alt="Uploaded image"
-                className={styles.uploadedImage}
-              />
-            ) : (
-              <>
-                <input
-                  type="file"
-                  className={styles.uploadFileInput}
-                  onChange={(e) => {
-                    const file = e.currentTarget.files?.[0] as File;
-                    const url = URL.createObjectURL(file);
-
-                    setImage(url);
-                  }}
-                  accept="image/png image/gif image/webp video/mp4 audio/mp3"
-                />
-                <button className={styles.uploadopenbutton}>
-                  Upload File
-                </button>
-                <h1 className={styles.uploadopentext}>
-                  PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
-                </h1>
-              </>
-            )}
-          </div>
-        </div>
-
-        <div className={styles.description}>
-          <h1>Description</h1>
-          <textarea
-            maxLength={126}
-            className={styles.descriptionInput}
-            placeholder="Provide detailed description of your item."
-            onChange={(v) => setDescription(v.target.value)}
-          />
-        </div>
-
-        <div className={styles.collection}>
-          <h1>Collection</h1>
-
-          <Select
-            value={collection}
-            onChange={(e) => setCollection(e.target.value as any)}
-            data={[
-              {
-                value: "select-category",
-                text: "Select a category",
-              },
-              {
-                value: "add-category",
-                text: "Add category",
-                onClick: () => dispatch(change("uploadNFT-uploadFile")),
-              },
-            ]}
-            className={styles.collectionSelect}
-          />
-        </div>
-        <div className={styles.editorials_royalties}>
-          <div className={styles.editorials}>
-            <h1>Number of editorials</h1>
+        <div className={styles.containerOfInputsAndNames}>
+          <div className={styles.name}>
+            <h1>Name</h1>
             <input
-              className={styles.editorialsInput}
-              type="number"
-              placeholder="100"
+              className={styles.nameInput}
+              type="text"
+              placeholder="Name"
             />
           </div>
-          <div className={styles.royalties}>
-            <h1>Royalties</h1>
-            <div className={styles.royaltiesPercent}>
+
+          <div className={styles.upload}>
+            <h1>Upload File</h1>
+            {!image}
+            <div className={clsx(styles.openBtn, image && styles.autoHeight)}>
+              {image ? (
+                <img
+                  src={image}
+                  alt="Uploaded image"
+                  className={styles.uploadedImage}
+                />
+              ) : (
+                <>
+                  <input
+                    type="file"
+                    className={styles.uploadFileInput}
+                    onChange={(e) => {
+                      const file = e.currentTarget.files?.[0] as File;
+                      const url = URL.createObjectURL(file);
+
+                      setImage(url);
+                    }}
+                    accept="image/png image/gif image/webp video/mp4 audio/mp3"
+                  />
+                  <button className={styles.uploadopenbutton}>
+                    Upload File
+                  </button>
+                  <h1 className={styles.uploadopentext}>
+                    PNG, GIF, WEBP, MP4 or MP3. Max 100mb.
+                  </h1>
+                </>
+              )}
+            </div>
+          </div>
+
+          <div className={styles.description}>
+            <h1>Description</h1>
+            <textarea
+              maxLength={126}
+              className={styles.descriptionInput}
+              placeholder="Provide detailed description of your item."
+              onChange={(v) => setDescription(v.target.value)}
+            />
+          </div>
+
+          <div className={styles.collection}>
+            <h1>Collection</h1>
+
+            <Select
+              value={collection}
+              onChange={(e) => setCollection(e.target.value as any)}
+              data={[
+                {
+                  value: "select-category",
+                  text: "Select a category",
+                },
+                {
+                  value: "add-category",
+                  text: "Add category",
+                  onClick: () => dispatch(change("uploadNFT-uploadFile")),
+                },
+              ]}
+              className={styles.collectionSelect}
+            />
+          </div>
+          <div className={styles.editorials_royalties}>
+            <div className={styles.editorials}>
+              <h1>Number of editorials</h1>
               <input
-                className={styles.royaltiesInput}
+                className={styles.editorialsInput}
                 type="number"
-                placeholder="10"
+                placeholder="100"
               />
-              <h3>%</h3>
+            </div>
+            <div className={styles.royalties}>
+              <h1>Royalties</h1>
+              <div className={styles.royaltiesPercent}>
+                <input
+                  className={styles.royaltiesInput}
+                  type="number"
+                  placeholder="10"
+                />
+                <h3>%</h3>
+              </div>
+            </div>
+          </div>
+          <div className={styles.price}>
+            <h1>Price</h1>
+            <div className={styles.priceinpselect}>
+              <input
+                className={styles.priceInput}
+                type="number"
+                placeholder="2.5"
+                onChange={(v) => setPrice(v.target.value)}
+              />
+              <select>
+                <option>ETH</option>
+              </select>
+            </div>
+          </div>
+          <div className={styles.fee_recieve}>
+            <div className={styles.fee_percent}>
+              <h2>Service Fee</h2>
+              <h3>2.5%</h3>
+            </div>
+            <div className={styles.receive}>
+              <h2>You will receive</h2>
+              <h3>{(+price * 2.5) / 100} ETH</h3>
             </div>
           </div>
         </div>
-        <div className={styles.price}>
-          <h1>Price</h1>
-          <div className={styles.priceinpselect}>
-            <input
-              className={styles.priceInput}
-              type="number"
-              placeholder="2.5"
-              onChange={(v) => setPrice(v.target.value)}
-            />
-            <select>
-              <option>ETH</option>
-            </select>
-          </div>
-        </div>
-        <div className={styles.fee_recieve}>
-          <div className={styles.fee_percent}>
-            <h2>Service Fee</h2>
-            <h3>2.5%</h3>
-          </div>
-          <div className={styles.receive}>
-            <h2>You will receive</h2>
-            <h3>{(+price * 2.5) / 100} ETH</h3>
-          </div>
-        </div>
+        <button className={styles.createItem}>Create Item</button>
       </div>
-      <button className={styles.createItem}>Create Item</button>
-    </div>
     </>
-    );
+  );
 }
-
-
 
 export default CreateNewNFT;
