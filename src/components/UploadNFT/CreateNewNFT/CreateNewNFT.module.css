@@ -17,6 +17,12 @@
   padding-left: 50px;
 }
 
+@media all and (max-width: 768px) {
+  .leftSide {
+    padding: 0 20px;
+  }
+}
+
 .rightSide {
   border-radius: 10px;
 }
@@ -165,8 +171,14 @@
 .editorials_royalties {
   width: 100%;
   display: flex;
-  /* justify-content: space-between; */
   gap: 16px;
+}
+
+.editorials,
+.royalties,
+.editorials > input,
+.royaltiesInput {
+  width: 100% !important;
 }
 
 .editorials h1 {
@@ -291,6 +303,12 @@
 
 .fee_recieve {
   width: 460px;
+}
+
+@media all and (max-width: 768px) {
+  .fee_recieve {
+    width: 100%;
+  }
 }
 
 .fee_percent {
@@ -490,7 +508,6 @@ input[type="file"]::-webkit-file-upload-button {
   padding: 16px;
   inline-size: 100%;
   overflow-wrap: break-word;
-
 }
 
 .img_description h1 {
