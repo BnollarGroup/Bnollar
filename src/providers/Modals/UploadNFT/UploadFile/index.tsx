@@ -53,6 +53,26 @@ const [ inputValue, setInputValue ] = useState<any>("");
                     value: "category",
                     text: "Select a category",
                   },
+                  {
+                    value: "category",
+                    text: "Art",
+                  },
+                  {
+                    value: "category",
+                    text: "Gaming",
+                  },
+                  {
+                    value: "category",
+                    text: "Memberships",
+                  },
+                  {
+                    value: "category",
+                    text: "PFPs",
+                  },
+                  {
+                    value: "category",
+                    text: "Music",
+                  },
                 ]}
                 className={style.categorySelectContainer}
               />

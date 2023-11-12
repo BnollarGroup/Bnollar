@@ -123,9 +123,14 @@ input[type="file"]::-webkit-file-upload-button {
 
 .nftdescription {
   color: wheat;
-  width: 640px;
   padding: 40px;
   box-sizing: content-box;
+}
+
+@media all and (max-width: 600px) {
+  .nftdescription {
+    padding: 40px 16px;
+  }
 }
 
 .upload_nft {
@@ -227,6 +232,13 @@ input[type="file"]::-webkit-file-upload-button {
   gap: 1.75em;
 }
 
+@media all and (max-width: 600px) {
+  .category_shorturl {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
 .shorturl input {
   width: 312px;
   height: 52px;
@@ -237,6 +249,12 @@ input[type="file"]::-webkit-file-upload-button {
   color: #ffffff;
   padding-left: 14px;
   margin-top: 8px;
+}
+
+@media all and (max-width: 600px) {
+  .shorturl input {
+    width: 100%;
+  }
 }
 
 .shorturl span {
