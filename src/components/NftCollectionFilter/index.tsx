@@ -12,9 +12,41 @@ import style from "./NftCollectionFilter.module.css";
 
 interface NftFilterMenuProps {
   showNewestFilter: boolean;
+  setShowNewestFilter: (showNewest: boolean) => void;
+  selectedChains: string[];
+  setSelectedChains: (chains: string[]) => void;
+  selectedStatus: string;
+  setSelectedStatus: (status: string) => void;
+  minPrice: string;
+  setMinPrice: (price: string) => void;
+  maxPrice: string;
+  setMaxPrice: (price: string) => void;
+  selectedMarketplaces: string[];
+  setSelectedMarketplaces: (marketplaces: string[]) => void;
+  selectedCollections: string[];
+  setSelectedCollections: (collections: string[]) => void;
+  selectedDates: string;
+  setSelectedDates: (date: string) => void;
 }
 
-function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
+function NftFilterMenu({
+  showNewestFilter,
+  setShowNewestFilter,
+  selectedChains,
+  setSelectedChains,
+  selectedStatus,
+  setSelectedStatus,
+  minPrice,
+  setMinPrice,
+  maxPrice,
+  setMaxPrice,
+  selectedMarketplaces,
+  setSelectedMarketplaces,
+  selectedCollections,
+  setSelectedCollections,
+  selectedDates,
+  setSelectedDates,
+}: NftFilterMenuProps) {
   const [showChainsFilter, setShowChainsFilter] = useState(false);
   const [showStatusFilter, setShowStatusFilter] = useState(false);
   const [showPriceFilter, setShowPriceFilter] = useState(false);
@@ -22,7 +54,46 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
   const [showCollectionFilter, setShowCollectionFilter] = useState(false);
   const [showDateFilter, setShowDateFilter] = useState(false);
 
+  const handleChainFilter = (chain: string) => {
+    if (chain === "All Chains") {
+      setSelectedChains([
+        "All Chains",
+        "Ethereum",
+        "Solana",
+        "Tezos",
+        "Immutable X",
+        "Polygon",
+      ]);
+    } else {
+      const updatedSelectedChains = selectedChains.includes("All Chains")
+        ? [chain]
+        : [chain, ...selectedChains.filter((c) => c !== "All Chains")];
+      setSelectedChains(updatedSelectedChains);
+    }
+  };
+
+  const handleMarketPlacesFilter = (marketplace: string) => {
+    const updatedSelectedMarketplaces = selectedMarketplaces.includes(
+      marketplace
+    )
+      ? selectedMarketplaces.filter((m) => m !== marketplace)
+      : [...selectedMarketplaces, marketplace];
+    setSelectedMarketplaces(updatedSelectedMarketplaces);
+  };
+
   const handleChainsFilter = () => {
+    if (selectedChains.includes("All Chains")) {
+      setSelectedChains([]);
+    } else {
+      setSelectedChains([
+        "All Chains",
+        "Ethereum",
+        "Solana",
+        "Tezos",
+        "Immutable X",
+        "Polygon",
+      ]);
+    }
     setShowChainsFilter(!showChainsFilter);
     setShowStatusFilter(false);
     setShowPriceFilter(false);
@@ -77,53 +148,68 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
   };
 
   return (
-    // <div className={style.nftmenuContainer}>
     <div className={style.nftmenuMain}>
       <div className={style.nftmenuWrapper}>
         <div className={style.nftmenu}>
-          <div className={style.chains} onClick={handleChainsFilter}>
-            <img src={Circle} className={style.circle}></img>
-            <div className={style.breakDown}>
+          <div className={style.chains}>
+            <img
+              src={Circle}
+              className={style.circle}
+              alt="Circle"
+              onClick={() => handleChainFilter("All Chains")}
+            />
+            <div className={style.breakDown} onClick={handleChainsFilter}>
               <button className={style.breakDownbtn}>All Chains</button>
-              <img
-                src={ArrowDown}
-                className={style.breakDownArrow}
-                // onClick={handleChainsFilter}
-              />
+              <img src={ArrowDown} className={style.breakDownArrow} />
             </div>
             {showChainsFilter && (
               <div className={style.chainsFilterBox}>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowChainsFilter(false)}
+                  onClick={() => {
+                    setShowChainsFilter(false);
+                    handleChainFilter("Ethereum");
+                  }}
                 >
                   <img src={Circle} className={style.circle} alt="Circle" />
                   <p className={style.options}>Ethereum</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowChainsFilter(false)}
+                  onClick={() => {
+                    setShowChainsFilter(false);
+                    handleChainFilter("Solana");
+                  }}
                 >
                   <img src={Circle} className={style.circle} alt="Circle" />
                   <p className={style.options}>Solana</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowChainsFilter(false)}
+                  onClick={() => {
+                    setShowChainsFilter(false);
+                    handleChainFilter("Tezos");
+                  }}
                 >
                   <img src={Circle} className={style.circle} alt="Circle" />
                   <p className={style.options}>Tezos</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowChainsFilter(false)}
+                  onClick={() => {
+                    setShowChainsFilter(false);
+                    handleChainFilter("Immutable X");
+                  }}
                 >
                   <img src={Circle} className={style.circle} alt="Circle" />
                   <p className={style.options}>Immutable X</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowChainsFilter(false)}
+                  onClick={() => {
+                    setShowChainsFilter(false);
+                    handleChainFilter("Polygon");
+                  }}
                 >
                   <img src={Circle} className={style.circle} alt="Circle" />
                   <p className={style.options}>Polygon</p>
@@ -133,28 +219,33 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
           </div>
           <div className={style.nftmenubtn} onClick={handleStatusFilter}>
             <button className={style.nftmenubutton}>Status</button>
-            <img
-              src={ArrowDown}
-              className={style.breakDownArrow}
-              // onClick={handleStatusFilter}
-            />
+            <img src={ArrowDown} className={style.breakDownArrow} />
             {showStatusFilter && (
               <div className={style.statusFilterBox}>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowStatusFilter(false)}
+                  onClick={() => {
+                    setShowStatusFilter(false);
+                    setSelectedStatus("");
+                  }}
                 >
                   <p className={style.options}>All</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowStatusFilter(false)}
+                  onClick={() => {
+                    setShowStatusFilter(false);
+                    setSelectedStatus("Buy now");
+                  }}
                 >
                   <p className={style.options}>Buy now</p>
                 </div>
                 <div
                   className={style.optionBox}
-                  onClick={() => setShowStatusFilter(false)}
+                  onClick={() => {
+                    setShowStatusFilter(false);
+                    setSelectedStatus("Live auction");
+                  }}
                 >
                   <p className={style.options}>Live auction</p>
                 </div>
@@ -163,11 +254,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
           </div>
           <div className={style.nftmenubtn} onClick={handlePriceFilter}>
             <button className={style.nftmenubutton}>Price</button>
-            <img
-              src={ArrowDown}
-              className={style.breakDownArrow}
-              // onClick={handlePriceFilter}
-            />
+            <img src={ArrowDown} className={style.breakDownArrow} />
             {showPriceFilter && (
               <div className={style.priceFilterBox}>
                 <div className={style.CalculationBox}>
@@ -193,15 +280,16 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
           </div>
           <div className={style.nftmenubtn} onClick={handleMarketPlaceFilter}>
             <button className={style.nftmenubutton}>Marketplace</button>
-            <img
-              src={ArrowDown}
-              className={style.breakDownArrow}
-              // onClick={handleMarketPlaceFilter}
-            />
+            <img src={ArrowDown} className={style.breakDownArrow} />
             {showMarketPlaceFilter && (
               <div className={style.chainsFilterBox}>
                 <div className={style.optionBox}>
-                  <input type="checkbox" className={style.checkBox} />
+                  <input
+                    type="checkbox"
+                    className={style.checkBox}
+                    checked={selectedMarketplaces.includes("Rarible")}
+                    onChange={() => handleMarketPlacesFilter("Rarible")}
+                  />
                   <img
                     src={RaribleLogo}
                     className={style.marketplaceLogo}
@@ -210,7 +298,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
                   <p className={style.options}>Rarible</p>
                 </div>
                 <div className={style.optionBox}>
-                  <input type="checkbox" className={style.checkBox} />
+                  <input
+                    type="checkbox"
+                    className={style.checkBox}
+                    checked={selectedMarketplaces.includes("OpenSea")}
+                    onChange={() => handleMarketPlacesFilter("OpenSea")}
+                  />
                   <img
                     src={OpenSeaLogo}
                     className={style.marketplaceLogo}
@@ -219,7 +312,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
                   <p className={style.options}>OpenSea</p>
                 </div>
                 <div className={style.optionBox}>
-                  <input type="checkbox" className={style.checkBox} />
+                  <input
+                    type="checkbox"
+                    className={style.checkBox}
+                    checked={selectedMarketplaces.includes("x2y2")}
+                    onChange={() => handleMarketPlacesFilter("x2y2")}
+                  />
                   <img
                     src={X2y2Logo}
                     className={style.marketplaceLogo}
@@ -228,7 +326,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
                   <p className={style.options}>x2y2</p>
                 </div>
                 <div className={style.optionBox}>
-                  <input type="checkbox" className={style.checkBox} />
+                  <input
+                    type="checkbox"
+                    className={style.checkBox}
+                    checked={selectedMarketplaces.includes("Looks Rare")}
+                    onChange={() => handleMarketPlacesFilter("Looks Rare")}
+                  />
                   <img
                     src={LooksRareLogo}
                     className={style.marketplaceLogo}
@@ -237,7 +340,12 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
                   <p className={style.options}>Looks Rare</p>
                 </div>
                 <div className={style.optionBox}>
-                  <input type="checkbox" className={style.checkBox} />
+                  <input
+                    type="checkbox"
+                    className={style.checkBox}
+                    checked={selectedMarketplaces.includes("Polygon")}
+                    onChange={() => handleMarketPlacesFilter("Polygon")}
+                  />
                   <img
                     src={SudoSwapLogo}
                     className={style.marketplaceLogo}
@@ -250,11 +358,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
           </div>
           <div className={style.nftmenubtn} onClick={handleCollectionFilter}>
             <button className={style.nftmenubutton}>Collection</button>
-            <img
-              src={ArrowDown}
-              className={style.breakDownArrow}
-              // onClick={handleCollectionFilter}
-            />
+            <img src={ArrowDown} className={style.breakDownArrow} />
             {showCollectionFilter && (
               <div className={style.CollectionFilterBox}>
                 <div className={style.collectionFilterSearch}>
@@ -280,6 +384,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
                     <p className={style.subtext}>Subtext</p>
                   </div>
                 </div>
+
                 <div
                   className={style.optionBox}
                   onClick={() => setShowCollectionFilter(false)}
@@ -301,11 +406,7 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
         {showNewestFilter && (
           <div className={style.nftmenubtn} onClick={handleDateFilter}>
             <button className={style.nftmenubutton}>Newest</button>
-            <img
-              src={ArrowDown}
-              className={style.breakDownArrow}
-              // onClick={handleDateFilter}
-            />
+            <img src={ArrowDown} className={style.breakDownArrow} />
             {showDateFilter && (
               <div className={style.dateFilterBox}>
                 <div
@@ -326,7 +427,6 @@ function NftFilterMenu({ showNewestFilter }: NftFilterMenuProps) {
         )}
       </div>
     </div>
-    // </div>
   );
 }
 
