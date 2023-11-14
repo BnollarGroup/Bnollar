@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+@media all and (max-width: 768px) {
+  .container {
+    margin-top: 3em;
+  }
+}
+
 .main {
   width: 100%;
   display: flex;
