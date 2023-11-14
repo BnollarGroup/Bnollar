@@ -9,7 +9,17 @@ import Chevron from "lib/resources/images/icons/chevron-right.svg";
 import Layout from "providers/Layout";
 
 function NftCollectionsecond() {
-  let showNewestFilter = true;
+  const [showNewestFilter, setShowNewestFilter] = useState(true);
+  const [selectedChains, setSelectedChains] = useState<string[]>([]);
+  const [selectedStatus, setSelectedStatus] = useState<string>("");
+  const [minPrice, setMinPrice] = useState<string>("");
+  const [maxPrice, setMaxPrice] = useState<string>("");
+  const [selectedMarketplaces, setSelectedMarketplaces] = useState<string[]>(
+    []
+  );
+  const [selectedCollections, setSelectedCollections] = useState<string[]>([]);
+  const [selectedDates, setSelectedDates] = useState<string>("");
+
   const [nftCollectionSecond] = useState([
     {
       img: NftPic,
@@ -88,7 +98,24 @@ function NftCollectionsecond() {
                 placeholder="Search NFTs"
               />
             </div>
-            <NftFilterMenu showNewestFilter={showNewestFilter} />
+            <NftFilterMenu
+              showNewestFilter={showNewestFilter}
+              setShowNewestFilter={setShowNewestFilter}
+              selectedChains={selectedChains}
+              setSelectedChains={setSelectedChains}
+              selectedStatus={selectedStatus}
+              setSelectedStatus={setSelectedStatus}
+              minPrice={minPrice}
+              setMinPrice={setMinPrice}
+              maxPrice={maxPrice}
+              setMaxPrice={setMaxPrice}
+              selectedMarketplaces={selectedMarketplaces}
+              setSelectedMarketplaces={setSelectedMarketplaces}
+              selectedCollections={selectedCollections}
+              setSelectedCollections={setSelectedCollections}
+              selectedDates={selectedDates}
+              setSelectedDates={setSelectedDates}
+            />
             <div className={style.nftmenuposition}>
               <div className={style.nfts}>
                 <div className={style.nfts_sections}>
