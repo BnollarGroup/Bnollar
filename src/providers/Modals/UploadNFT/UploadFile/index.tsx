@@ -1,10 +1,11 @@
-import { close } from "features/modal/modalSlice";
-import { useAppDispatch } from "hooks/useRedux";
+import { close, collectionInputValueChange } from "features/modal/modalSlice";
+import { useAppDispatch, useAppSelector } from "hooks/useRedux";
 import style from "./UploadFile.module.css";
 import addIcon from "lib/resources/images/icons/addicon.png";
 import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.png";
 import Select from "components/Select";
 import { useState } from "react";
+
 
 export default function UploadNFTUploadFileModal() {
   const dispatch = useAppDispatch();
@@ -12,14 +13,24 @@ export default function UploadNFTUploadFileModal() {
   const handleClose = () => {
     dispatch(close());
   };
-const [ inputValue, setInputValue ] = useState<any>("");
+
+  const [ collectionInputValue, setCollectionInputValue ] = useState("");
+  const [ inputValue, setInputValue ] = useState<any>("");
+
+
+  const handleCollectionInputChange = (value: string) => {
+    setCollectionInputValue(value);
+    dispatch(collectionInputValueChange(value));
+  };
+  
+
   return (
     <div className={style.browse}>
       <div className={style.background} onClick={handleClose} />
 
       <div className={style.container}>
         <div className={style.uploadcontainter}>
-          <input type="file" className={style.uploadFileInput} />
+          <input type="file" className={style.uploadFileInput}  />
 
           <div className={style.uploadtext}>
             <h2>Drop image here, or</h2>
@@ -40,6 +51,7 @@ const [ inputValue, setInputValue ] = useState<any>("");
               className={style.collectioninput}
               type="text"
               placeholder="My collection"
+              onChange={(v) => handleCollectionInputChange(v.target.value)}
             />
           </div>
 
@@ -93,7 +105,7 @@ const [ inputValue, setInputValue ] = useState<any>("");
             <textarea placeholder="Provide detailed description of your collection."></textarea>
           </div>
 
-          <button className={style.createnft}>Create Item</button>
+          <button className={style.createnft} onClick={handleClose}>Create Item</button>
         </div>
       </div>
     </div>
