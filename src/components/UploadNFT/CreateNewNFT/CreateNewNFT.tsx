@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./CreateNewNFT.module.css";
 import Fruit from "lib/resources/images/icons/watermelon.png";
 import emptyPic from "lib/resources/images/upload-nft/createNewNFT/emptyPic.png";
 import emptyText from "lib/resources/images/upload-nft/createNewNFT/emptyText.png";
 import Select from "components/Select";
-import { useAppDispatch } from "hooks/useRedux";
+import { useAppDispatch, useAppSelector } from "hooks/useRedux";
 import { change } from "features/modal/modalSlice";
 import { useScreenSize } from "hooks/useScreenSize";
 import clsx from "clsx";
@@ -12,6 +12,12 @@ import clsx from "clsx";
 function CreateNewNFT() {
   const dispatch = useAppDispatch();
   const size = useScreenSize();
+  const { collectionInputValue } = useAppSelector((state) => state.modals);
+  const [categories, setCategories] = useState<
+    { value: string; text: string; onClick?: () => void }[]
+  >([]);
+
+  console.log("collectionInputValue", collectionInputValue);
 
   const [collection, setCollection] = useState("select-category");
   const [price, setPrice] = useState("2.5");
@@ -19,6 +25,16 @@ function CreateNewNFT() {
   const [description, setDescription] = useState("");
 
   const isMobile = size === "md" || size === "sm" || size === "xs";
+
+  useEffect(() => {
+    if (!collectionInputValue) {
+      return;
+    }
+
+    setCategories([
+      { text: collectionInputValue, value: collectionInputValue },
+    ]);
+  }, [collectionInputValue]);
 
   if (!isMobile) {
     return (
@@ -147,7 +163,7 @@ function CreateNewNFT() {
                 </div>
                 <div className={styles.receive}>
                   <h2>You will receive</h2>
-                  <h3>{(+price * 2.5) / 100} ETH</h3>
+                  <h3>{+price - (+price * 2.5) / 100} ETH</h3>
                 </div>
               </div>
             </div>
@@ -260,6 +276,7 @@ function CreateNewNFT() {
                   text: "Add category",
                   onClick: () => dispatch(change("uploadNFT-uploadFile")),
                 },
+                ...categories,
               ]}
               className={styles.collectionSelect}
             />
@@ -306,7 +323,7 @@ function CreateNewNFT() {
             </div>
             <div className={styles.receive}>
               <h2>You will receive</h2>
-              <h3>{(+price * 2.5) / 100} ETH</h3>
+              <h3>+price - {(+price * 2.5) / 100} ETH</h3>
             </div>
           </div>
         </div>
