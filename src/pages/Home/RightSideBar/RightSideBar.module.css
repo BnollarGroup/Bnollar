@@ -1,7 +1,6 @@
 .rightSideBarWrapper {
   display: flex;
   flex: 1.5;
-  margin-right: 3em;
   flex-direction: column;
 }
 .contactsWrapper {
