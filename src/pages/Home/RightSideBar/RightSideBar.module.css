@@ -1,10 +1,6 @@
 .rightSideBarWrapper {
   display: flex;
-<<<<<<< Updated upstream
   flex: 1.5;
-=======
-  margin-right: 3em;
->>>>>>> Stashed changes
   flex-direction: column;
   gap: 2em;
   position: sticky;
