@@ -113,6 +113,9 @@
 }
 
 @media all and (max-width: 768px) {
+  .navbar{
+    padding: 1em;
+  }
   .search_input_cont {
     display: none;
   }
