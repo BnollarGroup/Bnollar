@@ -1,7 +1,14 @@
 .rightSideBarWrapper {
   display: flex;
+<<<<<<< Updated upstream
   flex: 1.5;
+=======
+  margin-right: 3em;
+>>>>>>> Stashed changes
   flex-direction: column;
+  gap: 2em;
+  position: sticky;
+  top: var(--space-for-sticking);
 }
 .contactsWrapper {
   display: flex;
@@ -12,7 +19,6 @@
   width: 100%;
   background: #17181b;
   border-radius: 10px;
-  margin-bottom: 20px;
   height: 350px;
   overflow-y: scroll;
 }
@@ -41,6 +47,7 @@
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
+  gap: 1.5em;
 }
 .contactsWrapper ul li {
   display: flex;
@@ -48,10 +55,9 @@
   position: relative;
   cursor: pointer;
   width: 100%;
-  margin: 10px 14px 10px 0px;
+  gap: 10px;
 }
 .contactsWrapper ul li span {
-  margin-left: 14px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;

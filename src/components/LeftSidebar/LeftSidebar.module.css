@@ -2,7 +2,10 @@
   display: flex;
   background-color: transparent;
   flex-direction: column;
+<<<<<<< Updated upstream
   flex: 1.5;
+=======
+>>>>>>> Stashed changes
   position: sticky;
   top: var(--space-for-sticking);
 }
@@ -104,3 +107,7 @@
 .leftMenuButton:hover svg path {
   stroke: white;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

@@ -3,8 +3,8 @@
   background-color: transparent;
   flex-direction: column;
   overflow-y: scroll;
-  height: 100vh;
   flex: 3;
+  gap: 1.5em;
 }
 .feedWrapper::-webkit-scrollbar {
   width: 0.2em;
@@ -20,4 +20,11 @@
 .feedWrapper::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
   display: none;
+}
+
+@media all and (max-width: 768px) {
+  .feedWrapper {
+    margin-top: 5.8em;
+    margin-bottom: 3em;
+  }
 }
