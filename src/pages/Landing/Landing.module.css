@@ -1,6 +1,6 @@
 .container {
-  width: 100%;
-  max-width: 80vw;
+  /* width: 100%;
+  max-width: 80vw; */
   min-height: 100vh;
   margin: auto;
 
@@ -12,7 +12,11 @@
 
   overflow-y: hidden;
 }
-
+.headerContainer{
+  width: 100%;
+  max-width: 80vw;
+  margin: auto;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -84,83 +88,120 @@
   opacity: 0.8;
 }
 
-.footerContainer {
+
+
+.mainContainer{
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  margin-top: auto;
-
+  justify-content: space-around;
+  margin-top: 7em;
   position: relative;
-  top: 8em;
 }
 
-.footerImage {
-  border-radius: 1.95em;
-
-  object-fit: contain;
-
-  border: 6px solid #191a1d;
-  position: relative;
-  z-index: 2;
-
-  height: 45em;
-}
-
-.footerIcons {
+.leftPinkIcon{
   position: absolute;
-  left: 0;
-  top: -5em;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
+  top: 7em;
+  left: 2.7%;
+  width: 8%;
+  
 }
+.leftGreenIcon{
+  position: absolute;
+  left: 14.2%;
+  width: 8%;
 
-.footerIcons img {
-  object-fit: cover;
-  height: 13em;
-  width: 13em;
+  
 }
+.leftBlueIcon{
+  position: absolute;
+  top: 40em;
+  left: -1.4%;
+  width: 8%;
 
-.firstIcon {
+}
+.mainPhoto{
   position: relative;
-  left: 5em;
+  left: -1%;
+  
 }
+.rightPinkIcon{
+  position: absolute;
+  top: 5em;
+  left: 74%;
+  width: 8%;
 
-.firstIconOfRightSection {
-  position: relative;
-  right: 5em;
 }
+.rightGreenIcon{
+  position: absolute;
+  top: 15em;
+  left: 90%;
+  width: 8%;
 
-.secondIcon {
-  position: relative;
-  left: 20em;
 }
+.rightBlueIcon{
+  position: absolute;
+  top: 35em;
+  left: 83%;
+  width: 8%;
 
-.secondIconOfRightSection {
-  position: relative;
-  right: 17em;
 }
-
-.rightSectionOfIcons {
-  right: 5em;
-
-  left: auto;
+.footerResponsiveImage{
+  display: none;
 }
-
+.footerImage{
+  width: 100%;
+}
+.mainPhoto{
+  z-index: 1;
+}
 @media all and (max-width: 768px) {
   .container {
     max-width: 100%;
-
+    
     padding: 0 2em;
   }
 
-  .footerIcons {
+   .footerIcons {
     display: none;
-  }
-
+  } 
+  
   .footerImage {
     display: none;
   }
+  .footerResponsiveImage{
+    display: block;
+    margin-top: -30px;
+  }
+  .firstIcon{
+    display: none;
+  }
+  .secondIcon{
+    display: none;
+  }
+  .leftPinkIcon{
+    display: none;
+  }
+  .leftBlueIcon{
+    display: none;
+  }
+  .rightGreenIcon{
+    display: none;
+  }
+  .rightBlueIcon{
+    display: none;
+  }
+  .leftGreenIcon{
+    position: absolute;
+    left: -4%;
+    top: 34em;
+    width: 8%;
+  }
+  .rightPinkIcon{
+    position: absolute;
+    left: 99%;
+    top: 15em;
+    width: 8%;
+  }
 }
+
+
