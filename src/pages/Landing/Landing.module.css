@@ -192,15 +192,15 @@
   }
   .leftGreenIcon{
     position: absolute;
-    left: -4%;
+    left: -9%;
     top: 34em;
-    width: 8%;
+    width: 16%;
   }
   .rightPinkIcon{
     position: absolute;
-    left: 99%;
-    top: 15em;
-    width: 8%;
+    left: 98%;
+    top: 13em;
+    width: 16%;
   }
 }
 
