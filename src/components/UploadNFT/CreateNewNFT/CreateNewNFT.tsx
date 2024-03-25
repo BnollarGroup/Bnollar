@@ -35,6 +35,17 @@ function CreateNewNFT() {
       { text: collectionInputValue, value: collectionInputValue },
     ]);
   }, [collectionInputValue]);
+  const handleCollectionChange = (selectedValue: string) => {
+    if (selectedValue === 'add-category') {
+      // Dispatch action or perform any other necessary actions for adding category
+      dispatch(change('uploadNFT-uploadFile'));
+      // Update the collection state to 'select-category' after performing the action
+      setCollection('select-category');
+    } else {
+      // Update the collection state for other options
+      setCollection(selectedValue);
+    }
+  };
 
   if (!isMobile) {
     return (
@@ -106,7 +117,8 @@ function CreateNewNFT() {
 
                 <Select
                   value={collection}
-                  onChange={(e) => setCollection(e.target.value as any)}
+                  onChange={handleCollectionChange}
+                  // onChange={(e) => setCollection(e.target.value as any)}
                   data={[
                     {
                       value: "select-category",
@@ -115,7 +127,10 @@ function CreateNewNFT() {
                     {
                       value: "add-category",
                       text: "Add category",
-                      onClick: () => dispatch(change("uploadNFT-uploadFile")),
+                      onClick: () => {
+                        setCollection('select-category');
+                        dispatch(change("uploadNFT-uploadFile"));
+                      },
                     },
                   ]}
                   className={styles.collectionSelect}
@@ -265,7 +280,8 @@ function CreateNewNFT() {
 
             <Select
               value={collection}
-              onChange={(e) => setCollection(e.target.value as any)}
+              onChange={handleCollectionChange}
+              // onChange={(e) => setCollection(e.target.value as any)}
               data={[
                 {
                   value: "select-category",
