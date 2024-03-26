@@ -157,8 +157,8 @@
 @media all and (max-width: 768px) {
   .container {
     max-width: 100%;
-    
     padding: 0 2em;
+    overflow: hidden;
   }
 
    .footerIcons {
@@ -198,7 +198,7 @@
   }
   .rightPinkIcon{
     position: absolute;
-    left: 98%;
+    left: 94%;
     top: 13em;
     width: 16%;
   }
