@@ -16,6 +16,15 @@ const registerSchema = yup.object({
     .required("Please enter a display name")
     .min(3, "Display name must be at least 3 characters long")
     .max(50, "Display name can be at most 50 characters long"),
+
+  walletAddress: yup
+    .string()
+    .required("Please enter your wallet address")
+    .matches(
+      /^(0x)?[0-9a-fA-F]{40}$/,
+      "Please enter a valid Ethereum wallet address"
+    ),
+
 });
 
 export default registerSchema;

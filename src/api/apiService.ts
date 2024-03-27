@@ -11,11 +11,11 @@ export async function fetchData<T>(url: string): Promise<T> {
     return response.json();
 }
 
-export async function postData<T>(url: string, data: object): Promise<T> {
+export async function postData<T>(url: string, data: object, contentType: string): Promise<T> {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': contentType,
         },
         body: JSON.stringify(data),
     });
@@ -25,12 +25,12 @@ export async function postData<T>(url: string, data: object): Promise<T> {
     return response.json();
 }
 
-export async function request<T>(url: string, options: RequestOptions): Promise<T> {
+export async function request<T>(url: string, options: RequestOptions, contentType: string): Promise<T> {
     const { method, body } = options;
     if (method === 'GET') {
         return fetchData<T>(url);
     } else if (method === 'POST') {
-        return postData<T>(url, body || {});
+        return postData<T>(url, body || {}, contentType);
     } else {
         throw new Error(`Unsupported HTTP method: ${method}`);
     }
