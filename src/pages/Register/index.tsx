@@ -11,6 +11,7 @@ import ok from "lib/resources/images/registration/ok.svg";
 import Edit from "lib/resources/images/icons/edit (2).png";
 import { useNavigate } from "react-router-dom";
 import registerSchema from "lib/schemas/registerSchema";
+import { postData } from "api/apiService";
 
 interface Category {
   id: number;
@@ -43,9 +44,9 @@ const useCategories = (): UseCategoriesType => {
       return categories.map((category) => {
         return category.id === id
           ? {
-              ...category,
-              selected: !category.selected,
-            }
+            ...category,
+            selected: !category.selected,
+          }
           : category;
       });
     });
@@ -57,6 +58,7 @@ const useCategories = (): UseCategoriesType => {
 const Register: FC = () => {
   const [userName, setUserName] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
   const [showRegister, setShowRegister] = useState(true);
   const [showSelectCategory, setShowSelectCategory] = useState(false);
   const [showAllSet, setShowAllSet] = useState(false);
@@ -85,12 +87,28 @@ const Register: FC = () => {
   const submitHandler = async (data: {
     displayName: string;
     username: string;
+    walletAddress: string
   }) => {
     setUserName(data.username);
     setDisplayName(data.displayName);
+    setWalletAddress(data.walletAddress);
     setShowSelectCategory(true);
     setShowRegister(false);
     console.log(data);
+    try {
+      // Constructing data object with the expected format
+      const postingData = {
+        wallet_address: data.walletAddress,
+        username: data.username,
+        display_name: data.displayName,
+        profile_picture: "", // You can add profile picture if available
+        cover_picture: ""    // You can add cover picture if available
+      };
+      // Posting user registration data to the specified URL
+      await postData('http://64.226.94.204:1337/api/accounts/register', postingData, 'multipart/form-data');
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -373,14 +391,30 @@ const Register: FC = () => {
                         : styles.inputDefault
                     }
                   ></input>
+                  <input
+                    type="text"
+                    placeholder="Wallet Adress"
+                    {...register("walletAddress", {
+                      onChange: (e: any) => {
+                        setWalletAddress(e.target.value);
+                      },
+                    })}
+                    className={
+                      !errors.walletAddress && walletAddress.trim() !== ""
+                        ? styles.validInput
+                        : styles.inputDefault
+                    }
+                  ></input>
                 </div>
                 <button
                   type="submit"
                   className={
                     !errors.username &&
-                    !errors.displayName &&
-                    userName.trim() !== "" &&
-                    displayName.trim() !== ""
+                      !errors.displayName &&
+                      !errors.walletAddress &&
+                      userName.trim() !== "" &&
+                      displayName.trim() !== "" &&
+                      walletAddress.trim() !== ""
                       ? styles.submitted
                       : styles.initial
                   }
