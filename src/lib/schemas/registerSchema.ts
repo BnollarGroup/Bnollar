@@ -24,6 +24,9 @@ const registerSchema = yup.object({
       /^(0x)?[0-9a-fA-F]{40}$/,
       "Please enter a valid Ethereum wallet address"
     ),
+  profilePicture:yup.string(),
+  coverPicture:yup.string(),
+
 
 });
 
