@@ -12,6 +12,9 @@ import Edit from "lib/resources/images/icons/edit (2).png";
 import { useNavigate } from "react-router-dom";
 import registerSchema from "lib/schemas/registerSchema";
 import { postData } from "api/apiService";
+import { ethers } from "ethers";
+import { registerWithMetaMask } from "api/metamask/MetaMask";
+import { log } from "console";
 
 interface Category {
   id: number;
@@ -73,6 +76,8 @@ const Register: FC = () => {
   const inputRefProfile = useRef<HTMLInputElement | null>(null);
   const [isCoverImageUploaded, setIsCoverImageUploaded] = useState(false);
   const [showProfileImgSettings, setShowProfileImgSettings] = useState(false);
+  const [profileUrl, setProfileUrl] = useState<string>("");
+  const [coverUrl, setCoverUrl] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -87,25 +92,33 @@ const Register: FC = () => {
   const submitHandler = async (data: {
     displayName: string;
     username: string;
-    walletAddress: string
+    walletAddress: string,
+    profilePicture?: string,
+    coverPicture?: string
   }) => {
     setUserName(data.username);
     setDisplayName(data.displayName);
     setWalletAddress(data.walletAddress);
     setShowSelectCategory(true);
     setShowRegister(false);
-    console.log(data);
     try {
       // Constructing data object with the expected format
       const postingData = {
         wallet_address: data.walletAddress,
-        username: data.username,
         display_name: data.displayName,
-        profile_picture: "", // You can add profile picture if available
-        cover_picture: ""    // You can add cover picture if available
+        username: data.username,
+        
+        // profile_picture: profileUrl, // You can add profile picture if available
+        // cover_picture: coverUrl    // You can add cover picture if available
       };
+      
+      // console.log(data);
+      // console.log(postingData);
+      // console.log(inputRefProfile);
+      // console.log(JSON.stringify(postingData))
       // Posting user registration data to the specified URL
-      await postData('http://64.226.94.204:1337/api/accounts/register', postingData, 'multipart/form-data');
+      // await postData('http://64.226.94.204:1337/api/accounts/register', postingData, 'application/json');
+      await registerWithMetaMask(postingData);
     } catch (err) {
       console.error(err);
     }
@@ -200,6 +213,7 @@ const Register: FC = () => {
         let fileReader = new FileReader();
         fileReader.onload = () => {
           let fileURL = fileReader.result as string;
+          setCoverUrl(fileURL);
           const imgTag = `<img src="${fileURL}" alt="Dropped Image" />`;
           setCoverImageTag(imgTag);
         };
@@ -223,6 +237,7 @@ const Register: FC = () => {
         let fileReader = new FileReader();
         fileReader.onload = () => {
           let fileURL = fileReader.result as string;
+          setProfileUrl(fileURL);
           const imgTag = `<img src="${fileURL}" alt="Dropped Image" />`;
           setProfileImageTag(imgTag);
         };

@@ -15,9 +15,10 @@ export async function postData<T>(url: string, data: object, contentType: string
     const response = await fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': contentType,
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
+        mode: "no-cors"
     });
     if (!response.ok) {
         throw new Error(`Failed to post data to ${url}`);
