@@ -14,9 +14,8 @@ function Explore() {
   return (
     <Layout>
       <div className={style.container}>
-        <div className={style.navbarWrapper}>
-          <Navbar />
-        </div>
+        <Navbar />
+
 
         <div className={style.content}>
           <LeftSidebar />
