@@ -26,8 +26,7 @@ export async function registerWithMetaMask(maskdata:object): Promise<void> {
             const response = await fetch('http://64.226.94.204:1337/api/accounts/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(registrationData),
-                mode: 'no-cors'
+                body: JSON.stringify(registrationData.maskdata),
             });
             
             if (!response.ok) {
