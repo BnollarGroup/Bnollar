@@ -1,0 +1,58 @@
+.sendMessage {
+    display: flex;
+    width: calc(100% - 60px);
+    align-items: center;
+    justify-self: center;
+    column-gap: 16px;
+    position: absolute;
+    bottom: 20px;
+    height: 5%;
+}
+
+.sendMessageContainer {
+    display: flex;
+    width: 100%;
+}
+
+.messageInput {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 12px 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    resize: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+}
+
+.inputButtons {
+    height: 40px;
+    display: flex;
+    column-gap: 11.5px;
+    border-radius: 0 10px 10px 0;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    padding-right: 12px;
+}
+
+.inputButton {
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+}
+
+.sendMessageButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ef8031;
+    border-radius: 50%;
+}

@@ -74,6 +74,11 @@ export const publicRoutes = [
     component: lazy(() => import("pages/ProfileChat")),
   },
   {
+    title: "Mobile Direct Chat",
+    path: routes.mobileDirectChat,
+    component: lazy(() => import("pages/MobileDirect")),
+  },
+  {
     title: "Profile Chat with Video Call",
     path: routes.profileChatWithVideoCall,
     component: lazy(() => import("pages/VideoCall")),

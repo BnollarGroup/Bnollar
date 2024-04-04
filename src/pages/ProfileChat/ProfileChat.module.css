@@ -17,6 +17,13 @@
 .messagesList {
   width: fit-content;
 }
+.messagesListSingle{
+  width: 90%;
+  height: 90dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .search {
   display: flex;
@@ -48,6 +55,13 @@
   font-size: 16px;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.4);
+}
+.mobileNav{
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .searchImg {

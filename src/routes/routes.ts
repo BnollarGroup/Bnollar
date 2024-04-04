@@ -15,6 +15,7 @@ export const PublicRoutes = {
   profileChat: "/profile-chat",
   profileChatWithVideoCall: "/profile-chat/videocall",
   explore: "/explore",
+  mobileDirectChat: "/profile-chat/:id"
 };
 
 export const routes = {
