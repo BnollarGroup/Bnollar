@@ -24,6 +24,7 @@ import ChatSearch from "components/ProfileChat/ChatSearch/ChatSearch";
 import Mute from "components/ProfileChat/Mute/Mute";
 import BlockMenu from "components/ProfileChat/BlockMenu/BlockMenu";
 import EditNicknameMenu from "components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
+import DeleteChat from "components/ProfileChat/DeleteChat/DeleteChat";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -33,6 +34,7 @@ function ProfileChat() {
   const [blockIsOpen, setBlockIsOpen] = useState<boolean>(false);
   const [editMenuIsOpen, setEditMenuIsOpen] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>("");
+  const [deleteIsOpen, setDeleteIsOpen] = useState<boolean>(false);
 
   const chatMessages = [
     {
@@ -168,6 +170,7 @@ function ProfileChat() {
                   setMuteIsOpen={setMuteIsOpen}
                   setBlockIsOpen={setBlockIsOpen}
                   setEditMenuIsOpen={setEditMenuIsOpen}
+                  setDeleteIsOpen={setDeleteIsOpen}
                 />
               ) : null}
             </div>
@@ -241,28 +244,29 @@ function ProfileChat() {
                 </div>
               </div>
             </div>
-            <div className={styles.sendMessage}>
-              <div className={styles.sendMessageContainer}>
-                <textarea
-                  className={styles.messageInput}
-                  placeholder="Message..."
-                />
-                <div className={styles.inputButtons}>
-                  <button className={styles.inputButton}>
-                    <img src={attachment} alt="attachment logo" />
-                  </button>
-                  <button className={styles.inputButton}>
-                    <img src={statsReport} alt="stats report logo" />
-                  </button>
-                  <button className={styles.inputButton}>
-                    <img src={emoji} alt="emojis logo" />
-                  </button>
-                </div>
+
+          </div>
+          <div className={styles.sendMessage}>
+            <div className={styles.sendMessageContainer}>
+              <textarea
+                className={styles.messageInput}
+                placeholder="Message..."
+              />
+              <div className={styles.inputButtons}>
+                <button className={styles.inputButton}>
+                  <img src={attachment} alt="attachment logo" />
+                </button>
+                <button className={styles.inputButton}>
+                  <img src={statsReport} alt="stats report logo" />
+                </button>
+                <button className={styles.inputButton}>
+                  <img src={emoji} alt="emojis logo" />
+                </button>
               </div>
-              <button className={styles.sendMessageButton}>
-                <img src={arrow} alt="arrow" />
-              </button>
             </div>
+            <button className={styles.sendMessageButton}>
+              <img src={arrow} alt="arrow" />
+            </button>
           </div>
         </div>
       </div>
@@ -277,6 +281,7 @@ function ProfileChat() {
           setNickname={setNickname}
         />
       ) : null}
+      {deleteIsOpen ? <DeleteChat setDeleteIsOpen={setDeleteIsOpen} nickname={'Owen Padberg'} /> : null }
     </div>
   );
 }
