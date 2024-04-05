@@ -19,9 +19,10 @@ const data = [
 
 type ChooseTypeProps = {
   setPage: Dispatch<SetStateAction<string>>;
+  setType: Dispatch<SetStateAction<string | null>>;
 };
 
-export default function ChooseType({ setPage }: ChooseTypeProps) {
+export default function ChooseType({ setPage, setType }: ChooseTypeProps) {
   return (
     <div className={styles.container}>
       <Header
@@ -38,6 +39,7 @@ export default function ChooseType({ setPage }: ChooseTypeProps) {
               title={item.title}
               text={item.text}
               setPage={setPage}
+              setType={setType}
               key={i}
             />
           );

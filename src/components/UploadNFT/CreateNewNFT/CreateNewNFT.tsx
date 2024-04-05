@@ -9,7 +9,11 @@ import { change } from "features/modal/modalSlice";
 import { useScreenSize } from "hooks/useScreenSize";
 import clsx from "clsx";
 
-function CreateNewNFT() {
+type newNftProps = {
+  blockchain: string | null;
+  type: string | null;
+}
+function CreateNewNFT({ blockchain, type }: newNftProps) {
   const dispatch = useAppDispatch();
   const size = useScreenSize();
   const { collectionInputValue } = useAppSelector((state) => state.modals);
@@ -54,7 +58,7 @@ function CreateNewNFT() {
           <div className={styles.leftSide}>
             <div className={styles.createNewNft}>
               <h1>Create New NFT</h1>
-              <h3 className={styles.inscription}>Single edition on Etherium</h3>
+              <h3 className={styles.inscription}>{type} edition on {blockchain}</h3>
             </div>
             <div className={styles.containerOfInputsAndNames}>
               <div className={styles.name}>
@@ -122,7 +126,7 @@ function CreateNewNFT() {
                   data={[
                     {
                       value: "select-category",
-                      text: "Select a category",
+                      text: "Select a category"
                     },
                     {
                       value: "add-category",

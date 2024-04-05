@@ -1,7 +1,9 @@
 .upload_nft {
   width: 100%;
   min-height: 100vh;
+  box-sizing: border-box;
   background-color: #0d0e11;
+  padding: 20px 0;
 }
 
 .createnftwidth {
@@ -15,6 +17,11 @@
 
 .leftSide {
   padding-left: 50px;
+}
+@media screen and (max-width: 1024px){
+  .leftSide{
+    padding: 50px;
+  }
 }
 
 @media all and (max-width: 768px) {
