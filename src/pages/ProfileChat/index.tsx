@@ -24,6 +24,8 @@ import ChatSearch from "components/ProfileChat/ChatSearch/ChatSearch";
 import Mute from "components/ProfileChat/Mute/Mute";
 import BlockMenu from "components/ProfileChat/BlockMenu/BlockMenu";
 import EditNicknameMenu from "components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
+import DeleteChat from "components/ProfileChat/DeleteChat/DeleteChat";
+import { useScreenSize } from "hooks/useScreenSize";
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -33,7 +35,8 @@ function ProfileChat() {
   const [blockIsOpen, setBlockIsOpen] = useState<boolean>(false);
   const [editMenuIsOpen, setEditMenuIsOpen] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>("");
-
+  const [deleteIsOpen, setDeleteIsOpen] = useState<boolean>(false);
+  const size = useScreenSize();
   const chatMessages = [
     {
       name: "Owen Padberg",
@@ -71,11 +74,219 @@ function ProfileChat() {
       messageTime: "1y",
     },
   ];
-
+  console.log(size)
   return (
-    <div className={styles.container}>
-      <div className={styles.rightSideBar}>
-        <div className={styles.messagesList}>
+    size !== 'sm' && size !== 'xs' ?
+      <div className={styles.container}>
+        <div className={styles.rightSideBar}>
+          <div className={styles.messagesList}>
+            <form
+              onChange={(event) => event.preventDefault}
+              className={styles.search}
+            >
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="Search"
+              />
+              <img
+                className={styles.searchImg}
+                src={searchLogo}
+                alt="search logo"
+              />
+              <button className={styles.editButton}>
+                <img className={styles.editIcon} src={edit} alt="edit icon" />
+              </button>
+            </form>
+            <div className={styles.messageContainer}>
+              {chatMessages.map((item, index) => {
+                return (
+                  <div key={index} className={styles.messages}>
+                    <div className={styles.messagesContent}>
+                      {item.hasDot ? (
+                        <img
+                          className={styles.messagesDot}
+                          src={dotIcon}
+                          alt="dot"
+                        />
+                      ) : null}
+                      <img
+                        className={styles.userAvatar}
+                        src={item.avatar}
+                        alt="user avatar"
+                      />
+                      <div className={styles.messageInfo}>
+                        <span className={styles.messagesAuthor}>{item.name}</span>
+                        <span className={styles.messagesText}>
+                          {item.message}
+                        </span>
+                      </div>
+                    </div>
+                    <span className={styles.messagesTime}>
+                      {item.messageTime}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className={styles.chatWindow}>
+            <div className={styles.chatWindowNav}>
+              <div className={styles.chatWindowContainer}>
+                <div className={styles.chatWindowUserInfo}>
+                  <img src={avatar1} alt="user avatar" />
+                  <div className={styles.usernameInfo}>
+                    <span className={styles.username}>
+                      {nickname.length > 0 ? nickname : "Owen Padberg"}
+                    </span>
+                    <span className={styles.usernameActiveTime}>
+                      Active 15 min ago
+                    </span>
+                  </div>
+                </div>
+                <div className={styles.chatWindowButtons}>
+                  <button className={styles.actionButton}>
+                    <img src={phone} alt="call icon" />
+                  </button>
+                  <Link
+                    className={styles.actionButton}
+                    to="/profile-chat/videocall"
+                  >
+                    <img src={videoCall} alt="video call icon" />
+                  </Link>
+                  <button
+                    onClick={() => {
+                      setDropdownMenu(!dropdownMenu);
+                      setSearchIsOpen(false);
+                    }}
+                    className={styles.actionButton}
+                  >
+                    <span className={styles.actionButtonInner}>...</span>
+                  </button>
+                </div>
+                {dropdownMenu ? (
+                  <DropDownMenu
+                    dropdownMenu={dropdownMenu}
+                    setDropdownMenu={setDropdownMenu}
+                    setSearchIsOpen={setSearchIsOpen}
+                    setMuteIsOpen={setMuteIsOpen}
+                    setBlockIsOpen={setBlockIsOpen}
+                    setEditMenuIsOpen={setEditMenuIsOpen}
+                    setDeleteIsOpen={setDeleteIsOpen}
+                  />
+                ) : null}
+              </div>
+              {searchIsOpen ? (
+                <ChatSearch setSearchIsOpen={setSearchIsOpen} />
+              ) : null}
+            </div>
+            <div className={styles.chatMessagesContainer}>
+              <div className={styles.chatMessages}>
+                <div className={styles.currentUser}>
+                  <img
+                    className={styles.currentUserAvatar}
+                    src={chatAvatar}
+                    alt="current user avatar"
+                  />
+                  <p className={styles.currentUserMessage}>
+                    Hey Olivia, Katherine sent me over the latest doc. I just have
+                    a quick question about the job
+                  </p>
+                </div>
+                <p className={styles.answeredMessage}>
+                  Hey, Yeah Let me know what’s yur question.
+                </p>
+                <div className={styles.currentUser}>
+                  <img
+                    className={styles.currentUserAvatar}
+                    src={chatAvatar}
+                    alt="current user avatar"
+                  />
+                  <div className={styles.currentUserAttachment}>
+                    <div className={styles.currentUserVideo}>
+                      <button className={styles.currentUserVideoPlayButton}>
+                        <img
+                          src={videoPlayButtonIcon}
+                          alt="video player play button"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.currentUser}>
+                  <img
+                    style={{ alignSelf: "center" }}
+                    className={styles.currentUserAvatar}
+                    src={chatAvatar}
+                    alt="current user avatar"
+                  />
+                  <div className={styles.currentUserAttachment}>
+                    <div className={styles.currentUserVoiceMessage}>
+                      <button className={styles.currentUserVoiceMessageButton}>
+                        <img
+                          src={videoPlayButtonIcon}
+                          alt="video player play button"
+                        />
+                      </button>
+                      <div className={styles.currentUserVoiceMessageTime}>
+                        0:52
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.answeredAttachment}>
+                  <div className={styles.answeredVoiceMessage}>
+                    <button className={styles.answeredVoiceMessageButton}>
+                      <img
+                        src={videoPlayButtonIconOrange}
+                        alt="video player play button"
+                      />
+                    </button>
+                    <div className={styles.answeredVoiceMessageTime}>0:52</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className={styles.sendMessage}>
+              <div className={styles.sendMessageContainer}>
+                <textarea
+                  className={styles.messageInput}
+                  placeholder="Message..."
+                />
+                <div className={styles.inputButtons}>
+                  <button className={styles.inputButton}>
+                    <img src={attachment} alt="attachment logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={statsReport} alt="stats report logo" />
+                  </button>
+                  <button className={styles.inputButton}>
+                    <img src={emoji} alt="emojis logo" />
+                  </button>
+                </div>
+              </div>
+              <button className={styles.sendMessageButton}>
+                <img src={arrow} alt="arrow" />
+              </button>
+            </div>
+          </div>
+        </div>
+        {muteIsOpen ? (
+          <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
+        ) : null}
+        {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
+        {editMenuIsOpen ? (
+          <EditNicknameMenu
+            setEditMenuIsOpen={setEditMenuIsOpen}
+            nickname={nickname}
+            setNickname={setNickname}
+          />
+        ) : null}
+        {deleteIsOpen ? <DeleteChat setDeleteIsOpen={setDeleteIsOpen} nickname={'Owen Padberg'} /> : null}
+      </div> :
+      <div className={styles.mobileNav}>
+        <div className={styles.messagesListSingle}>
           <form
             onChange={(event) => event.preventDefault}
             className={styles.search}
@@ -111,12 +322,14 @@ function ProfileChat() {
                       src={item.avatar}
                       alt="user avatar"
                     />
-                    <div className={styles.messageInfo}>
-                      <span className={styles.messagesAuthor}>{item.name}</span>
-                      <span className={styles.messagesText}>
-                        {item.message}
-                      </span>
-                    </div>
+                    <Link to={'1'}>
+                      <div className={styles.messageInfo}>
+                        <span className={styles.messagesAuthor}>{item.name}</span>
+                        <span className={styles.messagesText}>
+                          {item.message}
+                        </span>
+                      </div>
+                    </Link>
                   </div>
                   <span className={styles.messagesTime}>
                     {item.messageTime}
@@ -126,158 +339,7 @@ function ProfileChat() {
             })}
           </div>
         </div>
-        <div className={styles.chatWindow}>
-          <div className={styles.chatWindowNav}>
-            <div className={styles.chatWindowContainer}>
-              <div className={styles.chatWindowUserInfo}>
-                <img src={avatar1} alt="user avatar" />
-                <div className={styles.usernameInfo}>
-                  <span className={styles.username}>
-                    {nickname.length > 0 ? nickname : "Owen Padberg"}
-                  </span>
-                  <span className={styles.usernameActiveTime}>
-                    Active 15 min ago
-                  </span>
-                </div>
-              </div>
-              <div className={styles.chatWindowButtons}>
-                <button className={styles.actionButton}>
-                  <img src={phone} alt="call icon" />
-                </button>
-                <Link
-                  className={styles.actionButton}
-                  to="/profile-chat/videocall"
-                >
-                  <img src={videoCall} alt="video call icon" />
-                </Link>
-                <button
-                  onClick={() => {
-                    setDropdownMenu(!dropdownMenu);
-                    setSearchIsOpen(false);
-                  }}
-                  className={styles.actionButton}
-                >
-                  <span className={styles.actionButtonInner}>...</span>
-                </button>
-              </div>
-              {dropdownMenu ? (
-                <DropDownMenu
-                  dropdownMenu={dropdownMenu}
-                  setDropdownMenu={setDropdownMenu}
-                  setSearchIsOpen={setSearchIsOpen}
-                  setMuteIsOpen={setMuteIsOpen}
-                  setBlockIsOpen={setBlockIsOpen}
-                  setEditMenuIsOpen={setEditMenuIsOpen}
-                />
-              ) : null}
-            </div>
-            {searchIsOpen ? (
-              <ChatSearch setSearchIsOpen={setSearchIsOpen} />
-            ) : null}
-          </div>
-          <div className={styles.chatMessagesContainer}>
-            <div className={styles.chatMessages}>
-              <div className={styles.currentUser}>
-                <img
-                  className={styles.currentUserAvatar}
-                  src={chatAvatar}
-                  alt="current user avatar"
-                />
-                <p className={styles.currentUserMessage}>
-                  Hey Olivia, Katherine sent me over the latest doc. I just have
-                  a quick question about the job
-                </p>
-              </div>
-              <p className={styles.answeredMessage}>
-                Hey, Yeah Let me know what’s yur question.
-              </p>
-              <div className={styles.currentUser}>
-                <img
-                  className={styles.currentUserAvatar}
-                  src={chatAvatar}
-                  alt="current user avatar"
-                />
-                <div className={styles.currentUserAttachment}>
-                  <div className={styles.currentUserVideo}>
-                    <button className={styles.currentUserVideoPlayButton}>
-                      <img
-                        src={videoPlayButtonIcon}
-                        alt="video player play button"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.currentUser}>
-                <img
-                  style={{ alignSelf: "center" }}
-                  className={styles.currentUserAvatar}
-                  src={chatAvatar}
-                  alt="current user avatar"
-                />
-                <div className={styles.currentUserAttachment}>
-                  <div className={styles.currentUserVoiceMessage}>
-                    <button className={styles.currentUserVoiceMessageButton}>
-                      <img
-                        src={videoPlayButtonIcon}
-                        alt="video player play button"
-                      />
-                    </button>
-                    <div className={styles.currentUserVoiceMessageTime}>
-                      0:52
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.answeredAttachment}>
-                <div className={styles.answeredVoiceMessage}>
-                  <button className={styles.answeredVoiceMessageButton}>
-                    <img
-                      src={videoPlayButtonIconOrange}
-                      alt="video player play button"
-                    />
-                  </button>
-                  <div className={styles.answeredVoiceMessageTime}>0:52</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.sendMessage}>
-              <div className={styles.sendMessageContainer}>
-                <textarea
-                  className={styles.messageInput}
-                  placeholder="Message..."
-                />
-                <div className={styles.inputButtons}>
-                  <button className={styles.inputButton}>
-                    <img src={attachment} alt="attachment logo" />
-                  </button>
-                  <button className={styles.inputButton}>
-                    <img src={statsReport} alt="stats report logo" />
-                  </button>
-                  <button className={styles.inputButton}>
-                    <img src={emoji} alt="emojis logo" />
-                  </button>
-                </div>
-              </div>
-              <button className={styles.sendMessageButton}>
-                <img src={arrow} alt="arrow" />
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
-      {muteIsOpen ? (
-        <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
-      ) : null}
-      {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
-      {editMenuIsOpen ? (
-        <EditNicknameMenu
-          setEditMenuIsOpen={setEditMenuIsOpen}
-          nickname={nickname}
-          setNickname={setNickname}
-        />
-      ) : null}
-    </div>
   );
 }
 

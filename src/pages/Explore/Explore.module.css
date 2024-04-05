@@ -8,7 +8,9 @@
   flex-direction: column;
   row-gap: 16px;
 }
-
+.navbarWrapper{
+  position: sticky;
+}
 .rightSideBarWrapper {
   flex: 1;
 }

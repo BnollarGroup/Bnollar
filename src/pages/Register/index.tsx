@@ -107,9 +107,8 @@ const Register: FC = () => {
         wallet_address: data.walletAddress,
         display_name: data.displayName,
         username: data.username,
-
-        // profile_picture: profileUrl, // You can add profile picture if available
-        // cover_picture: coverUrl    // You can add cover picture if available
+        profile_picture: profileImage, // You can add profile picture if available
+        cover_picture: coverImage    // You can add cover picture if available
       };
 
       // console.log(data);
@@ -118,31 +117,32 @@ const Register: FC = () => {
       // console.log(JSON.stringify(postingData))
       // Posting user registration data to the specified URL
       // await postData('http://64.226.94.204:1337/api/accounts/register', postingData, 'application/json');
-      // await registerWithMetaMask(postingData);
-      const registerWithMetaMaskk = async () => {
-        try {
-          // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-          // const account = accounts[0];
-          // console.log('Registering with account:', account);
-          console.log(JSON.stringify({ wallet_address: postingData.wallet_address, display_name: postingData.display_name, username: postingData.username }))
-          // Call your backend registration endpoint
-          fetch('http://64.226.94.204:1337/api/accounts/register/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ wallet_address: postingData.wallet_address, display_name: postingData.display_name, username: postingData.username }),
-          })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              console.log('Registration successful');
-            })
-            .catch(error => console.error('Registration failed:', error));
-        } catch (error) {
-          console.error('MetaMask registration error:', error);
-        }
-      }
-      registerWithMetaMaskk();
+      await registerWithMetaMask(postingData);
+
+      // const registerWithMetaMaskk = async () => {
+      //   try {
+      //     // const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      //     // const account = accounts[0];
+      //     // console.log('Registering with account:', account);
+      //     console.log(postingData.wallet_address, postingData.display_name, postingData.username )
+      //     // Call your backend registration endpoint
+      //     fetch('http://64.226.94.204:1337/api/accounts/register/', {
+      //       method: 'POST',
+      //       headers: { 'Content-Type': 'application/json' },
+      //       body: JSON.stringify({ wallet_address: postingData.wallet_address , display_name: postingData.display_name, username: postingData.username }),
+      //     })
+      //       .then(response => {
+      //         // if (!response.ok) {
+      //         //   throw new Error('Network response was not ok');
+      //         // }
+      //         console.log('Registration successful');
+      //       })
+      //       .catch(error => console.error('Registration failed:', error));
+      //   } catch (error) {
+      //     console.error('MetaMask registration error:', error);
+      //   }
+      // }
+      // registerWithMetaMaskk();
 
     } catch (err) {
       console.error(err);

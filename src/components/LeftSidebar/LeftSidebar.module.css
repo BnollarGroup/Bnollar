@@ -5,6 +5,7 @@
   flex: 1.5;
   position: sticky;
   top: var(--space-for-sticking);
+  height: fit-content;
 }
 
 .leftMenu {
