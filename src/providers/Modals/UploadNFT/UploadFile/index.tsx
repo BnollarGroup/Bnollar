@@ -5,6 +5,7 @@ import addIcon from "lib/resources/images/icons/addicon.png";
 import UploadImgMiddleLogo from "lib/resources/images/icons/uploadimgmiddlelogo.png";
 import Select from "components/Select";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function UploadNFTUploadFileModal() {
@@ -14,15 +15,15 @@ export default function UploadNFTUploadFileModal() {
     dispatch(close());
   };
 
-  const [ collectionInputValue, setCollectionInputValue ] = useState("");
-  const [ inputValue, setInputValue ] = useState<any>("");
+  const [collectionInputValue, setCollectionInputValue] = useState("");
+  const [inputValue, setInputValue] = useState<any>("");
 
 
   const handleCollectionInputChange = (value: string) => {
     setCollectionInputValue(value);
     dispatch(collectionInputValueChange(value));
   };
-  
+
 
   return (
     <div className={style.browse}>
@@ -30,7 +31,7 @@ export default function UploadNFTUploadFileModal() {
 
       <div className={style.container}>
         <div className={style.uploadcontainter}>
-          <input type="file" className={style.uploadFileInput}  />
+          <input type="file" className={style.uploadFileInput} />
 
           <div className={style.uploadtext}>
             <h2>Drop image here, or</h2>
@@ -95,7 +96,8 @@ export default function UploadNFTUploadFileModal() {
 
               <div>
                 <input type="text" placeholder="bnollar.com/" onChange={(v) => setInputValue(v)} />
-                { inputValue.length < 1 ? <span>@Name</span> : null }
+                {/* value={`bnollar.com/${collectionInputValue}`} */}
+                {inputValue.length < 1 ? <span>{collectionInputValue}</span> : null}
               </div>
             </div>
           </div>
@@ -105,7 +107,9 @@ export default function UploadNFTUploadFileModal() {
             <textarea placeholder="Provide detailed description of your collection."></textarea>
           </div>
 
-          <button className={style.createnft} onClick={handleClose}>Create Item</button>
+          <Link to="/nft">
+            <button className={style.createnft} onClick={handleClose}>Create Item</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -24,6 +24,7 @@ import BlockMenu from "components/ProfileChat/BlockMenu/BlockMenu";
 import EditNicknameMenu from "components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
 import DeleteChat from "components/ProfileChat/DeleteChat/DeleteChat";
 import { useScreenSize } from "hooks/useScreenSize";
+import MobileNavbar from "components/MobileNavbar";
 
 function MobileDirect() {
     const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -73,160 +74,163 @@ function MobileDirect() {
         },
     ];
     return (
-        <div className={styles.chatWindow} style={{height:'100dvh', width:'100dvw'}}>
-            <div className={styles.chatWindowNav}>
-                <div className={styles.chatWindowContainer}>
-                    <div className={styles.chatWindowUserInfo}>
-                        <img src={avatar1} alt="user avatar" />
-                        <div className={styles.usernameInfo}>
-                            <span className={styles.username}>
-                                {nickname.length > 0 ? nickname : "Owen Padberg"}
-                            </span>
-                            <span className={styles.usernameActiveTime}>
-                                Active 15 min ago
-                            </span>
-                        </div>
-                    </div>
-                    <div className={styles.chatWindowButtons}>
-                        <button className={styles.actionButton}>
-                            <img src={phone} alt="call icon" />
-                        </button>
-                        <Link
-                            className={styles.actionButton}
-                            to="/profile-chat/videocall"
-                        >
-                            <img src={videoCall} alt="video call icon" />
-                        </Link>
-                        <button
-                            onClick={() => {
-                                setDropdownMenu(!dropdownMenu);
-                                setSearchIsOpen(false);
-                            }}
-                            className={styles.actionButton}
-                        >
-                            <span className={styles.actionButtonInner}>...</span>
-                        </button>
-                    </div>
-                    {dropdownMenu ? (
-                        <DropDownMenu
-                            dropdownMenu={dropdownMenu}
-                            setDropdownMenu={setDropdownMenu}
-                            setSearchIsOpen={setSearchIsOpen}
-                            setMuteIsOpen={setMuteIsOpen}
-                            setBlockIsOpen={setBlockIsOpen}
-                            setEditMenuIsOpen={setEditMenuIsOpen}
-                            setDeleteIsOpen={setDeleteIsOpen}
-                        />
-                    ) : null}
-                </div>
-                {searchIsOpen ? (
-                    <ChatSearch setSearchIsOpen={setSearchIsOpen} />
-                ) : null}
-            </div>
-            <div className={styles.chatMessagesContainer}>
-                <div className={styles.chatMessages}>
-                    <div className={styles.currentUser}>
-                        <img
-                            className={styles.currentUserAvatar}
-                            src={chatAvatar}
-                            alt="current user avatar"
-                        />
-                        <p className={styles.currentUserMessage}>
-                            Hey Olivia, Katherine sent me over the latest doc. I just have
-                            a quick question about the job
-                        </p>
-                    </div>
-                    <p className={styles.answeredMessage}>
-                        Hey, Yeah Let me know what’s yur question.
-                    </p>
-                    <div className={styles.currentUser}>
-                        <img
-                            className={styles.currentUserAvatar}
-                            src={chatAvatar}
-                            alt="current user avatar"
-                        />
-                        <div className={styles.currentUserAttachment}>
-                            <div className={styles.currentUserVideo}>
-                                <button className={styles.currentUserVideoPlayButton}>
-                                    <img
-                                        src={videoPlayButtonIcon}
-                                        alt="video player play button"
-                                    />
-                                </button>
+        <div style={{width:'100dvw', height:'100dvh'}}>
+            <div className={styles.chatWindow} style={{ height: '90dvh', width: '100%' }}>
+                <div className={styles.chatWindowNav}>
+                    <div className={styles.chatWindowContainer}>
+                        <div className={styles.chatWindowUserInfo}>
+                            <img src={avatar1} alt="user avatar" />
+                            <div className={styles.usernameInfo}>
+                                <span className={styles.username}>
+                                    {nickname.length > 0 ? nickname : "Owen Padberg"}
+                                </span>
+                                <span className={styles.usernameActiveTime}>
+                                    Active 15 min ago
+                                </span>
                             </div>
                         </div>
+                        <div className={styles.chatWindowButtons}>
+                            <button className={styles.actionButton}>
+                                <img src={phone} alt="call icon" />
+                            </button>
+                            <Link
+                                className={styles.actionButton}
+                                to="/profile-chat/videocall"
+                            >
+                                <img src={videoCall} alt="video call icon" />
+                            </Link>
+                            <button
+                                onClick={() => {
+                                    setDropdownMenu(!dropdownMenu);
+                                    setSearchIsOpen(false);
+                                }}
+                                className={styles.actionButton}
+                            >
+                                <span className={styles.actionButtonInner}>...</span>
+                            </button>
+                        </div>
+                        {dropdownMenu ? (
+                            <DropDownMenu
+                                dropdownMenu={dropdownMenu}
+                                setDropdownMenu={setDropdownMenu}
+                                setSearchIsOpen={setSearchIsOpen}
+                                setMuteIsOpen={setMuteIsOpen}
+                                setBlockIsOpen={setBlockIsOpen}
+                                setEditMenuIsOpen={setEditMenuIsOpen}
+                                setDeleteIsOpen={setDeleteIsOpen}
+                            />
+                        ) : null}
                     </div>
-                    <div className={styles.currentUser}>
-                        <img
-                            style={{ alignSelf: "center" }}
-                            className={styles.currentUserAvatar}
-                            src={chatAvatar}
-                            alt="current user avatar"
-                        />
-                        <div className={styles.currentUserAttachment}>
-                            <div className={styles.currentUserVoiceMessage}>
-                                <button className={styles.currentUserVoiceMessageButton}>
-                                    <img
-                                        src={videoPlayButtonIcon}
-                                        alt="video player play button"
-                                    />
-                                </button>
-                                <div className={styles.currentUserVoiceMessageTime}>
-                                    0:52
+                    {searchIsOpen ? (
+                        <ChatSearch setSearchIsOpen={setSearchIsOpen} />
+                    ) : null}
+                </div>
+                <div className={styles.chatMessagesContainer}>
+                    <div className={styles.chatMessages}>
+                        <div className={styles.currentUser}>
+                            <img
+                                className={styles.currentUserAvatar}
+                                src={chatAvatar}
+                                alt="current user avatar"
+                            />
+                            <p className={styles.currentUserMessage}>
+                                Hey Olivia, Katherine sent me over the latest doc. I just have
+                                a quick question about the job
+                            </p>
+                        </div>
+                        <p className={styles.answeredMessage}>
+                            Hey, Yeah Let me know what’s yur question.
+                        </p>
+                        <div className={styles.currentUser}>
+                            <img
+                                className={styles.currentUserAvatar}
+                                src={chatAvatar}
+                                alt="current user avatar"
+                            />
+                            <div className={styles.currentUserAttachment}>
+                                <div className={styles.currentUserVideo}>
+                                    <button className={styles.currentUserVideoPlayButton}>
+                                        <img
+                                            src={videoPlayButtonIcon}
+                                            alt="video player play button"
+                                        />
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.answeredAttachment}>
-                        <div className={styles.answeredVoiceMessage}>
-                            <button className={styles.answeredVoiceMessageButton}>
-                                <img
-                                    src={videoPlayButtonIconOrange}
-                                    alt="video player play button"
-                                />
-                            </button>
-                            <div className={styles.answeredVoiceMessageTime}>0:52</div>
+                        <div className={styles.currentUser}>
+                            <img
+                                style={{ alignSelf: "center" }}
+                                className={styles.currentUserAvatar}
+                                src={chatAvatar}
+                                alt="current user avatar"
+                            />
+                            <div className={styles.currentUserAttachment}>
+                                <div className={styles.currentUserVoiceMessage}>
+                                    <button className={styles.currentUserVoiceMessageButton}>
+                                        <img
+                                            src={videoPlayButtonIcon}
+                                            alt="video player play button"
+                                        />
+                                    </button>
+                                    <div className={styles.currentUserVoiceMessageTime}>
+                                        0:52
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.answeredAttachment}>
+                            <div className={styles.answeredVoiceMessage}>
+                                <button className={styles.answeredVoiceMessageButton}>
+                                    <img
+                                        src={videoPlayButtonIconOrange}
+                                        alt="video player play button"
+                                    />
+                                </button>
+                                <div className={styles.answeredVoiceMessageTime}>0:52</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-            <div className={mobileStyles.sendMessage}>
-                <div className={mobileStyles.sendMessageContainer}>
-                    <textarea
-                        className={mobileStyles.messageInput}
-                        placeholder="Message..."
-                    />
-                    <div className={mobileStyles.inputButtons}>
-                        <button className={mobileStyles.inputButton}>
-                            <img src={attachment} alt="attachment logo" />
-                        </button>
-                        <button className={mobileStyles.inputButton}>
-                            <img src={statsReport} alt="stats report logo" />
-                        </button>
-                        <button className={mobileStyles.inputButton}>
-                            <img src={emoji} alt="emojis logo" />
-                        </button>
-                    </div>
                 </div>
-                <button className={mobileStyles.sendMessageButton}>
-                    <img src={arrow} alt="arrow" />
-                </button>
+                <div className={mobileStyles.sendMessage}>
+                    <div className={mobileStyles.sendMessageContainer}>
+                        <textarea
+                            className={mobileStyles.messageInput}
+                            placeholder="Message..."
+                        />
+                        <div className={mobileStyles.inputButtons}>
+                            <button className={mobileStyles.inputButton}>
+                                <img src={attachment} alt="attachment logo" />
+                            </button>
+                            <button className={mobileStyles.inputButton}>
+                                <img src={statsReport} alt="stats report logo" />
+                            </button>
+                            <button className={mobileStyles.inputButton}>
+                                <img src={emoji} alt="emojis logo" />
+                            </button>
+                        </div>
+                    </div>
+                    <button className={mobileStyles.sendMessageButton}>
+                        <img src={arrow} alt="arrow" />
+                    </button>
+                </div>
+                {muteIsOpen ? (
+                    <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
+                ) : null}
+                {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
+                {
+                    editMenuIsOpen ? (
+                        <EditNicknameMenu
+                            setEditMenuIsOpen={setEditMenuIsOpen}
+                            nickname={nickname}
+                            setNickname={setNickname}
+                        />
+                    ) : null
+                }
+                {deleteIsOpen ? <DeleteChat setDeleteIsOpen={setDeleteIsOpen} nickname={'Owen Padberg'} /> : null}
             </div>
-            {muteIsOpen ? (
-                <Mute setMuteIsOpen={setMuteIsOpen} setMuteOption={setMuteOption} />
-            ) : null}
-            {blockIsOpen ? <BlockMenu setBlockIsOpen={setBlockIsOpen} /> : null}
-            {
-                editMenuIsOpen ? (
-                    <EditNicknameMenu
-                        setEditMenuIsOpen={setEditMenuIsOpen}
-                        nickname={nickname}
-                        setNickname={setNickname}
-                    />
-                ) : null
-            }
-            {deleteIsOpen ? <DeleteChat setDeleteIsOpen={setDeleteIsOpen} nickname={'Owen Padberg'} /> : null}
+            <MobileNavbar />
         </div>
     );
 }

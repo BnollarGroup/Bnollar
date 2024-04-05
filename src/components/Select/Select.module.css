@@ -10,7 +10,6 @@
 
 .select {
   appearance: none;
-
   width: 100%;
   height: 52px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -24,7 +23,12 @@
   font-weight: 500;
   line-height: 22px;
 }
-
+.select option{
+  color: black;
+}
+.select option:first-child {
+  display: none;
+}
 .icon {
   position: absolute;
   right: 1.25em;

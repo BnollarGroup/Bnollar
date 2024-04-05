@@ -29,12 +29,10 @@ const data = [
 
 type ChooseBlockchainProps = {
   setPage: Dispatch<SetStateAction<string>>;
+  setBlockchain: Dispatch<SetStateAction<string | null>>;
 };
 
-export default function ChooseBlockchain({ setPage }: ChooseBlockchainProps) {
-  const [blockchain, setBlockchain] = useState<string | null>(null);
-
-  console.log(blockchain);
+export default function ChooseBlockchain({ setPage, setBlockchain }: ChooseBlockchainProps) {
 
   const linkTag = (
     // add link later

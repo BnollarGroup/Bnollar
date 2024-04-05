@@ -6,6 +6,7 @@ type TypeContainerProps = {
   title: string;
   text: string;
   setPage: Dispatch<SetStateAction<string>>;
+  setType: Dispatch<SetStateAction<string | null>>;
 };
 
 export default function TypeContainer({
@@ -13,9 +14,12 @@ export default function TypeContainer({
   title,
   text,
   setPage,
+  setType
 }: TypeContainerProps) {
   return (
-    <div className={styles.container} onClick={() => setPage("createNewNFT")}>
+    <div className={styles.container} onClick={() => {
+      setPage("createNewNFT"); setType(title)
+    }}>
       <img
         src={require(`../../../../lib/resources/images/upload-nft/chooseType/${image}`)}
         alt={`${title} choose type`}

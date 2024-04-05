@@ -7,16 +7,21 @@ import CreateNewNFT from "components/UploadNFT/CreateNewNFT/CreateNewNFT";
 
 export default function UploadNft() {
   const [page, setPage] = useState<string>("chooseBlockchain");
+  const [blockchain, setBlockchain] = useState<string | null>(null);
+  const [type, setType] = useState<string | null>(null);
+  console.log(blockchain);
+  console.log(type)
+
   return (
     <section className={styles.container}>
       <Navbar />
 
       {page === "chooseBlockchain" ? (
-        <ChooseBlockchain setPage={setPage} />
+        <ChooseBlockchain setPage={setPage} setBlockchain={setBlockchain} />
       ) : page === "chooseType" ? (
-        <ChooseType setPage={setPage} />
+        <ChooseType setPage={setPage} setType={setType} />
       ) : (
-        <CreateNewNFT />
+        <CreateNewNFT blockchain={blockchain} type={type} />
       )}
     </section>
   );
