@@ -1,0 +1,95 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(13, 14, 17, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addPopup {
+    width: 548px;
+    height: 415px;
+    border-radius: 16px;
+    background: rgba(23, 24, 27, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+/* .question {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #FFFFFF;
+} */
+.comment_textarea {
+    margin-top: 10px;
+    resize: none;
+    width: 100%;
+    height: 80%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 13px 14px 13px 14px;
+    color: #ffffff;
+    outline: none;
+    font-family: "Inter";
+}
+
+
+.comment_textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.buttons {
+    width: 50%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonYes {
+    width: 45%;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #fff;
+    background-color: orange;
+}
+
+.buttonYes {
+    width: 145px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #ef8031;
+    background: #ef8031;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.buttonNo {
+    width: 79px;
+    height: 40px;
+    border-radius: 8px;
+    background: inherit;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}

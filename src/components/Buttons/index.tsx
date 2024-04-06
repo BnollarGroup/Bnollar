@@ -5,6 +5,8 @@ import upvoteOn from "lib/resources/images/icons/arrow-up-circled.svg";
 import chat from "lib/resources/images/icons/chat.svg";
 import chatOn from "lib/resources/images/icons/chatOn.svg";
 import share from "lib/resources/images/icons/share.svg";
+import AddComment from "components/Home/AddComment";
+import Share from "components/Home/Share";
 
 export const UpvoteButton = () => {
   const [showUpVote, setShowUpVote] = useState(false);
@@ -28,13 +30,17 @@ export const CommnetButton = () => {
   const [showComment, setShowComment] = useState(false);
 
   return (
-    <button
-      className={showComment ? styles.ClickedBtn : styles.Button}
-    >
-      <img src={showComment ? chatOn : chat} alt="Comment" />
-      Comment
-    </button>
+    <>
+      <button
+        className={showComment ? styles.ClickedBtn : styles.Button}
+        onClick={() => setShowComment(true)}
+      >
+        <img src={showComment ? chatOn : chat} alt="Comment" />
+        Comment
+      </button>
+      {showComment ? <AddComment setCommentIsOpen={setShowComment} /> : null}
 
+    </>
   );
 };
 
@@ -44,6 +50,13 @@ export const ShareButton = () => {
   const handleShareClick = () => {
     setShowShare((prevState) => !prevState);
   };
+  const ShareElement =
+    <div className={styles.opencovereditdrop}>
+      <button className={styles.dropcoverbtn}>Send</button>
+      <button className={styles.dropcoverbtn}>Share to Facebook</button>
+      <button className={styles.dropcoverbtn}>Share to Twitter</button>
+      <button className={styles.dropcoverbtn}>Iframe</button>
+    </div>
 
   return (
     <>
@@ -55,12 +68,7 @@ export const ShareButton = () => {
         Share
       </button>
       {showShare && (
-        <div className={styles.opencovereditdrop}>
-          <button className={styles.dropcoverbtn}>Send</button>
-          <button className={styles.dropcoverbtn}>Share to Facebook</button>
-          <button className={styles.dropcoverbtn}>Share to Twitter</button>
-          <button className={styles.dropcoverbtn}>Iframe</button>
-        </div>
+        <Share setShareisOpen={setShowShare} shareElement={ShareElement} />
       )}
     </>
   );
@@ -95,7 +103,7 @@ export const CommnetButtonMobile = () => {
 
     setShowComment((prevState) => !prevState);
   };
-  
+
   return (
     <button
       className={showComment ? styles.ClickedBtn : styles.Button}
@@ -103,7 +111,7 @@ export const CommnetButtonMobile = () => {
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />
     </button>
-    
+
   );
 };
 
@@ -121,7 +129,7 @@ export const ShareButtonMobile = () => {
         onClick={handleShareClick}
       >
         <img src={share} alt="share" />
-        
+
       </button>
       {showShare && (
         <div className={styles.opencovereditdrop}>
