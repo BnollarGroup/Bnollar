@@ -102,22 +102,7 @@
   display: none;
 }
 
-.postSettings {
-  width: 24px;
-  height: 24px;
-  background: inherit;
-  position: relative;
-  align-self: baseline;
-}
 
-.postSettingsInner {
-  position: absolute;
-  top: 35%;
-  left: 54%;
-  transform: translate(-50%, -50%);
-  letter-spacing: 2.5px;
-  color: rgba(255, 255, 255, 0.4);
-}
 
 .postBtns {
   display: flex;

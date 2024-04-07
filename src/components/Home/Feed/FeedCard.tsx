@@ -9,6 +9,8 @@ import Upperdropdown from "./Dropdowns/Upperdropdown";
 
 const FeedCard = (props: any) => {
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
+  const [showComment, setShowComment] = useState(false);
+
 
   const handleMenuClick = () => {
     setShowMenuDropDown((prevState) => !prevState);
@@ -61,7 +63,7 @@ const FeedCard = (props: any) => {
         )}
         <div className={styles.feedCard_buttons}>
           <UpvoteButton />
-          <CommnetButton />
+          <CommnetButton onClick={() => setShowComment(prev => !prev)} />
           <ShareButton />
         </div>
       </div>

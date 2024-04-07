@@ -70,7 +70,14 @@
 .dropcoverbtn:hover {
   background-color: rgba(255, 255, 255, 0.04);
 }
-
+.shareWrapper{
+  position: relative;
+  color: rgba(255, 255, 255, 0.6);
+  width: 30%;
+}
+.share{
+  width: 100%;
+}
 .ClickedBtn {
   display: flex;
   flex-direction: row;
@@ -87,4 +94,24 @@
   line-height: 20px;
   color: rgba(255, 255, 255, 0.6);
   width: 30%;
+}
+
+.postSettings {
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  position: relative;
+  align-self: baseline;
+}
+
+.postSettingsInner {
+  position: absolute;
+  top: 35%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.settingsWrapper{
+  position: relative;
 }

@@ -4,6 +4,7 @@
   top: 37px;
   width: 213px;
   background: #17181b;
+  z-index: 100;
   padding: 8px;
   border-radius: 10px;
   box-shadow: 0px 2px 2px -4px rgba(0, 0, 0, 0.1),

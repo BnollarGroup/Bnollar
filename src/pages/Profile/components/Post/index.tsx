@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Post.module.css";
 import verifiedIcon from "lib/resources/images/explore/verified-icon.png";
-import { UpvoteButton, CommnetButton, ShareButton } from "components/Buttons";
+import { UpvoteButton, CommnetButton, ShareButton, MoreButton } from "components/Buttons";
 import {
   UpvoteButtonMobile,
   CommnetButtonMobile,
@@ -17,7 +17,7 @@ interface PostProps {
 const Post: React.FC<PostProps> = (props) => {
   const { data } = props;
 
-  const [openComments, setOpenComments] = useState<Record<number, boolean>>({});
+  const [openComments, isCommentsOpen] = useState<boolean>(false);
   // const handleCommentClick = (postId: number) => {
   //   setOpenComments({ ...openComments, [postId]: !openComments[postId] });
   // };
@@ -55,9 +55,7 @@ const Post: React.FC<PostProps> = (props) => {
                             {post.createdAt}
                           </span>
                         </div>
-                        <button className={styles.postSettings}>
-                          <span className={styles.postSettingsInner}>...</span>
-                        </button>
+                        <MoreButton />
                       </div>
                       <div className={styles.postContainer}>
                         <p className={styles.postText}>{post.content}</p>
@@ -70,7 +68,7 @@ const Post: React.FC<PostProps> = (props) => {
                         ) : null}
                         <div className={styles.postBtns}>
                           <UpvoteButton />
-                          <CommnetButton />
+                          <CommnetButton onClick={() => isCommentsOpen(prev => !prev)} />
                           <ShareButton />
                         </div>
                       </div>
@@ -94,7 +92,7 @@ const Post: React.FC<PostProps> = (props) => {
                   </div>
                 </div>
               </div>
-              <Comment post={post} isOpen={openComments[post.id]} />
+              <Comment post={post} isOpen={openComments} />
             </div>
           </div>
         );
