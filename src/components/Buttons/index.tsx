@@ -55,9 +55,6 @@ export const CommnetButton: React.FC<CommentButtonProps> = ({ onClick }) => {
     </>
   );
 };
-CommnetButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
 
 export const ShareButton = () => {
   const [showShare, setShowShare] = useState(false);
@@ -102,18 +99,17 @@ export const UpvoteButtonMobile = () => {
   );
 };
 
-export const CommnetButtonMobile = () => {
+export const CommnetButtonMobile: React.FC<CommentButtonProps> = ({ onClick }) => {
   const [showComment, setShowComment] = useState(false);
 
   const handleCommentClick = () => {
-
     setShowComment((prevState) => !prevState);
   };
 
   return (
     <button
       className={showComment ? styles.ClickedBtn : styles.Button}
-      onClick={handleCommentClick}
+      onClick={() => onClick()}
     >
       <img src={showComment ? chatOn : chat} alt="Comment" />
     </button>
@@ -162,4 +158,12 @@ export const MoreButton = () => {
       )}
     </div>
   );
+};
+
+
+CommnetButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+CommnetButtonMobile.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };

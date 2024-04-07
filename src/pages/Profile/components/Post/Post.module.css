@@ -13,7 +13,9 @@
   flex-direction: column;
   row-gap: 16px;
 }
-
+.feedWrap{
+  width: 100%;
+}
 .postFlexInner {
   display: flex;
   column-gap: 14px;

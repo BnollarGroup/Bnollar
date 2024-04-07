@@ -17,13 +17,20 @@ interface PostProps {
 const Post: React.FC<PostProps> = (props) => {
   const { data } = props;
 
-  const [openComments, isCommentsOpen] = useState<boolean>(false);
-  // const handleCommentClick = (postId: number) => {
-  //   setOpenComments({ ...openComments, [postId]: !openComments[postId] });
-  // };
+  // State to manage whether comments are open or closed for each post
+  const [openComments, setOpenComments] = useState<boolean[]>(Array(data.posts?.length).fill(false));
+
+  // Function to toggle comments for a specific post
+  const toggleComments = (index: number) => {
+    setOpenComments(prevState => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
 
   return (
-    <>
+    <div style={{width:'100%'}}>
       {data.posts?.map((post, index) => {
         return (
           <div key={index} className={styles.post}>
@@ -68,7 +75,7 @@ const Post: React.FC<PostProps> = (props) => {
                         ) : null}
                         <div className={styles.postBtns}>
                           <UpvoteButton />
-                          <CommnetButton onClick={() => isCommentsOpen(prev => !prev)} />
+                          <CommnetButton onClick={() => toggleComments(index)} />
                           <ShareButton />
                         </div>
                       </div>
@@ -87,17 +94,17 @@ const Post: React.FC<PostProps> = (props) => {
 
                   <div className={styles.postBtnsMobile}>
                     <UpvoteButtonMobile />
-                    <CommnetButtonMobile />
+                    <CommnetButtonMobile onClick={() => toggleComments(index)} />
                     <ShareButtonMobile />
                   </div>
                 </div>
               </div>
-              <Comment post={post} isOpen={openComments} />
+              <Comment post={post} isOpen={openComments[index]} />
             </div>
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
