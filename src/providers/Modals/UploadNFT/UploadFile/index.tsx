@@ -107,9 +107,7 @@ export default function UploadNFTUploadFileModal() {
             <textarea placeholder="Provide detailed description of your collection."></textarea>
           </div>
 
-          <Link to="/nft">
-            <button className={style.createnft} onClick={handleClose}>Create Item</button>
-          </Link>
+          <button className={style.createnft} onClick={handleClose}>Create Item</button>
         </div>
       </div>
     </div>

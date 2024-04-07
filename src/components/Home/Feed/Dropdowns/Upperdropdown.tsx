@@ -1,7 +1,7 @@
 import DropdownItem from "./DropdownItem";
 import styles from "./Dropdowns.module.css";
 
-const Upperdropdown = () => {
+const SettingsDropdown = () => {
   return (
     <div className={styles.dropdownWrapper}>
       <DropdownItem label="Report" />
@@ -11,4 +11,4 @@ const Upperdropdown = () => {
   );
 };
 
-export default Upperdropdown;
+export default SettingsDropdown;

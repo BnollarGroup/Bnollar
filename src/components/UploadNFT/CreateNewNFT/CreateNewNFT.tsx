@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from "hooks/useRedux";
 import { change } from "features/modal/modalSlice";
 import { useScreenSize } from "hooks/useScreenSize";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 type newNftProps = {
   blockchain: string | null;
@@ -186,7 +187,9 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
                 </div>
               </div>
             </div>
-            <button className={styles.createItem}>Create Item</button>
+            <Link to={'/nft'}>
+              <button className={styles.createItem}>Create Item</button>
+            </Link>
           </div>
           <div className={styles.rightSide}>
             <div className={styles.pic_text}>
@@ -347,7 +350,9 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
             </div>
           </div>
         </div>
-        <button className={styles.createItem}>Create Item</button>
+        <Link to={'/nft'}>
+          <button className={styles.createItem}>Create Item</button>
+        </Link>
       </div>
     </>
   );

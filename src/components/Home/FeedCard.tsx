@@ -10,6 +10,7 @@ const FeedCard = (props: any) => {
   const [showMenuDropDown, setShowMenuDropDown] = useState(false);
   const [showUpVote, setShowUpVote] = useState(false);
   const [showShare, setShowShare] = useState(false);
+  const [commentOpen, setCommentsOpen] = useState(false);
 
   const handleMenuClick = () => {
     setShowMenuDropDown((prevState) => !prevState);
@@ -84,7 +85,7 @@ const FeedCard = (props: any) => {
               <img src={chat} alt="comment" />
               Comment
             </button> */}
-            <CommnetButton />
+            <CommnetButton onClick={() => setCommentsOpen(prev => !prev)} />
             {/* <button className={styles.share} onClick={handleShareClick}>
               <img src={share} alt="share"/>
               Share
