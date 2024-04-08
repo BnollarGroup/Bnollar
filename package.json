@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@emoji-mart/data": "^1.1.2",
+    "@emoji-mart/react": "^1.1.1",
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.8",
     "clsx": "^2.0.0",
+    "emoji-mart": "^5.5.2",
     "ethers": "^6.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

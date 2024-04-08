@@ -1,4 +1,4 @@
-.container {
+/* .container {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -28,16 +28,81 @@
     font-weight: 700;
     line-height: 24px;
     color: #FFFFFF;
+} */
+.container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(13, 14, 17, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.buttons {
-    width: 50%;
-    align-self: flex-end;
+.mutePopup {
+    width: 548px;
+    height: 380px;
+    border-radius: 16px;
+    background: rgba(23, 24, 27, 1);
+}
+
+.muteHead {
+    width: 548px;
+    padding: 24px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.buttonYes {
+.muteTitle {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.muteCloseButton {
+    width: 24px;
+    height: 24px;
+    background: inherit;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.muteCloseButtonIcon {
+    width: 14.83px;
+    height: 14.83px;
+}
+
+.deleteBody {
+    width: 100%;
+    height: 60%;
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #ffffff;
+    padding: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+
+.buttons {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* .buttonYes {
     width: 45%;
     border-radius: 10px;
     padding: 10px 0;
@@ -47,10 +112,10 @@
     line-height: 24px;
     color: #fff;
     background-color: orange;
-}
+} */
 
 .buttonYes {
-    width: 145px;
+    width: 30%;
     height: 40px;
     border-radius: 40px;
     border: 1px solid #ef8031;
@@ -64,7 +129,7 @@
 }
 
 .buttonNo {
-    width: 79px;
+    width: 30%;
     height: 40px;
     border-radius: 8px;
     background: inherit;

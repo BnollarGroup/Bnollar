@@ -26,6 +26,8 @@ import BlockMenu from "components/ProfileChat/BlockMenu/BlockMenu";
 import EditNicknameMenu from "components/ProfileChat/EditNicknameMenu/EditNicknameMenu";
 import DeleteChat from "components/ProfileChat/DeleteChat/DeleteChat";
 import { useScreenSize } from "hooks/useScreenSize";
+import data from '@emoji-mart/data'
+import Picker from '@emoji-mart/react'
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -36,6 +38,7 @@ function ProfileChat() {
   const [editMenuIsOpen, setEditMenuIsOpen] = useState<boolean>(false);
   const [nickname, setNickname] = useState<string>("");
   const [deleteIsOpen, setDeleteIsOpen] = useState<boolean>(false);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const size = useScreenSize();
   const chatMessages = [
     {
@@ -84,10 +87,22 @@ function ProfileChat() {
     setSentMessages([...sentMessages, { text: messageValue }]);
     setMessageValue('');
   }
-  const handleKeyPress = (e : any) => {
+  const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       handleAddMessage();
     }
+  };
+  const toggleEmojiPicker = () => {
+    setShowEmojiPicker(!showEmojiPicker);
+  };
+
+  const hideEmojiPicker = () => {
+    setShowEmojiPicker(false);
+  };
+
+  const handleEmojiSelect = (emoji: any) => {
+    const emojiUnicode = emoji.native;
+    setMessageValue(messageValue + emojiUnicode);
   };
 
   return (
@@ -277,6 +292,7 @@ function ProfileChat() {
                   className={styles.messageInput}
                   placeholder="Message..."
                 />
+
                 <div className={styles.inputButtons}>
                   <button className={styles.inputButton}>
                     <img src={attachment} alt="attachment logo" />
@@ -284,8 +300,11 @@ function ProfileChat() {
                   <button className={styles.inputButton}>
                     <img src={statsReport} alt="stats report logo" />
                   </button>
-                  <button className={styles.inputButton}>
+                  <button style={{ position: 'relative' }} className={styles.inputButton} onClick={toggleEmojiPicker}>
                     <img src={emoji} alt="emojis logo" />
+                    {showEmojiPicker && (
+                      <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
+                    )}
                   </button>
                 </div>
               </div>

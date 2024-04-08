@@ -419,3 +419,8 @@
   background: #ef8031;
   border-radius: 50%;
 }
+em-emoji-picker{
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
