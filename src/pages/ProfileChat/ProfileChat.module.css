@@ -224,12 +224,16 @@
   flex-direction: column;
   row-gap: 30px;
   height: 80%;
+  overflow-y: scroll;
+  padding-right: 5px;
 }
+
 
 .chatMessages {
   display: flex;
   flex-direction: column;
   row-gap: 19px;
+  padding-bottom: 10px;
 }
 
 .currentUser {
