@@ -6,6 +6,7 @@
   display: flex;
   flex: 1;
   gap: 1.6em;
+  width: 100%;
 }
 
 .LeftSideBar{
@@ -15,6 +16,7 @@
 
 .feedContainer{
   flex: 3;
+  width: 100%;
 }
 .RightSideBar{
   flex: 1;
