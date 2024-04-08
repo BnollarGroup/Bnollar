@@ -46,7 +46,7 @@
     font-size: 13px;
     line-height: 20px;
     color: #FFFFFF;
-    width: 590px;
+    width: 100%;
 }
 
 .commentActionButtons {
@@ -148,7 +148,7 @@
     height: 40px;
     display: flex;
     column-gap: 11.5px;
-    border-radius: 0;
+    border-radius: 0px 10px 10px 0px;
     align-items: center;
     background: rgba(255, 255, 255, 0.04);
     padding-right: 12px;
@@ -166,4 +166,22 @@
     height: 32px;
     background: #EF8031;
     border-radius: 50%;
+}
+
+
+@media screen and (max-width:768px) {
+    .sendMessage{
+        column-gap: 10px;
+    }
+    .sendMessageContainer {
+        min-width: unset;
+        width: 80%;
+    }
+    .messageInput{
+        min-width: unset;
+    }
+    .sendMessageButton{
+        width: 25px;
+        height: 25px;
+    }
 }
