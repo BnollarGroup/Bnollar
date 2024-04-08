@@ -74,7 +74,22 @@ function ProfileChat() {
       messageTime: "1y",
     },
   ];
-  console.log(size)
+
+  type sentMessage = {
+    text: string
+  }
+  const [sentMessages, setSentMessages] = useState<Array<sentMessage>>([]);
+  const [messageValue, setMessageValue] = useState<string>('');
+  const handleAddMessage = () => {
+    setSentMessages([...sentMessages, { text: messageValue }]);
+    setMessageValue('');
+  }
+  const handleKeyPress = (e : any) => {
+    if (e.key === 'Enter') {
+      handleAddMessage();
+    }
+  };
+
   return (
     size !== 'sm' && size !== 'xs' ?
       <div className={styles.container}>
@@ -245,12 +260,20 @@ function ProfileChat() {
                     <div className={styles.answeredVoiceMessageTime}>0:52</div>
                   </div>
                 </div>
+                {sentMessages.map((message, _index) => (
+                  <p key={_index} className={styles.answeredMessage}>
+                    {message.text}
+                  </p>
+                ))}
               </div>
 
             </div>
             <div className={styles.sendMessage}>
               <div className={styles.sendMessageContainer}>
                 <textarea
+                  onChange={(e) => setMessageValue(e.currentTarget.value)}
+                  onKeyDown={(e) => handleKeyPress(e)}
+                  value={messageValue}
                   className={styles.messageInput}
                   placeholder="Message..."
                 />
@@ -266,7 +289,7 @@ function ProfileChat() {
                   </button>
                 </div>
               </div>
-              <button className={styles.sendMessageButton}>
+              <button className={styles.sendMessageButton} onClick={handleAddMessage}>
                 <img src={arrow} alt="arrow" />
               </button>
             </div>
