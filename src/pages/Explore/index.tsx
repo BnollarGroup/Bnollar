@@ -7,7 +7,14 @@ import RightSidebar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
 import Post from "components/Post";
-
+const categories = [
+  "Recommended",
+  "Business",
+  "Creative",
+  "Education",
+  "Entertainment",
+  "Fashion & Beauty",
+];
 function Explore() {
   const posts = data[0].posts;
 
@@ -23,7 +30,7 @@ function Explore() {
           <div className={style.newsFeedContainer}>
             <h1 className={style.title}>Explore</h1>
 
-            <CategoryButtons />
+            <CategoryButtons categories={categories} />
 
             <div className={style.newsFeed}>
               {posts?.map((post) => (

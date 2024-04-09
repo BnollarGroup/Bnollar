@@ -9,6 +9,7 @@
   scrollbar-width: none;
   overflow-x: auto;
   position: relative;
+  width: 100%;
 }
 
 .container::-webkit-scrollbar {

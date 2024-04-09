@@ -9,7 +9,7 @@ export const PublicRoutes = {
   nftCollection: "/nft-collection",
   nftCollectionPrice: "/nft-collectionprice",
   profile: "/profile",
-  // joincommunity: "/joincommunity",
+  joincommunity: "/joincommunity",
   groupPage: "/grouppage",
   settingsWithType: "/settings/:type",
   profileChat: "/profile-chat",

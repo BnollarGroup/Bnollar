@@ -53,11 +53,11 @@ export const publicRoutes = [
     path: routes.profile,
     component: lazy(() => import("pages/Profile")),
   },
-  // {
-  //   title: "Join Community",
-  //   path: routes.joincommunity,
-  //   component: lazy(() => import("pages/JoinCommunity")),
-  // },
+  {
+    title: "Join Community",
+    path: routes.joincommunity,
+    component: lazy(() => import("pages/JoinCommunity")),
+  },
   {
     title: "Group Page",
     path: routes.groupPage,

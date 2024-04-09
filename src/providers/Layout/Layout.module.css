@@ -5,6 +5,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 1780px;
+  height: fit-content;
 }
 
 @media all and (max-width: 768px) {
