@@ -6,6 +6,7 @@ import { publicRoutes } from "routes/route-generator";
 import { Provider } from "react-redux";
 import { store } from "app/store";
 import Modals from "providers/Modals";
+import Testt from "Testt";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -26,6 +27,7 @@ root.render(
                 element={<route.component />}
               />
             ))}
+            <Route path="/testt" element={<Testt />} />
           </Routes>
         </Provider>
       </Suspense>
