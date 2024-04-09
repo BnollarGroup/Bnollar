@@ -1,11 +1,14 @@
 import style from "./InformationSection.module.css";
-
 import Twitter from "lib/resources/images/icons/_Twitter (2).png";
 import Instagram from "lib/resources/images/icons/instagram.png";
 import Discord from "lib/resources/images/icons/Discord.png";
 import clsx from "clsx";
+import { useState } from "react";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
 export default function InformationSection({ data }: { data: any }) {
+  const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
+
   return (
     <>
       <div className={style.container}>
@@ -17,7 +20,7 @@ export default function InformationSection({ data }: { data: any }) {
           </div>
         </div>
 
-        <div className={clsx(style.social, style.socialOnDesktop)}>
+        <div style={{position:'relative'}} className={clsx(style.social, style.socialOnDesktop)}>
           <img src={Instagram} alt="" className={style.icon} />
 
           <img src={Twitter} alt="" className={style.icon} />
@@ -26,7 +29,9 @@ export default function InformationSection({ data }: { data: any }) {
 
           <button className={style.button}>Subscribe</button>
 
-          <button className={clsx(style.button, style.dotbtn)}>...</button>
+          <button className={clsx(style.button, style.dotbtn)} onClick={() => setDropdownMenu(prev => !prev)}>...</button>
+          {dropdownMenu && <DropDownMenu dropdownMenu={dropdownMenu} setDropdownMenu={setDropdownMenu} />}
+
         </div>
       </div>
 
