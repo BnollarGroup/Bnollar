@@ -3,19 +3,31 @@ import Navbar from "components/Navbar";
 import style from "./JoinCommunity.module.css";
 import RightSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";
+import CategoryButtons from "pages/Explore/components/CategoryButtons";
+import Layout from "providers/Layout";
+import { ReactComponent as CheckIcon } from "lib/resources/images/icons/check.svg"
+import { ReactComponent as CloseIcon } from "lib/resources/images/icons/cancel.svg"
+import Select from "components/Select";
+
 
 function JoinCommunity() {
   const [joinCommunity] = useState([
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
-    { img: Cover, title: "Title", member: "Member 24" },
+    { img: Cover, title: "Title", member: "Member 24", joined: false },
+    { img: Cover, title: "Title", member: "Member 24", joined: false },
+    { img: Cover, title: "Title", member: "Member 24", joined: true },
+    { img: Cover, title: "Title", member: "Member 24", joined: false },
+    { img: Cover, title: "Title", member: "Member 24", joined: false },
+    { img: Cover, title: "Title", member: "Member 24", joined: true },
+    { img: Cover, title: "Title", member: "Member 24", joined: false },
   ]);
-
+  const categories = [
+    "Recommended",
+    "Business",
+    "Creative",
+    "Education",
+    "Entertainment",
+    "Food",
+  ];
   const [openCreateGroup, setopenCreateGroup] = useState(false);
   let createGroup;
   if (openCreateGroup) {
@@ -24,7 +36,10 @@ function JoinCommunity() {
         <div className={style.popup}>
           <div className={style.popupleft}></div>
           <div className={style.popupright}>
-            <h1 className={style.creategrouppopup}>Create Group</h1>
+            <div className={style.popupHeadWrapper}>
+              <h1 className={style.createGrouptitle}>Create Group</h1>
+              <CloseIcon style={{cursor:'pointer'}} onClick={() => setopenCreateGroup(false)} />
+            </div>
             <h2 className={style.tellusmore}>Tell us more about your group</h2>
             <div className={style.groupname}>
               <input
@@ -34,12 +49,35 @@ function JoinCommunity() {
               />
             </div>
             <div className={style.privecy_category}>
-              <select className={style.privacy_select}>
-                <option value="">Choose Privacy</option>
-              </select>
-              <select className={style.category_select}>
-                <option value="">Choose Category</option>
-              </select>
+              <Select className={style.category_select} data={[
+                {
+                  value: "category1",
+                  text: "Category 1"
+                },
+                {
+                  value: "category2",
+                  text: "Category 2"
+                },
+                {
+                  value: "category3",
+                  text: "Category 3"
+                },
+              ]} />
+              <Select className={style.category_select} data={[
+                {
+                  value: "category1",
+                  text: "Category 1"
+                },
+                {
+                  value: "category2",
+                  text: "Category 2"
+                },
+                {
+                  value: "category3",
+                  text: "Category 3"
+                },
+              ]} />
+
             </div>
             <div className={style.groupdescription}>
               <textarea
@@ -59,7 +97,7 @@ function JoinCommunity() {
   }
 
   return (
-    <section>
+    <Layout>
       {createGroup}
       <Navbar />
       <div className={style.join_main}>
@@ -76,7 +114,8 @@ function JoinCommunity() {
               Create Group
             </button>
           </div>
-          <div className={style.nftmenu}>
+
+          {/* <div className={style.nftmenu}>
             <div className={style.nftmenubt}>
               <button>Recomended</button>
             </div>
@@ -101,7 +140,8 @@ function JoinCommunity() {
             <div className={style.extralargebtn}>
               <button>Goverment & Policits</button>
             </div>
-          </div>
+          </div> */}
+          <CategoryButtons categories={categories} />
           <div className={style.join_community_box}>
             {joinCommunity.map((element, i) => {
               return (
@@ -111,18 +151,20 @@ function JoinCommunity() {
                   </div>
                   <div className={style.join_title}>
                     <h1>{element.title}</h1>
-                    <h1>{element.member}</h1>
+                    <h1 className={style.subtext}>{element.member}</h1>
                   </div>
-                  <button className={style.join_box_button}>
+                  {element.joined ? <button disabled className={style.join_box_button}>
+                    <CheckIcon /> Joined
+                  </button> : <button className={style.join_box_button}>
                     Join Community
-                  </button>
+                  </button>}
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-    </section>
+    </Layout >
   );
 }
 
