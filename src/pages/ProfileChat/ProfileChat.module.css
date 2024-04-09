@@ -17,7 +17,8 @@
 .messagesList {
   width: fit-content;
 }
-.messagesListSingle{
+
+.messagesListSingle {
   width: 90%;
   height: 90dvh;
   display: flex;
@@ -56,7 +57,8 @@
   line-height: 24px;
   color: rgba(255, 255, 255, 0.4);
 }
-.mobileNav{
+
+.mobileNav {
   width: 100%;
   height: 100dvh;
   display: flex;
@@ -313,7 +315,7 @@
 }
 
 .answeredMessage {
-  max-width: 321px;
+  max-width: 100%;
   font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
@@ -323,6 +325,21 @@
   color: #ffffff;
   background: #ef8031;
   align-self: end;
+  word-break: break-word;
+}
+
+.answeredMessageEmoji {
+  max-width: 100%;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 20px;
+  padding: 10px;
+  color: #ffffff;
+  background: none;
+  align-self: end;
+  word-break: break-word;
+
 }
 
 .answeredAttachment {
@@ -419,7 +436,8 @@
   background: #ef8031;
   border-radius: 50%;
 }
-em-emoji-picker{
+
+em-emoji-picker {
   position: absolute;
   bottom: 10px;
   right: 30px;
