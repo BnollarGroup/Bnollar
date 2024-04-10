@@ -28,6 +28,9 @@
 
 .left_profile_side {
   width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .asideContainer {

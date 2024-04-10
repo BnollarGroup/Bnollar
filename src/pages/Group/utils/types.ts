@@ -1,3 +1,4 @@
+
 export type Post = {
   id: number;
   user: {
@@ -28,3 +29,4 @@ export type User = {
   name: string;
   image: string;
 };
+

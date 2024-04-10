@@ -16,6 +16,9 @@ import InformationSection from "./components/InformationSection";
 import Cover from "./components/Cover";
 import GroupTags from "./components/Tags";
 import GroupMembers from "./components/Members";
+import Post from "pages/Profile/components/Post";
+import { data } from "pages/Group/utils/config"
+
 
 export type TabPage = "feed" | "members" | "media" | "files";
 
@@ -52,7 +55,6 @@ function Group() {
   };
 
   const [currentTab, setCurrentTab] = useState<TabPage>("feed");
-
   return (
     <Layout>
       <Navbar />
@@ -71,8 +73,8 @@ function Group() {
           <div className={style.mainbox}>
             <div className={style.left_profile_side}>
               <FeedHeader />
-
-              <div className={style.upload_news}>
+              <Post data={data[0]} />
+              {/* <div className={style.upload_news}>
                 <div className={style.upload_news_author_pic}>
                   <img src={UserFeedPic} />
                 </div>
@@ -102,7 +104,7 @@ function Group() {
                 </div>
               </div>
               {/* sadsa */}
-              <div className={style.posts}>
+              {/* <div className={style.posts}>
                 <div className={style.post_box}>
                   <div className={style.upload_news_author_pic}>
                     <img src={UserFeedPic} />
@@ -131,11 +133,10 @@ function Group() {
                   </div>
                 </div>
               </div>
+            </div> */}
             </div>
-
             <div className={style.asideContainer}>
               <GroupTags data={groupData} />
-
               <GroupMembers />
             </div>
           </div>
