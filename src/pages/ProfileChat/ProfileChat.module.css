@@ -230,6 +230,15 @@
   padding-right: 5px;
 }
 
+.chatMessagesContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chatMessagesContainer::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+}
+
 
 .chatMessages {
   display: flex;

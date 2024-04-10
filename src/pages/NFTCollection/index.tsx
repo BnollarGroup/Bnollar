@@ -174,7 +174,7 @@ function NftCollection() {
       chain: "Ethereum",
       status: "Buy now",
       marketplace: "Rarible",
-      collection: "Rarible",
+      collection: "aleko",
       date: "2020-11-06",
     },
   ]);

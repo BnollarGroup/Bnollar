@@ -70,6 +70,12 @@ function NftFilterMenu({
         : [chain, ...selectedChains.filter((c) => c !== "All Chains")];
       setSelectedChains(updatedSelectedChains);
     }
+    setShowChainsFilter(!showChainsFilter);
+    setShowStatusFilter(false);
+    setShowPriceFilter(false);
+    setShowMarketPlaceFilter(false);
+    setShowCollectionFilter(false);
+    setShowDateFilter(false);
   };
 
   const handleMarketPlacesFilter = (marketplace: string) => {
@@ -101,6 +107,15 @@ function NftFilterMenu({
     setShowCollectionFilter(false);
     setShowDateFilter(false);
   };
+
+  const handleChainFilterDropdown = () => {
+    setShowChainsFilter(!showChainsFilter);
+    setShowStatusFilter(false);
+    setShowPriceFilter(false);
+    setShowMarketPlaceFilter(false);
+    setShowCollectionFilter(false);
+    setShowDateFilter(false);
+  }
 
   const handleStatusFilter = () => {
     setShowStatusFilter(!showStatusFilter);
@@ -156,14 +171,26 @@ function NftFilterMenu({
               src={Circle}
               className={style.circle}
               alt="Circle"
-              onClick={() => handleChainFilter("All Chains")}
+              onClick={handleChainFilterDropdown}
             />
-            <div className={style.breakDown} onClick={handleChainsFilter}>
+            <div className={style.breakDown} onClick={handleChainFilterDropdown}>
               <button className={style.breakDownbtn}>All Chains</button>
               <img src={ArrowDown} className={style.breakDownArrow} />
             </div>
             {showChainsFilter && (
               <div className={style.chainsFilterBox}>
+                {!selectedChains.includes('All Chains') &&
+                  <div
+                    className={style.optionBox}
+                    onClick={() => {
+                      setShowChainsFilter(false);
+                      handleChainFilter("All Chains");
+                    }}
+                  >
+                    <img src={Circle} className={style.circle} alt="Circle" />
+                    <p className={style.options}>All Chains</p>
+                  </div>
+                }
                 <div
                   className={style.optionBox}
                   onClick={() => {
@@ -252,23 +279,25 @@ function NftFilterMenu({
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn} onClick={handlePriceFilter}>
-            <button className={style.nftmenubutton}>Price</button>
-            <img src={ArrowDown} className={style.breakDownArrow} />
+          <div className={style.nftmenubtnWrapper}>
+            <div className={style.nftmenubtn} onClick={handlePriceFilter}>
+              <button className={style.nftmenubutton}>Price</button>
+              <img src={ArrowDown} className={style.breakDownArrow} />
+            </div>
             {showPriceFilter && (
               <div className={style.priceFilterBox}>
                 <div className={style.CalculationBox}>
-                  <input className={style.minMaxContent} placeholder="Min" />
+                  <input onChange={(e) => setMinPrice(e.target.value)} type="number" className={style.minMaxContent} placeholder="Min" />
                   <p className={style.dash}> - </p>
-                  <input className={style.minMaxContent} placeholder="Max" />
+                  <input onChange={(e) => setMaxPrice(e.target.value)} type="number" className={style.minMaxContent} placeholder="Max" />
                 </div>
-                <div className={style.chooseBox}>
+                {/* <div className={style.chooseBox}>
                   <div className={style.leftPart}>
                     <img src={Circle} className={style.circle}></img>
                     <p className={style.cryptoChoice}>ETH</p>
                   </div>
                   <img src={ArrowDown} className={style.breakDownArrow} />
-                </div>
+                </div> */}
                 <button
                   className={style.applybtn}
                   onClick={() => setShowPriceFilter(false)}
@@ -278,9 +307,11 @@ function NftFilterMenu({
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn} onClick={handleMarketPlaceFilter}>
-            <button className={style.nftmenubutton}>Marketplace</button>
-            <img src={ArrowDown} className={style.breakDownArrow} />
+          <div className={style.nftmenubtnWrapper}>
+            <div className={style.nftmenubtn} onClick={handleMarketPlaceFilter}>
+              <button className={style.nftmenubutton}>Marketplace</button>
+              <img src={ArrowDown} className={style.breakDownArrow} />
+            </div>
             {showMarketPlaceFilter && (
               <div className={style.chainsFilterBox}>
                 <div className={style.optionBox}>
@@ -356,9 +387,11 @@ function NftFilterMenu({
               </div>
             )}
           </div>
-          <div className={style.nftmenubtn} onClick={handleCollectionFilter}>
-            <button className={style.nftmenubutton}>Collection</button>
-            <img src={ArrowDown} className={style.breakDownArrow} />
+          <div className={style.nftmenubtnWrapper}>
+            <div className={style.nftmenubtn} onClick={handleCollectionFilter}>
+              <button className={style.nftmenubutton}>Collection</button>
+              <img src={ArrowDown} className={style.breakDownArrow} />
+            </div>
             {showCollectionFilter && (
               <div className={style.CollectionFilterBox}>
                 <div className={style.collectionFilterSearch}>
@@ -367,6 +400,7 @@ function NftFilterMenu({
                     className={style.collectionFilterSearchInput}
                     type="text"
                     placeholder="Search by collections"
+                    onChange={(e) => setSelectedCollections([...selectedCollections, e.target.value])}
                   />
                 </div>
 
@@ -426,7 +460,7 @@ function NftFilterMenu({
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 }
 
