@@ -18,8 +18,9 @@
 .leftSide {
   padding-left: 50px;
 }
-@media screen and (max-width: 1024px){
-  .leftSide{
+
+@media screen and (max-width: 1024px) {
+  .leftSide {
     padding: 50px;
   }
 }
@@ -92,11 +93,28 @@
 .collection option::selection {
   color: black;
 }
+
 /* 
   .upload {
     margin-top: 10px;
   } */
 
+.uploadImageWrapper {
+  position: relative;
+}
+.removeButton{
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -10px;
+  top: -10px;
+  border: none;
+}
 .upload h1 {
   font-size: 13px;
   font-family: "Inter";
@@ -183,7 +201,7 @@
 
 .editorials,
 .royalties,
-.editorials > input,
+.editorials>input,
 .royaltiesInput {
   width: 100% !important;
 }

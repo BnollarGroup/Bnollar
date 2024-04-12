@@ -14,16 +14,19 @@
 .rightSideBarWrapper {
   flex: 1;
 }
-
+.leftSideBar{
+  flex: 1;
+  max-width: 300px;
+}
 @media all and (max-width: 930px) {
-  .rightSideBarWrapper {
+  .rightSideBarWrapper, .leftSideBar {
+    
     flex: none;
   }
 }
 
 .newsFeedContainer {
   flex: 2;
-
   width: 100%;
 }
 
@@ -72,5 +75,8 @@
 
   .title {
     padding-left: 16px;
+  }
+  .container{
+    padding: 0 10px;
   }
 }

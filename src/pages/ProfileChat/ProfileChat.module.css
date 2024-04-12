@@ -431,6 +431,10 @@
   background: rgba(255, 255, 255, 0.04);
   padding-right: 12px;
 }
+.inputButtons em-emoji-picker{
+  right: 50px;
+  bottom: 50px;
+}
 
 .inputButton {
   width: 16px;

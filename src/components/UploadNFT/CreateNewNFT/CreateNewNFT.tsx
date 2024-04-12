@@ -30,12 +30,14 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
   const [description, setDescription] = useState("");
 
   const isMobile = size === "md" || size === "sm" || size === "xs";
-
+  const removeImage = () => {
+    // Remove the image by setting the image state to null
+    setImage(null);
+  };
   useEffect(() => {
     if (!collectionInputValue) {
       return;
     }
-
     setCategories([
       { text: collectionInputValue, value: collectionInputValue },
     ]);
@@ -78,11 +80,16 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
                   className={clsx(styles.openBtn, image && styles.autoHeight)}
                 >
                   {image ? (
-                    <img
-                      src={image}
-                      alt="Uploaded image"
-                      className={styles.uploadedImage}
-                    />
+                    <div className={styles.uploadImageWrapper}>
+                      <button className={styles.removeButton} onClick={removeImage}>
+                        X
+                      </button>
+                      <img
+                        src={image}
+                        alt="Uploaded image"
+                        className={styles.uploadedImage}
+                      />
+                    </div>
                   ) : (
                     <>
                       <input

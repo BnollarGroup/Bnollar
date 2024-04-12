@@ -12,5 +12,5 @@ const Feed = () => {
       <Post data={data[0]} />
     </div>
   );
-};
+}; 
 export default Feed;

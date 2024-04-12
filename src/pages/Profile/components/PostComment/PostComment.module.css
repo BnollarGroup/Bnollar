@@ -152,6 +152,8 @@
     align-items: center;
     background: rgba(255, 255, 255, 0.04);
     padding-right: 12px;
+    position: relative;
+
 }
 
 .inputButton {
@@ -184,4 +186,9 @@
         width: 25px;
         height: 25px;
     }
+}
+em-emoji-picker{
+    position: absolute;
+    right: 30px;
+    top: 40px;
 }

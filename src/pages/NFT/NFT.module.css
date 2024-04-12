@@ -505,3 +505,13 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width:400px) {
+   .historyCollection{
+    flex-direction: column;
+    gap: 10px;
+   }
+   .historyUserInfo{
+    width: 100%;
+   }
+}
