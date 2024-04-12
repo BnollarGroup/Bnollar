@@ -5,7 +5,6 @@ import upvoteOn from "lib/resources/images/icons/arrow-up-circled.svg";
 import chat from "lib/resources/images/icons/chat.svg";
 import chatOn from "lib/resources/images/icons/chatOn.svg";
 import share from "lib/resources/images/icons/share.svg";
-import AddComment from "components/Home/AddComment";
 import ShareDropDownMenu from "components/Home/Share/DropDownMenu/ShareDropDownMenu";
 import SettingsDropdown from "components/Home/Feed/Dropdowns/Upperdropdown";
 import PropTypes from 'prop-types';
@@ -50,7 +49,6 @@ export const CommnetButton: React.FC<CommentButtonProps> = ({ onClick }) => {
         <img src={showComment ? chatOn : chat} alt="Comment" />
         Comment
       </button>
-      {showComment ? <AddComment setCommentIsOpen={setShowComment} /> : null}
 
     </>
   );

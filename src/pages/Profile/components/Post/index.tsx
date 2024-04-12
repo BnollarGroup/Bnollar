@@ -30,7 +30,7 @@ const Post: React.FC<PostProps> = (props) => {
   };
 
   return (
-    <div style={{width:'100%'}}>
+    <div style={{ width: '100%' }}>
       {data.posts?.map((post, index) => {
         return (
           <div key={index} className={styles.post}>
