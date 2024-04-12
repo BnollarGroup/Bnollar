@@ -8,6 +8,8 @@ import statsReport from "lib/resources/images/explore/stats-report.svg";
 import emoji from "lib/resources/images/explore/emoji.svg";
 import currentUser from "lib/resources/images/explore/current-user.png";
 import { PostsData } from "pages/Profile/utils/types";
+import data from '@emoji-mart/data'
+import Picker from '@emoji-mart/react'
 
 interface CommentProps {
   post: PostsData;
@@ -16,7 +18,8 @@ interface CommentProps {
 
 function Comment(props: CommentProps) {
   const { post, isOpen } = props;
-
+  const [commentValue, setCommentValue] = useState<string>('');
+  const [showEmojiPicker, setShowEmojiPicker] = useState<boolean>(false);
   const [repliesState, setRepliesState] = useState(
     post.replies?.map((reply) => ({
       ...reply,
@@ -32,6 +35,16 @@ function Comment(props: CommentProps) {
       ? 1
       : -1;
     setRepliesState(updatedReplies);
+  };
+
+  const addComment = () => {
+    let currentData = new Date();
+    setRepliesState([...repliesState, { content: commentValue, createdAt: currentData.toString(), id: repliesState.length + 1, image: 'https://picsum.photos/100', replyLikes: 1, replyReaction: false, username: 'aleks' }])
+    setCommentValue('');
+  }
+  const handleEmojiSelect = (emoji: any) => {
+    const emojiUnicode = emoji.native;
+    setCommentValue(commentValue + emojiUnicode);
   };
 
   return (
@@ -72,11 +85,10 @@ function Comment(props: CommentProps) {
                             <img src={nonClickedHeart} alt="isn't liked" />
                           )}
                           <span
-                            className={`${styles.numberOfLikes} ${
-                              reply.replyReaction
-                                ? styles.numberOfLikesActive
-                                : null
-                            }`}
+                            className={`${styles.numberOfLikes} ${reply.replyReaction
+                              ? styles.numberOfLikesActive
+                              : null
+                              }`}
                           >
                             {reply.replyLikes}
                           </span>
@@ -97,6 +109,8 @@ function Comment(props: CommentProps) {
               <textarea
                 className={styles.messageInput}
                 placeholder="Message..."
+                value={commentValue}
+                onChange={(e) => setCommentValue(e.target.value)}
               />
               <div className={styles.inputButtons}>
                 <button className={styles.inputButton}>
@@ -105,12 +119,15 @@ function Comment(props: CommentProps) {
                 <button className={styles.inputButton}>
                   <img src={statsReport} alt="stats report logo" />
                 </button>
-                <button className={styles.inputButton}>
+                <button className={styles.inputButton} onClick={() => setShowEmojiPicker(prev => !prev)}>
                   <img src={emoji} alt="emojis logo" />
+                  {showEmojiPicker && (
+                    <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
+                  )}
                 </button>
               </div>
             </div>
-            <button className={styles.sendMessageButton}>
+            <button className={styles.sendMessageButton} onClick={addComment}>
               <img src={arrow} alt="arrow" />
             </button>
           </div>
