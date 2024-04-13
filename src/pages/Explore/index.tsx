@@ -6,7 +6,7 @@ import LeftSidebar from "components/LeftSidebar";
 import RightSidebar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
-import Post from "components/Post";
+import Post from "pages/Profile/components/Post/index";
 const categories = [
   "Recommended",
   "Business",
@@ -22,10 +22,10 @@ function Explore() {
     <Layout>
       <div className={style.container}>
         <Navbar />
-
-
         <div className={style.content}>
-          <LeftSidebar />
+          <div className={style.leftSideBar}>
+            <LeftSidebar />
+          </div>
 
           <div className={style.newsFeedContainer}>
             <h1 className={style.title}>Explore</h1>
@@ -34,7 +34,7 @@ function Explore() {
 
             <div className={style.newsFeed}>
               {posts?.map((post) => (
-                <Post data={post} key={post.id} />
+                <Post data={data[0]} key={post.id} />
               ))}
             </div>
           </div>

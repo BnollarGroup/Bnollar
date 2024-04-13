@@ -1,3 +1,4 @@
+// Security.js
 import contStyles from "../../SettingsContainer.module.css";
 import styles from "./Security.module.css";
 import ToggleCard from "../ToggleCard/ToggleCard";
@@ -10,6 +11,8 @@ import ChevronLeft from "lib/resources/images/icons/arrow-left.svg";
 const Security = () => {
   const [activeMention, setActiveMention] = useState("Everyone");
   const [activeTags, setActiveTags] = useState("Everyone");
+  const [showDropdownMention, setShowDropdownMention] = useState(false);
+  const [showDropdownTags, setShowDropdownTags] = useState(false);
 
   const dropdownItems = [
     "Everyone",
@@ -17,6 +20,14 @@ const Security = () => {
     "Only me",
     "Friends of friends",
   ];
+
+  const toggleDropDowns = () => {
+    if (showDropdownMention) {
+      setShowDropdownMention(false);
+    } else if (showDropdownTags) {
+      setShowDropdownTags(false);
+    }
+  }
   return (
     <div className={contStyles.containerWrapper}>
       <div className={contStyles.mobileSettings}>
@@ -46,6 +57,9 @@ const Security = () => {
               items={dropdownItems}
               active={activeTags}
               set={setActiveTags}
+              show={showDropdownMention}
+              setShow={setShowDropdownMention}
+              onClick={toggleDropDowns}
             />
           </div>
           <div className={styles.flex_between}>
@@ -57,6 +71,9 @@ const Security = () => {
               items={dropdownItems}
               active={activeMention}
               set={setActiveMention}
+              show={showDropdownTags}
+              setShow={setShowDropdownTags}
+              onClick={toggleDropDowns}
             />
           </div>
           <LinkCard

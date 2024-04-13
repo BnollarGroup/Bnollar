@@ -38,14 +38,25 @@ function Comment(props: CommentProps) {
   };
 
   const addComment = () => {
-    let currentData = new Date();
-    setRepliesState([...repliesState, { content: commentValue, createdAt: currentData.toString(), id: repliesState.length + 1, image: 'https://picsum.photos/100', replyLikes: 1, replyReaction: false, username: 'aleks' }])
+    let currentDate = new Date();
+    let options: Intl.DateTimeFormatOptions = { month: 'short', day: '2-digit' };
+    // Format the date using toLocaleString with the specified options
+    let formattedDate = currentDate.toLocaleString('en-US', options);
+    setRepliesState([...repliesState, { content: commentValue, createdAt: formattedDate, id: repliesState.length + 1, image: 'https://picsum.photos/100', replyLikes: 1, replyReaction: false, username: 'aleks' }])
     setCommentValue('');
   }
   const handleEmojiSelect = (emoji: any) => {
     const emojiUnicode = emoji.native;
     setCommentValue(commentValue + emojiUnicode);
   };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault(); // Prevent default behavior (line break)
+      addComment();
+    }
+  };
+
 
   return (
     <>
@@ -111,6 +122,7 @@ function Comment(props: CommentProps) {
                 placeholder="Message..."
                 value={commentValue}
                 onChange={(e) => setCommentValue(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
               <div className={styles.inputButtons}>
                 <button className={styles.inputButton}>
@@ -121,10 +133,10 @@ function Comment(props: CommentProps) {
                 </button>
                 <button className={styles.inputButton} onClick={() => setShowEmojiPicker(prev => !prev)}>
                   <img src={emoji} alt="emojis logo" />
-                  {showEmojiPicker && (
-                    <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
-                  )}
                 </button>
+                {showEmojiPicker && (
+                  <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
+                )}
               </div>
             </div>
             <button className={styles.sendMessageButton} onClick={addComment}>

@@ -27,10 +27,12 @@
   display: none;
 }
 
-@media all and (max-width: 768px){
+@media all and (max-width: 950px){
   .LeftSideBar{
     display: none;
-  }
+  } 
+}
+@media all and (max-width: 768px){
   .RightSideBar{
     display: none;
   }
@@ -40,5 +42,7 @@
     position: fixed;
     bottom: 0;
   }
-  
+  .main{
+    padding: 0 10px;
+  }
 }

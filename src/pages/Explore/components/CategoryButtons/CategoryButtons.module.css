@@ -16,7 +16,7 @@
   display: none;
 }
 
-.item {
+.categoriesNotSelected {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   padding: 10px 16px;
@@ -28,6 +28,28 @@
   line-height: 20px;
   color: rgba(255, 255, 255, 0.6);
   white-space: nowrap;
+  cursor: pointer;
+}
+.categorieSelected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  width: fit-content;
+  height: 40px;
+  gap: 4px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  background: rgba(239, 128, 49, 0.1);
+  border: 1px solid #ef8031;
+  border-radius: 40px;
+  color: #ffffff;
+  cursor: pointer;
+  white-space: nowrap;
+
 }
 
 @media all and (max-width: 930px) {

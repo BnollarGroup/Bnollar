@@ -114,7 +114,7 @@ function ProfileChat() {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleAddMessage();
     }
@@ -328,19 +328,19 @@ function ProfileChat() {
                     placeholder="Message..."
                   />
 
-                  <div className={styles.inputButtons}>
+                  <div className={styles.inputButtons} style={{ position: 'relative' }}>
                     <button className={styles.inputButton}>
                       <img src={attachment} alt="attachment logo" />
                     </button>
                     <button className={styles.inputButton}>
                       <img src={statsReport} alt="stats report logo" />
                     </button>
-                    <button style={{ position: 'relative' }} className={styles.inputButton} onClick={toggleEmojiPicker}>
+                    <button className={styles.inputButton} onClick={toggleEmojiPicker}>
                       <img src={emoji} alt="emojis logo" />
-                      {showEmojiPicker && (
-                        <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
-                      )}
                     </button>
+                    {showEmojiPicker && (
+                      <Picker autoFocus data={data} onEmojiSelect={handleEmojiSelect} />
+                    )}
                   </div>
                 </div>
                 <button className={styles.sendMessageButton} onClick={handleAddMessage}>

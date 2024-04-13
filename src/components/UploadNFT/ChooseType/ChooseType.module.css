@@ -12,6 +12,11 @@
     margin-top: 3em;
   }
 }
+@media all and (min-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
 
 .main {
   width: 100%;

@@ -1,3 +1,4 @@
+// Dropdown.js
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import styles from "./Dropdown.module.css";
 import arrow from "lib/resources/images/Settings/arrow.png";
@@ -6,20 +7,20 @@ interface DropdownProps {
   items: string[];
   active: string;
   set: Dispatch<SetStateAction<string>>;
+  show: boolean;
+  setShow: Dispatch<SetStateAction<boolean>>;
+  onClick: () => void;
 }
 
-const Dropdown = ({ items, active, set }: DropdownProps) => {
-  const [showItems, setShowItems] = useState(false);
-
+const Dropdown = ({ items, active, set, show, setShow, onClick }: DropdownProps) => {
   const clickHandler = () => {
-    setShowItems(!showItems);
-    
+    setShow(!show);
   };
 
   useEffect(() => {
     const hideDropdown = (event: any) => {
-      if (showItems && event.target.id !== "toggler") {
-        setShowItems(false);
+      if (show && event.target.id !== "toggler") {
+        setShow(false);
       }
     };
     window.addEventListener("click", hideDropdown);
@@ -27,10 +28,10 @@ const Dropdown = ({ items, active, set }: DropdownProps) => {
     return () => {
       window.removeEventListener("click", hideDropdown);
     };
-  }, [showItems]);
-  
+  }, [show, setShow]);
+
   return (
-    <div className={styles.dropdown_wrapper}>
+    <div className={styles.dropdown_wrapper} onClick={onClick}>
       <div
         id="toggler"
         onClick={clickHandler}
@@ -39,12 +40,12 @@ const Dropdown = ({ items, active, set }: DropdownProps) => {
         <span id="toggler">{active}</span>
         <img
           id="toggler"
-          className={`${showItems && styles.rotate}`}
+          className={`${show && styles.rotate}`}
           src={arrow}
           alt="arrow"
         />
       </div>
-      <div className={`${styles.items_wrapper} ${showItems && styles.show}`}>
+      <div className={`${styles.items_wrapper} ${show && styles.show}`}>
         {items.map((item) => (
           <div
             key={item}
