@@ -23,10 +23,10 @@ function Navbar() {
       </div>
 
       <div className={style.right_cont}>
-        <div className={style.create}>
+        <Link to={"/upload-nft"} className={style.create}>
           <img src={Plus} alt="Plus" />
           <p>Create</p>
-        </div>
+        </Link>
         <div className={style.notifications}>
           <img src={Notifications} alt="notifications" />
           <img src={Plus} alt="notifications" />
