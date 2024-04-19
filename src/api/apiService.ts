@@ -4,7 +4,12 @@ interface RequestOptions {
 }
 
 export async function fetchData<T>(url: string): Promise<T> {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
     if (!response.ok) {
         throw new Error(`Failed to fetch data from ${url}`);
     }
