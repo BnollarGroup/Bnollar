@@ -1,6 +1,6 @@
 // import WithNavigation from "hoc/WithNavigation";
 import styles from "./ProfileChat.module.css";
-import { useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import edit from "lib/resources/images/profile-chat/edit.svg";
 import searchLogo from "lib/resources/images/profile-chat/search-logo.svg";
@@ -28,6 +28,8 @@ import DeleteChat from "components/ProfileChat/DeleteChat/DeleteChat";
 import { useScreenSize } from "hooks/useScreenSize";
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
+import clsx from "clsx";
+import cancel from 'lib/resources/images/profile-chat/cancel-block.svg'
 
 function ProfileChat() {
   const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
@@ -78,6 +80,112 @@ function ProfileChat() {
       hasDot: false,
       messageTime: "1y",
     },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+    {
+      name: "Lillian Powlowski",
+      message: "Good news!! Jack accepted t...",
+      avatar: avatar5,
+      hasDot: false,
+      messageTime: "1y",
+    },
+
   ];
 
   const containsOnlyEmojis = (text: string) => {
@@ -90,6 +198,36 @@ function ProfileChat() {
   }
   const [sentMessages, setSentMessages] = useState<Array<sentMessage>>([]);
   const [messageValue, setMessageValue] = useState<string>('');
+  const [addedMembers, setAddedMembers] = useState<Set<number>>(new Set());
+
+  const handleAddMember = (index: number) => {
+    // Create a new Set based on the existing state
+    const updatedSet = new Set(addedMembers);
+    if (updatedSet.has(index)) {
+      // If the member is already added, remove them
+      updatedSet.delete(index);
+    } else {
+      // Otherwise, add them
+      updatedSet.add(index);
+    }
+    setAddedMembers(updatedSet); // Update the state
+  };
+  const handleRemoveMember = (index: number) => {
+    const updatedSet = new Set(addedMembers);
+    updatedSet.delete(index); // Remove the specified index
+    setAddedMembers(updatedSet);
+  };
+  const [searchQuery, setSearchQuery] = useState<string>(''); // State for search query
+
+  // Function to handle input changes
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value); // Update the search query state
+  };
+
+  // Filter chatMessages based on the search query
+  const filteredChatMessages = chatMessages.filter((message) =>
+    message.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   const handleAddMessage = () => {
     // Check if the message contains only emojis
     const containsOnlyEmoji = containsOnlyEmojis(messageValue);
@@ -191,8 +329,60 @@ function ProfileChat() {
           </div>
           {createGroup
             ?
-            <div>
-              create a group
+            <div className={styles.createGroupWindow}>
+              <div className={styles.createGroupSearchWrap}>
+                <input
+                  className={styles.searchInputGroups}
+                  type="text"
+                  placeholder="Search"
+                  value={searchQuery} // Bind input value to searchQuery state
+                  onChange={handleSearchChange} // Handle input change
+                />
+                <img
+                  className={styles.searchImg}
+                  src={searchLogo}
+                  alt="search logo"
+                />
+              </div>
+              <div className={styles.addedFriends}>
+                {Array.from(addedMembers).map((index) => {
+                  const single = chatMessages[index];
+                  return (
+                    <div key={index} className={styles.addedFriend}>
+                      <span>{single.name}</span>
+                      <span
+                        className={styles.removeButton}
+                        onClick={() => handleRemoveMember(index)}
+                      >
+                        <img src={cancel} alt="cancel" />
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={styles.suggestedFriends}>
+                {filteredChatMessages.map((single, index) => {
+                  // Check if the current item is in the 'addedMembers' set
+                  const isAdded = addedMembers.has(index);
+
+                  return (
+                    <div key={index} className={styles.suggestedFriend}>
+                      <div className={styles.nameAndAvatarWrapper}>
+                        <img src={single.avatar} alt={`${single.name}'s avatar`} />
+                        <span>{single.name}</span>
+                      </div>
+                      <span
+                        className={clsx(styles.addMember, {
+                          [styles.added]: isAdded, // Apply style if added
+                        })}
+                        onClick={() => handleAddMember(index)}
+                      >
+                        {!isAdded ? 'Add' : 'Cancel'}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             :
             <div className={styles.chatWindow}>
@@ -380,9 +570,9 @@ function ProfileChat() {
               src={searchLogo}
               alt="search logo"
             />
-            <button className={styles.editButton}>
+            <Link to={'/create-chat'} className={styles.editButton}>
               <img className={styles.editIcon} src={edit} alt="edit icon" />
-            </button>
+            </Link>
           </form>
           <div className={styles.messageContainer}>
             {chatMessages.map((item, index) => {

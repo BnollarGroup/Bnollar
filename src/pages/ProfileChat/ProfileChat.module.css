@@ -16,6 +16,7 @@
 
 .messagesList {
   width: fit-content;
+  height: 90dvh;
 }
 
 .messagesListSingle {
@@ -50,7 +51,31 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.searchInput::placeholder {
+.searchInputGroups {
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 36px;
+  padding: 8px 14px 8px 40px;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  outline: none;
+  border: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.createGroupSearchWrap {
+  width: 100%;
+  position: relative;
+}
+
+.searchInput::placeholder,
+.searchInputGroups::placeholder {
   font-family: "Inter";
   font-weight: 400;
   font-size: 16px;
@@ -78,12 +103,23 @@
   height: 40px;
   border-radius: 182px;
   background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.messagesList {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .messageContainer {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+  overflow-y: scroll;
+  flex: 1;
 }
 
 .messages {
@@ -156,6 +192,151 @@
   background: rgba(255, 255, 255, 0.04);
   display: flex;
   flex-direction: column;
+}
+
+.createGroupWindow {
+  position: relative;
+  padding: 30px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.suggestedFriends {
+  box-sizing: border-box;
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+  row-gap: 10px;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.suggestedFriend {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.nameAndAvatarWrapper,
+.addMember {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.addMember {
+  cursor: pointer;
+}
+
+.added {
+  opacity: 40%;
+}
+
+
+.addedFriends::-webkit-scrollbar {
+  display: none;
+}
+
+.messageContainer::-webkit-scrollbar,
+.suggestedFriends::-webkit-scrollbar {
+  width: 3px;
+  /* Sets the width of the entire scrollbar */
+}
+
+/* Set scrollbar track style */
+.messageContainer::-webkit-scrollbar-track,
+.suggestedFriends::-webkit-scrollbar-track {
+  background: transparent;
+  /* Set track to be transparent */
+}
+
+/* Set scrollbar thumb (draggable part) style */
+.messageContainer::-webkit-scrollbar-thumb,
+.suggestedFriends::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  /* This changes the color of the scrollbar thumb */
+  border-radius: 1px;
+  /* Rounded edges, optional */
+}
+
+.addedFriends {
+  width: 100%;
+  /* Full width of the parent */
+  margin-top: 50px;
+  /* Top margin */
+  overflow-x: auto;
+  /* Allow horizontal scrolling */
+  overflow-y: hidden;
+  /* Prevent vertical overflow */
+  -ms-overflow-style: none;
+  /* Hide scrollbar in IE/Edge */
+  scrollbar-width: none;
+  /* Hide scrollbar in Firefox */
+  position: relative;
+  /* Maintain relative positioning */
+  display: flex;
+  /* Use Flexbox for layout */
+  flex-direction: row;
+  /* Horizontal layout */
+  flex-wrap: nowrap;
+  /* Prevent wrapping */
+  align-items: center;
+  /* Align items vertically */
+  padding: 10px;
+  /* Optional padding */
+  gap: 20px;
+}
+
+.addedFriend {
+  background-color: rgba(255, 255, 255, 0.09);
+  /* Semi-transparent white */
+  display: inline-flex;
+  /* Use inline-flex for layout */
+  justify-content: center;
+  /* Center content horizontally */
+  column-gap: 10px;
+  /* Gap between child elements */
+  align-items: center;
+  font-family: "Inter";
+  /* Font family */
+  font-weight: 400;
+  /* Font weight */
+  font-size: 14px;
+  /* Font size */
+  line-height: 20px;
+  /* Line height */
+  color: white;
+  /* Text color */
+  padding: 10px 20px;
+  /* Padding for the container */
+  border-radius: 8px;
+  /* Rounded corners */
+  white-space: nowrap;
+  /* Prevent text wrapping */
+}
+
+.removeButton {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.removeButton img {
+  width: 100%;
+  height: 100%;
 }
 
 .chatWindowContainer {
@@ -251,6 +432,7 @@
   display: flex;
   column-gap: 10px;
 }
+
 
 .currentUserAvatar {
   width: 28px;
@@ -431,7 +613,8 @@
   background: rgba(255, 255, 255, 0.04);
   padding-right: 12px;
 }
-.inputButtons em-emoji-picker{
+
+.inputButtons em-emoji-picker {
   right: 50px;
   bottom: 50px;
 }
