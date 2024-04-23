@@ -24,7 +24,7 @@ const Feed = () => {
   // }, []);
   const fetchIt = async () => {
     try {
-      const data = await fetchData('http://64.226.94.204:1337/api/posts/postdata/') as Array<PostsDataChanged>;
+      const data = await fetchData('http://64.226.94.204:1337/api/posts/posts/') as Array<PostsDataChanged>;
       console.log(data);
       setPosts(data);
     } catch (err) {
