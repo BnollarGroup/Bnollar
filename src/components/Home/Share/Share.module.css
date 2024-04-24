@@ -116,6 +116,7 @@
 .blockHead {
     width: 548px;
     padding: 24px;
+    height: 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -202,4 +203,31 @@
     align-items: center;
     background: inherit;
     border: none;
+}
+
+.blockBody {
+    overflow-y: scroll;
+    width: 100%;
+    height: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.blockBody::-webkit-scrollbar {
+    width: 3px;
+    /* Sets the width of the entire scrollbar */
+}
+
+/* Set scrollbar track style */
+.blockBody::-webkit-scrollbar-track {
+    background: transparent;
+    /* Set track to be transparent */
+}
+
+/* Set scrollbar thumb (draggable part) style */
+.blockBody::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    /* This changes the color of the scrollbar thumb */
+    border-radius: 1px;
+    /* Rounded edges, optional */
 }

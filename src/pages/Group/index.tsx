@@ -9,20 +9,35 @@ import Media from "lib/resources/images/icons/stats-report.png";
 import File from "lib/resources/images/icons/folder.png";
 import Layout from "providers/Layout";
 import LeftSideBar from "components/LeftSidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tabs from "components/Tabs";
 import FeedHeader from "components/Home/FeedHeader";
 import InformationSection from "./components/InformationSection";
 import Cover from "./components/Cover";
 import GroupTags from "./components/Tags";
 import GroupMembers from "./components/Members";
-import Post from "pages/Profile/components/Post";
-import { data } from "pages/Group/utils/config"
+import Post from "pages/Profile/components/Post/indexx";
+import { PostData } from "pages/Profile/utils/types";
+import { fetchData } from "api/apiService";
 
 
 export type TabPage = "feed" | "members" | "media" | "files";
 
 function Group() {
+  const [posts, setPosts] = useState<PostData[]>([]);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetchData<PostData[]>('http://64.226.94.204:1337/api/posts/posts/');
+      setPosts(response); // Assuming response is an array of posts
+    } catch (err) {
+      console.error("Error fetching posts:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
   const pages: { page: TabPage; icon: any }[] = [
     {
       page: "feed",
@@ -73,7 +88,7 @@ function Group() {
           <div className={style.mainbox}>
             <div className={style.left_profile_side}>
               <FeedHeader />
-              <Post data={data[0]} />
+              <Post posts={posts} />
               {/* <div className={style.upload_news}>
                 <div className={style.upload_news_author_pic}>
                   <img src={UserFeedPic} />

@@ -7,12 +7,12 @@ import attachment from "lib/resources/images/explore/attachment.svg";
 import statsReport from "lib/resources/images/explore/stats-report.svg";
 import emoji from "lib/resources/images/explore/emoji.svg";
 import currentUser from "lib/resources/images/explore/current-user.png";
-import { PostsData, PostsDataChanged } from "pages/Profile/utils/types";
+import { PostData } from "pages/Profile/utils/types";
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 
 interface CommentProps {
-    post: PostsDataChanged;
+    post: PostData;
     isOpen: boolean;
 }
 
@@ -63,7 +63,7 @@ function Comment(props: CommentProps) {
             {isOpen ? (
                 <div className={styles.commentContainer}>
                     <div className={styles.postLine}></div>
-                    {post.comments.map((reply, index) => {
+                    {post.replies.map((reply, index) => {
                         return (
                             <div className={styles.postComments} key={index}>
                                 <div className={styles.postComment}>
@@ -75,12 +75,12 @@ function Comment(props: CommentProps) {
                                         />
                                     </div>
                                     <div className={styles.commentInfo}>
-                                        <p className={styles.commentAuthor}>{reply.comment_author}</p>
-                                        <p className={styles.commentText}>{reply.comment_content}</p>
+                                        <p className={styles.commentAuthor}>{reply.user.username}</p>
+                                        <p className={styles.commentText}>{reply.content}</p>
                                         <div className={styles.commentActionButtons}>
                                             <div className={styles.commentButtons}>
                                                 <span className={styles.commentDate}>
-                                                    {reply.comment_date}
+                                                    {reply.createdAt}
                                                 </span>
                                                 <button className={styles.commentReply}>Reply</button>
                                                 <button className={styles.commentShare}>Share</button>

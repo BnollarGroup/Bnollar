@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import avatar1 from "lib/resources/images/profile-chat/avatar1.png";
 import avatar2 from "lib/resources/images/profile-chat/avatar2.png";
 import avatar3 from "lib/resources/images/profile-chat/avatar3.png";
@@ -173,6 +173,17 @@ const index = () => {
         updatedSet.delete(index); // Remove the specified index
         setAddedMembers(updatedSet);
     };
+    const [searchQuery, setSearchQuery] = useState<string>(''); // State for search query
+
+    // Function to handle input changes
+    const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchQuery(event.target.value); // Update the search query state
+    };
+
+    // Filter chatMessages based on the search query
+    const filteredChatMessages = chatMessages.filter((message) =>
+        message.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     return (
         <div className={styles.createGroupWindow}>
             <div className={styles.createGroupSearchWrap}>
@@ -180,6 +191,7 @@ const index = () => {
                     className={styles.searchInputGroups}
                     type="text"
                     placeholder="Search"
+                    onChange={handleSearchChange}
                 />
                 <img
                     className={styles.searchImg}
@@ -204,7 +216,7 @@ const index = () => {
                 })}
             </div>
             <div className={styles.suggestedFriends}>
-                {chatMessages.map((single, index) => {
+                {filteredChatMessages.map((single, index) => {
                     // Check if the current item is in the 'addedMembers' set
                     const isAdded = addedMembers.has(index);
 

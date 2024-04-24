@@ -7,22 +7,21 @@ import {
     CommnetButtonMobile,
     ShareButtonMobile,
 } from "components/Buttons";
-import Comment from "../PostComment/indexx";
-import { DataType, PostsData, PostsDataChanged } from "pages/Profile/utils/types";
+import Comment from "../PostComment/index";
+import { PostData } from "pages/Profile/utils/types";
 
 interface PostProps {
-    data: Array<PostsDataChanged>;
+    posts: PostData[];
 }
 
 const Post: React.FC<PostProps> = (props) => {
-    const { data } = props;
+    const { posts } = props;
 
     // State to manage whether comments are open or closed for each post
-    const [openComments, setOpenComments] = useState<boolean[]>(Array(data.length).fill(false));
+    const [openComments, setOpenComments] = useState<boolean[]>(Array(posts?.length).fill(false));
 
-    // Function to toggle comments for a specific post
     const toggleComments = (index: number) => {
-        setOpenComments(prevState => {
+        setOpenComments((prevState) => {
             const newState = [...prevState];
             newState[index] = !newState[index];
             return newState;
@@ -31,7 +30,7 @@ const Post: React.FC<PostProps> = (props) => {
 
     return (
         <div style={{ width: '100%' }}>
-            {data.map((post, index) => {
+            {posts?.map((post, index) => {
                 return (
                     <div key={index} className={styles.post}>
                         <div className={styles.postContent}>
@@ -39,8 +38,8 @@ const Post: React.FC<PostProps> = (props) => {
                                 <div className={styles.postFlexInner}>
                                     <img
                                         className={styles.postAvatar}
-                                        src={post.post_author.profile_picture}
-                                        alt={post.post_author.username}
+                                        src={post.user.profile_picture ? post.user.profile_picture : ''}
+                                        alt={post.user.username}
                                     />
                                     <div className={styles.postContentInner}>
                                         <div className={styles.postInfo}>
@@ -48,27 +47,27 @@ const Post: React.FC<PostProps> = (props) => {
                                                 <div className={styles.author}>
                                                     <div className={styles.postAuthorNameInner}>
                                                         <span className={styles.postAuthorName}>
-                                                            {post.post_author.username}
+                                                            {post.user.username}
                                                         </span>
-                                                        {/* {post. ? (
+                                                        {post.verified ? (
                                                             <img
                                                                 className={styles.verifiedUser}
                                                                 src={verifiedIcon}
                                                                 alt="verified user icon"
                                                             />
-                                                        ) : null} */}
+                                                        ) : null}
                                                     </div>
                                                     <span className={styles.postDate}>
-                                                        {post.post_date}
+                                                        {post.createdAt}
                                                     </span>
                                                 </div>
                                                 <MoreButton />
                                             </div>
                                             <div className={styles.postContainer}>
-                                                <p className={styles.postText}>{post.post_content}</p>
-                                                {post.content_Image && (
+                                                <p className={styles.postText}>{post.content}</p>
+                                                {post.attachment_Image && (
                                                     <img
-                                                        src={post.content_Image}
+                                                        src={post.attachment_Image}
                                                         alt="attachment icon"
                                                         className={styles.postUploadImg}
                                                     />
@@ -83,10 +82,10 @@ const Post: React.FC<PostProps> = (props) => {
                                     </div>
                                 </div>
                                 <div className={styles.postContainerMobile}>
-                                    <p className={styles.postTextMobile}>{post.post_content}</p>
-                                    {post.content_Image && (
+                                    <p className={styles.postTextMobile}>{post.content}</p>
+                                    {post.attachment_Image && (
                                         <img
-                                            src={post.content_Image}
+                                            src={post.attachment_Image}
                                             alt="attachment icon"
                                             className={styles.postUploadImg}
                                         />
