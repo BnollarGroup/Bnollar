@@ -7,12 +7,12 @@ import attachment from "lib/resources/images/explore/attachment.svg";
 import statsReport from "lib/resources/images/explore/stats-report.svg";
 import emoji from "lib/resources/images/explore/emoji.svg";
 import currentUser from "lib/resources/images/explore/current-user.png";
-import { PostsData } from "pages/Profile/utils/types";
+import { PostData, PostsData } from "pages/Profile/utils/types";
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
 
 interface CommentProps {
-  post: PostsData;
+  post: PostData;
   isOpen: boolean;
 }
 
@@ -42,7 +42,7 @@ function Comment(props: CommentProps) {
     let options: Intl.DateTimeFormatOptions = { month: 'short', day: '2-digit' };
     // Format the date using toLocaleString with the specified options
     let formattedDate = currentDate.toLocaleString('en-US', options);
-    setRepliesState([...repliesState, { content: commentValue, createdAt: formattedDate, id: repliesState.length + 1, image: 'https://picsum.photos/100', replyLikes: 1, replyReaction: false, username: 'aleks' }])
+    setRepliesState([...repliesState, { content: commentValue, createdAt: formattedDate, id: repliesState.length + 1, user: { profile_picture: 'https://picsum.photos/100', id: 1, username: 'aleks' }, replyLikes: 1, replyReaction: false }])
     setCommentValue('');
   }
   const handleEmojiSelect = (emoji: any) => {
@@ -70,12 +70,12 @@ function Comment(props: CommentProps) {
                   <div className={styles.commentAvatarBlock}>
                     <img
                       className={styles.commentAvatar}
-                      src={reply.image}
+                      src={reply.user.profile_picture ? reply.user.profile_picture : ''}
                       alt="user avatar"
                     />
                   </div>
                   <div className={styles.commentInfo}>
-                    <p className={styles.commentAuthor}>{reply.username}</p>
+                    <p className={styles.commentAuthor}>{reply.user.username}</p>
                     <p className={styles.commentText}>{reply.content}</p>
                     <div className={styles.commentActionButtons}>
                       <div className={styles.commentButtons}>

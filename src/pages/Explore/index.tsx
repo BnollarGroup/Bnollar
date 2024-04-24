@@ -6,7 +6,10 @@ import LeftSidebar from "components/LeftSidebar";
 import RightSidebar from "./components/RightSidebar";
 import MobileNavBar from "components/MobileNavbar";
 import CategoryButtons from "./components/CategoryButtons";
-import Post from "pages/Profile/components/Post/index";
+import Post from "pages/Profile/components/Post/indexx";
+import { useEffect, useState } from "react";
+import { PostData } from "pages/Profile/utils/types";
+import { fetchData } from "api/apiService";
 const categories = [
   "Recommended",
   "Business",
@@ -16,7 +19,20 @@ const categories = [
   "Fashion & Beauty",
 ];
 function Explore() {
-  const posts = data[0].posts;
+  const [posts, setPosts] = useState<PostData[]>([]);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetchData<PostData[]>('http://64.226.94.204:1337/api/posts/posts/');
+      setPosts(response); // Assuming response is an array of posts
+    } catch (err) {
+      console.error("Error fetching posts:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   return (
     <Layout>
@@ -33,9 +49,10 @@ function Explore() {
             <CategoryButtons categories={categories} />
 
             <div className={style.newsFeed}>
-              {posts?.map((post) => (
+              {/* {posts?.map((post) => (
                 <Post data={data[0]} key={post.id} />
-              ))}
+              ))} */}
+              <Post posts={posts} />
             </div>
           </div>
 

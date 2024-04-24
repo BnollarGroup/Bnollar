@@ -3,17 +3,34 @@ interface RequestOptions {
     body?: object;
 }
 
+// export async function fetchData<T>(url: string): Promise<T> {
+//     const response = await fetch(url, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         }
+//     });
+//     if (!response.ok) {
+//         throw new Error(`Failed to fetch data from ${url}`);
+//     }
+//     return response.json();
+// }
+// A generic function to fetch data and return it as the specified type
 export async function fetchData<T>(url: string): Promise<T> {
     const response = await fetch(url, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-        }
+        },
     });
+
     if (!response.ok) {
         throw new Error(`Failed to fetch data from ${url}`);
     }
-    return response.json();
+
+    const jsonData = await response.json();
+
+    return jsonData as T; // Explicitly cast to T to ensure correct type
 }
 
 export async function postData<T>(url: string, data: object, contentType: string): Promise<T> {
