@@ -1,0 +1,134 @@
+.createGroupWindow {
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.suggestedFriends {
+    box-sizing: border-box;
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter';
+    row-gap: 10px;
+    flex: 1;
+    overflow-y: scroll;
+}
+
+.suggestedFriend {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.nameAndAvatarWrapper,
+.addMember {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #ffffff;
+}
+
+.addMember {
+    cursor: pointer;
+}
+
+.added {
+    opacity: 40%;
+}
+
+
+.addedFriends::-webkit-scrollbar {
+    display: none;
+}
+
+.messageContainer::-webkit-scrollbar,
+.suggestedFriends::-webkit-scrollbar {
+    width: 3px;
+    /* Sets the width of the entire scrollbar */
+}
+
+/* Set scrollbar track style */
+.messageContainer::-webkit-scrollbar-track,
+.suggestedFriends::-webkit-scrollbar-track {
+    background: transparent;
+    /* Set track to be transparent */
+}
+
+/* Set scrollbar thumb (draggable part) style */
+.messageContainer::-webkit-scrollbar-thumb,
+.suggestedFriends::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    /* This changes the color of the scrollbar thumb */
+    border-radius: 1px;
+    /* Rounded edges, optional */
+}
+
+.searchInputGroups {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 36px;
+    padding: 8px 14px 8px 40px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    outline: none;
+    border: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.createGroupSearchWrap {
+    width: 100%;
+    position: relative;
+}
+
+.searchInput::placeholder,
+.searchInputGroups::placeholder {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.searchImg {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translate(0, -50%);
+}
+.addMember {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #ffffff;
+  }
+  
+  .addMember {
+    cursor: pointer;
+  }
+  
+  .added {
+    opacity: 40%;
+  }
+  
