@@ -19,9 +19,160 @@ import GroupMembers from "./components/Members";
 import Post from "pages/Profile/components/Post/indexx";
 import { PostData } from "pages/Profile/utils/types";
 import { fetchData } from "api/apiService";
+import CreateGroup from "components/ProfileChat/CreateGroup/CreateGroup";
+import avatar1 from "lib/resources/images/profile-chat/avatar1.png";
+import avatar2 from "lib/resources/images/profile-chat/avatar2.png";
+import avatar3 from "lib/resources/images/profile-chat/avatar3.png";
+import avatar4 from "lib/resources/images/profile-chat/avatar4.png";
+import avatar5 from "lib/resources/images/profile-chat/avatar5.png";
+import MediaTab from "./components/MediaTab";
+import FilesTab from "./components/FilesTab";
 
 
 export type TabPage = "feed" | "members" | "media" | "files";
+const chatMessages = [
+  {
+    name: "Owen Padberg",
+    message: "Hey Olivia, Katherine sent...",
+    avatar: avatar1,
+    hasDot: true,
+    messageTime: "5m",
+  },
+  {
+    name: "Traci Tillman",
+    message: "You: Sure thing, I’ll have a loo...",
+    avatar: avatar2,
+    hasDot: false,
+    messageTime: "1h",
+  },
+  {
+    name: "Mr. Percy Sauer",
+    message: "I’ve just published the site again.",
+    avatar: avatar3,
+    hasDot: true,
+    messageTime: "2w",
+  },
+  {
+    name: "Jeremy Weber PhD",
+    message: "Hey Liv — just wanted to say th...",
+    avatar: avatar4,
+    hasDot: false,
+    messageTime: "12w",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+  {
+    name: "Lillian Powlowski",
+    message: "Good news!! Jack accepted t...",
+    avatar: avatar5,
+    hasDot: false,
+    messageTime: "1y",
+  },
+
+];
 
 function Group() {
   const [posts, setPosts] = useState<PostData[]>([]);
@@ -87,8 +238,10 @@ function Group() {
           <div className={style.line}></div>
           <div className={style.mainbox}>
             <div className={style.left_profile_side}>
-              <FeedHeader />
-              <Post posts={posts} />
+              {currentTab === 'feed' ? <>
+                <FeedHeader />
+                <Post posts={posts} />
+              </> : currentTab === 'members' ? <CreateGroup chatMessages={chatMessages} /> : currentTab === 'media' ? <MediaTab />: <FilesTab />}
               {/* <div className={style.upload_news}>
                 <div className={style.upload_news_author_pic}>
                   <img src={UserFeedPic} />

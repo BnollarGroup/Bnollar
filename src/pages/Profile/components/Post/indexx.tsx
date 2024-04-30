@@ -83,13 +83,14 @@ const Post: React.FC<PostProps> = (props) => {
                                 </div>
                                 <div className={styles.postContainerMobile}>
                                     <p className={styles.postTextMobile}>{post.content}</p>
-                                    {post.attachment_Image && (
+                                    {post.attachment_Image ?  (
                                         <img
                                             src={post.attachment_Image}
                                             alt="attachment icon"
                                             className={styles.postUploadImg}
                                         />
-                                    )}
+                                        
+                                    ) : ''}
 
                                     <div className={styles.postBtnsMobile}>
                                         <UpvoteButtonMobile />
