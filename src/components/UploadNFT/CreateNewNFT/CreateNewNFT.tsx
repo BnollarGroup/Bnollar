@@ -233,7 +233,7 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
       <div className={styles.leftSide}>
         <div className={styles.createNewNft}>
           <h1>Create New NFT</h1>
-          <h3 className={styles.inscription}>Single edition on Etherium</h3>
+          <h3 className={styles.inscription}>{type} edition on {blockchain}</h3>
         </div>
         <div className={styles.containerOfInputsAndNames}>
           <div className={styles.name}>
@@ -353,7 +353,7 @@ function CreateNewNFT({ blockchain, type }: newNftProps) {
             </div>
             <div className={styles.receive}>
               <h2>You will receive</h2>
-              <h3>+price - {(+price * 2.5) / 100} ETH</h3>
+              <h3>{+price - (+price * 2.5) / 100} ETH</h3>
             </div>
           </div>
         </div>

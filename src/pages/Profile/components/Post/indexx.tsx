@@ -9,6 +9,7 @@ import {
 } from "components/Buttons";
 import Comment from "../PostComment/index";
 import { PostData } from "pages/Profile/utils/types";
+import { useNavigate } from "react-router-dom";
 
 interface PostProps {
     posts: PostData[];
@@ -16,7 +17,7 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = (props) => {
     const { posts } = props;
-
+    const nav = useNavigate();
     // State to manage whether comments are open or closed for each post
     const [openComments, setOpenComments] = useState<boolean[]>(Array(posts?.length).fill(false));
 
@@ -70,6 +71,7 @@ const Post: React.FC<PostProps> = (props) => {
                                                         src={post.attachment_Image}
                                                         alt="attachment icon"
                                                         className={styles.postUploadImg}
+                                                        onClick={() => nav('/post')}
                                                     />
                                                 )}
                                                 <div className={styles.postBtns}>
@@ -83,13 +85,13 @@ const Post: React.FC<PostProps> = (props) => {
                                 </div>
                                 <div className={styles.postContainerMobile}>
                                     <p className={styles.postTextMobile}>{post.content}</p>
-                                    {post.attachment_Image ?  (
+                                    {post.attachment_Image ? (
                                         <img
                                             src={post.attachment_Image}
                                             alt="attachment icon"
                                             className={styles.postUploadImg}
                                         />
-                                        
+
                                     ) : ''}
 
                                     <div className={styles.postBtnsMobile}>
