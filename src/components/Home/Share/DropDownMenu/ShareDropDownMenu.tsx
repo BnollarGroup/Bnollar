@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ShareSend from "..";
 import styles from "./DropDownMenu.module.css";
 function ShareDropDownMenu() {
   const [shareIsOpen, setShareisOpen] = useState<boolean>(false);
   const sendShareToggle = () => {
     setShareisOpen((prevState) => !prevState);
-    
   }
+  useEffect(() => {
+    shareIsOpen ? document.body.style.overflow = 'hidden'
+      : document.body.style.overflow = 'unset';
+  }, [shareIsOpen]);
 
   return (
     <div className={styles.dropdownMenu}>

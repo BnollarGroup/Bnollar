@@ -1,5 +1,5 @@
 
-import React, { ChangeEvent, ReactNode, useState } from "react";
+import React, { ChangeEvent, ReactNode, useEffect, useState } from "react";
 import styless from "./Share.module.css";
 import cancelIcon from "lib/resources/images/profile-chat/cancel-block.svg";
 import avatar1 from "lib/resources/images/profile-chat/avatar1.png";

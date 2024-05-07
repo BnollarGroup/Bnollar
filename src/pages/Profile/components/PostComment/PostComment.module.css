@@ -23,6 +23,7 @@
 .commentAvatar {
     width: 34px;
     height: 34px;
+    border-radius: 50%;
 }
 
 .commentInfo {
@@ -189,4 +190,5 @@ em-emoji-picker{
     position: absolute;
     right: 30px;
     top: 40px;
+    z-index: 1000;
 }
