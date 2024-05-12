@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "components/Navbar";
-import style from "./JoinCommunity.module.css";
+import style from  './Community.module.css';
 import RightSideBar from "components/RightNavbar";
 import Cover from "lib/resources/images/icons/cover.png";
 import CategoryButtons from "pages/Explore/components/CategoryButtons";
